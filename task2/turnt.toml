@@ -1,0 +1,2 @@
+command = "bril2json < {filename} | python3 op_count.py"
+output.out = "{base}.out"

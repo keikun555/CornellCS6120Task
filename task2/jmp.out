@@ -1,0 +1,4 @@
+OP	COUNT
+const	2
+jmp	1
+print	1

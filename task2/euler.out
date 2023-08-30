@@ -1,0 +1,14 @@
+OP	COUNT
+id	16
+const	8
+call	3
+ret	3
+br	2
+jmp	2
+fadd	2
+print	1
+fle	1
+fsub	1
+fmul	1
+flt	1
+fdiv	1
