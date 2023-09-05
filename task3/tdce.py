@@ -4,12 +4,10 @@ import json
 import sys
 
 from typing import Set, cast
-from typing_bril import Program, Instruction, Function, NonConstantInstruction
+from typing_bril import Program, Instruction, Function, Effect
 
 from basic_blocks import (
     BasicBlock,
-    basic_block_program_from_program,
-    program_from_basic_block_program,
 )
 
 OPERATIONS_WITH_SIDE_EFFECTS = ("call", "print")
@@ -24,7 +22,7 @@ def eliminate_dead_code_trivially(function: Function) -> Function:
         used: Set[str] = set()
         for instruction in instructions:
             if "args" in instruction:
-                instruction = cast(NonConstantInstruction, instruction)
+                instruction = cast(Effect, instruction)
                 used.update(instruction.get("args", []))
         for instruction in instructions:
             if "dest" not in instruction:
@@ -44,9 +42,13 @@ def eliminate_dead_code_trivially(function: Function) -> Function:
     return function
 
 
-if __name__ == "__main__":
+def main():
     prog: Program = json.load(sys.stdin)
     for i, func in enumerate(prog["functions"]):
         prog['functions'][i] = eliminate_dead_code_trivially(func)
 
     print(json.dumps(prog))
+
+
+if __name__ == "__main__":
+    main()

@@ -50,17 +50,24 @@ class InstructionBase(TypedDict):
     op: Operation
 
 
+class Variable(str):
+    ...
+
+
 class ValueInstructionBase(InstructionBase):
-    dest: str
+    dest: Variable
     type: BrilType
 
 
+PrimitiveType: TypeAlias = Union[int, bool]
+
+
 class Constant(ValueInstructionBase):
-    value: Union[int, bool]
+    value: PrimitiveType
 
 
 class NonConstantInstructionMixin(TypedDict):
-    args: NotRequired[list[str]]
+    args: NotRequired[list[Variable]]
     funcs: NotRequired[list[str]]
     labels: NotRequired[list[str]]
 
