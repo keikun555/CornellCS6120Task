@@ -1,0 +1,38 @@
+extract = 'total_dyn_inst: (\d+)'
+benchmarks = '../../bril/examples/test/lvn/commute.bril'
+
+[runs.baseline]
+pipeline = [
+    "bril2json",
+    "brili -p",
+]
+
+[runs.tdce]
+pipeline = [
+    "bril2json",
+    "python3 tdce.py",
+    "brili -p",
+]
+
+[runs.lvn]
+pipeline = [
+    "bril2json",
+    "python3 lvn.py",
+    "brili -p",
+]
+
+[runs.lvn_tdce]
+pipeline = [
+    "bril2json",
+    "python3 lvn.py",
+    "python3 tdce.py",
+    "brili -p",
+]
+
+[runs.commutative_lvn_tdce]
+pipeline = [
+    "bril2json",
+    "python3 lvn.py -c",
+    "python3 tdce.py",
+    "brili -p",
+]

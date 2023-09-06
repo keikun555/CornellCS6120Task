@@ -1,0 +1,6 @@
+benchmark,run,result
+commute,baseline,6
+commute,tdce,6
+commute,lvn,6
+commute,lvn_tdce,6
+commute,commutative_lvn_tdce,5
