@@ -4,6 +4,7 @@ from typing_extensions import TypedDict, Required, NotRequired
 
 
 Operation: TypeAlias = Literal[
+    # core
     "add",
     "mul",
     "sub",
@@ -23,6 +24,33 @@ Operation: TypeAlias = Literal[
     "id",
     "print",
     "nop",
+    # memory
+    "alloc",
+    "store",
+    "load",
+    "ptradd",
+    # float
+    "fadd",
+    "fmul",
+    "fsub",
+    "fdiv",
+    "feq",
+    "flt",
+    "fle",
+    "fgt",
+    "fge",
+    # speculative execution
+    "speculate",
+    "commit",
+    "guard",
+    # character
+    "ceq",
+    "clt",
+    "cle",
+    "cgt",
+    "cge",
+    "char2int",
+    "int2char",
 ]
 
 
@@ -59,7 +87,7 @@ class ValueInstructionBase(InstructionBase):
     type: BrilType
 
 
-PrimitiveType: TypeAlias = Union[int, bool]
+PrimitiveType: TypeAlias = Union[int, bool, float]
 
 
 class Constant(ValueInstructionBase):

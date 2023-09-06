@@ -1,16 +1,11 @@
 """ Trivial Dead Code Elimination """
-import collections
 import json
 import sys
 
 from typing import Set, cast
 from typing_bril import Program, Instruction, Function, Effect
 
-from basic_blocks import (
-    BasicBlock,
-)
-
-OPERATIONS_WITH_SIDE_EFFECTS = ("call", "print")
+from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS
 
 
 def eliminate_dead_code_trivially(function: Function) -> Function:
@@ -45,7 +40,7 @@ def eliminate_dead_code_trivially(function: Function) -> Function:
 def main():
     prog: Program = json.load(sys.stdin)
     for i, func in enumerate(prog["functions"]):
-        prog['functions'][i] = eliminate_dead_code_trivially(func)
+        prog["functions"][i] = eliminate_dead_code_trivially(func)
 
     print(json.dumps(prog))
 
