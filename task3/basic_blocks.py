@@ -9,10 +9,8 @@ from typing import Generator, Dict, TypeAlias
 from typing_extensions import TypedDict
 
 from typing_bril import Function, FunctionBase, Instruction, Program
+from bril_constants import TERMINATOR_OPERATORS, ENTRY_FUNCTION_NAME
 
-
-TERMINATORS = ["jmp", "br", "ret"]
-ENTRY_FUNCTION_NAME = "main"
 
 BasicBlock: TypeAlias = list[Instruction]
 
@@ -29,7 +27,7 @@ def basic_block_generator(func: Function) -> Generator[BasicBlock, None, None]:
     """given a function generates the basic block decomposition of the function instructions"""
     cur_block = []
     for instr in func["instrs"]:
-        if instr.get("op") in TERMINATORS:
+        if instr.get("op") in TERMINATOR_OPERATORS:
             cur_block.append(instr)
             yield cur_block
             cur_block = []

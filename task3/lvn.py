@@ -2,14 +2,15 @@
 import sys
 import json
 import uuid
-from typing import Dict, cast, Generator, TypeAlias, List, Union, Optional
+from typing import Dict, cast, Generator, TypeAlias, List, Optional
+
+import click
 
 from typing_bril import (
     Program,
     Operation,
     Value,
     Variable,
-    PrimitiveType,
     Constant,
 )
 from basic_blocks import (
@@ -19,10 +20,11 @@ from basic_blocks import (
     program_from_basic_block_program,
 )
 
-from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS
+from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS, COMMUTATIVE_OPERATIONS
 
 ValueTuple: TypeAlias = tuple[Operation, tuple[int, ...], Optional[str]]
 LocalValueNumberingRow: TypeAlias = tuple[int, ValueTuple, Variable]
+
 
 class LocalValueNumberingTable(object):
     def __init__(self):
@@ -30,15 +32,20 @@ class LocalValueNumberingTable(object):
         # value number to table index
         self._value_num_to_index: Dict[int, int] = {}
         # value to table index
-        self._value_to_index: Dict[ValueTuple, int] = {}
+        self._value_tuple_to_index: Dict[ValueTuple, int] = {}
 
-    def insert(self, value_number: int, value_tuple: ValueTuple, canonical_home: Variable) -> None:
+    def insert(
+        self, value_number: int, value_tuple: ValueTuple, canonical_home: Variable
+    ) -> None:
         self._table.append((value_number, value_tuple, canonical_home))
-        self._value_to_index[value_tuple] = len(self._table) - 1
+        self._value_tuple_to_index[value_tuple] = len(self._table) - 1
         self._value_num_to_index[value_number] = len(self._table) - 1
 
+    def value_tuple_in_table(self, value_tuple: ValueTuple) -> bool:
+        return value_tuple in self._value_tuple_to_index
+
     def row_from_value_tuple(self, value_tuple: ValueTuple) -> LocalValueNumberingRow:
-        return self._table[self._value_to_index[value_tuple]]
+        return self._table[self._value_tuple_to_index[value_tuple]]
 
     def row_from_value_number(self, value_number: int) -> LocalValueNumberingRow:
         return self._table[self._value_num_to_index[value_number]]
@@ -59,16 +66,12 @@ def overwritten_indices_get(basic_block: BasicBlock) -> set[int]:
     return {i for i, o in enumerate(overwritten) if o}
 
 
-def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
+def local_value_numbering(basic_block: BasicBlock, commutative: bool) -> BasicBlock:
     """Performs local value numbering on basic block and returns optimized block"""
     overwritten_indices = overwritten_indices_get(basic_block)
     overwrite_dict: dict[Variable, Variable] = {}
 
-    table: List[LocalValueNumberingRow] = []
-    # value number to table index
-    value_num_to_index: Dict[int, int] = {}
-    # value to table index
-    value_to_index: Dict[ValueTuple, int] = {}
+    table = LocalValueNumberingTable()
     var2num: Dict[Variable, int] = {}
 
     new_basic_block: BasicBlock = []
@@ -87,25 +90,24 @@ def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
     variable_generator = new_variable_generator()
 
     for i, instruction in enumerate(basic_block):
-        # print(f"table:\t{table}")
-        # print(f"value_num_to_index:\t{value_num_to_index}")
-        # print(f"value_to_index:\t{value_to_index}")
-        # print(f"var2num:\t{var2num}")
-        # print(f"instruction:\t{instruction}")
         if "args" in instruction:
+            # if we overwrote the variable with a fresh variable
+            # we must use that new variable here
             instr = cast(Value, instruction)
             for j, arg in enumerate(instr["args"]):
                 if arg in overwrite_dict:
                     instr["args"][j] = overwrite_dict[arg]
 
         if "dest" in instruction:
+            # if we redefine the original variable of a fresh variable
+            # remove from overwritten variable book keeping
             instr = cast(Value, instruction)
             if instr["dest"] in overwrite_dict:
                 overwrite_dict.pop(instr["dest"])
 
         if "op" not in instruction or "dest" not in instruction:
+            # Not a value, skip
             new_basic_block.append(instruction)
-            # print(f"appended {instruction}")
             continue
 
         value_tuple: ValueTuple
@@ -115,9 +117,7 @@ def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
             num = next(value_number_generator)  # fresh value number
             instruction = cast(Constant, instruction)
             value_tuple = (instruction["op"], (num,), None)
-            table.append((num, value_tuple, instruction["dest"]))
-            value_to_index[value_tuple] = len(table) - 1
-            value_num_to_index[num] = len(table) - 1
+            table.insert(num, value_tuple, instruction["dest"])
             var2num[instruction["dest"]] = num
             continue
 
@@ -129,12 +129,16 @@ def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
                 # so just input it into the var2num and table
                 num = next(value_number_generator)  # fresh value number
                 value_tuple = ("id", (num,), None)
-                table.append((num, value_tuple, arg))
-                value_to_index[value_tuple] = len(table) - 1
-                value_num_to_index[num] = len(table) - 1
+                table.insert(num, value_tuple, arg)
                 var2num[arg] = num
 
-        value_num_tuple = tuple(var2num[arg] for arg in instruction.get("args", []))
+        args: list[Variable]
+        if commutative and instruction['op'] in COMMUTATIVE_OPERATIONS:
+            args = sorted(instruction.get("args", []))
+        else:
+            args = instruction.get("args", [])
+
+        value_num_tuple = tuple(var2num[arg] for arg in args)
 
         identifier: Optional[str]
         if instruction["op"] in OPERATIONS_WITH_SIDE_EFFECTS:
@@ -148,10 +152,9 @@ def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
             value_num_tuple,
             identifier,
         )
-        # implement commutativity here
 
-        if value_tuple in value_to_index:
-            num, _, var = table[value_to_index[value_tuple]]
+        if table.value_tuple_in_table(value_tuple):
+            num, _, var = table.row_from_value_tuple(value_tuple)
             # replace instr with copy of var
             new_basic_block.append(
                 Value(
@@ -173,13 +176,11 @@ def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
             else:
                 dest = instruction["dest"]
 
-            table.append((num, value_tuple, dest))
-            value_to_index[value_tuple] = len(table) - 1
-            value_num_to_index[num] = len(table) - 1
+            table.insert(num, value_tuple, dest)
 
             for j, arg in enumerate(instruction.get("args", [])):
                 # each arg is already in var2num so replace
-                instruction["args"][j] = table[value_num_to_index[var2num[arg]]][2]
+                _, _, instruction["args"][j] = table.row_from_value_number(var2num[arg])
 
             new_basic_block.append(instruction)
 
@@ -188,12 +189,23 @@ def local_value_numbering(basic_block: BasicBlock) -> BasicBlock:
     return basic_block
 
 
-def main():
+@click.command()
+@click.option(
+    "-c",
+    "--commutative",
+    is_flag=True,
+    default=False,
+    type=bool,
+    help="Use commutative LVN optimization",
+)
+def main(commutative: bool):
     prog: Program = json.load(sys.stdin)
     bb_program: BasicBlockProgram = basic_block_program_from_program(prog)
     for i, func in enumerate(bb_program["functions"]):
         for j, basic_block in enumerate(func["instrs"]):
-            bb_program["functions"][i][j] = local_value_numbering(basic_block)
+            bb_program["functions"][i][j] = local_value_numbering(
+                basic_block, commutative
+            )
 
     optimized_prog: Program = program_from_basic_block_program(bb_program)
 
