@@ -5,11 +5,11 @@ import json
 import sys
 import itertools
 
-from typing import Generator, Dict, TypeAlias
+from typing import Generator, TypeAlias
 from typing_extensions import TypedDict
 
 from typing_bril import Function, FunctionBase, Instruction, Program
-from bril_constants import TERMINATOR_OPERATORS, ENTRY_FUNCTION_NAME
+from bril_constants import TERMINATOR_OPERATORS
 
 
 BasicBlock: TypeAlias = list[Instruction]
