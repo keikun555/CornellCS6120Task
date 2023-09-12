@@ -87,13 +87,16 @@ def analyze_data_flow(
     worklist = set(range(len(basic_block_function["instrs"])))
     while len(worklist) > 0:
         b_index = worklist.pop()
-        if b_index in (cfg.entry, cfg.exit):
-            continue
         dict1[b_index] = data_flow_analysis.merge(
             *(dict2[i] for i in endpoint1_get(b_index))
         )
 
-        basic_block = basic_block_function["instrs"][b_index]
+        basic_block: BasicBlock
+        if 0 <= b_index < len(basic_block_function['instrs']):
+            basic_block = basic_block_function["instrs"][b_index]
+        else:
+            basic_block = []
+
         new_dict2_set = data_flow_analysis.transfer(
             basic_block, b_index, dict1[b_index]
         )
@@ -129,7 +132,10 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         out: dict[int, set[DefinitionIdentifier]] = {
             i: set() for i, _ in enumerate(func["instrs"])
         }
-        out[-1] = set()
+        in_[cfg.entry] = set()
+        out[cfg.entry] = set()
+        in_[cfg.exit] = set()
+        out[cfg.exit] = set()
 
         if "args" in func:
             out[-1].update((None, -1, arg["name"]) for arg in func["args"])
@@ -190,7 +196,10 @@ class LiveVariables(DataFlowAnalysis[set[str]]):
         """Initial in and out dictionaries for the analysis algorithm"""
         in_: dict[int, set[str]] = {i: set() for i, _ in enumerate(func["instrs"])}
         out: dict[int, set[str]] = {i: set() for i, _ in enumerate(func["instrs"])}
+        in_[cfg.entry] = set()
+        out[cfg.entry] = set()
         in_[cfg.exit] = set()
+        out[cfg.exit] = set()
 
         return in_, out
 
