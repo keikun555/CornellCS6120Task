@@ -19,6 +19,7 @@ from basic_blocks import (
     basic_block_program_from_program,
     BasicBlock,
 )
+from bril_extract import label_get
 
 
 class ControlFlowGraph(DefaultDict[int, set[int]]):
@@ -30,8 +31,8 @@ class ControlFlowGraph(DefaultDict[int, set[int]]):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # entry and exits are sets of indices of entry blocks and exit blocks, respectively
-        self.entry: set[int] = set()
-        self.exit: set[int] = set()
+        self.entry = -1
+        self.exit = -2
 
     def predecessors(self, block_index) -> tuple[int, ...]:
         """Given block index, return predecessor indices of block"""
@@ -45,20 +46,22 @@ class ControlFlowGraph(DefaultDict[int, set[int]]):
 def control_flow_graph_from_instructions(
     basic_blocks: list[BasicBlock],
 ) -> ControlFlowGraph:
+    """Given list of basic blocks generate a control flow graph"""
     cfg = ControlFlowGraph(set)
     if len(basic_blocks) <= 0:
         return cfg
 
-    cfg.entry.add(0)
+    # Treat -1 as entry block and len(basic_blocks) as exit block
+    cfg.entry = -1
+    cfg.exit = len(basic_blocks)
+
+    cfg[cfg.entry].add(0)
 
     labels_to_index: dict[str, int] = {}
     for i, basic_block in enumerate(basic_blocks):
-        if len(basic_block) <= 0:
-            continue
-        first_instruction = basic_block[0]
-        if "label" in first_instruction:
-            label = cast(Label, first_instruction)
-            labels_to_index[label["label"]] = i
+        label = label_get(basic_block)
+        if label is not None:
+            labels_to_index[label] = i
 
     for i, basic_block in enumerate(basic_blocks):
         if len(basic_block) <= 0:
@@ -69,7 +72,7 @@ def control_flow_graph_from_instructions(
 
             if instruction["op"] in TERMINATOR_OPERATORS:
                 if instruction["op"] == "ret":
-                    cfg.exit.add(i)
+                    cfg[i].add(cfg.exit)
                     continue
 
                 terminator = cast(Effect, instruction)
@@ -78,8 +81,7 @@ def control_flow_graph_from_instructions(
                         labels_to_index[label] for label in terminator["labels"]
                     )
 
-            elif i + 1 < len(basic_blocks):
-                # At least check if within passed in blocks
+            else:
                 cfg[i].add(i + 1)
 
     return cfg

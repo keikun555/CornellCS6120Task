@@ -2,39 +2,30 @@
 
 import sys
 import json
-import copy
+import click
 from typing import (
-    Dict,
     cast,
-    Generator,
     TypeAlias,
-    List,
-    Optional,
     TypeVar,
     Generic,
-    Hashable,
+    Optional,
 )
 from abc import ABC, abstractmethod
 from enum import Enum
 
-import click
-
-from typing_bril import (
-    Program,
-    Operation,
-    Value,
-    Variable,
-    Constant,
-)
+from typing_bril import Program, Value
 from basic_blocks import (
     BasicBlockProgram,
+    BasicBlockFunction,
     BasicBlock,
     basic_block_program_from_program,
-    program_from_basic_block_program,
 )
+from cfg import ControlFlowGraph, control_flow_graph_from_instructions
+
+from bril_extract import label_get
 
 
-T = TypeVar("T")
+Domain = TypeVar("Domain")
 
 
 class Direction(Enum):
@@ -42,59 +33,183 @@ class Direction(Enum):
     BACKWARD = 2
 
 
-class DataFlowAnalysis(ABC, Generic[T]):
-    def __init__(self):
-        ...
-
+class DataFlowAnalysis(ABC, Generic[Domain]):
     @property
     @abstractmethod
     def direction(self) -> Direction:
         """Data flow direction"""
 
     @abstractmethod
-    def merge(self, *domains: set[T]):
+    def initial_in_out(
+        self, func: BasicBlockFunction
+    ) -> tuple[dict[int, Domain], dict[int, Domain]]:
+        """Initial in and out dictionaries for the analysis algorithm"""
+
+    @abstractmethod
+    def merge(self, *domains: Domain) -> Domain:
         """Merge the domains for worklist algorithm"""
 
     @abstractmethod
-    def transfer(self, basic_block: BasicBlock, source: set[T]) -> set[T]:
+    def transfer(
+        self, basic_block: BasicBlock, basic_block_identifier: int, source: Domain
+    ) -> Domain:
         """Transfer the source set to another set using basic_block"""
 
-    def execute(self, basic_blocks: list[BasicBlock], cfg: ControlFlowGraph):
-        in_: dict[int, set[T]] = {}
-        out: dict[int, set[T]] = {}
-
-        if self.direction == Direction.FORWARD:
-            dict1 = in_
-            dict2 = out
-            endpoint1_get = cfg.predecessors
-            endpoint2_get = cfg.successors
-        else:
-            dict1 = out
-            dict2 = in_
-            endpoint1_get = cfg.successors
-            endpoint2_get = cfg.predecessors
-
-        worklist = set(range(len(basic_blocks)))
-        while len(worklist) > 0:
-            b_index = worklist.pop()
-            dict1[b_index] = self.merge(*(out[i] for i in endpoint1_get(b_index)))
-
-            basic_block = basic_blocks[b_index]
-            new_dict2_set = self.transfer(basic_block, dict1[b_index])
-
-            if dict2[b_index] != new_dict2_set:
-                worklist.update(endpoint2_get(b_index))
-
-            dict2[b_index] = new_dict2_set
+    @staticmethod
+    @abstractmethod
+    def sprint_domain(domain: Domain) -> str:
+        """Returns a pretty string of an element in the domain"""
 
 
-def main():
+def analyze_data_flow(
+    data_flow_analysis: DataFlowAnalysis[Domain],
+    basic_block_function: BasicBlockFunction,
+    cfg: ControlFlowGraph,
+) -> tuple[dict[int, Domain], dict[int, Domain]]:
+    """
+    Given a data flow analysis object, basic blocks, and their control flow graph,
+    analyze their data flows
+    """
+    in_, out = data_flow_analysis.initial_in_out(basic_block_function)
+
+    if data_flow_analysis.direction == Direction.FORWARD:
+        dict1 = in_
+        dict2 = out
+        endpoint1_get = cfg.predecessors
+        endpoint2_get = cfg.successors
+    else:
+        dict1 = out
+        dict2 = in_
+        endpoint1_get = cfg.successors
+        endpoint2_get = cfg.predecessors
+
+    worklist = set(range(len(basic_block_function["instrs"])))
+    while len(worklist) > 0:
+        b_index = worklist.pop()
+        if b_index in (cfg.entry, cfg.exit):
+            continue
+        dict1[b_index] = data_flow_analysis.merge(
+            *(dict2[i] for i in endpoint1_get(b_index))
+        )
+
+        basic_block = basic_block_function["instrs"][b_index]
+        new_dict2_set = data_flow_analysis.transfer(
+            basic_block, b_index, dict1[b_index]
+        )
+
+        if dict2[b_index] != new_dict2_set:
+            worklist.update(endpoint2_get(b_index))
+
+        dict2[b_index] = new_dict2_set
+
+    return dict(in_), dict(out)
+
+
+DefinitionIdentifier: TypeAlias = tuple[Optional[str], int, str]
+
+
+def definition_identifier_get(
+    label: Optional[str], basic_block_identifier: int, variable_name: str
+) -> DefinitionIdentifier:
+    return (label, basic_block_identifier, variable_name)
+
+
+class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
+    """Bookkeep what definitions are available at the end of a block"""
+
+    @property
+    def direction(self) -> Direction:
+        """Data flow direction"""
+        return Direction.FORWARD
+
+    def initial_in_out(
+        self, func: BasicBlockFunction
+    ) -> tuple[
+        dict[int, set[DefinitionIdentifier]], dict[int, set[DefinitionIdentifier]]
+    ]:
+        """Initial in and out dictionaries for the analysis algorithm"""
+        in_: dict[int, set[DefinitionIdentifier]] = {
+            i: set() for i, _ in enumerate(func["instrs"])
+        }
+        out: dict[int, set[DefinitionIdentifier]] = {
+            i: set() for i, _ in enumerate(func["instrs"])
+        }
+
+        if "args" in func:
+            out[-1] = {(None, -1, arg["name"]) for arg in func["args"]}
+
+        return in_, out
+
+    def merge(self, *domains: set[DefinitionIdentifier]) -> set[DefinitionIdentifier]:
+        """Merge the domains for worklist algorithm"""
+        return set().union(*domains)
+
+    def transfer(
+        self,
+        basic_block: BasicBlock,
+        basic_block_identifier: int,
+        source: set[DefinitionIdentifier],
+    ) -> set[DefinitionIdentifier]:
+        """Transfer the source set to another set using basic_block"""
+        dest = source.copy()
+        label = label_get(basic_block)
+        for instruction in basic_block:
+            if "dest" in instruction:
+                value = cast(Value, instruction)
+                for old_label, bb_identifier, value_dest in source:
+                    if value_dest == value["dest"]:
+                        source.remove((old_label, bb_identifier, value_dest))
+
+                dest.add(
+                    definition_identifier_get(
+                        label, basic_block_identifier, value["dest"]
+                    )
+                )
+        return dest
+
+    @staticmethod
+    def sprint_domain(domain: set[DefinitionIdentifier]) -> str:
+        """Returns a pretty string of an element in the domain"""
+
+        def sprintf_element(element: DefinitionIdentifier):
+            label, basic_block_identifier, variable_name = element
+            if label is not None:
+                return f"{label}-{variable_name}"
+            return f"block_{basic_block_identifier}-{variable_name}"
+
+        return ", ".join(sorted([sprintf_element(element) for element in domain]))
+
+
+DATA_FLOW_ANALYSIS_MAP: dict[str, DataFlowAnalysis] = {
+    "defined": ReachingDefinitions(),
+}
+
+
+@click.command()
+@click.argument(
+    "data-flow-analysis-type",
+    type=click.Choice(DATA_FLOW_ANALYSIS_MAP.keys(), case_sensitive=False),
+)
+def main(data_flow_analysis_type):
+    data_flow_analysis = DATA_FLOW_ANALYSIS_MAP[data_flow_analysis_type]
     prog: Program = json.load(sys.stdin)
     bb_program: BasicBlockProgram = basic_block_program_from_program(prog)
 
-    optimized_prog: Program = program_from_basic_block_program(bb_program)
-
-    print(json.dumps(optimized_prog))
+    for func in bb_program["functions"]:
+        cfg = control_flow_graph_from_instructions(func["instrs"])
+        in_, out = analyze_data_flow(data_flow_analysis, func, cfg)
+        print(func["name"])
+        for i, basic_block in enumerate(func["instrs"]):
+            label = label_get(basic_block)
+            if label is not None:
+                block_name = label
+            else:
+                block_name = f"block_{i}"
+            print(f"  {block_name}:")
+            in_string = data_flow_analysis.sprint_domain(in_[i])
+            print(f"    in:  {in_string}")
+            out_string = data_flow_analysis.sprint_domain(out[i])
+            print(f"    out: {out_string}")
 
 
 if __name__ == "__main__":

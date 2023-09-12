@@ -32,11 +32,13 @@ def basic_block_generator(func: Function) -> Generator[BasicBlock, None, None]:
             yield cur_block
             cur_block = []
         elif "label" in instr:
-            yield cur_block
+            if len(cur_block) > 0:
+                yield cur_block
             cur_block = [instr]
         else:
             cur_block.append(instr)
-    yield cur_block
+    if len(cur_block) > 0:
+        yield cur_block
 
 
 def basic_block_program_from_program(prog: Program) -> BasicBlockProgram:
