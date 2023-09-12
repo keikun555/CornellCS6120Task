@@ -92,7 +92,7 @@ def analyze_data_flow(
         )
 
         basic_block: BasicBlock
-        if 0 <= b_index < len(basic_block_function['instrs']):
+        if 0 <= b_index < len(basic_block_function["instrs"]):
             basic_block = basic_block_function["instrs"][b_index]
         else:
             basic_block = []
@@ -138,7 +138,9 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         out[cfg.exit] = set()
 
         if "args" in func:
-            out[-1].update((None, -1, arg["name"]) for arg in func["args"])
+            out[cfg.entry].update(
+                (None, cfg.entry, arg["name"]) for arg in func["args"]
+            )
 
         return in_, out
 
