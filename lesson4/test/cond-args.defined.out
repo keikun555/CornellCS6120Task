@@ -1,0 +1,13 @@
+main:
+  block_0:
+    in:  block_-1-cond
+    out: block_-1-cond, block_0-a, block_0-b
+  left:
+    in:  block_-1-cond, block_0-a, block_0-b
+    out: block_-1-cond, block_0-a, left-b, left-c
+  right:
+    in:  block_-1-cond, block_0-a, block_0-b
+    out: block_-1-cond, block_0-b, right-a, right-c
+  end:
+    in:  block_-1-cond, block_0-a, block_0-b, left-b, left-c, right-a, right-c
+    out: block_-1-cond, block_0-a, block_0-b, end-d, left-b, left-c, right-a, right-c

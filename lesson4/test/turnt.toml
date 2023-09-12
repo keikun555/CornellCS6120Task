@@ -1,0 +1,7 @@
+[envs.defined]
+command = "bril2json < {filename} | python3 ../data_flow_analysis.py defined"
+output."defined.out" = "-"
+
+[envs.live]
+command = "bril2json < {filename} | python3 ../data_flow_analysis.py live"
+output."live.out" = "-"

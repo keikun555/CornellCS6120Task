@@ -1,0 +1,13 @@
+main:
+  block_0:
+    in:  ∅
+    out: block_0-i, block_0-result
+  header:
+    in:  block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
+    out: block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
+  body:
+    in:  block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
+    out: body-i, body-one, body-result, header-cond, header-zero
+  end:
+    in:  block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
+    out: block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
