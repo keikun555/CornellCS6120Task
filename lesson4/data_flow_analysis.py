@@ -2,7 +2,6 @@
 
 import sys
 import json
-import click
 from typing import (
     cast,
     TypeAlias,
@@ -13,7 +12,9 @@ from typing import (
 from abc import ABC, abstractmethod
 from enum import Enum
 
-from typing_bril import Program, Value
+import click
+
+from typing_bril import Program, Value, Effect
 from basic_blocks import (
     BasicBlockProgram,
     BasicBlockFunction,
@@ -41,7 +42,7 @@ class DataFlowAnalysis(ABC, Generic[Domain]):
 
     @abstractmethod
     def initial_in_out(
-        self, func: BasicBlockFunction
+        self, func: BasicBlockFunction, cfg: ControlFlowGraph
     ) -> tuple[dict[int, Domain], dict[int, Domain]]:
         """Initial in and out dictionaries for the analysis algorithm"""
 
@@ -70,7 +71,7 @@ def analyze_data_flow(
     Given a data flow analysis object, basic blocks, and their control flow graph,
     analyze their data flows
     """
-    in_, out = data_flow_analysis.initial_in_out(basic_block_function)
+    in_, out = data_flow_analysis.initial_in_out(basic_block_function, cfg)
 
     if data_flow_analysis.direction == Direction.FORWARD:
         dict1 = in_
@@ -108,14 +109,8 @@ def analyze_data_flow(
 DefinitionIdentifier: TypeAlias = tuple[Optional[str], int, str]
 
 
-def definition_identifier_get(
-    label: Optional[str], basic_block_identifier: int, variable_name: str
-) -> DefinitionIdentifier:
-    return (label, basic_block_identifier, variable_name)
-
-
 class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
-    """Bookkeep what definitions are available at the end of a block"""
+    """Bookkeep what definitions are available"""
 
     @property
     def direction(self) -> Direction:
@@ -123,7 +118,7 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         return Direction.FORWARD
 
     def initial_in_out(
-        self, func: BasicBlockFunction
+        self, func: BasicBlockFunction, cfg: ControlFlowGraph
     ) -> tuple[
         dict[int, set[DefinitionIdentifier]], dict[int, set[DefinitionIdentifier]]
     ]:
@@ -134,9 +129,10 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         out: dict[int, set[DefinitionIdentifier]] = {
             i: set() for i, _ in enumerate(func["instrs"])
         }
+        out[-1] = set()
 
         if "args" in func:
-            out[-1] = {(None, -1, arg["name"]) for arg in func["args"]}
+            out[-1].update((None, -1, arg["name"]) for arg in func["args"])
 
         return in_, out
 
@@ -158,18 +154,16 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
                 value = cast(Value, instruction)
                 for old_label, bb_identifier, value_dest in source:
                     if value_dest == value["dest"]:
-                        source.remove((old_label, bb_identifier, value_dest))
+                        dest.remove((old_label, bb_identifier, value_dest))
 
-                dest.add(
-                    definition_identifier_get(
-                        label, basic_block_identifier, value["dest"]
-                    )
-                )
+                dest.add((label, basic_block_identifier, value["dest"]))
         return dest
 
     @staticmethod
     def sprint_domain(domain: set[DefinitionIdentifier]) -> str:
         """Returns a pretty string of an element in the domain"""
+        if len(domain) <= 0:
+            return "∅"
 
         def sprintf_element(element: DefinitionIdentifier):
             label, basic_block_identifier, variable_name = element
@@ -180,8 +174,61 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         return ", ".join(sorted([sprintf_element(element) for element in domain]))
 
 
+class LiveVariables(DataFlowAnalysis[set[str]]):
+    """Bookkeep what variables are live"""
+
+    @property
+    def direction(self) -> Direction:
+        """Data flow direction"""
+        return Direction.BACKWARD
+
+    def initial_in_out(
+        self,
+        func: BasicBlockFunction,
+        cfg: ControlFlowGraph,
+    ) -> tuple[dict[int, set[str]], dict[int, set[str]]]:
+        """Initial in and out dictionaries for the analysis algorithm"""
+        in_: dict[int, set[str]] = {i: set() for i, _ in enumerate(func["instrs"])}
+        out: dict[int, set[str]] = {i: set() for i, _ in enumerate(func["instrs"])}
+        in_[cfg.exit] = set()
+
+        return in_, out
+
+    def merge(self, *domains: set[str]) -> set[str]:
+        """Merge the domains for worklist algorithm"""
+        return set().union(*domains)
+
+    def transfer(
+        self,
+        basic_block: BasicBlock,
+        basic_block_identifier: int,
+        source: set[str],
+    ) -> set[str]:
+        """Transfer the source set to another set using basic_block"""
+        dest = source.copy()
+        for instruction in reversed(basic_block):
+            if "dest" in instruction:
+                # kill definitions
+                value = cast(Value, instruction)
+                dest.discard(value["dest"])
+            if "args" in instruction:
+                # add arguments
+                effect = cast(Effect, instruction)
+                dest.update(effect["args"])
+        return dest
+
+    @staticmethod
+    def sprint_domain(domain: set[str]) -> str:
+        """Returns a pretty string of an element in the domain"""
+        if len(domain) <= 0:
+            return "∅"
+
+        return ", ".join(sorted(list(domain)))
+
+
 DATA_FLOW_ANALYSIS_MAP: dict[str, DataFlowAnalysis] = {
     "defined": ReachingDefinitions(),
+    "live": LiveVariables(),
 }
 
 
@@ -198,7 +245,7 @@ def main(data_flow_analysis_type):
     for func in bb_program["functions"]:
         cfg = control_flow_graph_from_instructions(func["instrs"])
         in_, out = analyze_data_flow(data_flow_analysis, func, cfg)
-        print(func["name"])
+        print(f'{func["name"]}:')
         for i, basic_block in enumerate(func["instrs"]):
             label = label_get(basic_block)
             if label is not None:
