@@ -5,6 +5,7 @@ from typing import Optional, cast
 from typing_bril import Label
 from basic_blocks import BasicBlock
 
+
 def label_get(basic_block: BasicBlock) -> Optional[str]:
     """Given a basic block get its label or None if the block doesn't have one"""
     if len(basic_block) <= 0:
