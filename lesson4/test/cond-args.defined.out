@@ -1,13 +1,13 @@
 main:
-  block_0:
-    in:  block_-1-cond
-    out: block_-1-cond, block_0-a, block_0-b
+  b0:
+    in:  ENTRY.cond
+    out: b0.a, b0.b, ENTRY.cond
   left:
-    in:  block_-1-cond, block_0-a, block_0-b
-    out: block_-1-cond, block_0-a, left-b, left-c
+    in:  b0.a, b0.b, ENTRY.cond
+    out: b0.a, left.b, left.c, ENTRY.cond
   right:
-    in:  block_-1-cond, block_0-a, block_0-b
-    out: block_-1-cond, block_0-b, right-a, right-c
+    in:  b0.a, b0.b, ENTRY.cond
+    out: right.a, b0.b, right.c, ENTRY.cond
   end:
-    in:  block_-1-cond, block_0-a, block_0-b, left-b, left-c, right-a, right-c
-    out: block_-1-cond, block_0-a, block_0-b, end-d, left-b, left-c, right-a, right-c
+    in:  b0.a, right.a, b0.b, left.b, left.c, right.c, ENTRY.cond
+    out: b0.a, right.a, b0.b, left.b, left.c, right.c, ENTRY.cond, end.d

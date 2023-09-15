@@ -4,6 +4,7 @@ import sys
 import json
 from typing import (
     cast,
+    Generator,
     TypeAlias,
     TypeVar,
     Generic,
@@ -34,6 +35,43 @@ class Direction(Enum):
     BACKWARD = 2
 
 
+def unique_label_name_generator(used_labels: set[str]) -> Generator[str, None, None]:
+    """Generates new labels"""
+    i = 0
+    while True:
+        candidate = f"b{i}"
+        if candidate not in used_labels:
+            yield candidate
+            used_labels.add(candidate)
+
+
+def index_to_label_dict_get(
+    basic_blocks: list[BasicBlock], cfg: ControlFlowGraph
+) -> dict[int, str]:
+    """
+    Assigns basic block indices to labels.
+    Creates new labels if a block does not have a label.
+    Does not modify the code.
+    """
+    index_to_label: dict[int, str] = {}
+    no_label_indices = []
+    for i, basic_block in enumerate(basic_blocks):
+        label = label_get(basic_block)
+        if label is not None:
+            index_to_label[i] = label
+        else:
+            no_label_indices.append(i)
+
+    label_name_generator = unique_label_name_generator(set(index_to_label.values()))
+    for i in no_label_indices:
+        index_to_label[i] = next(label_name_generator)
+
+    index_to_label[cfg.entry] = "ENTRY"
+    index_to_label[cfg.exit] = "EXIT"
+
+    return index_to_label
+
+
 class DataFlowAnalysis(ABC, Generic[Domain]):
     @property
     @abstractmethod
@@ -52,13 +90,13 @@ class DataFlowAnalysis(ABC, Generic[Domain]):
 
     @abstractmethod
     def transfer(
-        self, basic_block: BasicBlock, basic_block_identifier: int, source: Domain
+        self, basic_block: BasicBlock, basic_block_index: int, source: Domain
     ) -> Domain:
         """Transfer the source set to another set using basic_block"""
 
     @staticmethod
     @abstractmethod
-    def sprint_domain(domain: Domain) -> str:
+    def sprint_domain(domain: Domain, index_to_label: dict[int, str]) -> str:
         """Returns a pretty string of an element in the domain"""
 
 
@@ -109,7 +147,7 @@ def analyze_data_flow(
     return dict(in_), dict(out)
 
 
-DefinitionIdentifier: TypeAlias = tuple[Optional[str], int, str]
+DefinitionIdentifier: TypeAlias = tuple[str, int]
 
 
 class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
@@ -138,9 +176,7 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         out[cfg.exit] = set()
 
         if "args" in func:
-            out[cfg.entry].update(
-                (None, cfg.entry, arg["name"]) for arg in func["args"]
-            )
+            out[cfg.entry].update((arg["name"], cfg.entry) for arg in func["args"])
 
         return in_, out
 
@@ -151,7 +187,7 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
     def transfer(
         self,
         basic_block: BasicBlock,
-        basic_block_identifier: int,
+        basic_block_index: int,
         source: set[DefinitionIdentifier],
     ) -> set[DefinitionIdentifier]:
         """Transfer the source set to another set using basic_block"""
@@ -160,26 +196,26 @@ class ReachingDefinitions(DataFlowAnalysis[set[DefinitionIdentifier]]):
         for instruction in basic_block:
             if "dest" in instruction:
                 value = cast(Value, instruction)
-                for old_label, bb_identifier, value_dest in source:
+                for value_dest, bb_index in source:
                     if value_dest == value["dest"]:
-                        dest.remove((old_label, bb_identifier, value_dest))
+                        dest.remove((value_dest, bb_index))
 
-                dest.add((label, basic_block_identifier, value["dest"]))
+                dest.add((value["dest"], basic_block_index))
         return dest
 
     @staticmethod
-    def sprint_domain(domain: set[DefinitionIdentifier]) -> str:
+    def sprint_domain(
+        domain: set[DefinitionIdentifier], index_to_label: dict[int, str]
+    ) -> str:
         """Returns a pretty string of an element in the domain"""
         if len(domain) <= 0:
             return "∅"
 
         def sprintf_element(element: DefinitionIdentifier):
-            label, basic_block_identifier, variable_name = element
-            if label is not None:
-                return f"{label}-{variable_name}"
-            return f"block_{basic_block_identifier}-{variable_name}"
+            variable_name, basic_block_index = element
+            return f"{index_to_label[basic_block_index]}.{variable_name}"
 
-        return ", ".join(sorted([sprintf_element(element) for element in domain]))
+        return ", ".join([sprintf_element(element) for element in sorted(list(domain))])
 
 
 class LiveVariables(DataFlowAnalysis[set[str]]):
@@ -212,7 +248,7 @@ class LiveVariables(DataFlowAnalysis[set[str]]):
     def transfer(
         self,
         basic_block: BasicBlock,
-        basic_block_identifier: int,
+        basic_block_index: int,
         source: set[str],
     ) -> set[str]:
         """Transfer the source set to another set using basic_block"""
@@ -229,7 +265,7 @@ class LiveVariables(DataFlowAnalysis[set[str]]):
         return dest
 
     @staticmethod
-    def sprint_domain(domain: set[str]) -> str:
+    def sprint_domain(domain: set[str], index_to_label: dict[int, str]) -> str:
         """Returns a pretty string of an element in the domain"""
         if len(domain) <= 0:
             return "∅"
@@ -255,6 +291,7 @@ def main(data_flow_analysis_type):
 
     for func in bb_program["functions"]:
         cfg = control_flow_graph_from_instructions(func["instrs"])
+        index_to_label = index_to_label_dict_get(func["instrs"], cfg)
         in_, out = analyze_data_flow(data_flow_analysis, func, cfg)
         print(f'{func["name"]}:')
         for i, basic_block in enumerate(func["instrs"]):
@@ -262,11 +299,11 @@ def main(data_flow_analysis_type):
             if label is not None:
                 block_name = label
             else:
-                block_name = f"block_{i}"
+                block_name = f"b{i}"
             print(f"  {block_name}:")
-            in_string = data_flow_analysis.sprint_domain(in_[i])
+            in_string = data_flow_analysis.sprint_domain(in_[i], index_to_label)
             print(f"    in:  {in_string}")
-            out_string = data_flow_analysis.sprint_domain(out[i])
+            out_string = data_flow_analysis.sprint_domain(out[i], index_to_label)
             print(f"    out: {out_string}")
 
 

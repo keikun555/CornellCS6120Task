@@ -1,5 +1,5 @@
 main:
-  block_0:
+  b0:
     in:  ∅
     out: a
   left:

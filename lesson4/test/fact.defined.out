@@ -1,13 +1,13 @@
 main:
-  block_0:
+  b0:
     in:  ∅
-    out: block_0-i, block_0-result
+    out: b0.i, b0.result
   header:
-    in:  block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
-    out: block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
+    in:  header.cond, b0.i, body.i, body.one, b0.result, body.result, header.zero
+    out: header.cond, b0.i, body.i, body.one, b0.result, body.result, header.zero
   body:
-    in:  block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
-    out: body-i, body-one, body-result, header-cond, header-zero
+    in:  header.cond, b0.i, body.i, body.one, b0.result, body.result, header.zero
+    out: header.cond, body.i, body.one, body.result, header.zero
   end:
-    in:  block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
-    out: block_0-i, block_0-result, body-i, body-one, body-result, header-cond, header-zero
+    in:  header.cond, b0.i, body.i, body.one, b0.result, body.result, header.zero
+    out: header.cond, b0.i, body.i, body.one, b0.result, body.result, header.zero
