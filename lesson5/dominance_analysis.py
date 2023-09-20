@@ -86,12 +86,11 @@ def naive_strict_dominators_indices_get(cfg: ControlFlowGraph) -> DominanceAnaly
     """Given CFG, return dictionary mapping block index
     to sets of strict dominators of the block index"""
     all_indices = set([cfg.entry, cfg.exit] + list(cfg.keys()))
-    sdoms: DominanceAnalysis = {i: all_indices.copy() for i in cfg}
+    sdoms: DominanceAnalysis = {i: all_indices.copy() - {i} for i in cfg}
     for i in cfg:
         for path in all_paths(cfg, cfg.entry, i):
             for _, vertex in enumerate(path):
-                sdoms[vertex] &= set(path)
-                sdoms[vertex] -= {vertex}
+                sdoms[vertex] &= set(path) - {vertex}
 
     return sdoms
 
