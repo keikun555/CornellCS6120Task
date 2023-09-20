@@ -24,7 +24,7 @@ from basic_blocks import (
 from bril_extract import label_get
 
 
-class ControlFlowGraph(DefaultDict[int, set[int]]):
+class ControlFlowGraph(dict[int, set[int]]):
     """
     Key: index of basic block in function
     Value: set of indices of basic blocks that map from the basic block
@@ -51,16 +51,20 @@ def control_flow_graph_from_instructions(
     basic_blocks: list[BasicBlock],
 ) -> ControlFlowGraph:
     """Given list of basic blocks generate a control flow graph"""
-    cfg = ControlFlowGraph(set)
-    if len(basic_blocks) <= 0:
-        return cfg
+    cfg = ControlFlowGraph({i: set() for i, _ in enumerate(basic_blocks)})
 
     # Treat -1 as entry block and len(basic_blocks) as exit block
     cfg.entry = -1
     cfg.exit = len(basic_blocks)
 
-    cfg[cfg.entry].add(0)
+    cfg[cfg.entry] = set()
     cfg[cfg.exit] = set()
+
+    if len(basic_blocks) <= 0:
+        cfg[cfg.entry].add(cfg.exit)
+        return cfg
+
+    cfg[cfg.entry].add(0)
 
     labels_to_index: dict[str, int] = {}
     for i, basic_block in enumerate(basic_blocks):
@@ -98,13 +102,11 @@ class ReversedControlFlowGraph(ControlFlowGraph):
 
 def reverse_cfg(cfg: ControlFlowGraph) -> ReversedControlFlowGraph:
     """Reverse a CFG"""
-    reversed_cfg = ReversedControlFlowGraph(set, copy.deepcopy(cfg))
+    reversed_cfg = ReversedControlFlowGraph(copy.deepcopy(cfg))
 
     reversed_cfg.entry = cfg.exit
     reversed_cfg.exit = cfg.entry
 
-    reversed_cfg[cfg.entry] = set(cfg.predecessors(cfg.entry))
-    reversed_cfg[cfg.exit] = set(cfg.predecessors(cfg.exit))
     for i in cfg:
         reversed_cfg[i] = set(cfg.predecessors(i))
 
