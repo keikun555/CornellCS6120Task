@@ -40,6 +40,7 @@ def unique_label_name_generator(
         if candidate not in used_labels:
             yield candidate
             used_labels.add(candidate)
+        i += 1
 
 
 def index_to_label_dict_get(
