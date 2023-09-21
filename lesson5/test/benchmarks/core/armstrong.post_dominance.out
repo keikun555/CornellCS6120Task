@@ -1,0 +1,1 @@
+{"main": {"main.b0": ["main.b0", "loop", "done"], "loop": ["loop", "done"], "body": ["loop", "body", "done"], "done": ["done"]}, "getDigits": {"getDigits.b0": ["getDigits.b0"], "then": ["then"], "else": ["else"]}, "mod": {"mod.b0": ["mod.b0"]}, "power": {"power.b0": ["power.b0", "loop", "done"], "loop": ["loop", "done"], "body": ["loop", "body", "done"], "done": ["done"]}}

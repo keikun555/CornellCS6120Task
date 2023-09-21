@@ -1,0 +1,1 @@
+{"main": {"main.b0": ["main.b0", "cond", "print", "end"], "cond": ["cond", "end"], "loop": ["cond", "loop", "print", "end"], "even": ["cond", "even", "print", "end"], "odd": ["cond", "odd", "print", "end"], "print": ["cond", "print", "end"], "end": ["end"]}}

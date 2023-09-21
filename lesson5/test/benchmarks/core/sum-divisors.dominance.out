@@ -1,0 +1,1 @@
+{"main": {"main.b0": ["main.b0"], "neg": ["main.b0", "neg"], "begin": ["main.b0", "begin"], "check": ["main.b0", "begin", "check"], "body": ["main.b0", "begin", "check", "body"], "then": ["main.b0", "begin", "check", "body", "then"], "end": ["main.b0", "begin", "end"]}, "mod": {"mod.b0": ["mod.b0"]}}

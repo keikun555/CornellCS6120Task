@@ -1,0 +1,1 @@
+{"main": {"main.b0": [], "begin": ["main.b0"], "check_result": ["begin"], "process_result": ["check_result"], "check_done": ["check_result"], "done": ["check_done"]}, "is_single_digit": {"is_single_digit.b0": []}, "peel_last_digit": {"peel_last_digit.b0": []}}

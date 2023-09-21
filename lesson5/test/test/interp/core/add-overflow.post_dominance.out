@@ -1,0 +1,1 @@
+{"pow": {"pow.b0": ["pow.b0", "loop", "ret"], "loop": ["loop", "ret"], "body": ["loop", "body", "ret"], "ret": ["ret"]}, "main": {"main.b0": ["main.b0"]}}

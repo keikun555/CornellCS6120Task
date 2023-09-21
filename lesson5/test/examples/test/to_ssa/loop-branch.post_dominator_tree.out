@@ -1,0 +1,1 @@
+{"func": {"func.b0": []}, "loop": {"entry": [], "loop.header": ["entry", "loop.next"], "loop.body": [], "loop.print": [], "loop.next": ["loop.body", "loop.print"], "loop.end": ["loop.header"]}, "main": {"main.b0": []}}

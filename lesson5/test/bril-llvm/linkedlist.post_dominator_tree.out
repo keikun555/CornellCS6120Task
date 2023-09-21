@@ -1,0 +1,1 @@
+{"cons": {"cons.b0": []}, "print_list": {"print_list.b0": [], "print": [], "end": ["print_list.b0", "print"]}, "free_list": {"free_list.b0": [], "freetail": [], "end": ["free_list.b0", "freetail"]}, "main": {"main.b0": []}}

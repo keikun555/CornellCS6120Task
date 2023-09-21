@@ -1,0 +1,1 @@
+{"pow": {"pow.b0": ["pow.b0"], "while": ["pow.b0", "while"], "continue": ["pow.b0", "while", "continue"], "endwhile": ["pow.b0", "while", "endwhile"]}, "n_root": {"n_root.b0": ["n_root.b0"], "while": ["n_root.b0", "while"], "continue": ["n_root.b0", "while", "continue"], "endwhile": ["n_root.b0", "while", "endwhile"]}, "main": {"main.b0": ["main.b0"]}}
