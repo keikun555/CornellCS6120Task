@@ -38,6 +38,14 @@ output."immediate_dominance.out" = "-"
 command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-immediate-dominance"
 output."immediate_dominance.out" = "-"
 
+[envs.immediate-post-dominance]
+command = "bril2json < {filename} | python3 ../dominance_analysis.py immediate-dominance --post"
+output."immediate_post_dominance.out" = "-"
+
+[envs.naive-immediate-post-dominance]
+command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-immediate-dominance --post"
+output."immediate_post_dominance.out" = "-"
+
 [envs.dominator-tree]
 command = "bril2json < {filename} | python3 ../dominance_analysis.py dominator-tree"
 output."dominator_tree.out" = "-"

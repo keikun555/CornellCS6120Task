@@ -38,11 +38,25 @@ class ControlFlowGraph(dict[int, set[int]]):
             -2
         )  # this will be overwritten when calling control_flow_graph_from_instructions
 
-    def predecessors(self, block_index) -> tuple[int, ...]:
+    def reachable(self, block_index: int) -> bool:
+        """Tells us whether a block is reachable from the entry"""
+        visited: set[int] = set()
+        def helper(i: int):
+            visited.add(i)
+            if i == block_index:
+                return True
+            for j in self[i]:
+                if helper(j):
+                    return True
+            return False
+
+        return helper(self.entry)
+
+    def predecessors(self, block_index: int) -> tuple[int, ...]:
         """Given block index, return predecessor indices of block"""
         return tuple(i for i in self if block_index in self[i])
 
-    def successors(self, block_index) -> tuple[int, ...]:
+    def successors(self, block_index: int) -> tuple[int, ...]:
         """Given block index, return successor indices of block"""
         return tuple(self[block_index])
 
@@ -74,6 +88,7 @@ def control_flow_graph_from_instructions(
 
     for i, basic_block in enumerate(basic_blocks):
         if len(basic_block) <= 0:
+            cfg[i].add(i + 1)
             continue
         last_instruction = basic_block[-1]
         if "op" in last_instruction:
@@ -92,6 +107,8 @@ def control_flow_graph_from_instructions(
 
             else:
                 cfg[i].add(i + 1)
+        else:
+            cfg[i].add(i + 1)
 
     return cfg
 
@@ -113,7 +130,9 @@ def reverse_cfg(cfg: ControlFlowGraph) -> ReversedControlFlowGraph:
     return reversed_cfg
 
 
-def all_paths(cfg: ControlFlowGraph, start_index: int, end_index: int) -> Generator[tuple[int, ...], None, None]:
+def all_paths(
+    cfg: ControlFlowGraph, start_index: int, end_index: int
+) -> Generator[tuple[int, ...], None, None]:
     """Iterates through all paths in CFG from start block to end block
     Algorithm inspired from https://www.geeksforgeeks.org/find-paths-given-source-destination/"""
     visited: set[int] = {cfg.entry}

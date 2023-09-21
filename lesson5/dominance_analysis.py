@@ -4,6 +4,7 @@ Utilities to find dominators and the likes
 
 import sys
 import json
+import copy
 
 from typing import TypeAlias, Callable
 from collections import defaultdict
@@ -64,8 +65,7 @@ def naive_dominators_indices_get(cfg: ControlFlowGraph) -> DominanceAnalysis:
     doms: DominanceAnalysis = {i: all_indices.copy() for i in cfg}
     for i in cfg:
         for path in all_paths(cfg, cfg.entry, i):
-            for _, vertex in enumerate(path):
-                doms[vertex] &= set(path)
+            doms[i] &= set(path)
 
     return doms
 
@@ -107,6 +107,11 @@ def immediate_dominator_index_get(cfg: ControlFlowGraph) -> DominanceAnalysis:
         for node in strict_dominators[i]:
             idom[i] -= strict_dominators[node]
 
+        if len(idom[i]) > 1:
+            # immediate dominator is not well-defined
+            # set to nil
+            idom[i].clear()
+
     return idom
 
 
@@ -115,17 +120,23 @@ def naive_immediate_dominator_index_get(cfg: ControlFlowGraph) -> DominanceAnaly
     to sets of immediate dominators of the block index"""
     strict_dominators = naive_strict_dominators_indices_get(cfg)
 
-    all_indices = set([cfg.entry, cfg.exit] + list(cfg.keys()))
-    idom: DominanceAnalysis = {i: all_indices.copy() for i in cfg}
+    idom: DominanceAnalysis = copy.deepcopy(strict_dominators)
     for i in cfg:
         for path in all_paths(cfg, cfg.entry, i):
             for _, vertex in enumerate(path):
                 idom[vertex] &= set(path)
                 idom[vertex] -= {vertex}  # strict domination
-                for node in strict_dominators[vertex]:
-                    # idom[vertex] does not strictly dominate
-                    # any other node that strictly dominates vertex
-                    idom[vertex] -= strict_dominators[node]
+
+    for i in cfg:
+        for node in strict_dominators[i]:
+            # idom[i] does not strictly dominate
+            # any other node that strictly dominates vertex
+            idom[i] -= strict_dominators[node]
+
+        if len(idom[i]) > 1:
+            # immediate dominator is not well-defined
+            # set to nil
+            idom[i].clear()
 
     return idom
 
@@ -137,10 +148,6 @@ def index_dominator_tree_get(cfg: ControlFlowGraph) -> DominanceAnalysis:
     immediate_dominators = immediate_dominator_index_get(cfg)
 
     for i, idoms in immediate_dominators.items():
-        assert (
-            len(idoms) <= 1
-        ), f"block index {i} has more than one immediate dominator: {idoms}"
-
         if len(idoms) == 1:
             dominator_tree[idoms.pop()].add(i)
 
