@@ -43,6 +43,15 @@ def unique_label_name_generator(
         i += 1
 
 
+def is_labeled(basic_blocks:list[BasicBlock]) -> bool:
+    """Returns whether basic blocks are labeled"""
+    for basic_block in basic_blocks:
+        if label_get(basic_block) is None:
+            return False
+
+    return True
+
+
 def index_to_label_dict_get(
     basic_block_function: BasicBlockFunction, cfg: Optional[ControlFlowGraph] = None
 ) -> IndexToLabelDict:
