@@ -131,8 +131,7 @@ class Program(TypedDict):
 
 
 # SSA
-SSAOperation: TypeAlias = Literal['phi']
-
+SSAOperation: TypeAlias = Literal["phi"]
 
 
 class SSAInstructionBase(TypedDict):
