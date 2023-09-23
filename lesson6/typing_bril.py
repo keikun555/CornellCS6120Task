@@ -128,3 +128,40 @@ class Function(FunctionBase):
 
 class Program(TypedDict):
     functions: list[Function]
+
+
+# SSA
+SSAOperation: TypeAlias = Literal['phi']
+
+
+
+class SSAInstructionBase(TypedDict):
+    op: Operation | SSAOperation
+
+
+class SSAValueInstructionBase(SSAInstructionBase):
+    dest: Variable
+    type: BrilType
+
+
+class SSAConstant(SSAValueInstructionBase):
+    value: PrimitiveType
+
+
+class SSAValue(SSAValueInstructionBase, NonConstantInstructionMixin):
+    ...
+
+
+class SSAEffect(SSAInstructionBase, NonConstantInstructionMixin):
+    ...
+
+
+SSAInstruction: TypeAlias = SSAConstant | SSAValue | SSAEffect | Label
+
+
+class SSAFunction(FunctionBase):
+    instrs: list[SSAInstruction]
+
+
+class SSAProgram(TypedDict):
+    functions: list[SSAFunction]
