@@ -112,7 +112,7 @@ Instruction: TypeAlias = Union[Constant, Value, Effect, Label]
 
 
 class Argument(TypedDict):
-    name: str
+    name: Variable
     type: BrilType
 
 
@@ -143,19 +143,11 @@ class SSAValueInstructionBase(SSAInstructionBase):
     type: BrilType
 
 
-class SSAConstant(SSAValueInstructionBase):
-    value: PrimitiveType
-
-
 class SSAValue(SSAValueInstructionBase, NonConstantInstructionMixin):
     ...
 
 
-class SSAEffect(SSAInstructionBase, NonConstantInstructionMixin):
-    ...
-
-
-SSAInstruction: TypeAlias = SSAConstant | SSAValue | SSAEffect | Label
+SSAInstruction: TypeAlias = Constant | SSAValue | Effect | Label
 
 
 class SSAFunction(FunctionBase):
