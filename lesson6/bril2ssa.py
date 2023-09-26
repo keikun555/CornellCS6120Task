@@ -38,7 +38,7 @@ from cfg import (
     control_flow_graph_from_instructions,
 )
 
-from bril_labeler import is_labeled, index_to_label_dict_get, apply_labels
+from bril_labeler import index_to_label_dict_get, apply_labels
 
 from bril_extract import values_get, phi_nodes_get
 
@@ -48,8 +48,6 @@ from dominance_analysis import (
     index_dominator_tree_get,
     DominanceAnalysis,
 )
-
-from data_flow_analysis import analyze_data_flow, LiveVariables
 
 
 def new_variable_generator(variable: Variable) -> Generator[Variable, None, None]:
