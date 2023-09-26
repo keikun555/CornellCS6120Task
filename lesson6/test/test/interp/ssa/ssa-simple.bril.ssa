@@ -1,0 +1,13 @@
+@main(cond.0: bool) {
+.main.b0:
+  cond.1: bool = id cond.0;
+.top:
+  a.0: int = const 5;
+  br cond.1 .here .there;
+.here:
+  b.0: int = const 7;
+.there:
+  b.1: int = phi b.0 .here;
+  c.0: int = phi a.0 b.1 .top .here;
+  print c.0;
+}

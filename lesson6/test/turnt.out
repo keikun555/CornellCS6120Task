@@ -1,0 +1,1223 @@
+1..272
+ok 1 - ./bril-llvm/point.bril ssa
+not ok 2 - ./bril-llvm/point.bril ssa-verify # skip: updated bril-llvm/point.verify.out # missing: bril-llvm/point.verify.out
+ok 3 - ./bril-llvm/point.bril original-eval
+not ok 4 - ./bril-llvm/point.bril ssa-eval # skip: updated bril-llvm/point.out # missing: bril-llvm/point.out
+ok 5 - ./bril-llvm/linkedlist.bril ssa
+not ok 6 - ./bril-llvm/linkedlist.bril ssa-verify # skip: updated bril-llvm/linkedlist.verify.out # missing: bril-llvm/linkedlist.verify.out
+not ok 7 - ./bril-llvm/linkedlist.bril original-eval # skip: updated bril-llvm/linkedlist.out # missing: bril-llvm/linkedlist.out
+ok 8 - ./bril-llvm/linkedlist.bril ssa-eval
+ok 9 - ./benchmarks/mem/sieve.bril ssa
+not ok 10 - ./benchmarks/mem/sieve.bril ssa-verify # skip: updated benchmarks/mem/sieve.verify.out # missing: benchmarks/mem/sieve.verify.out
+not ok 11 - ./benchmarks/mem/sieve.bril original-eval # skip: updated benchmarks/mem/sieve.out # missing: benchmarks/mem/sieve.out
+ok 12 - ./benchmarks/mem/sieve.bril ssa-eval
+ok 13 - ./benchmarks/mem/vsmul.bril ssa
+not ok 14 - ./benchmarks/mem/vsmul.bril ssa-verify # skip: updated benchmarks/mem/vsmul.verify.out # missing: benchmarks/mem/vsmul.verify.out
+not ok 15 - ./benchmarks/mem/vsmul.bril original-eval # skip: updated benchmarks/mem/vsmul.out # missing: benchmarks/mem/vsmul.out
+ok 16 - ./benchmarks/mem/vsmul.bril ssa-eval
+ok 17 - ./benchmarks/mem/quicksort.bril ssa
+not ok 18 - ./benchmarks/mem/quicksort.bril ssa-verify # skip: updated benchmarks/mem/quicksort.verify.out # missing: benchmarks/mem/quicksort.verify.out
+ok 19 - ./benchmarks/mem/quicksort.bril original-eval
+not ok 20 - ./benchmarks/mem/quicksort.bril ssa-eval # skip: updated benchmarks/mem/quicksort.out # missing: benchmarks/mem/quicksort.out
+ok 21 - ./benchmarks/mem/max-subarray.bril ssa
+not ok 22 - ./benchmarks/mem/max-subarray.bril ssa-verify # skip: updated benchmarks/mem/max-subarray.verify.out # missing: benchmarks/mem/max-subarray.verify.out
+not ok 23 - ./benchmarks/mem/max-subarray.bril original-eval # skip: updated benchmarks/mem/max-subarray.out # missing: benchmarks/mem/max-subarray.out
+ok 24 - ./benchmarks/mem/max-subarray.bril ssa-eval
+ok 25 - ./benchmarks/mem/mat-mul.bril ssa
+not ok 26 - ./benchmarks/mem/mat-mul.bril ssa-verify # skip: updated benchmarks/mem/mat-mul.verify.out # missing: benchmarks/mem/mat-mul.verify.out
+not ok 27 - ./benchmarks/mem/mat-mul.bril original-eval # skip: updated benchmarks/mem/mat-mul.out # missing: benchmarks/mem/mat-mul.out
+ok 28 - ./benchmarks/mem/mat-mul.bril ssa-eval
+ok 29 - ./benchmarks/mem/fib.bril ssa
+not ok 30 - ./benchmarks/mem/fib.bril ssa-verify # skip: updated benchmarks/mem/fib.verify.out # missing: benchmarks/mem/fib.verify.out
+not ok 31 - ./benchmarks/mem/fib.bril original-eval # skip: updated benchmarks/mem/fib.out # missing: benchmarks/mem/fib.out
+ok 32 - ./benchmarks/mem/fib.bril ssa-eval
+ok 33 - ./benchmarks/mem/eight-queens.bril ssa
+not ok 34 - ./benchmarks/mem/eight-queens.bril ssa-verify # skip: updated benchmarks/mem/eight-queens.verify.out # missing: benchmarks/mem/eight-queens.verify.out
+not ok 35 - ./benchmarks/mem/eight-queens.bril original-eval # skip: updated benchmarks/mem/eight-queens.out # missing: benchmarks/mem/eight-queens.out
+ok 36 - ./benchmarks/mem/eight-queens.bril ssa-eval
+ok 37 - ./benchmarks/mem/primitive-root.bril ssa
+not ok 38 - ./benchmarks/mem/primitive-root.bril ssa-verify # skip: updated benchmarks/mem/primitive-root.verify.out # missing: benchmarks/mem/primitive-root.verify.out
+not ok 39 - ./benchmarks/mem/primitive-root.bril original-eval # skip: updated benchmarks/mem/primitive-root.out # missing: benchmarks/mem/primitive-root.out
+ok 40 - ./benchmarks/mem/primitive-root.bril ssa-eval
+ok 41 - ./benchmarks/mem/two-sum.bril ssa
+not ok 42 - ./benchmarks/mem/two-sum.bril ssa-verify # skip: updated benchmarks/mem/two-sum.verify.out # missing: benchmarks/mem/two-sum.verify.out
+ok 43 - ./benchmarks/mem/two-sum.bril original-eval
+not ok 44 - ./benchmarks/mem/two-sum.bril ssa-eval # skip: updated benchmarks/mem/two-sum.out # missing: benchmarks/mem/two-sum.out
+ok 45 - ./benchmarks/mem/adler32.bril ssa
+not ok 46 - ./benchmarks/mem/adler32.bril ssa-verify # skip: updated benchmarks/mem/adler32.verify.out # missing: benchmarks/mem/adler32.verify.out
+ok 47 - ./benchmarks/mem/adler32.bril original-eval
+not ok 48 - ./benchmarks/mem/adler32.bril ssa-eval # skip: updated benchmarks/mem/adler32.out # missing: benchmarks/mem/adler32.out
+ok 49 - ./benchmarks/mem/binary-search.bril ssa
+not ok 50 - ./benchmarks/mem/binary-search.bril ssa-verify # skip: updated benchmarks/mem/binary-search.verify.out # missing: benchmarks/mem/binary-search.verify.out
+not ok 51 - ./benchmarks/mem/binary-search.bril original-eval # skip: updated benchmarks/mem/binary-search.out # missing: benchmarks/mem/binary-search.out
+ok 52 - ./benchmarks/mem/binary-search.bril ssa-eval
+ok 53 - ./benchmarks/mem/adj2csr.bril ssa
+not ok 54 - ./benchmarks/mem/adj2csr.bril ssa-verify # skip: updated benchmarks/mem/adj2csr.verify.out # missing: benchmarks/mem/adj2csr.verify.out
+not ok 55 - ./benchmarks/mem/adj2csr.bril original-eval # skip: updated benchmarks/mem/adj2csr.out # missing: benchmarks/mem/adj2csr.out
+ok 56 - ./benchmarks/mem/adj2csr.bril ssa-eval
+ok 57 - ./benchmarks/mem/bubblesort.bril ssa
+not ok 58 - ./benchmarks/mem/bubblesort.bril ssa-verify # skip: updated benchmarks/mem/bubblesort.verify.out # missing: benchmarks/mem/bubblesort.verify.out
+not ok 59 - ./benchmarks/mem/bubblesort.bril original-eval # skip: updated benchmarks/mem/bubblesort.out # missing: benchmarks/mem/bubblesort.out
+ok 60 - ./benchmarks/mem/bubblesort.bril ssa-eval
+ok 61 - ./benchmarks/float/riemann.bril ssa
+not ok 62 - ./benchmarks/float/riemann.bril ssa-verify # skip: updated benchmarks/float/riemann.verify.out # missing: benchmarks/float/riemann.verify.out
+ok 63 - ./benchmarks/float/riemann.bril original-eval
+not ok 64 - ./benchmarks/float/riemann.bril ssa-eval # skip: updated benchmarks/float/riemann.out # missing: benchmarks/float/riemann.out
+ok 65 - ./benchmarks/float/euler.bril ssa
+not ok 66 - ./benchmarks/float/euler.bril ssa-verify # skip: updated benchmarks/float/euler.verify.out # missing: benchmarks/float/euler.verify.out
+ok 67 - ./benchmarks/float/euler.bril original-eval
+not ok 68 - ./benchmarks/float/euler.bril ssa-eval # skip: updated benchmarks/float/euler.out # missing: benchmarks/float/euler.out
+ok 69 - ./benchmarks/float/cordic.bril ssa
+not ok 70 - ./benchmarks/float/cordic.bril ssa-verify # skip: updated benchmarks/float/cordic.verify.out # missing: benchmarks/float/cordic.verify.out
+not ok 71 - ./benchmarks/float/cordic.bril original-eval # skip: updated benchmarks/float/cordic.out # missing: benchmarks/float/cordic.out
+ok 72 - ./benchmarks/float/cordic.bril ssa-eval
+ok 73 - ./benchmarks/float/mandelbrot.bril ssa
+not ok 74 - ./benchmarks/float/mandelbrot.bril ssa-verify # skip: updated benchmarks/float/mandelbrot.verify.out # missing: benchmarks/float/mandelbrot.verify.out
+not ok 75 - ./benchmarks/float/mandelbrot.bril original-eval # skip: updated benchmarks/float/mandelbrot.out # missing: benchmarks/float/mandelbrot.out
+ok 76 - ./benchmarks/float/mandelbrot.bril ssa-eval
+ok 77 - ./benchmarks/float/ray-sphere-intersection.bril ssa
+not ok 78 - ./benchmarks/float/ray-sphere-intersection.bril ssa-verify # skip: updated benchmarks/float/ray-sphere-intersection.verify.out # missing: benchmarks/float/ray-sphere-intersection.verify.out
+not ok 79 - ./benchmarks/float/ray-sphere-intersection.bril original-eval # skip: updated benchmarks/float/ray-sphere-intersection.out # missing: benchmarks/float/ray-sphere-intersection.out
+ok 80 - ./benchmarks/float/ray-sphere-intersection.bril ssa-eval
+ok 81 - ./benchmarks/float/sqrt.bril ssa
+not ok 82 - ./benchmarks/float/sqrt.bril ssa-verify # skip: updated benchmarks/float/sqrt.verify.out # missing: benchmarks/float/sqrt.verify.out
+not ok 83 - ./benchmarks/float/sqrt.bril original-eval # skip: updated benchmarks/float/sqrt.out # missing: benchmarks/float/sqrt.out
+ok 84 - ./benchmarks/float/sqrt.bril ssa-eval
+ok 85 - ./benchmarks/float/conjugate-gradient.bril ssa
+not ok 86 - ./benchmarks/float/conjugate-gradient.bril ssa-verify # skip: updated benchmarks/float/conjugate-gradient.verify.out # missing: benchmarks/float/conjugate-gradient.verify.out
+ok 87 - ./benchmarks/float/conjugate-gradient.bril original-eval
+not ok 88 - ./benchmarks/float/conjugate-gradient.bril ssa-eval # skip: updated benchmarks/float/conjugate-gradient.out # missing: benchmarks/float/conjugate-gradient.out
+ok 89 - ./benchmarks/float/pow.bril ssa
+not ok 90 - ./benchmarks/float/pow.bril ssa-verify # skip: updated benchmarks/float/pow.verify.out # missing: benchmarks/float/pow.verify.out
+not ok 91 - ./benchmarks/float/pow.bril original-eval # skip: updated benchmarks/float/pow.out # missing: benchmarks/float/pow.out
+ok 92 - ./benchmarks/float/pow.bril ssa-eval
+ok 93 - ./benchmarks/float/norm.bril ssa
+not ok 94 - ./benchmarks/float/norm.bril ssa-verify # skip: updated benchmarks/float/norm.verify.out # missing: benchmarks/float/norm.verify.out
+ok 95 - ./benchmarks/float/norm.bril original-eval
+not ok 96 - ./benchmarks/float/norm.bril ssa-eval # skip: updated benchmarks/float/norm.out # missing: benchmarks/float/norm.out
+ok 97 - ./benchmarks/float/newton.bril ssa
+not ok 98 - ./benchmarks/float/newton.bril ssa-verify # skip: updated benchmarks/float/newton.verify.out # missing: benchmarks/float/newton.verify.out
+not ok 99 - ./benchmarks/float/newton.bril original-eval # skip: updated benchmarks/float/newton.out # missing: benchmarks/float/newton.out
+ok 100 - ./benchmarks/float/newton.bril ssa-eval
+ok 101 - ./benchmarks/float/n_root.bril ssa
+not ok 102 - ./benchmarks/float/n_root.bril ssa-verify # skip: updated benchmarks/float/n_root.verify.out # missing: benchmarks/float/n_root.verify.out
+ok 103 - ./benchmarks/float/n_root.bril original-eval
+not ok 104 - ./benchmarks/float/n_root.bril ssa-eval # skip: updated benchmarks/float/n_root.out # missing: benchmarks/float/n_root.out
+ok 105 - ./benchmarks/long/function_call.bril ssa
+not ok 106 - ./benchmarks/long/function_call.bril ssa-verify # skip: updated benchmarks/long/function_call.verify.out # missing: benchmarks/long/function_call.verify.out
+ok 107 - ./benchmarks/long/function_call.bril original-eval
+not ok 108 - ./benchmarks/long/function_call.bril ssa-eval # skip: updated benchmarks/long/function_call.out # missing: benchmarks/long/function_call.out
+ok 109 - ./benchmarks/mixed/mat-inv.bril ssa
+not ok 110 - ./benchmarks/mixed/mat-inv.bril ssa-verify # skip: updated benchmarks/mixed/mat-inv.verify.out # missing: benchmarks/mixed/mat-inv.verify.out
+not ok 111 - ./benchmarks/mixed/mat-inv.bril original-eval # skip: updated benchmarks/mixed/mat-inv.out # missing: benchmarks/mixed/mat-inv.out
+ok 112 - ./benchmarks/mixed/mat-inv.bril ssa-eval
+ok 113 - ./benchmarks/mixed/cholesky.bril ssa
+not ok 114 - ./benchmarks/mixed/cholesky.bril ssa-verify # skip: updated benchmarks/mixed/cholesky.verify.out # missing: benchmarks/mixed/cholesky.verify.out
+ok 115 - ./benchmarks/mixed/cholesky.bril original-eval
+not ok 116 - ./benchmarks/mixed/cholesky.bril ssa-eval # skip: updated benchmarks/mixed/cholesky.out # missing: benchmarks/mixed/cholesky.out
+ok 117 - ./benchmarks/core/gcd.bril ssa
+not ok 118 - ./benchmarks/core/gcd.bril ssa-verify # skip: updated benchmarks/core/gcd.verify.out # missing: benchmarks/core/gcd.verify.out
+not ok 119 - ./benchmarks/core/gcd.bril original-eval # skip: updated benchmarks/core/gcd.out # missing: benchmarks/core/gcd.out
+ok 120 - ./benchmarks/core/gcd.bril ssa-eval
+ok 121 - ./benchmarks/core/digital-root.bril ssa
+not ok 122 - ./benchmarks/core/digital-root.bril ssa-verify # skip: updated benchmarks/core/digital-root.verify.out # missing: benchmarks/core/digital-root.verify.out
+not ok 123 - ./benchmarks/core/digital-root.bril original-eval # skip: updated benchmarks/core/digital-root.out # missing: benchmarks/core/digital-root.out
+ok 124 - ./benchmarks/core/digital-root.bril ssa-eval
+ok 125 - ./benchmarks/core/dot-product.bril ssa
+not ok 126 - ./benchmarks/core/dot-product.bril ssa-verify # skip: updated benchmarks/core/dot-product.verify.out # missing: benchmarks/core/dot-product.verify.out
+ok 127 - ./benchmarks/core/dot-product.bril original-eval
+not ok 128 - ./benchmarks/core/dot-product.bril ssa-eval # skip: updated benchmarks/core/dot-product.out # missing: benchmarks/core/dot-product.out
+ok 129 - ./benchmarks/core/relative-primes.bril ssa
+not ok 130 - ./benchmarks/core/relative-primes.bril ssa-verify # skip: updated benchmarks/core/relative-primes.verify.out # missing: benchmarks/core/relative-primes.verify.out
+not ok 131 - ./benchmarks/core/relative-primes.bril original-eval # skip: updated benchmarks/core/relative-primes.out # missing: benchmarks/core/relative-primes.out
+ok 132 - ./benchmarks/core/relative-primes.bril ssa-eval
+ok 133 - ./benchmarks/core/loopfact.bril ssa
+not ok 134 - ./benchmarks/core/loopfact.bril ssa-verify # skip: updated benchmarks/core/loopfact.verify.out # missing: benchmarks/core/loopfact.verify.out
+ok 135 - ./benchmarks/core/loopfact.bril original-eval
+not ok 136 - ./benchmarks/core/loopfact.bril ssa-eval # skip: updated benchmarks/core/loopfact.out # missing: benchmarks/core/loopfact.out
+ok 137 - ./benchmarks/core/palindrome.bril ssa
+not ok 138 - ./benchmarks/core/palindrome.bril ssa-verify # skip: updated benchmarks/core/palindrome.verify.out # missing: benchmarks/core/palindrome.verify.out
+not ok 139 - ./benchmarks/core/palindrome.bril original-eval # skip: updated benchmarks/core/palindrome.out # missing: benchmarks/core/palindrome.out
+ok 140 - ./benchmarks/core/palindrome.bril ssa-eval
+ok 141 - ./benchmarks/core/primes-between.bril ssa
+not ok 142 - ./benchmarks/core/primes-between.bril ssa-verify # skip: updated benchmarks/core/primes-between.verify.out # missing: benchmarks/core/primes-between.verify.out
+not ok 143 - ./benchmarks/core/primes-between.bril original-eval # skip: updated benchmarks/core/primes-between.out # missing: benchmarks/core/primes-between.out
+ok 144 - ./benchmarks/core/primes-between.bril ssa-eval
+ok 145 - ./benchmarks/core/fizz-buzz.bril ssa
+not ok 146 - ./benchmarks/core/fizz-buzz.bril ssa-verify # skip: updated benchmarks/core/fizz-buzz.verify.out # missing: benchmarks/core/fizz-buzz.verify.out
+not ok 147 - ./benchmarks/core/fizz-buzz.bril original-eval # skip: updated benchmarks/core/fizz-buzz.out # missing: benchmarks/core/fizz-buzz.out
+ok 148 - ./benchmarks/core/fizz-buzz.bril ssa-eval
+ok 149 - ./benchmarks/core/armstrong.bril ssa
+not ok 150 - ./benchmarks/core/armstrong.bril ssa-verify # skip: updated benchmarks/core/armstrong.verify.out # missing: benchmarks/core/armstrong.verify.out
+not ok 151 - ./benchmarks/core/armstrong.bril original-eval # skip: updated benchmarks/core/armstrong.out # missing: benchmarks/core/armstrong.out
+ok 152 - ./benchmarks/core/armstrong.bril ssa-eval
+ok 153 - ./benchmarks/core/collatz.bril ssa
+not ok 154 - ./benchmarks/core/collatz.bril ssa-verify # skip: updated benchmarks/core/collatz.verify.out # missing: benchmarks/core/collatz.verify.out
+not ok 155 - ./benchmarks/core/collatz.bril original-eval # skip: updated benchmarks/core/collatz.out # missing: benchmarks/core/collatz.out
+ok 156 - ./benchmarks/core/collatz.bril ssa-eval
+ok 157 - ./benchmarks/core/mod_inv.bril ssa
+not ok 158 - ./benchmarks/core/mod_inv.bril ssa-verify # skip: updated benchmarks/core/mod_inv.verify.out # missing: benchmarks/core/mod_inv.verify.out
+not ok 159 - ./benchmarks/core/mod_inv.bril original-eval # skip: updated benchmarks/core/mod_inv.out # missing: benchmarks/core/mod_inv.out
+ok 160 - ./benchmarks/core/mod_inv.bril ssa-eval
+ok 161 - ./benchmarks/core/sum-divisors.bril ssa
+not ok 162 - ./benchmarks/core/sum-divisors.bril ssa-verify # skip: updated benchmarks/core/sum-divisors.verify.out # missing: benchmarks/core/sum-divisors.verify.out
+ok 163 - ./benchmarks/core/sum-divisors.bril original-eval
+not ok 164 - ./benchmarks/core/sum-divisors.bril ssa-eval # skip: updated benchmarks/core/sum-divisors.out # missing: benchmarks/core/sum-divisors.out
+ok 165 - ./benchmarks/core/quadratic.bril ssa
+not ok 166 - ./benchmarks/core/quadratic.bril ssa-verify # skip: updated benchmarks/core/quadratic.verify.out # missing: benchmarks/core/quadratic.verify.out
+not ok 167 - ./benchmarks/core/quadratic.bril original-eval # skip: updated benchmarks/core/quadratic.out # missing: benchmarks/core/quadratic.out
+ok 168 - ./benchmarks/core/quadratic.bril ssa-eval
+ok 169 - ./benchmarks/core/recfact.bril ssa
+not ok 170 - ./benchmarks/core/recfact.bril ssa-verify # skip: updated benchmarks/core/recfact.verify.out # missing: benchmarks/core/recfact.verify.out
+ok 171 - ./benchmarks/core/recfact.bril original-eval
+not ok 172 - ./benchmarks/core/recfact.bril ssa-eval # skip: updated benchmarks/core/recfact.out # missing: benchmarks/core/recfact.out
+ok 173 - ./benchmarks/core/reverse.bril ssa
+not ok 174 - ./benchmarks/core/reverse.bril ssa-verify # skip: updated benchmarks/core/reverse.verify.out # missing: benchmarks/core/reverse.verify.out
+not ok 175 - ./benchmarks/core/reverse.bril original-eval # skip: updated benchmarks/core/reverse.out # missing: benchmarks/core/reverse.out
+ok 176 - ./benchmarks/core/reverse.bril ssa-eval
+ok 177 - ./benchmarks/core/pascals-row.bril ssa
+not ok 178 - ./benchmarks/core/pascals-row.bril ssa-verify # skip: updated benchmarks/core/pascals-row.verify.out # missing: benchmarks/core/pascals-row.verify.out
+not ok 179 - ./benchmarks/core/pascals-row.bril original-eval # skip: updated benchmarks/core/pascals-row.out # missing: benchmarks/core/pascals-row.out
+ok 180 - ./benchmarks/core/pascals-row.bril ssa-eval
+ok 181 - ./benchmarks/core/catalan.bril ssa
+not ok 182 - ./benchmarks/core/catalan.bril ssa-verify # skip: updated benchmarks/core/catalan.verify.out # missing: benchmarks/core/catalan.verify.out
+not ok 183 - ./benchmarks/core/catalan.bril original-eval # skip: updated benchmarks/core/catalan.out # missing: benchmarks/core/catalan.out
+ok 184 - ./benchmarks/core/catalan.bril ssa-eval
+ok 185 - ./benchmarks/core/hanoi.bril ssa
+not ok 186 - ./benchmarks/core/hanoi.bril ssa-verify # skip: updated benchmarks/core/hanoi.verify.out # missing: benchmarks/core/hanoi.verify.out
+not ok 187 - ./benchmarks/core/hanoi.bril original-eval # skip: updated benchmarks/core/hanoi.out # missing: benchmarks/core/hanoi.out
+ok 188 - ./benchmarks/core/hanoi.bril ssa-eval
+ok 189 - ./benchmarks/core/factors.bril ssa
+not ok 190 - ./benchmarks/core/factors.bril ssa-verify # skip: updated benchmarks/core/factors.verify.out # missing: benchmarks/core/factors.verify.out
+not ok 191 - ./benchmarks/core/factors.bril original-eval # skip: updated benchmarks/core/factors.out # missing: benchmarks/core/factors.out
+ok 192 - ./benchmarks/core/factors.bril ssa-eval
+ok 193 - ./benchmarks/core/pythagorean_triple.bril ssa
+not ok 194 - ./benchmarks/core/pythagorean_triple.bril ssa-verify # skip: updated benchmarks/core/pythagorean_triple.verify.out # missing: benchmarks/core/pythagorean_triple.verify.out
+not ok 195 - ./benchmarks/core/pythagorean_triple.bril original-eval # skip: updated benchmarks/core/pythagorean_triple.out # missing: benchmarks/core/pythagorean_triple.out
+ok 196 - ./benchmarks/core/pythagorean_triple.bril ssa-eval
+ok 197 - ./benchmarks/core/binary-fmt.bril ssa
+not ok 198 - ./benchmarks/core/binary-fmt.bril ssa-verify # skip: updated benchmarks/core/binary-fmt.verify.out # missing: benchmarks/core/binary-fmt.verify.out
+not ok 199 - ./benchmarks/core/binary-fmt.bril original-eval # skip: updated benchmarks/core/binary-fmt.out # missing: benchmarks/core/binary-fmt.out
+ok 200 - ./benchmarks/core/binary-fmt.bril ssa-eval
+ok 201 - ./benchmarks/core/ackermann.bril ssa
+not ok 202 - ./benchmarks/core/ackermann.bril ssa-verify # skip: updated benchmarks/core/ackermann.verify.out # missing: benchmarks/core/ackermann.verify.out
+not ok 203 - ./benchmarks/core/ackermann.bril original-eval # skip: updated benchmarks/core/ackermann.out # missing: benchmarks/core/ackermann.out
+ok 204 - ./benchmarks/core/ackermann.bril ssa-eval
+ok 205 - ./benchmarks/core/rectangles-area-difference.bril ssa
+not ok 206 - ./benchmarks/core/rectangles-area-difference.bril ssa-verify # skip: updated benchmarks/core/rectangles-area-difference.verify.out # missing: benchmarks/core/rectangles-area-difference.verify.out
+not ok 207 - ./benchmarks/core/rectangles-area-difference.bril original-eval # skip: updated benchmarks/core/rectangles-area-difference.out # missing: benchmarks/core/rectangles-area-difference.out
+ok 208 - ./benchmarks/core/rectangles-area-difference.bril ssa-eval
+ok 209 - ./benchmarks/core/sum-bits.bril ssa
+not ok 210 - ./benchmarks/core/sum-bits.bril ssa-verify # skip: updated benchmarks/core/sum-bits.verify.out # missing: benchmarks/core/sum-bits.verify.out
+not ok 211 - ./benchmarks/core/sum-bits.bril original-eval # skip: updated benchmarks/core/sum-bits.out # missing: benchmarks/core/sum-bits.out
+ok 212 - ./benchmarks/core/sum-bits.bril ssa-eval
+ok 213 - ./benchmarks/core/fact.bril ssa
+not ok 214 - ./benchmarks/core/fact.bril ssa-verify # skip: updated benchmarks/core/fact.verify.out # missing: benchmarks/core/fact.verify.out
+ok 215 - ./benchmarks/core/fact.bril original-eval
+not ok 216 - ./benchmarks/core/fact.bril ssa-eval # skip: updated benchmarks/core/fact.out # missing: benchmarks/core/fact.out
+ok 217 - ./benchmarks/core/bitwise-ops.bril ssa
+not ok 218 - ./benchmarks/core/bitwise-ops.bril ssa-verify # skip: updated benchmarks/core/bitwise-ops.verify.out # missing: benchmarks/core/bitwise-ops.verify.out
+not ok 219 - ./benchmarks/core/bitwise-ops.bril original-eval # skip: updated benchmarks/core/bitwise-ops.out # missing: benchmarks/core/bitwise-ops.out
+ok 220 - ./benchmarks/core/bitwise-ops.bril ssa-eval
+ok 221 - ./benchmarks/core/totient.bril ssa
+not ok 222 - ./benchmarks/core/totient.bril ssa-verify # skip: updated benchmarks/core/totient.verify.out # missing: benchmarks/core/totient.verify.out
+ok 223 - ./benchmarks/core/totient.bril original-eval
+not ok 224 - ./benchmarks/core/totient.bril ssa-eval # skip: updated benchmarks/core/totient.out # missing: benchmarks/core/totient.out
+ok 225 - ./benchmarks/core/orders.bril ssa
+not ok 226 - ./benchmarks/core/orders.bril ssa-verify # skip: updated benchmarks/core/orders.verify.out # missing: benchmarks/core/orders.verify.out
+not ok 227 - ./benchmarks/core/orders.bril original-eval # skip: updated benchmarks/core/orders.out # missing: benchmarks/core/orders.out
+ok 228 - ./benchmarks/core/orders.bril ssa-eval
+ok 229 - ./benchmarks/core/euclid.bril ssa
+not ok 230 - ./benchmarks/core/euclid.bril ssa-verify # skip: updated benchmarks/core/euclid.verify.out # missing: benchmarks/core/euclid.verify.out
+not ok 231 - ./benchmarks/core/euclid.bril original-eval # skip: updated benchmarks/core/euclid.out # missing: benchmarks/core/euclid.out
+ok 232 - ./benchmarks/core/euclid.bril ssa-eval
+ok 233 - ./benchmarks/core/bitshift.bril ssa
+not ok 234 - ./benchmarks/core/bitshift.bril ssa-verify # skip: updated benchmarks/core/bitshift.verify.out # missing: benchmarks/core/bitshift.verify.out
+not ok 235 - ./benchmarks/core/bitshift.bril original-eval # skip: updated benchmarks/core/bitshift.out # missing: benchmarks/core/bitshift.out
+ok 236 - ./benchmarks/core/bitshift.bril ssa-eval
+ok 237 - ./benchmarks/core/sum-sq-diff.bril ssa
+not ok 238 - ./benchmarks/core/sum-sq-diff.bril ssa-verify # skip: updated benchmarks/core/sum-sq-diff.verify.out # missing: benchmarks/core/sum-sq-diff.verify.out
+not ok 239 - ./benchmarks/core/sum-sq-diff.bril original-eval # skip: updated benchmarks/core/sum-sq-diff.out # missing: benchmarks/core/sum-sq-diff.out
+ok 240 - ./benchmarks/core/sum-sq-diff.bril ssa-eval
+ok 241 - ./benchmarks/core/perfect.bril ssa
+not ok 242 - ./benchmarks/core/perfect.bril ssa-verify # skip: updated benchmarks/core/perfect.verify.out # missing: benchmarks/core/perfect.verify.out
+not ok 243 - ./benchmarks/core/perfect.bril original-eval # skip: updated benchmarks/core/perfect.out # missing: benchmarks/core/perfect.out
+ok 244 - ./benchmarks/core/perfect.bril ssa-eval
+ok 245 - ./benchmarks/core/up-arrow.bril ssa
+not ok 246 - ./benchmarks/core/up-arrow.bril ssa-verify # skip: updated benchmarks/core/up-arrow.verify.out # missing: benchmarks/core/up-arrow.verify.out
+ok 247 - ./benchmarks/core/up-arrow.bril original-eval
+not ok 248 - ./benchmarks/core/up-arrow.bril ssa-eval # skip: updated benchmarks/core/up-arrow.out # missing: benchmarks/core/up-arrow.out
+ok 249 - ./benchmarks/core/check-primes.bril ssa
+not ok 250 - ./benchmarks/core/check-primes.bril ssa-verify # skip: updated benchmarks/core/check-primes.verify.out # missing: benchmarks/core/check-primes.verify.out
+ok 251 - ./benchmarks/core/check-primes.bril original-eval
+not ok 252 - ./benchmarks/core/check-primes.bril ssa-eval # skip: updated benchmarks/core/check-primes.out # missing: benchmarks/core/check-primes.out
+ok 253 - ./bril-ocaml/test/count/bools.bril ssa
+not ok 254 - ./bril-ocaml/test/count/bools.bril ssa-verify # skip: updated bril-ocaml/test/count/bools.verify.out # missing: bril-ocaml/test/count/bools.verify.out
+not ok 255 - ./bril-ocaml/test/count/bools.bril original-eval # skip: updated bril-ocaml/test/count/bools.out # missing: bril-ocaml/test/count/bools.out
+ok 256 - ./bril-ocaml/test/count/bools.bril ssa-eval
+ok 257 - ./bril-ocaml/test/count/empty.bril ssa
+not ok 258 - ./bril-ocaml/test/count/empty.bril ssa-verify # skip: updated bril-ocaml/test/count/empty.verify.out # missing: bril-ocaml/test/count/empty.verify.out
+ok 259 - ./bril-ocaml/test/count/empty.bril original-eval
+not ok 260 - ./bril-ocaml/test/count/empty.bril ssa-eval # skip: updated bril-ocaml/test/count/empty.out # missing: bril-ocaml/test/count/empty.out
+ok 261 - ./bril-ocaml/test/count/funcs.bril ssa
+not ok 262 - ./bril-ocaml/test/count/funcs.bril ssa-verify # skip: updated bril-ocaml/test/count/funcs.verify.out # missing: bril-ocaml/test/count/funcs.verify.out
+ok 263 - ./bril-ocaml/test/count/funcs.bril original-eval
+not ok 264 - ./bril-ocaml/test/count/funcs.bril ssa-eval # skip: updated bril-ocaml/test/count/funcs.out # missing: bril-ocaml/test/count/funcs.out
+ok 265 - ./bril-ocaml/test/count/ints.bril ssa
+not ok 266 - ./bril-ocaml/test/count/ints.bril ssa-verify # skip: updated bril-ocaml/test/count/ints.verify.out # missing: bril-ocaml/test/count/ints.verify.out
+not ok 267 - ./bril-ocaml/test/count/ints.bril original-eval # skip: updated bril-ocaml/test/count/ints.out # missing: bril-ocaml/test/count/ints.out
+ok 268 - ./bril-ocaml/test/count/ints.bril ssa-eval
+not ok 269 - ./type-infer/tests/parse/partial.bril ssa
+# exit code: 1
+not ok 270 - ./type-infer/tests/parse/partial.bril ssa-verify
+# exit code: 1
+not ok 271 - ./type-infer/tests/parse/partial.bril original-eval # skip: updated type-infer/tests/parse/partial.out # differing: type-infer/tests/parse/partial.out
+not ok 272 - ./type-infer/tests/parse/partial.bril ssa-eval # skip: updated type-infer/tests/parse/partial.out # missing: type-infer/tests/parse/partial.out
+not ok 273 - ./type-infer/tests/parse/add.bril ssa
+# exit code: 1
+not ok 274 - ./type-infer/tests/parse/add.bril ssa-verify
+# exit code: 1
+not ok 275 - ./type-infer/tests/parse/add.bril original-eval # skip: updated type-infer/tests/parse/add.out # missing: type-infer/tests/parse/add.out
+not ok 276 - ./type-infer/tests/parse/add.bril ssa-eval # skip: updated type-infer/tests/parse/add.out # differing: type-infer/tests/parse/add.out
+ok 277 - ./type-infer/tests/parse/div.bril ssa
+not ok 278 - ./type-infer/tests/parse/div.bril ssa-verify # skip: updated type-infer/tests/parse/div.verify.out # missing: type-infer/tests/parse/div.verify.out
+ok 279 - ./type-infer/tests/parse/div.bril original-eval
+not ok 280 - ./type-infer/tests/parse/div.bril ssa-eval # skip: updated type-infer/tests/parse/div.out # missing: type-infer/tests/parse/div.out
+not ok 281 - ./type-infer/tests/print/partial.bril ssa
+# exit code: 1
+not ok 282 - ./type-infer/tests/print/partial.bril ssa-verify
+# exit code: 1
+not ok 283 - ./type-infer/tests/print/partial.bril original-eval # skip: updated type-infer/tests/print/partial.out # missing: type-infer/tests/print/partial.out
+not ok 284 - ./type-infer/tests/print/partial.bril ssa-eval # skip: updated type-infer/tests/print/partial.out # differing: type-infer/tests/print/partial.out
+not ok 285 - ./type-infer/tests/print/add.bril ssa
+# exit code: 1
+not ok 286 - ./type-infer/tests/print/add.bril ssa-verify
+# exit code: 1
+not ok 287 - ./type-infer/tests/print/add.bril original-eval # skip: updated type-infer/tests/print/add.out # missing: type-infer/tests/print/add.out
+not ok 288 - ./type-infer/tests/print/add.bril ssa-eval # skip: updated type-infer/tests/print/add.out # differing: type-infer/tests/print/add.out
+ok 289 - ./type-infer/tests/print/div.bril ssa
+not ok 290 - ./type-infer/tests/print/div.bril ssa-verify # skip: updated type-infer/tests/print/div.verify.out # missing: type-infer/tests/print/div.verify.out
+ok 291 - ./type-infer/tests/print/div.bril original-eval
+not ok 292 - ./type-infer/tests/print/div.bril ssa-eval # skip: updated type-infer/tests/print/div.out # missing: type-infer/tests/print/div.out
+ok 293 - ./type-infer/tests/infer/br.bril ssa
+not ok 294 - ./type-infer/tests/infer/br.bril ssa-verify # skip: updated type-infer/tests/infer/br.verify.out # missing: type-infer/tests/infer/br.verify.out
+not ok 295 - ./type-infer/tests/infer/br.bril original-eval # skip: updated type-infer/tests/infer/br.out # missing: type-infer/tests/infer/br.out
+ok 296 - ./type-infer/tests/infer/br.bril ssa-eval
+ok 297 - ./type-infer/tests/infer/tiny.bril ssa
+not ok 298 - ./type-infer/tests/infer/tiny.bril ssa-verify # skip: updated type-infer/tests/infer/tiny.verify.out # missing: type-infer/tests/infer/tiny.verify.out
+ok 299 - ./type-infer/tests/infer/tiny.bril original-eval
+not ok 300 - ./type-infer/tests/infer/tiny.bril ssa-eval # skip: updated type-infer/tests/infer/tiny.out # missing: type-infer/tests/infer/tiny.out
+not ok 301 - ./type-infer/tests/infer/tricky-jump.bril ssa
+# exit code: 1
+not ok 302 - ./type-infer/tests/infer/tricky-jump.bril ssa-verify
+# exit code: 1
+not ok 303 - ./type-infer/tests/infer/tricky-jump.bril original-eval # skip: updated type-infer/tests/infer/tricky-jump.out # missing: type-infer/tests/infer/tricky-jump.out
+not ok 304 - ./type-infer/tests/infer/tricky-jump.bril ssa-eval # skip: updated type-infer/tests/infer/tricky-jump.out # differing: type-infer/tests/infer/tricky-jump.out
+ok 305 - ./type-infer/tests/infer/jmp.bril ssa
+not ok 306 - ./type-infer/tests/infer/jmp.bril ssa-verify # skip: updated type-infer/tests/infer/jmp.verify.out # missing: type-infer/tests/infer/jmp.verify.out
+not ok 307 - ./type-infer/tests/infer/jmp.bril original-eval # skip: updated type-infer/tests/infer/jmp.out # missing: type-infer/tests/infer/jmp.out
+ok 308 - ./type-infer/tests/infer/jmp.bril ssa-eval
+not ok 309 - ./type-infer/tests/infer/logic_ops.bril ssa
+# exit code: 1
+not ok 310 - ./type-infer/tests/infer/logic_ops.bril ssa-verify
+# exit code: 1
+not ok 311 - ./type-infer/tests/infer/logic_ops.bril original-eval # skip: updated type-infer/tests/infer/logic_ops.out # missing: type-infer/tests/infer/logic_ops.out
+not ok 312 - ./type-infer/tests/infer/logic_ops.bril ssa-eval # skip: updated type-infer/tests/infer/logic_ops.out # differing: type-infer/tests/infer/logic_ops.out
+ok 313 - ./type-infer/tests/infer/nop.bril ssa
+not ok 314 - ./type-infer/tests/infer/nop.bril ssa-verify # skip: updated type-infer/tests/infer/nop.verify.out # missing: type-infer/tests/infer/nop.verify.out
+not ok 315 - ./type-infer/tests/infer/nop.bril original-eval # skip: updated type-infer/tests/infer/nop.out # missing: type-infer/tests/infer/nop.out
+ok 316 - ./type-infer/tests/infer/nop.bril ssa-eval
+not ok 317 - ./type-infer/tests/infer/many_functions.bril ssa
+# exit code: 1
+not ok 318 - ./type-infer/tests/infer/many_functions.bril ssa-verify
+# exit code: 1
+not ok 319 - ./type-infer/tests/infer/many_functions.bril original-eval # skip: updated type-infer/tests/infer/many_functions.out # missing: type-infer/tests/infer/many_functions.out
+not ok 320 - ./type-infer/tests/infer/many_functions.bril ssa-eval # skip: updated type-infer/tests/infer/many_functions.out # differing: type-infer/tests/infer/many_functions.out
+not ok 321 - ./type-infer/tests/infer/control_ops.bril ssa
+# exit code: 1
+not ok 322 - ./type-infer/tests/infer/control_ops.bril ssa-verify
+# exit code: 1
+not ok 323 - ./type-infer/tests/infer/control_ops.bril original-eval # skip: updated type-infer/tests/infer/control_ops.out # missing: type-infer/tests/infer/control_ops.out
+not ok 324 - ./type-infer/tests/infer/control_ops.bril ssa-eval # skip: updated type-infer/tests/infer/control_ops.out # differing: type-infer/tests/infer/control_ops.out
+ok 325 - ./type-infer/tests/infer/ret.bril ssa
+not ok 326 - ./type-infer/tests/infer/ret.bril ssa-verify # skip: updated type-infer/tests/infer/ret.verify.out # missing: type-infer/tests/infer/ret.verify.out
+ok 327 - ./type-infer/tests/infer/ret.bril original-eval
+not ok 328 - ./type-infer/tests/infer/ret.bril ssa-eval # skip: updated type-infer/tests/infer/ret.out # missing: type-infer/tests/infer/ret.out
+ok 329 - ./type-infer/tests/infer/div.bril ssa
+not ok 330 - ./type-infer/tests/infer/div.bril ssa-verify # skip: updated type-infer/tests/infer/div.verify.out # missing: type-infer/tests/infer/div.verify.out
+not ok 331 - ./type-infer/tests/infer/div.bril original-eval # skip: updated type-infer/tests/infer/div.out # missing: type-infer/tests/infer/div.out
+ok 332 - ./type-infer/tests/infer/div.bril ssa-eval
+not ok 333 - ./type-infer/tests/infer/comp_ops.bril ssa
+# exit code: 1
+not ok 334 - ./type-infer/tests/infer/comp_ops.bril ssa-verify
+# exit code: 1
+not ok 335 - ./type-infer/tests/infer/comp_ops.bril original-eval # skip: updated type-infer/tests/infer/comp_ops.out # missing: type-infer/tests/infer/comp_ops.out
+not ok 336 - ./type-infer/tests/infer/comp_ops.bril ssa-eval # skip: updated type-infer/tests/infer/comp_ops.out # differing: type-infer/tests/infer/comp_ops.out
+not ok 337 - ./type-infer/tests/infer/idchain.bril ssa
+# exit code: 1
+not ok 338 - ./type-infer/tests/infer/idchain.bril ssa-verify
+# exit code: 1
+not ok 339 - ./type-infer/tests/infer/idchain.bril original-eval # skip: updated type-infer/tests/infer/idchain.out # missing: type-infer/tests/infer/idchain.out
+not ok 340 - ./type-infer/tests/infer/idchain.bril ssa-eval # skip: updated type-infer/tests/infer/idchain.out # differing: type-infer/tests/infer/idchain.out
+not ok 341 - ./type-infer/tests/infer/arith_ops.bril ssa
+# exit code: 1
+not ok 342 - ./type-infer/tests/infer/arith_ops.bril ssa-verify
+# exit code: 1
+not ok 343 - ./type-infer/tests/infer/arith_ops.bril original-eval # skip: updated type-infer/tests/infer/arith_ops.out # differing: type-infer/tests/infer/arith_ops.out
+not ok 344 - ./type-infer/tests/infer/arith_ops.bril ssa-eval # skip: updated type-infer/tests/infer/arith_ops.out # missing: type-infer/tests/infer/arith_ops.out
+not ok 345 - ./type-infer/tests/infer/addarg.bril ssa
+# exit code: 1
+not ok 346 - ./type-infer/tests/infer/addarg.bril ssa-verify
+# exit code: 1
+ok 347 - ./type-infer/tests/infer/addarg.bril original-eval
+not ok 348 - ./type-infer/tests/infer/addarg.bril ssa-eval # skip: updated type-infer/tests/infer/addarg.out # missing: type-infer/tests/infer/addarg.out
+not ok 349 - ./type-infer/tests/fail-infer/assign_label.bril ssa
+# exit code: 1
+not ok 350 - ./type-infer/tests/fail-infer/assign_label.bril ssa-verify
+# exit code: 1
+not ok 351 - ./type-infer/tests/fail-infer/assign_label.bril original-eval # skip: updated type-infer/tests/fail-infer/assign_label.out # missing: type-infer/tests/fail-infer/assign_label.out
+not ok 352 - ./type-infer/tests/fail-infer/assign_label.bril ssa-eval # skip: updated type-infer/tests/fail-infer/assign_label.out # differing: type-infer/tests/fail-infer/assign_label.out
+not ok 353 - ./type-infer/tests/fail-infer/br.bril ssa
+# exit code: 0, expected: 1
+not ok 354 - ./type-infer/tests/fail-infer/br.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 355 - ./type-infer/tests/fail-infer/br.bril original-eval
+# exit code: 0, expected: 1
+not ok 356 - ./type-infer/tests/fail-infer/br.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 357 - ./type-infer/tests/fail-infer/tricky-jump.bril ssa
+# exit code: 1
+not ok 358 - ./type-infer/tests/fail-infer/tricky-jump.bril ssa-verify
+# exit code: 1
+ok 359 - ./type-infer/tests/fail-infer/tricky-jump.bril original-eval
+not ok 360 - ./type-infer/tests/fail-infer/tricky-jump.bril ssa-eval # skip: updated type-infer/tests/fail-infer/tricky-jump.out # missing: type-infer/tests/fail-infer/tricky-jump.out
+not ok 361 - ./type-infer/tests/fail-infer/jmp.bril ssa
+# exit code: 0, expected: 1
+not ok 362 - ./type-infer/tests/fail-infer/jmp.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 363 - ./type-infer/tests/fail-infer/jmp.bril original-eval
+# exit code: 0, expected: 1
+not ok 364 - ./type-infer/tests/fail-infer/jmp.bril ssa-eval
+# exit code: 0, expected: 1
+ok 365 - ./type-infer/tests/fail-infer/logic_ops.bril ssa
+not ok 366 - ./type-infer/tests/fail-infer/logic_ops.bril ssa-verify # skip: updated type-infer/tests/fail-infer/logic_ops.verify.out # missing: type-infer/tests/fail-infer/logic_ops.verify.out
+not ok 367 - ./type-infer/tests/fail-infer/logic_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 368 - ./type-infer/tests/fail-infer/logic_ops.bril ssa-eval
+# exit code: 0, expected: 1
+ok 369 - ./type-infer/tests/fail-infer/many_functions.bril ssa
+not ok 370 - ./type-infer/tests/fail-infer/many_functions.bril ssa-verify # skip: updated type-infer/tests/fail-infer/many_functions.verify.out # missing: type-infer/tests/fail-infer/many_functions.verify.out
+not ok 371 - ./type-infer/tests/fail-infer/many_functions.bril original-eval
+# exit code: 0, expected: 1
+not ok 372 - ./type-infer/tests/fail-infer/many_functions.bril ssa-eval
+# exit code: 0, expected: 1
+ok 373 - ./type-infer/tests/fail-infer/control_ops.bril ssa
+not ok 374 - ./type-infer/tests/fail-infer/control_ops.bril ssa-verify # skip: updated type-infer/tests/fail-infer/control_ops.verify.out # missing: type-infer/tests/fail-infer/control_ops.verify.out
+not ok 375 - ./type-infer/tests/fail-infer/control_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 376 - ./type-infer/tests/fail-infer/control_ops.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 377 - ./type-infer/tests/fail-infer/div.bril ssa
+# exit code: 0, expected: 1
+not ok 378 - ./type-infer/tests/fail-infer/div.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 379 - ./type-infer/tests/fail-infer/div.bril original-eval
+# exit code: 0, expected: 1
+not ok 380 - ./type-infer/tests/fail-infer/div.bril ssa-eval
+# exit code: 0, expected: 1
+ok 381 - ./type-infer/tests/fail-infer/comp_ops.bril ssa
+not ok 382 - ./type-infer/tests/fail-infer/comp_ops.bril ssa-verify # skip: updated type-infer/tests/fail-infer/comp_ops.verify.out # missing: type-infer/tests/fail-infer/comp_ops.verify.out
+not ok 383 - ./type-infer/tests/fail-infer/comp_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 384 - ./type-infer/tests/fail-infer/comp_ops.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 385 - ./type-infer/tests/fail-infer/idchain.bril ssa
+# exit code: 1
+not ok 386 - ./type-infer/tests/fail-infer/idchain.bril ssa-verify
+# exit code: 1
+not ok 387 - ./type-infer/tests/fail-infer/idchain.bril original-eval # skip: updated type-infer/tests/fail-infer/idchain.out # missing: type-infer/tests/fail-infer/idchain.out
+not ok 388 - ./type-infer/tests/fail-infer/idchain.bril ssa-eval # skip: updated type-infer/tests/fail-infer/idchain.out # differing: type-infer/tests/fail-infer/idchain.out
+ok 389 - ./type-infer/tests/fail-infer/arith_ops.bril ssa
+not ok 390 - ./type-infer/tests/fail-infer/arith_ops.bril ssa-verify # skip: updated type-infer/tests/fail-infer/arith_ops.verify.out # missing: type-infer/tests/fail-infer/arith_ops.verify.out
+not ok 391 - ./type-infer/tests/fail-infer/arith_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 392 - ./type-infer/tests/fail-infer/arith_ops.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 393 - ./type-infer/tests/fail-typecheck/br.bril ssa
+# exit code: 0, expected: 1
+not ok 394 - ./type-infer/tests/fail-typecheck/br.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 395 - ./type-infer/tests/fail-typecheck/br.bril original-eval
+# exit code: 0, expected: 1
+not ok 396 - ./type-infer/tests/fail-typecheck/br.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 397 - ./type-infer/tests/fail-typecheck/tiny.bril ssa
+# exit code: 0, expected: 1
+not ok 398 - ./type-infer/tests/fail-typecheck/tiny.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 399 - ./type-infer/tests/fail-typecheck/tiny.bril original-eval
+# exit code: 0, expected: 1
+not ok 400 - ./type-infer/tests/fail-typecheck/tiny.bril ssa-eval
+# exit code: 0, expected: 1
+ok 401 - ./type-infer/tests/fail-typecheck/tricky-jump.bril ssa
+not ok 402 - ./type-infer/tests/fail-typecheck/tricky-jump.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/tricky-jump.verify.out # missing: type-infer/tests/fail-typecheck/tricky-jump.verify.out
+not ok 403 - ./type-infer/tests/fail-typecheck/tricky-jump.bril original-eval
+# exit code: 0, expected: 1
+not ok 404 - ./type-infer/tests/fail-typecheck/tricky-jump.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 405 - ./type-infer/tests/fail-typecheck/jmp.bril ssa
+# exit code: 0, expected: 1
+not ok 406 - ./type-infer/tests/fail-typecheck/jmp.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 407 - ./type-infer/tests/fail-typecheck/jmp.bril original-eval
+# exit code: 0, expected: 1
+not ok 408 - ./type-infer/tests/fail-typecheck/jmp.bril ssa-eval
+# exit code: 0, expected: 1
+ok 409 - ./type-infer/tests/fail-typecheck/logic_ops.bril ssa
+not ok 410 - ./type-infer/tests/fail-typecheck/logic_ops.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/logic_ops.verify.out # missing: type-infer/tests/fail-typecheck/logic_ops.verify.out
+not ok 411 - ./type-infer/tests/fail-typecheck/logic_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 412 - ./type-infer/tests/fail-typecheck/logic_ops.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 413 - ./type-infer/tests/fail-typecheck/nop.bril ssa
+# exit code: 0, expected: 1
+not ok 414 - ./type-infer/tests/fail-typecheck/nop.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 415 - ./type-infer/tests/fail-typecheck/nop.bril original-eval
+# exit code: 0, expected: 1
+not ok 416 - ./type-infer/tests/fail-typecheck/nop.bril ssa-eval
+# exit code: 0, expected: 1
+ok 417 - ./type-infer/tests/fail-typecheck/many_functions.bril ssa
+not ok 418 - ./type-infer/tests/fail-typecheck/many_functions.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/many_functions.verify.out # missing: type-infer/tests/fail-typecheck/many_functions.verify.out
+not ok 419 - ./type-infer/tests/fail-typecheck/many_functions.bril original-eval
+# exit code: 0, expected: 1
+not ok 420 - ./type-infer/tests/fail-typecheck/many_functions.bril ssa-eval
+# exit code: 0, expected: 1
+ok 421 - ./type-infer/tests/fail-typecheck/control_ops.bril ssa
+not ok 422 - ./type-infer/tests/fail-typecheck/control_ops.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/control_ops.verify.out # missing: type-infer/tests/fail-typecheck/control_ops.verify.out
+not ok 423 - ./type-infer/tests/fail-typecheck/control_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 424 - ./type-infer/tests/fail-typecheck/control_ops.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 425 - ./type-infer/tests/fail-typecheck/add.bril ssa # skip: updated type-infer/tests/fail-typecheck/add.err # differing: type-infer/tests/fail-typecheck/add.err
+not ok 426 - ./type-infer/tests/fail-typecheck/add.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/add.err # differing: type-infer/tests/fail-typecheck/add.err
+not ok 427 - ./type-infer/tests/fail-typecheck/add.bril original-eval
+# exit code: 0, expected: 1
+not ok 428 - ./type-infer/tests/fail-typecheck/add.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 429 - ./type-infer/tests/fail-typecheck/ret.bril ssa
+# exit code: 0, expected: 1
+not ok 430 - ./type-infer/tests/fail-typecheck/ret.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 431 - ./type-infer/tests/fail-typecheck/ret.bril original-eval
+# exit code: 0, expected: 1
+not ok 432 - ./type-infer/tests/fail-typecheck/ret.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 433 - ./type-infer/tests/fail-typecheck/div.bril ssa
+# exit code: 0, expected: 1
+not ok 434 - ./type-infer/tests/fail-typecheck/div.bril ssa-verify
+# exit code: 0, expected: 1
+not ok 435 - ./type-infer/tests/fail-typecheck/div.bril original-eval
+# exit code: 0, expected: 1
+not ok 436 - ./type-infer/tests/fail-typecheck/div.bril ssa-eval
+# exit code: 0, expected: 1
+ok 437 - ./type-infer/tests/fail-typecheck/comp_ops.bril ssa
+not ok 438 - ./type-infer/tests/fail-typecheck/comp_ops.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/comp_ops.verify.out # missing: type-infer/tests/fail-typecheck/comp_ops.verify.out
+not ok 439 - ./type-infer/tests/fail-typecheck/comp_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 440 - ./type-infer/tests/fail-typecheck/comp_ops.bril ssa-eval
+# exit code: 0, expected: 1
+ok 441 - ./type-infer/tests/fail-typecheck/idchain.bril ssa
+not ok 442 - ./type-infer/tests/fail-typecheck/idchain.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/idchain.verify.out # missing: type-infer/tests/fail-typecheck/idchain.verify.out
+not ok 443 - ./type-infer/tests/fail-typecheck/idchain.bril original-eval
+# exit code: 0, expected: 1
+not ok 444 - ./type-infer/tests/fail-typecheck/idchain.bril ssa-eval
+# exit code: 0, expected: 1
+ok 445 - ./type-infer/tests/fail-typecheck/arith_ops.bril ssa
+not ok 446 - ./type-infer/tests/fail-typecheck/arith_ops.bril ssa-verify # skip: updated type-infer/tests/fail-typecheck/arith_ops.verify.out # missing: type-infer/tests/fail-typecheck/arith_ops.verify.out
+not ok 447 - ./type-infer/tests/fail-typecheck/arith_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 448 - ./type-infer/tests/fail-typecheck/arith_ops.bril ssa-eval
+# exit code: 0, expected: 1
+ok 449 - ./type-infer/tests/typecheck/br.bril ssa
+not ok 450 - ./type-infer/tests/typecheck/br.bril ssa-verify # skip: updated type-infer/tests/typecheck/br.verify.out # missing: type-infer/tests/typecheck/br.verify.out
+ok 451 - ./type-infer/tests/typecheck/br.bril original-eval
+not ok 452 - ./type-infer/tests/typecheck/br.bril ssa-eval # skip: updated type-infer/tests/typecheck/br.out # missing: type-infer/tests/typecheck/br.out
+ok 453 - ./type-infer/tests/typecheck/tiny.bril ssa
+not ok 454 - ./type-infer/tests/typecheck/tiny.bril ssa-verify # skip: updated type-infer/tests/typecheck/tiny.verify.out # missing: type-infer/tests/typecheck/tiny.verify.out
+not ok 455 - ./type-infer/tests/typecheck/tiny.bril original-eval # skip: updated type-infer/tests/typecheck/tiny.out # differing: type-infer/tests/typecheck/tiny.out
+not ok 456 - ./type-infer/tests/typecheck/tiny.bril ssa-eval # skip: updated type-infer/tests/typecheck/tiny.out # missing: type-infer/tests/typecheck/tiny.out
+not ok 457 - ./type-infer/tests/typecheck/tricky-jump.bril ssa
+# exit code: 1
+not ok 458 - ./type-infer/tests/typecheck/tricky-jump.bril ssa-verify
+# exit code: 1
+not ok 459 - ./type-infer/tests/typecheck/tricky-jump.bril original-eval # skip: updated type-infer/tests/typecheck/tricky-jump.out # missing: type-infer/tests/typecheck/tricky-jump.out
+not ok 460 - ./type-infer/tests/typecheck/tricky-jump.bril ssa-eval # skip: updated type-infer/tests/typecheck/tricky-jump.out # differing: type-infer/tests/typecheck/tricky-jump.out
+ok 461 - ./type-infer/tests/typecheck/jmp.bril ssa
+not ok 462 - ./type-infer/tests/typecheck/jmp.bril ssa-verify # skip: updated type-infer/tests/typecheck/jmp.verify.out # missing: type-infer/tests/typecheck/jmp.verify.out
+ok 463 - ./type-infer/tests/typecheck/jmp.bril original-eval
+not ok 464 - ./type-infer/tests/typecheck/jmp.bril ssa-eval # skip: updated type-infer/tests/typecheck/jmp.out # missing: type-infer/tests/typecheck/jmp.out
+not ok 465 - ./type-infer/tests/typecheck/logic_ops.bril ssa
+# exit code: 1
+not ok 466 - ./type-infer/tests/typecheck/logic_ops.bril ssa-verify
+# exit code: 1
+not ok 467 - ./type-infer/tests/typecheck/logic_ops.bril original-eval # skip: updated type-infer/tests/typecheck/logic_ops.out # differing: type-infer/tests/typecheck/logic_ops.out
+not ok 468 - ./type-infer/tests/typecheck/logic_ops.bril ssa-eval # skip: updated type-infer/tests/typecheck/logic_ops.out # missing: type-infer/tests/typecheck/logic_ops.out
+ok 469 - ./type-infer/tests/typecheck/nop.bril ssa
+not ok 470 - ./type-infer/tests/typecheck/nop.bril ssa-verify # skip: updated type-infer/tests/typecheck/nop.verify.out # missing: type-infer/tests/typecheck/nop.verify.out
+not ok 471 - ./type-infer/tests/typecheck/nop.bril original-eval # skip: updated type-infer/tests/typecheck/nop.out # missing: type-infer/tests/typecheck/nop.out
+not ok 472 - ./type-infer/tests/typecheck/nop.bril ssa-eval # skip: updated type-infer/tests/typecheck/nop.out # missing: type-infer/tests/typecheck/nop.out
+not ok 473 - ./type-infer/tests/typecheck/many_functions.bril ssa
+# exit code: 1
+not ok 474 - ./type-infer/tests/typecheck/many_functions.bril ssa-verify
+# exit code: 1
+not ok 475 - ./type-infer/tests/typecheck/many_functions.bril original-eval # skip: updated type-infer/tests/typecheck/many_functions.out # missing: type-infer/tests/typecheck/many_functions.out
+not ok 476 - ./type-infer/tests/typecheck/many_functions.bril ssa-eval # skip: updated type-infer/tests/typecheck/many_functions.out # missing: type-infer/tests/typecheck/many_functions.out
+not ok 477 - ./type-infer/tests/typecheck/control_ops.bril ssa
+# exit code: 1
+not ok 478 - ./type-infer/tests/typecheck/control_ops.bril ssa-verify
+# exit code: 1
+not ok 479 - ./type-infer/tests/typecheck/control_ops.bril original-eval # skip: updated type-infer/tests/typecheck/control_ops.out # differing: type-infer/tests/typecheck/control_ops.out
+not ok 480 - ./type-infer/tests/typecheck/control_ops.bril ssa-eval # skip: updated type-infer/tests/typecheck/control_ops.out # missing: type-infer/tests/typecheck/control_ops.out
+ok 481 - ./type-infer/tests/typecheck/ret.bril ssa
+not ok 482 - ./type-infer/tests/typecheck/ret.bril ssa-verify # skip: updated type-infer/tests/typecheck/ret.verify.out # missing: type-infer/tests/typecheck/ret.verify.out
+not ok 483 - ./type-infer/tests/typecheck/ret.bril original-eval # skip: updated type-infer/tests/typecheck/ret.out # missing: type-infer/tests/typecheck/ret.out
+ok 484 - ./type-infer/tests/typecheck/ret.bril ssa-eval
+ok 485 - ./type-infer/tests/typecheck/div.bril ssa
+not ok 486 - ./type-infer/tests/typecheck/div.bril ssa-verify # skip: updated type-infer/tests/typecheck/div.verify.out # missing: type-infer/tests/typecheck/div.verify.out
+not ok 487 - ./type-infer/tests/typecheck/div.bril original-eval # skip: updated type-infer/tests/typecheck/div.out # missing: type-infer/tests/typecheck/div.out
+ok 488 - ./type-infer/tests/typecheck/div.bril ssa-eval
+not ok 489 - ./type-infer/tests/typecheck/comp_ops.bril ssa
+# exit code: 1
+not ok 490 - ./type-infer/tests/typecheck/comp_ops.bril ssa-verify
+# exit code: 1
+not ok 491 - ./type-infer/tests/typecheck/comp_ops.bril original-eval # skip: updated type-infer/tests/typecheck/comp_ops.out # missing: type-infer/tests/typecheck/comp_ops.out
+not ok 492 - ./type-infer/tests/typecheck/comp_ops.bril ssa-eval # skip: updated type-infer/tests/typecheck/comp_ops.out # differing: type-infer/tests/typecheck/comp_ops.out
+not ok 493 - ./type-infer/tests/typecheck/idchain.bril ssa
+# exit code: 1
+not ok 494 - ./type-infer/tests/typecheck/idchain.bril ssa-verify
+# exit code: 1
+not ok 495 - ./type-infer/tests/typecheck/idchain.bril original-eval # skip: updated type-infer/tests/typecheck/idchain.out # differing: type-infer/tests/typecheck/idchain.out
+not ok 496 - ./type-infer/tests/typecheck/idchain.bril ssa-eval # skip: updated type-infer/tests/typecheck/idchain.out # missing: type-infer/tests/typecheck/idchain.out
+not ok 497 - ./type-infer/tests/typecheck/arith_ops.bril ssa
+# exit code: 1
+not ok 498 - ./type-infer/tests/typecheck/arith_ops.bril ssa-verify
+# exit code: 1
+not ok 499 - ./type-infer/tests/typecheck/arith_ops.bril original-eval # skip: updated type-infer/tests/typecheck/arith_ops.out # missing: type-infer/tests/typecheck/arith_ops.out
+not ok 500 - ./type-infer/tests/typecheck/arith_ops.bril ssa-eval # skip: updated type-infer/tests/typecheck/arith_ops.out # differing: type-infer/tests/typecheck/arith_ops.out
+ok 501 - ./examples/test/dom/loopcond.bril ssa
+not ok 502 - ./examples/test/dom/loopcond.bril ssa-verify # skip: updated examples/test/dom/loopcond.verify.out # missing: examples/test/dom/loopcond.verify.out
+not ok 503 - ./examples/test/dom/loopcond.bril original-eval # skip: updated examples/test/dom/loopcond.out # missing: examples/test/dom/loopcond.out
+ok 504 - ./examples/test/dom/loopcond.bril ssa-eval
+ok 505 - ./examples/test/dom/while.bril ssa
+not ok 506 - ./examples/test/dom/while.bril ssa-verify # skip: updated examples/test/dom/while.verify.out # missing: examples/test/dom/while.verify.out
+not ok 507 - ./examples/test/dom/while.bril original-eval # skip: updated examples/test/dom/while.out # missing: examples/test/dom/while.out
+ok 508 - ./examples/test/dom/while.bril ssa-eval
+ok 509 - ./examples/test/ssa/if-orig.bril ssa
+not ok 510 - ./examples/test/ssa/if-orig.bril ssa-verify # skip: updated examples/test/ssa/if-orig.verify.out # missing: examples/test/ssa/if-orig.verify.out
+not ok 511 - ./examples/test/ssa/if-orig.bril original-eval # skip: updated examples/test/ssa/if-orig.out # missing: examples/test/ssa/if-orig.out
+ok 512 - ./examples/test/ssa/if-orig.bril ssa-eval
+ok 513 - ./examples/test/ssa/loop-orig.bril ssa
+not ok 514 - ./examples/test/ssa/loop-orig.bril ssa-verify # skip: updated examples/test/ssa/loop-orig.verify.out # missing: examples/test/ssa/loop-orig.verify.out
+not ok 515 - ./examples/test/ssa/loop-orig.bril original-eval # skip: updated examples/test/ssa/loop-orig.out # missing: examples/test/ssa/loop-orig.out
+ok 516 - ./examples/test/ssa/loop-orig.bril ssa-eval
+ok 517 - ./examples/test/ssa/if-ssa.bril ssa
+not ok 518 - ./examples/test/ssa/if-ssa.bril ssa-verify # skip: updated examples/test/ssa/if-ssa.verify.out # missing: examples/test/ssa/if-ssa.verify.out
+not ok 519 - ./examples/test/ssa/if-ssa.bril original-eval # skip: updated examples/test/ssa/if-ssa.out # missing: examples/test/ssa/if-ssa.out
+ok 520 - ./examples/test/ssa/if-ssa.bril ssa-eval
+ok 521 - ./examples/test/ssa/loop-ssa.bril ssa
+not ok 522 - ./examples/test/ssa/loop-ssa.bril ssa-verify # skip: updated examples/test/ssa/loop-ssa.verify.out # missing: examples/test/ssa/loop-ssa.verify.out
+ok 523 - ./examples/test/ssa/loop-ssa.bril original-eval
+not ok 524 - ./examples/test/ssa/loop-ssa.bril ssa-eval # skip: updated examples/test/ssa/loop-ssa.out # missing: examples/test/ssa/loop-ssa.out
+ok 525 - ./examples/test/tdce/skipped.bril ssa
+not ok 526 - ./examples/test/tdce/skipped.bril ssa-verify # skip: updated examples/test/tdce/skipped.verify.out # missing: examples/test/tdce/skipped.verify.out
+ok 527 - ./examples/test/tdce/skipped.bril original-eval
+not ok 528 - ./examples/test/tdce/skipped.bril ssa-eval # skip: updated examples/test/tdce/skipped.out # missing: examples/test/tdce/skipped.out
+ok 529 - ./examples/test/tdce/reassign-dkp.bril ssa
+not ok 530 - ./examples/test/tdce/reassign-dkp.bril ssa-verify # skip: updated examples/test/tdce/reassign-dkp.verify.out # missing: examples/test/tdce/reassign-dkp.verify.out
+ok 531 - ./examples/test/tdce/reassign-dkp.bril original-eval
+not ok 532 - ./examples/test/tdce/reassign-dkp.bril ssa-eval # skip: updated examples/test/tdce/reassign-dkp.out # missing: examples/test/tdce/reassign-dkp.out
+ok 533 - ./examples/test/tdce/double.bril ssa
+not ok 534 - ./examples/test/tdce/double.bril ssa-verify # skip: updated examples/test/tdce/double.verify.out # missing: examples/test/tdce/double.verify.out
+not ok 535 - ./examples/test/tdce/double.bril original-eval # skip: updated examples/test/tdce/double.out # missing: examples/test/tdce/double.out
+ok 536 - ./examples/test/tdce/double.bril ssa-eval
+ok 537 - ./examples/test/tdce/combo.bril ssa
+not ok 538 - ./examples/test/tdce/combo.bril ssa-verify # skip: updated examples/test/tdce/combo.verify.out # missing: examples/test/tdce/combo.verify.out
+not ok 539 - ./examples/test/tdce/combo.bril original-eval # skip: updated examples/test/tdce/combo.out # missing: examples/test/tdce/combo.out
+ok 540 - ./examples/test/tdce/combo.bril ssa-eval
+ok 541 - ./examples/test/tdce/simple.bril ssa
+not ok 542 - ./examples/test/tdce/simple.bril ssa-verify # skip: updated examples/test/tdce/simple.verify.out # missing: examples/test/tdce/simple.verify.out
+ok 543 - ./examples/test/tdce/simple.bril original-eval
+not ok 544 - ./examples/test/tdce/simple.bril ssa-eval # skip: updated examples/test/tdce/simple.out # missing: examples/test/tdce/simple.out
+ok 545 - ./examples/test/tdce/diamond.bril ssa
+not ok 546 - ./examples/test/tdce/diamond.bril ssa-verify # skip: updated examples/test/tdce/diamond.verify.out # missing: examples/test/tdce/diamond.verify.out
+not ok 547 - ./examples/test/tdce/diamond.bril original-eval # skip: updated examples/test/tdce/diamond.out # missing: examples/test/tdce/diamond.out
+ok 548 - ./examples/test/tdce/diamond.bril ssa-eval
+ok 549 - ./examples/test/tdce/reassign.bril ssa
+not ok 550 - ./examples/test/tdce/reassign.bril ssa-verify # skip: updated examples/test/tdce/reassign.verify.out # missing: examples/test/tdce/reassign.verify.out
+not ok 551 - ./examples/test/tdce/reassign.bril original-eval # skip: updated examples/test/tdce/reassign.out # missing: examples/test/tdce/reassign.out
+ok 552 - ./examples/test/tdce/reassign.bril ssa-eval
+ok 553 - ./examples/test/tdce/double-pass.bril ssa
+not ok 554 - ./examples/test/tdce/double-pass.bril ssa-verify # skip: updated examples/test/tdce/double-pass.verify.out # missing: examples/test/tdce/double-pass.verify.out
+ok 555 - ./examples/test/tdce/double-pass.bril original-eval
+not ok 556 - ./examples/test/tdce/double-pass.bril ssa-eval # skip: updated examples/test/tdce/double-pass.out # missing: examples/test/tdce/double-pass.out
+ok 557 - ./examples/test/df/cond.bril ssa
+not ok 558 - ./examples/test/df/cond.bril ssa-verify # skip: updated examples/test/df/cond.verify.out # missing: examples/test/df/cond.verify.out
+not ok 559 - ./examples/test/df/cond.bril original-eval # skip: updated examples/test/df/cond.out # missing: examples/test/df/cond.out
+ok 560 - ./examples/test/df/cond.bril ssa-eval
+ok 561 - ./examples/test/df/cond-args.bril ssa
+not ok 562 - ./examples/test/df/cond-args.bril ssa-verify # skip: updated examples/test/df/cond-args.verify.out # missing: examples/test/df/cond-args.verify.out
+not ok 563 - ./examples/test/df/cond-args.bril original-eval # skip: updated examples/test/df/cond-args.out # missing: examples/test/df/cond-args.out
+ok 564 - ./examples/test/df/cond-args.bril ssa-eval
+ok 565 - ./examples/test/df/fact.bril ssa
+not ok 566 - ./examples/test/df/fact.bril ssa-verify # skip: updated examples/test/df/fact.verify.out # missing: examples/test/df/fact.verify.out
+ok 567 - ./examples/test/df/fact.bril original-eval
+not ok 568 - ./examples/test/df/fact.bril ssa-eval # skip: updated examples/test/df/fact.out # missing: examples/test/df/fact.out
+ok 569 - ./examples/test/ssa_roundtrip/argwrite.bril ssa
+not ok 570 - ./examples/test/ssa_roundtrip/argwrite.bril ssa-verify # skip: updated examples/test/ssa_roundtrip/argwrite.verify.out # missing: examples/test/ssa_roundtrip/argwrite.verify.out
+ok 571 - ./examples/test/ssa_roundtrip/argwrite.bril original-eval
+not ok 572 - ./examples/test/ssa_roundtrip/argwrite.bril ssa-eval # skip: updated examples/test/ssa_roundtrip/argwrite.out # missing: examples/test/ssa_roundtrip/argwrite.out
+ok 573 - ./examples/test/ssa_roundtrip/if.bril ssa
+not ok 574 - ./examples/test/ssa_roundtrip/if.bril ssa-verify # skip: updated examples/test/ssa_roundtrip/if.verify.out # missing: examples/test/ssa_roundtrip/if.verify.out
+ok 575 - ./examples/test/ssa_roundtrip/if.bril original-eval
+not ok 576 - ./examples/test/ssa_roundtrip/if.bril ssa-eval # skip: updated examples/test/ssa_roundtrip/if.out # missing: examples/test/ssa_roundtrip/if.out
+ok 577 - ./examples/test/ssa_roundtrip/if-const.bril ssa
+not ok 578 - ./examples/test/ssa_roundtrip/if-const.bril ssa-verify # skip: updated examples/test/ssa_roundtrip/if-const.verify.out # missing: examples/test/ssa_roundtrip/if-const.verify.out
+not ok 579 - ./examples/test/ssa_roundtrip/if-const.bril original-eval # skip: updated examples/test/ssa_roundtrip/if-const.out # missing: examples/test/ssa_roundtrip/if-const.out
+ok 580 - ./examples/test/ssa_roundtrip/if-const.bril ssa-eval
+ok 581 - ./examples/test/ssa_roundtrip/selfloop.bril ssa
+not ok 582 - ./examples/test/ssa_roundtrip/selfloop.bril ssa-verify # skip: updated examples/test/ssa_roundtrip/selfloop.verify.out # missing: examples/test/ssa_roundtrip/selfloop.verify.out
+ok 583 - ./examples/test/ssa_roundtrip/selfloop.bril original-eval
+not ok 584 - ./examples/test/ssa_roundtrip/selfloop.bril ssa-eval # skip: updated examples/test/ssa_roundtrip/selfloop.out # missing: examples/test/ssa_roundtrip/selfloop.out
+ok 585 - ./examples/test/ssa_roundtrip/loop.bril ssa
+not ok 586 - ./examples/test/ssa_roundtrip/loop.bril ssa-verify # skip: updated examples/test/ssa_roundtrip/loop.verify.out # missing: examples/test/ssa_roundtrip/loop.verify.out
+ok 587 - ./examples/test/ssa_roundtrip/loop.bril original-eval
+not ok 588 - ./examples/test/ssa_roundtrip/loop.bril ssa-eval # skip: updated examples/test/ssa_roundtrip/loop.out # missing: examples/test/ssa_roundtrip/loop.out
+ok 589 - ./examples/test/ssa_roundtrip/while.bril ssa
+not ok 590 - ./examples/test/ssa_roundtrip/while.bril ssa-verify # skip: updated examples/test/ssa_roundtrip/while.verify.out # missing: examples/test/ssa_roundtrip/while.verify.out
+ok 591 - ./examples/test/ssa_roundtrip/while.bril original-eval
+not ok 592 - ./examples/test/ssa_roundtrip/while.bril ssa-eval # skip: updated examples/test/ssa_roundtrip/while.out # missing: examples/test/ssa_roundtrip/while.out
+ok 593 - ./examples/test/to_ssa/argwrite.bril ssa
+not ok 594 - ./examples/test/to_ssa/argwrite.bril ssa-verify # skip: updated examples/test/to_ssa/argwrite.verify.out # missing: examples/test/to_ssa/argwrite.verify.out
+not ok 595 - ./examples/test/to_ssa/argwrite.bril original-eval # skip: updated examples/test/to_ssa/argwrite.out # missing: examples/test/to_ssa/argwrite.out
+ok 596 - ./examples/test/to_ssa/argwrite.bril ssa-eval
+ok 597 - ./examples/test/to_ssa/if.bril ssa
+not ok 598 - ./examples/test/to_ssa/if.bril ssa-verify # skip: updated examples/test/to_ssa/if.verify.out # missing: examples/test/to_ssa/if.verify.out
+not ok 599 - ./examples/test/to_ssa/if.bril original-eval # skip: updated examples/test/to_ssa/if.out # missing: examples/test/to_ssa/if.out
+ok 600 - ./examples/test/to_ssa/if.bril ssa-eval
+ok 601 - ./examples/test/to_ssa/if-const.bril ssa
+not ok 602 - ./examples/test/to_ssa/if-const.bril ssa-verify # skip: updated examples/test/to_ssa/if-const.verify.out # missing: examples/test/to_ssa/if-const.verify.out
+not ok 603 - ./examples/test/to_ssa/if-const.bril original-eval # skip: updated examples/test/to_ssa/if-const.out # missing: examples/test/to_ssa/if-const.out
+ok 604 - ./examples/test/to_ssa/if-const.bril ssa-eval
+ok 605 - ./examples/test/to_ssa/selfloop.bril ssa
+not ok 606 - ./examples/test/to_ssa/selfloop.bril ssa-verify # skip: updated examples/test/to_ssa/selfloop.verify.out # missing: examples/test/to_ssa/selfloop.verify.out
+not ok 607 - ./examples/test/to_ssa/selfloop.bril original-eval # skip: updated examples/test/to_ssa/selfloop.out # missing: examples/test/to_ssa/selfloop.out
+not ok 608 - ./examples/test/to_ssa/selfloop.bril ssa-eval # skip: updated examples/test/to_ssa/selfloop.out # missing: examples/test/to_ssa/selfloop.out
+ok 609 - ./examples/test/to_ssa/if-ssa.bril ssa
+not ok 610 - ./examples/test/to_ssa/if-ssa.bril ssa-verify # skip: updated examples/test/to_ssa/if-ssa.verify.out # missing: examples/test/to_ssa/if-ssa.verify.out
+ok 611 - ./examples/test/to_ssa/if-ssa.bril original-eval
+not ok 612 - ./examples/test/to_ssa/if-ssa.bril ssa-eval # skip: updated examples/test/to_ssa/if-ssa.out # missing: examples/test/to_ssa/if-ssa.out
+ok 613 - ./examples/test/to_ssa/loop-branch.bril ssa
+not ok 614 - ./examples/test/to_ssa/loop-branch.bril ssa-verify # skip: updated examples/test/to_ssa/loop-branch.verify.out # missing: examples/test/to_ssa/loop-branch.verify.out
+ok 615 - ./examples/test/to_ssa/loop-branch.bril original-eval
+not ok 616 - ./examples/test/to_ssa/loop-branch.bril ssa-eval # skip: updated examples/test/to_ssa/loop-branch.out # missing: examples/test/to_ssa/loop-branch.out
+ok 617 - ./examples/test/to_ssa/loop.bril ssa
+not ok 618 - ./examples/test/to_ssa/loop.bril ssa-verify # skip: updated examples/test/to_ssa/loop.verify.out # missing: examples/test/to_ssa/loop.verify.out
+ok 619 - ./examples/test/to_ssa/loop.bril original-eval
+not ok 620 - ./examples/test/to_ssa/loop.bril ssa-eval # skip: updated examples/test/to_ssa/loop.out # missing: examples/test/to_ssa/loop.out
+ok 621 - ./examples/test/to_ssa/while.bril ssa
+not ok 622 - ./examples/test/to_ssa/while.bril ssa-verify # skip: updated examples/test/to_ssa/while.verify.out # missing: examples/test/to_ssa/while.verify.out
+not ok 623 - ./examples/test/to_ssa/while.bril original-eval # skip: updated examples/test/to_ssa/while.out # missing: examples/test/to_ssa/while.out
+ok 624 - ./examples/test/to_ssa/while.bril ssa-eval
+ok 625 - ./examples/test/lvn/redundant.bril ssa
+not ok 626 - ./examples/test/lvn/redundant.bril ssa-verify # skip: updated examples/test/lvn/redundant.verify.out # missing: examples/test/lvn/redundant.verify.out
+ok 627 - ./examples/test/lvn/redundant.bril original-eval
+not ok 628 - ./examples/test/lvn/redundant.bril ssa-eval # skip: updated examples/test/lvn/redundant.out # missing: examples/test/lvn/redundant.out
+ok 629 - ./examples/test/lvn/nonlocal-clobber.bril ssa
+not ok 630 - ./examples/test/lvn/nonlocal-clobber.bril ssa-verify # skip: updated examples/test/lvn/nonlocal-clobber.verify.out # missing: examples/test/lvn/nonlocal-clobber.verify.out
+not ok 631 - ./examples/test/lvn/nonlocal-clobber.bril original-eval # skip: updated examples/test/lvn/nonlocal-clobber.out # missing: examples/test/lvn/nonlocal-clobber.out
+ok 632 - ./examples/test/lvn/nonlocal-clobber.bril ssa-eval
+not ok 633 - ./examples/test/lvn/clobber.bril ssa
+# exit code: 1
+not ok 634 - ./examples/test/lvn/clobber.bril ssa-verify
+# exit code: 1
+not ok 635 - ./examples/test/lvn/clobber.bril original-eval
+# exit code: 1
+not ok 636 - ./examples/test/lvn/clobber.bril ssa-eval
+# exit code: 1
+ok 637 - ./examples/test/lvn/idchain-nonlocal.bril ssa
+not ok 638 - ./examples/test/lvn/idchain-nonlocal.bril ssa-verify # skip: updated examples/test/lvn/idchain-nonlocal.verify.out # missing: examples/test/lvn/idchain-nonlocal.verify.out
+not ok 639 - ./examples/test/lvn/idchain-nonlocal.bril original-eval # skip: updated examples/test/lvn/idchain-nonlocal.out # missing: examples/test/lvn/idchain-nonlocal.out
+ok 640 - ./examples/test/lvn/idchain-nonlocal.bril ssa-eval
+ok 641 - ./examples/test/lvn/fold-comparisons.bril ssa
+not ok 642 - ./examples/test/lvn/fold-comparisons.bril ssa-verify # skip: updated examples/test/lvn/fold-comparisons.verify.out # missing: examples/test/lvn/fold-comparisons.verify.out
+not ok 643 - ./examples/test/lvn/fold-comparisons.bril original-eval # skip: updated examples/test/lvn/fold-comparisons.out # missing: examples/test/lvn/fold-comparisons.out
+ok 644 - ./examples/test/lvn/fold-comparisons.bril ssa-eval
+not ok 645 - ./examples/test/lvn/rename-fold.bril ssa
+# exit code: 1
+not ok 646 - ./examples/test/lvn/rename-fold.bril ssa-verify
+# exit code: 1
+not ok 647 - ./examples/test/lvn/rename-fold.bril original-eval
+# exit code: 1
+not ok 648 - ./examples/test/lvn/rename-fold.bril ssa-eval
+# exit code: 1
+ok 649 - ./examples/test/lvn/clobber-arg.bril ssa
+not ok 650 - ./examples/test/lvn/clobber-arg.bril ssa-verify # skip: updated examples/test/lvn/clobber-arg.verify.out # missing: examples/test/lvn/clobber-arg.verify.out
+not ok 651 - ./examples/test/lvn/clobber-arg.bril original-eval # skip: updated examples/test/lvn/clobber-arg.out # missing: examples/test/lvn/clobber-arg.out
+ok 652 - ./examples/test/lvn/clobber-arg.bril ssa-eval
+ok 653 - ./examples/test/lvn/divide-by-zero.bril ssa
+not ok 654 - ./examples/test/lvn/divide-by-zero.bril ssa-verify # skip: updated examples/test/lvn/divide-by-zero.verify.out # missing: examples/test/lvn/divide-by-zero.verify.out
+not ok 655 - ./examples/test/lvn/divide-by-zero.bril original-eval # skip: updated examples/test/lvn/divide-by-zero.out # missing: examples/test/lvn/divide-by-zero.out
+ok 656 - ./examples/test/lvn/divide-by-zero.bril ssa-eval
+not ok 657 - ./examples/test/lvn/redundant-dce.bril ssa
+# exit code: 1
+not ok 658 - ./examples/test/lvn/redundant-dce.bril ssa-verify
+# exit code: 1
+not ok 659 - ./examples/test/lvn/redundant-dce.bril original-eval
+# exit code: 1
+not ok 660 - ./examples/test/lvn/redundant-dce.bril ssa-eval
+# exit code: 1
+not ok 661 - ./examples/test/lvn/clobber-fold.bril ssa
+# exit code: 1
+not ok 662 - ./examples/test/lvn/clobber-fold.bril ssa-verify
+# exit code: 1
+not ok 663 - ./examples/test/lvn/clobber-fold.bril original-eval
+# exit code: 1
+not ok 664 - ./examples/test/lvn/clobber-fold.bril ssa-eval
+# exit code: 1
+ok 665 - ./examples/test/lvn/idchain-prop.bril ssa
+not ok 666 - ./examples/test/lvn/idchain-prop.bril ssa-verify # skip: updated examples/test/lvn/idchain-prop.verify.out # missing: examples/test/lvn/idchain-prop.verify.out
+not ok 667 - ./examples/test/lvn/idchain-prop.bril original-eval # skip: updated examples/test/lvn/idchain-prop.out # missing: examples/test/lvn/idchain-prop.out
+ok 668 - ./examples/test/lvn/idchain-prop.bril ssa-eval
+ok 669 - ./examples/test/lvn/commute.bril ssa
+not ok 670 - ./examples/test/lvn/commute.bril ssa-verify # skip: updated examples/test/lvn/commute.verify.out # missing: examples/test/lvn/commute.verify.out
+ok 671 - ./examples/test/lvn/commute.bril original-eval
+not ok 672 - ./examples/test/lvn/commute.bril ssa-eval # skip: updated examples/test/lvn/commute.out # missing: examples/test/lvn/commute.out
+ok 673 - ./examples/test/lvn/idchain.bril ssa
+not ok 674 - ./examples/test/lvn/idchain.bril ssa-verify # skip: updated examples/test/lvn/idchain.verify.out # missing: examples/test/lvn/idchain.verify.out
+not ok 675 - ./examples/test/lvn/idchain.bril original-eval # skip: updated examples/test/lvn/idchain.out # missing: examples/test/lvn/idchain.out
+ok 676 - ./examples/test/lvn/idchain.bril ssa-eval
+ok 677 - ./examples/test/lvn/logical-operators.bril ssa
+not ok 678 - ./examples/test/lvn/logical-operators.bril ssa-verify # skip: updated examples/test/lvn/logical-operators.verify.out # missing: examples/test/lvn/logical-operators.verify.out
+not ok 679 - ./examples/test/lvn/logical-operators.bril original-eval # skip: updated examples/test/lvn/logical-operators.out # missing: examples/test/lvn/logical-operators.out
+ok 680 - ./examples/test/lvn/logical-operators.bril ssa-eval
+ok 681 - ./examples/test/lvn/reassign.bril ssa
+not ok 682 - ./examples/test/lvn/reassign.bril ssa-verify # skip: updated examples/test/lvn/reassign.verify.out # missing: examples/test/lvn/reassign.verify.out
+not ok 683 - ./examples/test/lvn/reassign.bril original-eval # skip: updated examples/test/lvn/reassign.out # missing: examples/test/lvn/reassign.out
+ok 684 - ./examples/test/lvn/reassign.bril ssa-eval
+ok 685 - ./examples/test/lvn/nonlocal.bril ssa
+not ok 686 - ./examples/test/lvn/nonlocal.bril ssa-verify # skip: updated examples/test/lvn/nonlocal.verify.out # missing: examples/test/lvn/nonlocal.verify.out
+not ok 687 - ./examples/test/lvn/nonlocal.bril original-eval # skip: updated examples/test/lvn/nonlocal.out # missing: examples/test/lvn/nonlocal.out
+ok 688 - ./examples/test/lvn/nonlocal.bril ssa-eval
+ok 689 - ./test/parse/comment.bril ssa
+not ok 690 - ./test/parse/comment.bril ssa-verify # skip: updated test/parse/comment.verify.out # missing: test/parse/comment.verify.out
+not ok 691 - ./test/parse/comment.bril original-eval # skip: updated test/parse/comment.out # missing: test/parse/comment.out
+ok 692 - ./test/parse/comment.bril ssa-eval
+ok 693 - ./test/parse/print.bril ssa
+not ok 694 - ./test/parse/print.bril ssa-verify # skip: updated test/parse/print.verify.out # missing: test/parse/print.verify.out
+not ok 695 - ./test/parse/print.bril original-eval # skip: updated test/parse/print.out # missing: test/parse/print.out
+ok 696 - ./test/parse/print.bril ssa-eval
+ok 697 - ./test/parse/float.bril ssa
+not ok 698 - ./test/parse/float.bril ssa-verify # skip: updated test/parse/float.verify.out # missing: test/parse/float.verify.out
+ok 699 - ./test/parse/float.bril original-eval
+not ok 700 - ./test/parse/float.bril ssa-eval # skip: updated test/parse/float.out # missing: test/parse/float.out
+ok 701 - ./test/parse/add.bril ssa
+not ok 702 - ./test/parse/add.bril ssa-verify # skip: updated test/parse/add.verify.out # missing: test/parse/add.verify.out
+ok 703 - ./test/parse/add.bril original-eval
+not ok 704 - ./test/parse/add.bril ssa-eval # skip: updated test/parse/add.out # missing: test/parse/add.out
+ok 705 - ./test/parse/char.bril ssa
+not ok 706 - ./test/parse/char.bril ssa-verify # skip: updated test/parse/char.verify.out # missing: test/parse/char.verify.out
+ok 707 - ./test/parse/char.bril original-eval
+not ok 708 - ./test/parse/char.bril ssa-eval # skip: updated test/parse/char.out # missing: test/parse/char.out
+ok 709 - ./test/parse/positions.bril ssa
+not ok 710 - ./test/parse/positions.bril ssa-verify # skip: updated test/parse/positions.verify.out # missing: test/parse/positions.verify.out
+ok 711 - ./test/parse/positions.bril original-eval
+not ok 712 - ./test/parse/positions.bril ssa-eval # skip: updated test/parse/positions.out # missing: test/parse/positions.out
+ok 713 - ./test/parse/mem.bril ssa
+not ok 714 - ./test/parse/mem.bril ssa-verify # skip: updated test/parse/mem.verify.out # missing: test/parse/mem.verify.out
+not ok 715 - ./test/parse/mem.bril original-eval # skip: updated test/parse/mem.out # missing: test/parse/mem.out
+ok 716 - ./test/parse/mem.bril ssa-eval
+ok 717 - ./test/print/ptr.bril ssa
+not ok 718 - ./test/print/ptr.bril ssa-verify # skip: updated test/print/ptr.verify.out # missing: test/print/ptr.verify.out
+not ok 719 - ./test/print/ptr.bril original-eval # skip: updated test/print/ptr.out # missing: test/print/ptr.out
+ok 720 - ./test/print/ptr.bril ssa-eval
+ok 721 - ./test/print/add.bril ssa
+not ok 722 - ./test/print/add.bril ssa-verify # skip: updated test/print/add.verify.out # missing: test/print/add.verify.out
+ok 723 - ./test/print/add.bril original-eval
+not ok 724 - ./test/print/add.bril ssa-eval # skip: updated test/print/add.out # missing: test/print/add.out
+ok 725 - ./test/print/spec-abort.bril ssa
+not ok 726 - ./test/print/spec-abort.bril ssa-verify # skip: updated test/print/spec-abort.verify.out # missing: test/print/spec-abort.verify.out
+not ok 727 - ./test/print/spec-abort.bril original-eval # skip: updated test/print/spec-abort.out # missing: test/print/spec-abort.out
+ok 728 - ./test/print/spec-abort.bril ssa-eval
+ok 729 - ./test/print/eight-queens.bril ssa
+not ok 730 - ./test/print/eight-queens.bril ssa-verify # skip: updated test/print/eight-queens.verify.out # missing: test/print/eight-queens.verify.out
+not ok 731 - ./test/print/eight-queens.bril original-eval # skip: updated test/print/eight-queens.out # missing: test/print/eight-queens.out
+ok 732 - ./test/print/eight-queens.bril ssa-eval
+ok 733 - ./test/print/char.bril ssa
+not ok 734 - ./test/print/char.bril ssa-verify # skip: updated test/print/char.verify.out # missing: test/print/char.verify.out
+not ok 735 - ./test/print/char.bril original-eval # skip: updated test/print/char.out # missing: test/print/char.out
+ok 736 - ./test/print/char.bril ssa-eval
+ok 737 - ./test/print/call.bril ssa
+not ok 738 - ./test/print/call.bril ssa-verify # skip: updated test/print/call.verify.out # missing: test/print/call.verify.out
+not ok 739 - ./test/print/call.bril original-eval # skip: updated test/print/call.out # missing: test/print/call.out
+ok 740 - ./test/print/call.bril ssa-eval
+ok 741 - ./test/interp/mem/access_many.bril ssa
+not ok 742 - ./test/interp/mem/access_many.bril ssa-verify # skip: updated test/interp/mem/access_many.verify.out # missing: test/interp/mem/access_many.verify.out
+not ok 743 - ./test/interp/mem/access_many.bril original-eval # skip: updated test/interp/mem/access_many.out # missing: test/interp/mem/access_many.out
+ok 744 - ./test/interp/mem/access_many.bril ssa-eval
+ok 745 - ./test/interp/mem/access.bril ssa
+not ok 746 - ./test/interp/mem/access.bril ssa-verify # skip: updated test/interp/mem/access.verify.out # missing: test/interp/mem/access.verify.out
+not ok 747 - ./test/interp/mem/access.bril original-eval # skip: updated test/interp/mem/access.out # missing: test/interp/mem/access.out
+ok 748 - ./test/interp/mem/access.bril ssa-eval
+ok 749 - ./test/interp/mem/ptr_call.bril ssa
+not ok 750 - ./test/interp/mem/ptr_call.bril ssa-verify # skip: updated test/interp/mem/ptr_call.verify.out # missing: test/interp/mem/ptr_call.verify.out
+not ok 751 - ./test/interp/mem/ptr_call.bril original-eval # skip: updated test/interp/mem/ptr_call.out # missing: test/interp/mem/ptr_call.out
+ok 752 - ./test/interp/mem/ptr_call.bril ssa-eval
+ok 753 - ./test/interp/mem/alloc.bril ssa
+not ok 754 - ./test/interp/mem/alloc.bril ssa-verify # skip: updated test/interp/mem/alloc.verify.out # missing: test/interp/mem/alloc.verify.out
+ok 755 - ./test/interp/mem/alloc.bril original-eval
+not ok 756 - ./test/interp/mem/alloc.bril ssa-eval # skip: updated test/interp/mem/alloc.out # missing: test/interp/mem/alloc.out
+ok 757 - ./test/interp/mem/fib.bril ssa
+not ok 758 - ./test/interp/mem/fib.bril ssa-verify # skip: updated test/interp/mem/fib.verify.out # missing: test/interp/mem/fib.verify.out
+ok 759 - ./test/interp/mem/fib.bril original-eval
+not ok 760 - ./test/interp/mem/fib.bril ssa-eval # skip: updated test/interp/mem/fib.out # missing: test/interp/mem/fib.out
+ok 761 - ./test/interp/mem/ptr_ret.bril ssa
+not ok 762 - ./test/interp/mem/ptr_ret.bril ssa-verify # skip: updated test/interp/mem/ptr_ret.verify.out # missing: test/interp/mem/ptr_ret.verify.out
+not ok 763 - ./test/interp/mem/ptr_ret.bril original-eval # skip: updated test/interp/mem/ptr_ret.out # missing: test/interp/mem/ptr_ret.out
+ok 764 - ./test/interp/mem/ptr_ret.bril ssa-eval
+ok 765 - ./test/interp/mem/alloc_large.bril ssa
+not ok 766 - ./test/interp/mem/alloc_large.bril ssa-verify # skip: updated test/interp/mem/alloc_large.verify.out # missing: test/interp/mem/alloc_large.verify.out
+not ok 767 - ./test/interp/mem/alloc_large.bril original-eval # skip: updated test/interp/mem/alloc_large.out # missing: test/interp/mem/alloc_large.out
+ok 768 - ./test/interp/mem/alloc_large.bril ssa-eval
+ok 769 - ./test/interp/mem/mem_id.bril ssa
+not ok 770 - ./test/interp/mem/mem_id.bril ssa-verify # skip: updated test/interp/mem/mem_id.verify.out # missing: test/interp/mem/mem_id.verify.out
+ok 771 - ./test/interp/mem/mem_id.bril original-eval
+not ok 772 - ./test/interp/mem/mem_id.bril ssa-eval # skip: updated test/interp/mem/mem_id.out # missing: test/interp/mem/mem_id.out
+ok 773 - ./test/interp/mem/alloc_many.bril ssa
+not ok 774 - ./test/interp/mem/alloc_many.bril ssa-verify # skip: updated test/interp/mem/alloc_many.verify.out # missing: test/interp/mem/alloc_many.verify.out
+not ok 775 - ./test/interp/mem/alloc_many.bril original-eval # skip: updated test/interp/mem/alloc_many.out # missing: test/interp/mem/alloc_many.out
+ok 776 - ./test/interp/mem/alloc_many.bril ssa-eval
+ok 777 - ./test/interp/mem/access_ptr.bril ssa
+not ok 778 - ./test/interp/mem/access_ptr.bril ssa-verify # skip: updated test/interp/mem/access_ptr.verify.out # missing: test/interp/mem/access_ptr.verify.out
+not ok 779 - ./test/interp/mem/access_ptr.bril original-eval # skip: updated test/interp/mem/access_ptr.out # missing: test/interp/mem/access_ptr.out
+ok 780 - ./test/interp/mem/access_ptr.bril ssa-eval
+ok 781 - ./test/interp/float/float_special.bril ssa
+not ok 782 - ./test/interp/float/float_special.bril ssa-verify # skip: updated test/interp/float/float_special.verify.out # missing: test/interp/float/float_special.verify.out
+ok 783 - ./test/interp/float/float_special.bril original-eval
+not ok 784 - ./test/interp/float/float_special.bril ssa-eval # skip: updated test/interp/float/float_special.out # missing: test/interp/float/float_special.out
+ok 785 - ./test/interp/float/float_args.bril ssa
+not ok 786 - ./test/interp/float/float_args.bril ssa-verify # skip: updated test/interp/float/float_args.verify.out # missing: test/interp/float/float_args.verify.out
+not ok 787 - ./test/interp/float/float_args.bril original-eval # skip: updated test/interp/float/float_args.out # missing: test/interp/float/float_args.out
+ok 788 - ./test/interp/float/float_args.bril ssa-eval
+ok 789 - ./test/interp/float/float.bril ssa
+not ok 790 - ./test/interp/float/float.bril ssa-verify # skip: updated test/interp/float/float.verify.out # missing: test/interp/float/float.verify.out
+ok 791 - ./test/interp/float/float.bril original-eval
+not ok 792 - ./test/interp/float/float.bril ssa-eval # skip: updated test/interp/float/float.out # missing: test/interp/float/float.out
+ok 793 - ./test/interp/float/float_divide_by_zero.bril ssa
+not ok 794 - ./test/interp/float/float_divide_by_zero.bril ssa-verify # skip: updated test/interp/float/float_divide_by_zero.verify.out # missing: test/interp/float/float_divide_by_zero.verify.out
+not ok 795 - ./test/interp/float/float_divide_by_zero.bril original-eval # skip: updated test/interp/float/float_divide_by_zero.out # missing: test/interp/float/float_divide_by_zero.out
+ok 796 - ./test/interp/float/float_divide_by_zero.bril ssa-eval
+ok 797 - ./test/interp/mixed/store-char.bril ssa
+not ok 798 - ./test/interp/mixed/store-char.bril ssa-verify # skip: updated test/interp/mixed/store-char.verify.out # missing: test/interp/mixed/store-char.verify.out
+not ok 799 - ./test/interp/mixed/store-char.bril original-eval # skip: updated test/interp/mixed/store-char.out # missing: test/interp/mixed/store-char.out
+ok 800 - ./test/interp/mixed/store-char.bril ssa-eval
+ok 801 - ./test/interp/mixed/store-float.bril ssa
+not ok 802 - ./test/interp/mixed/store-float.bril ssa-verify # skip: updated test/interp/mixed/store-float.verify.out # missing: test/interp/mixed/store-float.verify.out
+not ok 803 - ./test/interp/mixed/store-float.bril original-eval # skip: updated test/interp/mixed/store-float.out # missing: test/interp/mixed/store-float.out
+ok 804 - ./test/interp/mixed/store-float.bril ssa-eval
+ok 805 - ./test/interp/spec/spec-commit.bril ssa
+not ok 806 - ./test/interp/spec/spec-commit.bril ssa-verify # skip: updated test/interp/spec/spec-commit.verify.out # missing: test/interp/spec/spec-commit.verify.out
+ok 807 - ./test/interp/spec/spec-commit.bril original-eval
+not ok 808 - ./test/interp/spec/spec-commit.bril ssa-eval # skip: updated test/interp/spec/spec-commit.out # missing: test/interp/spec/spec-commit.out
+ok 809 - ./test/interp/spec/spec-abort.bril ssa
+not ok 810 - ./test/interp/spec/spec-abort.bril ssa-verify # skip: updated test/interp/spec/spec-abort.verify.out # missing: test/interp/spec/spec-abort.verify.out
+not ok 811 - ./test/interp/spec/spec-abort.bril original-eval # skip: updated test/interp/spec/spec-abort.out # missing: test/interp/spec/spec-abort.out
+ok 812 - ./test/interp/spec/spec-abort.bril ssa-eval
+ok 813 - ./test/interp/spec/spec-noabort.bril ssa
+not ok 814 - ./test/interp/spec/spec-noabort.bril ssa-verify # skip: updated test/interp/spec/spec-noabort.verify.out # missing: test/interp/spec/spec-noabort.verify.out
+not ok 815 - ./test/interp/spec/spec-noabort.bril original-eval # skip: updated test/interp/spec/spec-noabort.out # missing: test/interp/spec/spec-noabort.out
+ok 816 - ./test/interp/spec/spec-noabort.bril ssa-eval
+ok 817 - ./test/interp/spec/spec-nested.bril ssa
+not ok 818 - ./test/interp/spec/spec-nested.bril ssa-verify # skip: updated test/interp/spec/spec-nested.verify.out # missing: test/interp/spec/spec-nested.verify.out
+not ok 819 - ./test/interp/spec/spec-nested.bril original-eval # skip: updated test/interp/spec/spec-nested.out # missing: test/interp/spec/spec-nested.out
+not ok 820 - ./test/interp/spec/spec-nested.bril ssa-eval # skip: updated test/interp/spec/spec-nested.out # differing: test/interp/spec/spec-nested.out
+ok 821 - ./test/interp/char/char_ops.bril ssa
+not ok 822 - ./test/interp/char/char_ops.bril ssa-verify # skip: updated test/interp/char/char_ops.verify.out # missing: test/interp/char/char_ops.verify.out
+ok 823 - ./test/interp/char/char_ops.bril original-eval
+not ok 824 - ./test/interp/char/char_ops.bril ssa-eval # skip: updated test/interp/char/char_ops.out # missing: test/interp/char/char_ops.out
+ok 825 - ./test/interp/char/char_args.bril ssa
+not ok 826 - ./test/interp/char/char_args.bril ssa-verify # skip: updated test/interp/char/char_args.verify.out # missing: test/interp/char/char_args.verify.out
+not ok 827 - ./test/interp/char/char_args.bril original-eval # skip: updated test/interp/char/char_args.out # missing: test/interp/char/char_args.out
+ok 828 - ./test/interp/char/char_args.bril ssa-eval
+ok 829 - ./test/interp/char/control_char.bril ssa
+not ok 830 - ./test/interp/char/control_char.bril ssa-verify # skip: updated test/interp/char/control_char.verify.out # missing: test/interp/char/control_char.verify.out
+not ok 831 - ./test/interp/char/control_char.bril original-eval # skip: updated test/interp/char/control_char.out # missing: test/interp/char/control_char.out
+ok 832 - ./test/interp/char/control_char.bril ssa-eval
+ok 833 - ./test/interp/char/conversions.bril ssa
+not ok 834 - ./test/interp/char/conversions.bril ssa-verify # skip: updated test/interp/char/conversions.verify.out # missing: test/interp/char/conversions.verify.out
+not ok 835 - ./test/interp/char/conversions.bril original-eval # skip: updated test/interp/char/conversions.out # missing: test/interp/char/conversions.out
+ok 836 - ./test/interp/char/conversions.bril ssa-eval
+ok 837 - ./test/interp/char/char.bril ssa
+not ok 838 - ./test/interp/char/char.bril ssa-verify # skip: updated test/interp/char/char.verify.out # missing: test/interp/char/char.verify.out
+ok 839 - ./test/interp/char/char.bril original-eval
+not ok 840 - ./test/interp/char/char.bril ssa-eval # skip: updated test/interp/char/char.out # missing: test/interp/char/char.out
+ok 841 - ./test/interp/ssa/ssa-simple.bril ssa
+not ok 842 - ./test/interp/ssa/ssa-simple.bril ssa-verify # skip: updated test/interp/ssa/ssa-simple.verify.out # missing: test/interp/ssa/ssa-simple.verify.out
+not ok 843 - ./test/interp/ssa/ssa-simple.bril original-eval # skip: updated test/interp/ssa/ssa-simple.out # missing: test/interp/ssa/ssa-simple.out
+ok 844 - ./test/interp/ssa/ssa-simple.bril ssa-eval
+ok 845 - ./test/interp/ssa/ssa-simple-inv.bril ssa
+not ok 846 - ./test/interp/ssa/ssa-simple-inv.bril ssa-verify # skip: updated test/interp/ssa/ssa-simple-inv.verify.out # missing: test/interp/ssa/ssa-simple-inv.verify.out
+not ok 847 - ./test/interp/ssa/ssa-simple-inv.bril original-eval # skip: updated test/interp/ssa/ssa-simple-inv.out # missing: test/interp/ssa/ssa-simple-inv.out
+ok 848 - ./test/interp/ssa/ssa-simple-inv.bril ssa-eval
+ok 849 - ./test/interp/core/add-overflow.bril ssa
+not ok 850 - ./test/interp/core/add-overflow.bril ssa-verify # skip: updated test/interp/core/add-overflow.verify.out # missing: test/interp/core/add-overflow.verify.out
+ok 851 - ./test/interp/core/add-overflow.bril original-eval
+not ok 852 - ./test/interp/core/add-overflow.bril ssa-eval # skip: updated test/interp/core/add-overflow.out # missing: test/interp/core/add-overflow.out
+ok 853 - ./test/interp/core/call-with-args.bril ssa
+not ok 854 - ./test/interp/core/call-with-args.bril ssa-verify # skip: updated test/interp/core/call-with-args.verify.out # missing: test/interp/core/call-with-args.verify.out
+not ok 855 - ./test/interp/core/call-with-args.bril original-eval # skip: updated test/interp/core/call-with-args.out # missing: test/interp/core/call-with-args.out
+ok 856 - ./test/interp/core/call-with-args.bril ssa-eval
+ok 857 - ./test/interp/core/br.bril ssa
+not ok 858 - ./test/interp/core/br.bril ssa-verify # skip: updated test/interp/core/br.verify.out # missing: test/interp/core/br.verify.out
+not ok 859 - ./test/interp/core/br.bril original-eval # skip: updated test/interp/core/br.out # missing: test/interp/core/br.out
+ok 860 - ./test/interp/core/br.bril ssa-eval
+ok 861 - ./test/interp/core/tiny.bril ssa
+not ok 862 - ./test/interp/core/tiny.bril ssa-verify # skip: updated test/interp/core/tiny.verify.out # missing: test/interp/core/tiny.verify.out
+ok 863 - ./test/interp/core/tiny.bril original-eval
+not ok 864 - ./test/interp/core/tiny.bril ssa-eval # skip: updated test/interp/core/tiny.out # missing: test/interp/core/tiny.out
+ok 865 - ./test/interp/core/main-bool-args.bril ssa
+not ok 866 - ./test/interp/core/main-bool-args.bril ssa-verify # skip: updated test/interp/core/main-bool-args.verify.out # missing: test/interp/core/main-bool-args.verify.out
+not ok 867 - ./test/interp/core/main-bool-args.bril original-eval # skip: updated test/interp/core/main-bool-args.out # missing: test/interp/core/main-bool-args.out
+ok 868 - ./test/interp/core/main-bool-args.bril ssa-eval
+ok 869 - ./test/interp/core/main-args.bril ssa
+not ok 870 - ./test/interp/core/main-args.bril ssa-verify # skip: updated test/interp/core/main-args.verify.out # missing: test/interp/core/main-args.verify.out
+ok 871 - ./test/interp/core/main-args.bril original-eval
+not ok 872 - ./test/interp/core/main-args.bril ssa-eval # skip: updated test/interp/core/main-args.out # missing: test/interp/core/main-args.out
+ok 873 - ./test/interp/core/jmp.bril ssa
+not ok 874 - ./test/interp/core/jmp.bril ssa-verify # skip: updated test/interp/core/jmp.verify.out # missing: test/interp/core/jmp.verify.out
+not ok 875 - ./test/interp/core/jmp.bril original-eval # skip: updated test/interp/core/jmp.out # missing: test/interp/core/jmp.out
+ok 876 - ./test/interp/core/jmp.bril ssa-eval
+ok 877 - ./test/interp/core/nop.bril ssa
+not ok 878 - ./test/interp/core/nop.bril ssa-verify # skip: updated test/interp/core/nop.verify.out # missing: test/interp/core/nop.verify.out
+not ok 879 - ./test/interp/core/nop.bril original-eval # skip: updated test/interp/core/nop.out # missing: test/interp/core/nop.out
+ok 880 - ./test/interp/core/nop.bril ssa-eval
+ok 881 - ./test/interp/core/ret.bril ssa
+not ok 882 - ./test/interp/core/ret.bril ssa-verify # skip: updated test/interp/core/ret.verify.out # missing: test/interp/core/ret.verify.out
+ok 883 - ./test/interp/core/ret.bril original-eval
+not ok 884 - ./test/interp/core/ret.bril ssa-eval # skip: updated test/interp/core/ret.out # missing: test/interp/core/ret.out
+ok 885 - ./test/interp/core/div.bril ssa
+not ok 886 - ./test/interp/core/div.bril ssa-verify # skip: updated test/interp/core/div.verify.out # missing: test/interp/core/div.verify.out
+not ok 887 - ./test/interp/core/div.bril original-eval # skip: updated test/interp/core/div.out # missing: test/interp/core/div.out
+ok 888 - ./test/interp/core/div.bril ssa-eval
+ok 889 - ./test/interp/core/call.bril ssa
+not ok 890 - ./test/interp/core/call.bril ssa-verify # skip: updated test/interp/core/call.verify.out # missing: test/interp/core/call.verify.out
+not ok 891 - ./test/interp/core/call.bril original-eval # skip: updated test/interp/core/call.out # missing: test/interp/core/call.out
+ok 892 - ./test/interp/core/call.bril ssa-eval
+ok 893 - ./test/interp-error/char-error/badconversion.bril ssa
+not ok 894 - ./test/interp-error/char-error/badconversion.bril ssa-verify # skip: updated test/interp-error/char-error/badconversion.verify.out # missing: test/interp-error/char-error/badconversion.verify.out
+ok 895 - ./test/interp-error/char-error/badconversion.bril original-eval
+not ok 896 - ./test/interp-error/char-error/badconversion.bril ssa-eval # skip: updated test/interp-error/char-error/badconversion.out # missing: test/interp-error/char-error/badconversion.out
+ok 897 - ./test/interp-error/mem-error/out_of_bounds.bril ssa
+not ok 898 - ./test/interp-error/mem-error/out_of_bounds.bril ssa-verify # skip: updated test/interp-error/mem-error/out_of_bounds.verify.out # missing: test/interp-error/mem-error/out_of_bounds.verify.out
+not ok 899 - ./test/interp-error/mem-error/out_of_bounds.bril original-eval # skip: updated test/interp-error/mem-error/out_of_bounds.out # missing: test/interp-error/mem-error/out_of_bounds.out
+ok 900 - ./test/interp-error/mem-error/out_of_bounds.bril ssa-eval
+ok 901 - ./test/interp-error/mem-error/out_of_bounds_2.bril ssa
+not ok 902 - ./test/interp-error/mem-error/out_of_bounds_2.bril ssa-verify # skip: updated test/interp-error/mem-error/out_of_bounds_2.verify.out # missing: test/interp-error/mem-error/out_of_bounds_2.verify.out
+not ok 903 - ./test/interp-error/mem-error/out_of_bounds_2.bril original-eval # skip: updated test/interp-error/mem-error/out_of_bounds_2.out # missing: test/interp-error/mem-error/out_of_bounds_2.out
+ok 904 - ./test/interp-error/mem-error/out_of_bounds_2.bril ssa-eval
+ok 905 - ./test/interp-error/mem-error/free_offset.bril ssa
+not ok 906 - ./test/interp-error/mem-error/free_offset.bril ssa-verify # skip: updated test/interp-error/mem-error/free_offset.verify.out # missing: test/interp-error/mem-error/free_offset.verify.out
+ok 907 - ./test/interp-error/mem-error/free_offset.bril original-eval
+not ok 908 - ./test/interp-error/mem-error/free_offset.bril ssa-eval # skip: updated test/interp-error/mem-error/free_offset.out # missing: test/interp-error/mem-error/free_offset.out
+ok 909 - ./test/interp-error/mem-error/double_free.bril ssa
+not ok 910 - ./test/interp-error/mem-error/double_free.bril ssa-verify # skip: updated test/interp-error/mem-error/double_free.verify.out # missing: test/interp-error/mem-error/double_free.verify.out
+not ok 911 - ./test/interp-error/mem-error/double_free.bril original-eval # skip: updated test/interp-error/mem-error/double_free.out # missing: test/interp-error/mem-error/double_free.out
+ok 912 - ./test/interp-error/mem-error/double_free.bril ssa-eval
+ok 913 - ./test/interp-error/mem-error/wrong_write.bril ssa
+not ok 914 - ./test/interp-error/mem-error/wrong_write.bril ssa-verify # skip: updated test/interp-error/mem-error/wrong_write.verify.out # missing: test/interp-error/mem-error/wrong_write.verify.out
+not ok 915 - ./test/interp-error/mem-error/wrong_write.bril original-eval # skip: updated test/interp-error/mem-error/wrong_write.out # missing: test/interp-error/mem-error/wrong_write.out
+ok 916 - ./test/interp-error/mem-error/wrong_write.bril ssa-eval
+ok 917 - ./test/interp-error/mem-error/leak.bril ssa
+not ok 918 - ./test/interp-error/mem-error/leak.bril ssa-verify # skip: updated test/interp-error/mem-error/leak.verify.out # missing: test/interp-error/mem-error/leak.verify.out
+not ok 919 - ./test/interp-error/mem-error/leak.bril original-eval # skip: updated test/interp-error/mem-error/leak.out # missing: test/interp-error/mem-error/leak.out
+ok 920 - ./test/interp-error/mem-error/leak.bril ssa-eval
+ok 921 - ./test/interp-error/mem-error/uninit_read.bril ssa
+not ok 922 - ./test/interp-error/mem-error/uninit_read.bril ssa-verify # skip: updated test/interp-error/mem-error/uninit_read.verify.out # missing: test/interp-error/mem-error/uninit_read.verify.out
+not ok 923 - ./test/interp-error/mem-error/uninit_read.bril original-eval # skip: updated test/interp-error/mem-error/uninit_read.out # missing: test/interp-error/mem-error/uninit_read.out
+ok 924 - ./test/interp-error/mem-error/uninit_read.bril ssa-eval
+ok 925 - ./test/interp-error/core-error/call-wrong-argument-types.bril ssa
+not ok 926 - ./test/interp-error/core-error/call-wrong-argument-types.bril ssa-verify # skip: updated test/interp-error/core-error/call-wrong-argument-types.verify.out # missing: test/interp-error/core-error/call-wrong-argument-types.verify.out
+ok 927 - ./test/interp-error/core-error/call-wrong-argument-types.bril original-eval
+not ok 928 - ./test/interp-error/core-error/call-wrong-argument-types.bril ssa-eval # skip: updated test/interp-error/core-error/call-wrong-argument-types.out # missing: test/interp-error/core-error/call-wrong-argument-types.out
+ok 929 - ./test/interp-error/core-error/call-wrong-declared-type.bril ssa
+not ok 930 - ./test/interp-error/core-error/call-wrong-declared-type.bril ssa-verify # skip: updated test/interp-error/core-error/call-wrong-declared-type.verify.out # missing: test/interp-error/core-error/call-wrong-declared-type.verify.out
+ok 931 - ./test/interp-error/core-error/call-wrong-declared-type.bril original-eval
+not ok 932 - ./test/interp-error/core-error/call-wrong-declared-type.bril ssa-eval # skip: updated test/interp-error/core-error/call-wrong-declared-type.out # missing: test/interp-error/core-error/call-wrong-declared-type.out
+ok 933 - ./test/interp-error/core-error/duplicate_main.bril ssa
+not ok 934 - ./test/interp-error/core-error/duplicate_main.bril ssa-verify # skip: updated test/interp-error/core-error/duplicate_main.verify.out # missing: test/interp-error/core-error/duplicate_main.verify.out
+ok 935 - ./test/interp-error/core-error/duplicate_main.bril original-eval
+not ok 936 - ./test/interp-error/core-error/duplicate_main.bril ssa-eval # skip: updated test/interp-error/core-error/duplicate_main.out # missing: test/interp-error/core-error/duplicate_main.out
+ok 937 - ./test/interp-error/core-error/undefined-func.bril ssa
+not ok 938 - ./test/interp-error/core-error/undefined-func.bril ssa-verify # skip: updated test/interp-error/core-error/undefined-func.verify.out # missing: test/interp-error/core-error/undefined-func.verify.out
+not ok 939 - ./test/interp-error/core-error/undefined-func.bril original-eval # skip: updated test/interp-error/core-error/undefined-func.out # missing: test/interp-error/core-error/undefined-func.out
+ok 940 - ./test/interp-error/core-error/undefined-func.bril ssa-eval
+ok 941 - ./test/interp-error/core-error/call-return-wrong-type.bril ssa
+not ok 942 - ./test/interp-error/core-error/call-return-wrong-type.bril ssa-verify # skip: updated test/interp-error/core-error/call-return-wrong-type.verify.out # missing: test/interp-error/core-error/call-return-wrong-type.verify.out
+not ok 943 - ./test/interp-error/core-error/call-return-wrong-type.bril original-eval # skip: updated test/interp-error/core-error/call-return-wrong-type.out # missing: test/interp-error/core-error/call-return-wrong-type.out
+ok 944 - ./test/interp-error/core-error/call-return-wrong-type.bril ssa-eval
+ok 945 - ./test/interp-error/core-error/duplicate_function.bril ssa
+not ok 946 - ./test/interp-error/core-error/duplicate_function.bril ssa-verify # skip: updated test/interp-error/core-error/duplicate_function.verify.out # missing: test/interp-error/core-error/duplicate_function.verify.out
+ok 947 - ./test/interp-error/core-error/duplicate_function.bril original-eval
+not ok 948 - ./test/interp-error/core-error/duplicate_function.bril ssa-eval # skip: updated test/interp-error/core-error/duplicate_function.out # missing: test/interp-error/core-error/duplicate_function.out
+ok 949 - ./test/interp-error/core-error/call-wrong-arity.bril ssa
+not ok 950 - ./test/interp-error/core-error/call-wrong-arity.bril ssa-verify # skip: updated test/interp-error/core-error/call-wrong-arity.verify.out # missing: test/interp-error/core-error/call-wrong-arity.verify.out
+ok 951 - ./test/interp-error/core-error/call-wrong-arity.bril original-eval
+not ok 952 - ./test/interp-error/core-error/call-wrong-arity.bril ssa-eval # skip: updated test/interp-error/core-error/call-wrong-arity.out # missing: test/interp-error/core-error/call-wrong-arity.out
+ok 953 - ./test/interp-error/core-error/divide_by_zero.bril ssa
+not ok 954 - ./test/interp-error/core-error/divide_by_zero.bril ssa-verify # skip: updated test/interp-error/core-error/divide_by_zero.verify.out # missing: test/interp-error/core-error/divide_by_zero.verify.out
+not ok 955 - ./test/interp-error/core-error/divide_by_zero.bril original-eval # skip: updated test/interp-error/core-error/divide_by_zero.out # missing: test/interp-error/core-error/divide_by_zero.out
+ok 956 - ./test/interp-error/core-error/divide_by_zero.bril ssa-eval
+ok 957 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril ssa
+not ok 958 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril ssa-verify # skip: updated test/interp-error/core-error/call-nonvoid-return-nothing-error.verify.out # missing: test/interp-error/core-error/call-nonvoid-return-nothing-error.verify.out
+not ok 959 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril original-eval # skip: updated test/interp-error/core-error/call-nonvoid-return-nothing-error.out # missing: test/interp-error/core-error/call-nonvoid-return-nothing-error.out
+ok 960 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril ssa-eval
+ok 961 - ./test/interp-error/core-error/call-void-return-error.bril ssa
+not ok 962 - ./test/interp-error/core-error/call-void-return-error.bril ssa-verify # skip: updated test/interp-error/core-error/call-void-return-error.verify.out # missing: test/interp-error/core-error/call-void-return-error.verify.out
+ok 963 - ./test/interp-error/core-error/call-void-return-error.bril original-eval
+not ok 964 - ./test/interp-error/core-error/call-void-return-error.bril ssa-eval # skip: updated test/interp-error/core-error/call-void-return-error.out # missing: test/interp-error/core-error/call-void-return-error.out
+ok 965 - ./test/interp-error/core-error/call-return-nothing-error.bril ssa
+not ok 966 - ./test/interp-error/core-error/call-return-nothing-error.bril ssa-verify # skip: updated test/interp-error/core-error/call-return-nothing-error.verify.out # missing: test/interp-error/core-error/call-return-nothing-error.verify.out
+ok 967 - ./test/interp-error/core-error/call-return-nothing-error.bril original-eval
+not ok 968 - ./test/interp-error/core-error/call-return-nothing-error.bril ssa-eval # skip: updated test/interp-error/core-error/call-return-nothing-error.out # missing: test/interp-error/core-error/call-return-nothing-error.out
+ok 969 - ./test/interp-error/ssa-error/ssa-nolabel.bril ssa
+not ok 970 - ./test/interp-error/ssa-error/ssa-nolabel.bril ssa-verify # skip: updated test/interp-error/ssa-error/ssa-nolabel.verify.out # missing: test/interp-error/ssa-error/ssa-nolabel.verify.out
+not ok 971 - ./test/interp-error/ssa-error/ssa-nolabel.bril original-eval # skip: updated test/interp-error/ssa-error/ssa-nolabel.out # missing: test/interp-error/ssa-error/ssa-nolabel.out
+ok 972 - ./test/interp-error/ssa-error/ssa-nolabel.bril ssa-eval
+ok 973 - ./test/interp-error/ssa-error/ssa-mismatch.bril ssa
+not ok 974 - ./test/interp-error/ssa-error/ssa-mismatch.bril ssa-verify # skip: updated test/interp-error/ssa-error/ssa-mismatch.verify.out # missing: test/interp-error/ssa-error/ssa-mismatch.verify.out
+not ok 975 - ./test/interp-error/ssa-error/ssa-mismatch.bril original-eval # skip: updated test/interp-error/ssa-error/ssa-mismatch.out # missing: test/interp-error/ssa-error/ssa-mismatch.out
+not ok 976 - ./test/interp-error/ssa-error/ssa-mismatch.bril ssa-eval # skip: updated test/interp-error/ssa-error/ssa-mismatch.out # missing: test/interp-error/ssa-error/ssa-mismatch.out
+ok 977 - ./test/interp-error/spec-error/spec-return-implicit.bril ssa
+not ok 978 - ./test/interp-error/spec-error/spec-return-implicit.bril ssa-verify # skip: updated test/interp-error/spec-error/spec-return-implicit.verify.out # missing: test/interp-error/spec-error/spec-return-implicit.verify.out
+ok 979 - ./test/interp-error/spec-error/spec-return-implicit.bril original-eval
+not ok 980 - ./test/interp-error/spec-error/spec-return-implicit.bril ssa-eval # skip: updated test/interp-error/spec-error/spec-return-implicit.out # missing: test/interp-error/spec-error/spec-return-implicit.out
+ok 981 - ./test/interp-error/spec-error/spec-call.bril ssa
+not ok 982 - ./test/interp-error/spec-error/spec-call.bril ssa-verify # skip: updated test/interp-error/spec-error/spec-call.verify.out # missing: test/interp-error/spec-error/spec-call.verify.out
+not ok 983 - ./test/interp-error/spec-error/spec-call.bril original-eval # skip: updated test/interp-error/spec-error/spec-call.out # missing: test/interp-error/spec-error/spec-call.out
+not ok 984 - ./test/interp-error/spec-error/spec-call.bril ssa-eval # skip: updated test/interp-error/spec-error/spec-call.out # missing: test/interp-error/spec-error/spec-call.out
+ok 985 - ./test/interp-error/spec-error/spec-nonspec-abort.bril ssa
+not ok 986 - ./test/interp-error/spec-error/spec-nonspec-abort.bril ssa-verify # skip: updated test/interp-error/spec-error/spec-nonspec-abort.verify.out # missing: test/interp-error/spec-error/spec-nonspec-abort.verify.out
+not ok 987 - ./test/interp-error/spec-error/spec-nonspec-abort.bril original-eval # skip: updated test/interp-error/spec-error/spec-nonspec-abort.out # missing: test/interp-error/spec-error/spec-nonspec-abort.out
+ok 988 - ./test/interp-error/spec-error/spec-nonspec-abort.bril ssa-eval
+ok 989 - ./test/interp-error/spec-error/spec-return.bril ssa
+not ok 990 - ./test/interp-error/spec-error/spec-return.bril ssa-verify # skip: updated test/interp-error/spec-error/spec-return.verify.out # missing: test/interp-error/spec-error/spec-return.verify.out
+ok 991 - ./test/interp-error/spec-error/spec-return.bril original-eval
+not ok 992 - ./test/interp-error/spec-error/spec-return.bril ssa-eval # skip: updated test/interp-error/spec-error/spec-return.out # missing: test/interp-error/spec-error/spec-return.out
+ok 993 - ./test/interp-error/spec-error/spec-double-commit.bril ssa
+not ok 994 - ./test/interp-error/spec-error/spec-double-commit.bril ssa-verify # skip: updated test/interp-error/spec-error/spec-double-commit.verify.out # missing: test/interp-error/spec-error/spec-double-commit.verify.out
+not ok 995 - ./test/interp-error/spec-error/spec-double-commit.bril original-eval # skip: updated test/interp-error/spec-error/spec-double-commit.out # missing: test/interp-error/spec-error/spec-double-commit.out
+ok 996 - ./test/interp-error/spec-error/spec-double-commit.bril ssa-eval
+not ok 997 - ./test/linking/diamond.bril ssa
+# exit code: 1
+not ok 998 - ./test/linking/diamond.bril ssa-verify
+# exit code: 1
+ok 999 - ./test/linking/diamond.bril original-eval
+not ok 1000 - ./test/linking/diamond.bril ssa-eval # skip: updated test/linking/diamond.out # missing: test/linking/diamond.out
+not ok 1001 - ./test/linking/recursive.bril ssa
+# exit code: 1
+not ok 1002 - ./test/linking/recursive.bril ssa-verify
+# exit code: 1
+ok 1003 - ./test/linking/recursive.bril original-eval
+not ok 1004 - ./test/linking/recursive.bril ssa-eval # skip: updated test/linking/recursive.out # missing: test/linking/recursive.out
+not ok 1005 - ./test/linking/nested.bril ssa
+# exit code: 1
+not ok 1006 - ./test/linking/nested.bril ssa-verify
+# exit code: 1
+ok 1007 - ./test/linking/nested.bril original-eval
+not ok 1008 - ./test/linking/nested.bril ssa-eval # skip: updated test/linking/nested.out # missing: test/linking/nested.out
+not ok 1009 - ./test/linking/link_ops.bril ssa
+# exit code: 1
+not ok 1010 - ./test/linking/link_ops.bril ssa-verify
+# exit code: 1
+not ok 1011 - ./test/linking/link_ops.bril original-eval # skip: updated test/linking/link_ops.out # missing: test/linking/link_ops.out
+ok 1012 - ./test/linking/link_ops.bril ssa-eval
+ok 1013 - ./test/check/ptr.bril ssa
+not ok 1014 - ./test/check/ptr.bril ssa-verify # skip: updated test/check/ptr.verify.out # missing: test/check/ptr.verify.out
+not ok 1015 - ./test/check/ptr.bril original-eval # skip: updated test/check/ptr.out # missing: test/check/ptr.out
+ok 1016 - ./test/check/ptr.bril ssa-eval
+ok 1017 - ./test/check/tiny.bril ssa
+not ok 1018 - ./test/check/tiny.bril ssa-verify # skip: updated test/check/tiny.verify.out # missing: test/check/tiny.verify.out
+not ok 1019 - ./test/check/tiny.bril original-eval # skip: updated test/check/tiny.out # missing: test/check/tiny.out
+ok 1020 - ./test/check/tiny.bril ssa-eval
+ok 1021 - ./test/check/badcall.bril ssa
+not ok 1022 - ./test/check/badcall.bril ssa-verify # skip: updated test/check/badcall.verify.out # missing: test/check/badcall.verify.out
+not ok 1023 - ./test/check/badcall.bril original-eval # skip: updated test/check/badcall.out # missing: test/check/badcall.out
+ok 1024 - ./test/check/badcall.bril ssa-eval
+ok 1025 - ./test/check/extra.bril ssa
+not ok 1026 - ./test/check/extra.bril ssa-verify # skip: updated test/check/extra.verify.out # missing: test/check/extra.verify.out
+ok 1027 - ./test/check/extra.bril original-eval
+not ok 1028 - ./test/check/extra.bril ssa-eval # skip: updated test/check/extra.out # missing: test/check/extra.out
+not ok 1029 - ./test/check/labels.bril ssa
+# exit code: 1
+not ok 1030 - ./test/check/labels.bril ssa-verify
+# exit code: 1
+not ok 1031 - ./test/check/labels.bril original-eval # skip: updated test/check/labels.out # missing: test/check/labels.out
+ok 1032 - ./test/check/labels.bril ssa-eval
+ok 1033 - ./test/check/main-args.bril ssa
+not ok 1034 - ./test/check/main-args.bril ssa-verify # skip: updated test/check/main-args.verify.out # missing: test/check/main-args.verify.out
+not ok 1035 - ./test/check/main-args.bril original-eval # skip: updated test/check/main-args.out # missing: test/check/main-args.out
+ok 1036 - ./test/check/main-args.bril ssa-eval
+ok 1037 - ./test/check/speculate.bril ssa
+not ok 1038 - ./test/check/speculate.bril ssa-verify # skip: updated test/check/speculate.verify.out # missing: test/check/speculate.verify.out
+not ok 1039 - ./test/check/speculate.bril original-eval # skip: updated test/check/speculate.out # missing: test/check/speculate.out
+ok 1040 - ./test/check/speculate.bril ssa-eval
+ok 1041 - ./test/check/argtype.bril ssa
+not ok 1042 - ./test/check/argtype.bril ssa-verify # skip: updated test/check/argtype.verify.out # missing: test/check/argtype.verify.out
+not ok 1043 - ./test/check/argtype.bril original-eval # skip: updated test/check/argtype.out # missing: test/check/argtype.out
+ok 1044 - ./test/check/argtype.bril ssa-eval
+ok 1045 - ./test/check/typeconflict.bril ssa
+not ok 1046 - ./test/check/typeconflict.bril ssa-verify # skip: updated test/check/typeconflict.verify.out # missing: test/check/typeconflict.verify.out
+not ok 1047 - ./test/check/typeconflict.bril original-eval # skip: updated test/check/typeconflict.out # missing: test/check/typeconflict.out
+ok 1048 - ./test/check/typeconflict.bril ssa-eval
+ok 1049 - ./test/check/badid.bril ssa
+not ok 1050 - ./test/check/badid.bril ssa-verify # skip: updated test/check/badid.verify.out # missing: test/check/badid.verify.out
+ok 1051 - ./test/check/badid.bril original-eval
+not ok 1052 - ./test/check/badid.bril ssa-eval # skip: updated test/check/badid.out # missing: test/check/badid.out
+ok 1053 - ./test/check/badmem.bril ssa
+not ok 1054 - ./test/check/badmem.bril ssa-verify # skip: updated test/check/badmem.verify.out # missing: test/check/badmem.verify.out
+ok 1055 - ./test/check/badmem.bril original-eval
+not ok 1056 - ./test/check/badmem.bril ssa-eval # skip: updated test/check/badmem.out # missing: test/check/badmem.out
+ok 1057 - ./test/check/ssa.bril ssa
+not ok 1058 - ./test/check/ssa.bril ssa-verify # skip: updated test/check/ssa.verify.out # missing: test/check/ssa.verify.out
+not ok 1059 - ./test/check/ssa.bril original-eval # skip: updated test/check/ssa.out # missing: test/check/ssa.out
+ok 1060 - ./test/check/ssa.bril ssa-eval
+ok 1061 - ./test/check/char.bril ssa
+not ok 1062 - ./test/check/char.bril ssa-verify # skip: updated test/check/char.verify.out # missing: test/check/char.verify.out
+not ok 1063 - ./test/check/char.bril original-eval # skip: updated test/check/char.out # missing: test/check/char.out
+ok 1064 - ./test/check/char.bril ssa-eval
+ok 1065 - ./test/check/missdest.bril ssa
+not ok 1066 - ./test/check/missdest.bril ssa-verify # skip: updated test/check/missdest.verify.out # missing: test/check/missdest.verify.out
+not ok 1067 - ./test/check/missdest.bril original-eval # skip: updated test/check/missdest.out # missing: test/check/missdest.out
+ok 1068 - ./test/check/missdest.bril ssa-eval
+ok 1069 - ./test/check/missarg.bril ssa
+not ok 1070 - ./test/check/missarg.bril ssa-verify # skip: updated test/check/missarg.verify.out # missing: test/check/missarg.verify.out
+not ok 1071 - ./test/check/missarg.bril original-eval # skip: updated test/check/missarg.out # missing: test/check/missarg.out
+ok 1072 - ./test/check/missarg.bril ssa-eval
+ok 1073 - ./test/check/mem.bril ssa
+not ok 1074 - ./test/check/mem.bril ssa-verify # skip: updated test/check/mem.verify.out # missing: test/check/mem.verify.out
+not ok 1075 - ./test/check/mem.bril original-eval # skip: updated test/check/mem.out # missing: test/check/mem.out
+ok 1076 - ./test/check/mem.bril ssa-eval
+not ok 1077 - ./test/check/undef.bril ssa
+# exit code: 1
+not ok 1078 - ./test/check/undef.bril ssa-verify
+# exit code: 1
+not ok 1079 - ./test/check/undef.bril original-eval # skip: updated test/check/undef.out # missing: test/check/undef.out
+ok 1080 - ./test/check/undef.bril ssa-eval
+ok 1081 - ./test/check/printres.bril ssa
+not ok 1082 - ./test/check/printres.bril ssa-verify # skip: updated test/check/printres.verify.out # missing: test/check/printres.verify.out
+not ok 1083 - ./test/check/printres.bril original-eval # skip: updated test/check/printres.out # missing: test/check/printres.out
+ok 1084 - ./test/check/printres.bril ssa-eval
+ok 1085 - ./test/check/badconst.bril ssa
+not ok 1086 - ./test/check/badconst.bril ssa-verify # skip: updated test/check/badconst.verify.out # missing: test/check/badconst.verify.out
+not ok 1087 - ./test/check/badconst.bril original-eval # skip: updated test/check/badconst.out # missing: test/check/badconst.out
+ok 1088 - ./test/check/badconst.bril ssa-eval

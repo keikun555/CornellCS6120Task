@@ -1,0 +1,22 @@
+@main {
+.main.b0:
+  inc.0: int = const 1;
+  v.0: int = const 1000;
+  max.0: int = const 1000000;
+  count.0: int = const 0;
+  pi.0: ptr<int> = alloc v.0;
+  pp.0: ptr<ptr<int>> = alloc v.0;
+.lbl:
+  pi.1: ptr<int> = phi pi.0 pi.2 .main.b0 .lbl;
+  loop.0: bool = phi loop.1 .lbl;
+  count.1: int = phi count.0 count.2 .main.b0 .lbl;
+  count.2: int = add count.1 inc.0;
+  store pp.0 pi.1;
+  pi.2: ptr<int> = load pp.0;
+  loop.1: bool = ge count.2 max.0;
+  br loop.1 .end .lbl;
+.end:
+  free pi.2;
+  free pp.0;
+  print count.2;
+}

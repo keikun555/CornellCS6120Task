@@ -1,0 +1,43 @@
+@main(n.0: int, arrows.0: int, repeats.0: int) {
+.main.b0:
+  n.1: int = id n.0;
+  arrows.1: int = id arrows.0;
+  repeats.1: int = id repeats.0;
+.main.b1:
+  ans.0: int = call @up_arrow n.1 arrows.1 repeats.1;
+  print ans.0;
+}
+@up_arrow(num.0: int, arrows.0: int, repeats.0: int): int {
+.up_arrow.b0:
+  num.1: int = id num.0;
+  arrows.1: int = id arrows.0;
+  repeats.1: int = id repeats.0;
+.up_arrow.b1:
+  one.0: int = const 1;
+  ans.0: int = id num.1;
+  i.0: int = const 1;
+.loopstart:
+  new_arrows.0: int = phi new_arrows.2 .finally;
+  keepgoing.0: bool = phi keepgoing.1 .finally;
+  i.1: int = phi i.0 i.2 .up_arrow.b1 .finally;
+  base_case.0: bool = phi base_case.1 .finally;
+  ans.1: int = phi ans.0 ans.4 .up_arrow.b1 .finally;
+  keepgoing.1: bool = lt i.1 repeats.1;
+  br keepgoing.1 .loopbody .endloop;
+.loopbody:
+  base_case.1: bool = le arrows.1 one.0;
+  br base_case.1 .base .arrowsgreaterthan1;
+.base:
+  ans.2: int = mul ans.1 num.1;
+  jmp .finally;
+.arrowsgreaterthan1:
+  new_arrows.1: int = sub arrows.1 one.0;
+  ans.3: int = call @up_arrow num.1 new_arrows.1 ans.1;
+.finally:
+  new_arrows.2: int = phi new_arrows.0 new_arrows.1 .base .arrowsgreaterthan1;
+  ans.4: int = phi ans.2 ans.3 .base .arrowsgreaterthan1;
+  i.2: int = add i.1 one.0;
+  jmp .loopstart;
+.endloop:
+  ret ans.1;
+}

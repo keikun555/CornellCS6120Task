@@ -1,0 +1,17 @@
+@main {
+.main.b0:
+  v.0: int = const 1;
+  max.0: int = const 1000000;
+  count.0: int = const 0;
+.lbl:
+  p.0: ptr<int> = phi p.1 .lbl;
+  loop.0: bool = phi loop.1 .lbl;
+  count.1: int = phi count.0 count.2 .main.b0 .lbl;
+  count.2: int = add count.1 v.0;
+  p.1: ptr<int> = alloc v.0;
+  free p.1;
+  loop.1: bool = ge count.2 max.0;
+  br loop.1 .end .lbl;
+.end:
+  print count.2;
+}

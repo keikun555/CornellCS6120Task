@@ -1,0 +1,32 @@
+@main(num.0: int) {
+.main.b0:
+  num.1: int = id num.0;
+.main.b1:
+  zer.0: int = const 0;
+  one.0: int = const 1;
+  fac.0: int = const 2;
+.loopcheck:
+  tmp.0: int = phi tmp.1 tmp.1 .ifyes .ifno;
+  quo.0: int = phi quo.1 quo.1 .ifyes .ifno;
+  num.2: int = phi num.1 num.3 num.2 .main.b1 .ifyes .ifno;
+  mod.0: int = phi mod.1 mod.1 .ifyes .ifno;
+  iszero.0: bool = phi iszero.1 iszero.1 .ifyes .ifno;
+  ispos.0: bool = phi ispos.1 ispos.1 .ifyes .ifno;
+  fac.1: int = phi fac.0 fac.1 fac.2 .main.b1 .ifyes .ifno;
+  ispos.1: bool = lt one.0 num.2;
+  br ispos.1 .loopbody .loopend;
+.loopbody:
+  quo.1: int = div num.2 fac.1;
+  tmp.1: int = mul quo.1 fac.1;
+  mod.1: int = sub num.2 tmp.1;
+  iszero.1: bool = eq mod.1 zer.0;
+  br iszero.1 .ifyes .ifno;
+.ifyes:
+  print fac.1;
+  num.3: int = div num.2 fac.1;
+  jmp .loopcheck;
+.ifno:
+  fac.2: int = add fac.1 one.0;
+  jmp .loopcheck;
+.loopend:
+}
