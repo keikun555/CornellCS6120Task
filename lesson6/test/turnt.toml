@@ -1,79 +1,15 @@
-[envs.dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py dominance"
-output."dominance.out" = "-"
+[envs.ssa]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | bril2txt"
+output."bril.ssa" = "-"
 
-[envs.naive-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-dominance"
-output."dominance.out" = "-"
+[envs.ssa-verify]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../../../bril/examples/is_ssa.py"
+output."verify.out" = "-"
 
-[envs.post-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py dominance --post"
-output."post_dominance.out" = "-"
+[envs.original-eval]
+command = "bril2json < {filename} | brili {args} || echo invalid"
+output.out = "-"
 
-[envs.naive-post-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-dominance --post"
-output."post_dominance.out" = "-"
-
-[envs.strict-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py strict-dominance"
-output."strict_dominance.out" = "-"
-
-[envs.naive-strict-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-strict-dominance"
-output."strict_dominance.out" = "-"
-
-[envs.strict-post-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-strict-dominance --post"
-output."strict_post_dominance.out" = "-"
-
-[envs.naive-strict-post-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-strict-dominance --post"
-output."strict_post_dominance.out" = "-"
-
-[envs.immediate-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py immediate-dominance"
-output."immediate_dominance.out" = "-"
-
-[envs.naive-immediate-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-immediate-dominance"
-output."immediate_dominance.out" = "-"
-
-[envs.immediate-post-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py immediate-dominance --post"
-output."immediate_post_dominance.out" = "-"
-
-[envs.naive-immediate-post-dominance]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-immediate-dominance --post"
-output."immediate_post_dominance.out" = "-"
-
-[envs.dominator-tree]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py dominator-tree"
-output."dominator_tree.out" = "-"
-
-[envs.naive-dominator-tree]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-dominator-tree"
-output."dominator_tree.out" = "-"
-
-[envs.post-dominator-tree]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py dominator-tree --post"
-output."post_dominator_tree.out" = "-"
-
-[envs.naive-post-dominator-tree]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-dominator-tree --post"
-output."post_dominator_tree.out" = "-"
-
-[envs.dominance-frontier]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py dominance-frontier"
-output."dominance_frontier.out" = "-"
-
-[envs.naive-dominance-frontier]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-dominance-frontier"
-output."dominance_frontier.out" = "-"
-
-[envs.post-dominance-frontier]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py dominance-frontier --post"
-output."post_dominance_frontier.out" = "-"
-
-[envs.naive-post-dominance-frontier]
-command = "bril2json < {filename} | python3 ../dominance_analysis.py naive-dominance-frontier --post"
-output."post_dominance_frontier.out" = "-"
+[envs.ssa-eval]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | brili {args} || echo invalid"
+output.out = "-"

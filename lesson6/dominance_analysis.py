@@ -177,13 +177,14 @@ def dominance_frontier_indices_get(cfg: ControlFlowGraph) -> DominanceAnalysis:
     frontier: DominanceAnalysis = {}
 
     dominators = dominators_indices_get(cfg)
+    strict_dominators = strict_dominators_indices_get(cfg)
     for i in cfg:
         frontier[i] = set()
         for j in cfg:
             predecessors = set().union(*[dominators[k] for k in cfg.predecessors(j)])
-            if i in predecessors and i not in dominators[j]:
+            if i in predecessors and i not in strict_dominators[j]:
                 # i dominates a predecessor of frontier
-                # i does not dominate frontier
+                # i does not strictly dominate frontier
                 frontier[i].add(j)
 
     return frontier
@@ -195,13 +196,14 @@ def naive_dominance_frontier_indices_get(cfg: ControlFlowGraph) -> DominanceAnal
     frontier: DominanceAnalysis = {}
 
     dominators = naive_dominators_indices_get(cfg)
+    strict_dominators = naive_strict_dominators_indices_get(cfg)
     for i in cfg:
         frontier[i] = set()
         for j in cfg:
             predecessors = set().union(*[dominators[k] for k in cfg.predecessors(j)])
-            if i in predecessors and i not in dominators[j]:
+            if i in predecessors and i not in strict_dominators[j]:
                 # i dominates a predecessor of frontier
-                # i does not dominate frontier
+                # i does not strictly dominate frontier
                 frontier[i].add(j)
 
     return frontier

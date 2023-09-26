@@ -38,27 +38,27 @@ class ControlFlowGraph(dict[int, set[int]]):
             -2
         )  # this will be overwritten when calling control_flow_graph_from_instructions
 
-    def reachable(self, block_index: int) -> bool:
+    def reachable(self, start_index: int, dest_index: int) -> bool:
         """Tells us whether a block is reachable from the entry"""
         visited: set[int] = set()
         def helper(i: int):
             visited.add(i)
-            if i == block_index:
+            if i == dest_index:
                 return True
             for j in self[i]:
-                if helper(j):
+                if not visited and helper(j):
                     return True
             return False
 
-        return helper(self.entry)
+        return helper(start_index)
 
     def predecessors(self, block_index: int) -> tuple[int, ...]:
         """Given block index, return predecessor indices of block"""
-        return tuple(i for i in self if block_index in self[i])
+        return tuple(sorted([i for i in self if block_index in self[i]]))
 
     def successors(self, block_index: int) -> tuple[int, ...]:
         """Given block index, return successor indices of block"""
-        return tuple(self[block_index])
+        return tuple(sorted(list(self[block_index])))
 
 
 def control_flow_graph_from_instructions(
