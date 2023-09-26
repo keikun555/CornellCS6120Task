@@ -750,7 +750,7 @@ ok 635 - ./type-infer/tests/fail-typecheck/control_ops.bril ssa-roundtrip
 not ok 636 - ./type-infer/tests/fail-typecheck/control_ops.bril ssa-roundtrip-eval
 # exit code: 0, expected: 1
 not ok 637 - ./type-infer/tests/fail-typecheck/add.bril ssa # differing: type-infer/tests/fail-typecheck/add.err
-not ok 638 - ./type-infer/tests/fail-typecheck/add.bril ssa-verify # differing: type-infer/tests/fail-typecheck/add.err
+ok 638 - ./type-infer/tests/fail-typecheck/add.bril ssa-verify
 not ok 639 - ./type-infer/tests/fail-typecheck/add.bril original-eval
 # exit code: 0, expected: 1
 not ok 640 - ./type-infer/tests/fail-typecheck/add.bril ssa-eval

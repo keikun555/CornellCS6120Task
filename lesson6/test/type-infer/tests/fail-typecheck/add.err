@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 311, in <module>
+  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 310, in <module>
     main()
   File "/home/kei/course/6120/6120/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
     return self.main(*args, **kwargs)
@@ -9,13 +9,13 @@ Traceback (most recent call last):
     return ctx.invoke(self.callback, **ctx.params)
   File "/home/kei/course/6120/6120/lib/python3.10/site-packages/click/core.py", line 783, in invoke
     return __callback(*args, **kwargs)
-  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 306, in main
+  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 305, in main
     ssa_program: SSAProgram = bril_to_ssa(prog)
-  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 298, in bril_to_ssa
+  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 297, in bril_to_ssa
     ssa_bb_program["functions"][i] = bb_func_to_ssa_bb_func(func)
-  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 164, in bb_func_to_ssa_bb_func
+  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 163, in bb_func_to_ssa_bb_func
     defs, orig, var_to_type = defs_orig_variable_dicts_get(bb_func)
-  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 108, in defs_orig_variable_dicts_get
+  File "/home/kei/course/6120/task/lesson6/test/../bril2ssa.py", line 107, in defs_orig_variable_dicts_get
     var_to_type[var] = value["type"]
 KeyError: 'type'
 Traceback (most recent call last):
@@ -30,4 +30,3 @@ Traceback (most recent call last):
   File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

@@ -3,7 +3,7 @@ command = "bril2json < {filename} | python3 ../bril2ssa.py | bril2txt"
 output."bril.ssa" = "-"
 
 [envs.ssa-verify]
-command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../../../bril/examples/is_ssa.py"
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../../../bril/examples/is_ssa.py | grep -E '^yes$'"
 output."verify.out" = "-"
 
 [envs.original-eval]
