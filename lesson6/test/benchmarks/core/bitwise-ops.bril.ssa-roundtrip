@@ -1,0 +1,127 @@
+@mod2(a.0: int): bool {
+.mod2.b0:
+  a.1: int = id a.0;
+.mod2.b1:
+  two.0: int = const 2;
+  tmp.0: int = div a.1 two.0;
+  tmp2.0: int = mul tmp.0 two.0;
+  tmp3.0: int = sub a.1 tmp2.0;
+  one.0: int = const 1;
+  ans.0: bool = eq one.0 tmp3.0;
+  ret ans.0;
+}
+@loop_subroutine(a.0: int, b.0: int, c.0: bool): int {
+.loop_subroutine.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+  c.1: bool = id c.0;
+.loop_subroutine.b1:
+  i.0: int = const 0;
+  n.0: int = const 63;
+  one.0: int = const 1;
+  two.0: int = const 2;
+  ans.0: int = const 0;
+  to_add.0: int = const 1;
+  to_add.1: int = id to_add.0;
+  mod2b.0: bool = const false;
+  mod2a.0: bool = const false;
+  i.1: int = id i.0;
+  cond_add.0: bool = const false;
+  cond.0: bool = const false;
+  b.2: int = id b.1;
+  ans.1: int = id ans.0;
+  a.2: int = id a.1;
+.loop:
+  cond.1: bool = le i.1 n.0;
+  br cond.1 .here .end;
+.here:
+  mod2a.1: bool = call @mod2 a.2;
+  mod2b.1: bool = call @mod2 b.2;
+  cond_add.1: bool = and mod2a.1 mod2b.1;
+  cond_add.3: bool = id cond_add.1;
+  br c.1 .doOr .stay;
+.doOr:
+  cond_add.2: bool = or mod2a.1 mod2b.1;
+  cond_add.3: bool = id cond_add.2;
+.stay:
+  ans.3: int = id ans.1;
+  br cond_add.3 .add .end_loop;
+.add:
+  ans.2: int = add ans.1 to_add.1;
+  ans.3: int = id ans.2;
+.end_loop:
+  a.3: int = div a.2 two.0;
+  b.3: int = div b.2 two.0;
+  to_add.2: int = mul to_add.1 two.0;
+  i.2: int = add i.1 one.0;
+  to_add.1: int = id to_add.2;
+  mod2b.0: bool = id mod2b.1;
+  mod2a.0: bool = id mod2a.1;
+  i.1: int = id i.2;
+  cond_add.0: bool = id cond_add.3;
+  cond.0: bool = id cond.1;
+  b.2: int = id b.3;
+  ans.1: int = id ans.3;
+  a.2: int = id a.3;
+  jmp .loop;
+.end:
+  ret ans.1;
+}
+@OR(a.0: int, b.0: int): int {
+.OR.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.OR.b1:
+  oper.0: bool = const true;
+  v1.0: int = call @loop_subroutine a.1 b.1 oper.0;
+  ret v1.0;
+}
+@AND(a.0: int, b.0: int): int {
+.AND.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.AND.b1:
+  oper.0: bool = const false;
+  v1.0: int = call @loop_subroutine a.1 b.1 oper.0;
+  ret v1.0;
+}
+@XOR(a.0: int, b.0: int): int {
+.XOR.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.XOR.b1:
+  and_val.0: int = call @AND a.1 b.1;
+  or_val.0: int = call @OR a.1 b.1;
+  ans.0: int = sub or_val.0 and_val.0;
+  ret ans.0;
+}
+@main(a.0: int, b.0: int, c.0: int) {
+.main.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+  c.1: int = id c.0;
+.main.b1:
+  one.0: int = const 1;
+  zero.0: int = const 0;
+  sel.0: int = sub c.1 one.0;
+  ans.0: int = id zero.0;
+  less.0: bool = lt sel.0 zero.0;
+  equal.0: bool = eq sel.0 zero.0;
+  greater.0: bool = gt sel.0 zero.0;
+  br less.0 .and_op .useless_lbl;
+.useless_lbl:
+  br equal.0 .or_op .xor_op;
+.and_op:
+  ans.3: int = call @AND a.1 b.1;
+  ans.4: int = id ans.3;
+  jmp .end;
+.or_op:
+  ans.1: int = call @OR a.1 b.1;
+  ans.4: int = id ans.1;
+  jmp .end;
+.xor_op:
+  ans.2: int = call @XOR a.1 b.1;
+  ans.4: int = id ans.2;
+.end:
+  print ans.4;
+}

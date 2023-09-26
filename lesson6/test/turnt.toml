@@ -13,3 +13,11 @@ output.out = "-"
 [envs.ssa-eval]
 command = "bril2json < {filename} | python3 ../bril2ssa.py | brili {args} || echo invalid"
 output.out = "-"
+
+[envs.ssa-roundtrip]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../ssa2bril.py | bril2txt"
+output."bril.ssa-roundtrip" = "-"
+
+[envs.ssa-roundtrip-eval]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../ssa2bril.py | brili {args} || echo invalid"
+output.out = "-"

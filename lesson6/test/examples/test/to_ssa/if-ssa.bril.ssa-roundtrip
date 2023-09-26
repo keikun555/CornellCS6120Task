@@ -1,0 +1,21 @@
+@main(cond.0: bool) {
+.main.b0:
+  cond.1: bool = id cond.0;
+.entry:
+  a.1.0: int = const 47;
+  br cond.1 .left .right;
+.left:
+  a.2.0: int = add a.1.0 a.1.0;
+  a.3.1: int = const 0;
+  a.2.1: int = id a.2.0;
+  a.4.0: int = id a.2.1;
+  jmp .zexit;
+.right:
+  a.3.0: int = mul a.1.0 a.1.0;
+  a.3.1: int = id a.3.0;
+  a.2.1: int = const 0;
+  a.4.0: int = id a.3.1;
+  jmp .zexit;
+.zexit:
+  print a.4.0;
+}

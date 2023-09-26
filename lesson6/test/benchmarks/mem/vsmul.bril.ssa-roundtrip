@@ -1,0 +1,80 @@
+@rand(seq.0: ptr<int>, max.0: int): int {
+.rand.b0:
+  seq.1: ptr<int> = id seq.0;
+  max.1: int = id max.0;
+.rand.b1:
+  a.0: int = const 25214903917;
+  c.0: int = const 11;
+  m.0: int = const 281474976710656;
+  x.0: int = load seq.1;
+  ax.0: int = mul a.0 x.0;
+  axpc.0: int = add ax.0 c.0;
+  next.0: int = div axpc.0 m.0;
+  next.1: int = mul next.0 m.0;
+  next.2: int = sub axpc.0 next.1;
+  store seq.1 next.2;
+  val.0: int = div next.2 max.1;
+  val.1: int = mul val.0 max.1;
+  val.2: int = sub next.2 val.1;
+  ret val.2;
+}
+@randarray(size.0: int, rng.0: ptr<int>): ptr<int> {
+.randarray.b0:
+  size.1: int = id size.0;
+  rng.1: ptr<int> = id rng.0;
+.randarray.b1:
+  arr.0: ptr<int> = alloc size.1;
+  i.0: int = const 0;
+  max.0: int = const 1000;
+  one.0: int = const 1;
+  val.0: int = const 0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<int> = alloc loc.0.size;
+  free loc.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.loop:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .body .done;
+.body:
+  val.1: int = call @rand rng.1 max.0;
+  loc.1: ptr<int> = ptradd arr.0 i.1;
+  store loc.1 val.1;
+.loop_end:
+  i.2: int = add i.1 one.0;
+  val.0: int = id val.1;
+  loc.0: ptr<int> = id loc.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .loop;
+.done:
+  ret arr.0;
+}
+@main(size.0: int, seed.0: int) {
+.main.b0:
+  size.1: int = id size.0;
+  seed.1: int = id seed.0;
+.main.b1:
+  two.0: int = const 2;
+  rng.0: ptr<int> = alloc seed.1;
+  store rng.0 seed.1;
+  arr.0: ptr<int> = call @randarray size.1 rng.0;
+  i.0: int = const 0;
+.loop:
+  cond.0: bool = lt i.0 size.1;
+  val.2: int = const 0;
+  loc.1.size: int = const 1;
+  loc.1: ptr<int> = alloc loc.1.size;
+  free loc.1;
+  br cond.0 .body .done;
+.body:
+  loc.0: ptr<int> = ptradd arr.0 i.0;
+  val.0: int = load loc.0;
+  val.1: int = mul val.0 two.0;
+  store loc.0 val.1;
+  val.2: int = id val.1;
+  loc.1: ptr<int> = id loc.0;
+.done:
+  free arr.0;
+  free rng.0;
+}

@@ -1,0 +1,144 @@
+@main(in.0: int) {
+.main.b0:
+  in.1: int = id in.0;
+.main.b1:
+  ten.0: int = const 10;
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  index.0: int = const 1;
+  not_finished.0: bool = const true;
+  power.0: int = const 0;
+  not_finished.1: bool = id not_finished.0;
+  index.1: int = id index.0;
+  d.0: int = const 0;
+  check.0: bool = const false;
+.for.cond:
+  br not_finished.1 .for.body .for.end;
+.for.body:
+  power.1: int = call @pow ten.0 index.1;
+  d.1: int = div in.1 power.1;
+  check.1: bool = eq d.1 zero.0;
+  br check.1 .if.true .if.false;
+.if.true:
+  not_finished.2: bool = const false;
+  power.0: int = id power.1;
+  not_finished.1: bool = id not_finished.2;
+  index.1: int = id index.1;
+  d.0: int = id d.1;
+  check.0: bool = id check.1;
+  jmp .for.cond;
+.if.false:
+  index.2: int = add index.1 one.0;
+  power.0: int = id power.1;
+  not_finished.1: bool = id not_finished.1;
+  index.1: int = id index.2;
+  d.0: int = id d.1;
+  check.0: bool = id check.1;
+  jmp .for.cond;
+.for.end:
+  exp.0: int = sub index.1 one.0;
+  is_palindrome.0: bool = call @palindrome in.1 exp.0;
+  print is_palindrome.0;
+}
+@pow(base.0: int, exp.0: int): int {
+.pow.b0:
+  base.1: int = id base.0;
+  exp.1: int = id exp.0;
+.pow.b1:
+  res.0: int = const 1;
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  not_finished.0: bool = const true;
+  res.1: int = id res.0;
+  not_finished.1: bool = id not_finished.0;
+  finished.0: bool = const false;
+  exp.2: int = id exp.1;
+.for.cond.pow:
+  br not_finished.1 .for.body.pow .for.end.pow;
+.for.body.pow:
+  finished.1: bool = eq exp.2 zero.0;
+  br finished.1 .if.true.pow .if.false.pow;
+.if.true.pow:
+  not_finished.2: bool = const false;
+  res.1: int = id res.1;
+  not_finished.1: bool = id not_finished.2;
+  finished.0: bool = id finished.1;
+  exp.2: int = id exp.2;
+  jmp .for.cond.pow;
+.if.false.pow:
+  res.2: int = mul res.1 base.1;
+  exp.3: int = sub exp.2 one.0;
+  res.1: int = id res.2;
+  not_finished.1: bool = id not_finished.1;
+  finished.0: bool = id finished.1;
+  exp.2: int = id exp.3;
+  jmp .for.cond.pow;
+.for.end.pow:
+  ret res.1;
+}
+@palindrome(in.0: int, len.0: int): bool {
+.palindrome.b0:
+  in.1: int = id in.0;
+  len.1: int = id len.0;
+.palindrome.b1:
+  is_palindrome.0: bool = const false;
+  zero.0: int = const 0;
+  two.0: int = const 2;
+  ten.0: int = const 10;
+  check.0: bool = le len.1 zero.0;
+  br check.0 .if.true.palindrome .if.false.palindrome;
+.if.true.palindrome:
+  is_palindrome.1: bool = const true;
+  v2.1: int = const 0;
+  v1.1: int = const 0;
+  temp.3: int = const 0;
+  right.1: int = const 0;
+  power.1: int = const 0;
+  next_len.1: int = const 0;
+  next_in.1: int = const 0;
+  left.1: int = const 0;
+  is_palindrome.4: bool = id is_palindrome.1;
+  is_equal.1: bool = const false;
+  jmp .if.end.palindrome;
+.if.false.palindrome:
+  power.0: int = call @pow ten.0 len.1;
+  left.0: int = div in.1 power.0;
+  v1.0: int = div in.1 ten.0;
+  v2.0: int = mul v1.0 ten.0;
+  right.0: int = sub in.1 v2.0;
+  is_equal.0: bool = eq left.0 right.0;
+  br is_equal.0 .if.true.mirror .if.false.mirror;
+.if.true.mirror:
+  temp.0: int = mul power.0 left.0;
+  temp.1: int = sub in.1 temp.0;
+  temp.2: int = sub temp.1 right.0;
+  next_in.0: int = div temp.2 ten.0;
+  next_len.0: int = sub len.1 two.0;
+  is_palindrome.2: bool = call @palindrome next_in.0 next_len.0;
+  v2.1: int = id v2.0;
+  v1.1: int = id v1.0;
+  temp.3: int = id temp.2;
+  right.1: int = id right.0;
+  power.1: int = id power.0;
+  next_len.1: int = id next_len.0;
+  next_in.1: int = id next_in.0;
+  left.1: int = id left.0;
+  is_palindrome.4: bool = id is_palindrome.2;
+  is_equal.1: bool = id is_equal.0;
+  jmp .if.end.palindrome;
+.if.false.mirror:
+  is_palindrome.3: bool = const false;
+  v2.1: int = id v2.0;
+  v1.1: int = id v1.0;
+  temp.3: int = const 0;
+  right.1: int = id right.0;
+  power.1: int = id power.0;
+  next_len.1: int = const 0;
+  next_in.1: int = const 0;
+  left.1: int = id left.0;
+  is_palindrome.4: bool = id is_palindrome.3;
+  is_equal.1: bool = id is_equal.0;
+  jmp .if.end.palindrome;
+.if.end.palindrome:
+  ret is_palindrome.4;
+}

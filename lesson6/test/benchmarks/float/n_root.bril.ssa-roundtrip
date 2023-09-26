@@ -1,0 +1,73 @@
+@pow(x.0: float, k.0: int): float {
+.pow.b0:
+  x.1: float = id x.0;
+  k.1: int = id k.0;
+.pow.b1:
+  xx.0: float = const 1.0;
+  one.0: int = const 1;
+  i.0: int = const 0;
+  xx.1: float = id xx.0;
+  i.1: int = id i.0;
+  b.0: bool = const false;
+.while:
+  b.1: bool = lt i.1 k.1;
+  br b.1 .continue .endwhile;
+.continue:
+  xx.2: float = fmul xx.1 x.1;
+  i.2: int = add i.1 one.0;
+  xx.1: float = id xx.2;
+  i.1: int = id i.2;
+  b.0: bool = id b.1;
+  jmp .while;
+.endwhile:
+  ret xx.1;
+}
+@n_root(x.0: float, n.0: int): float {
+.n_root.b0:
+  x.1: float = id x.0;
+  n.1: int = id n.0;
+.n_root.b1:
+  one.0: int = const 1;
+  two_f.0: float = const 2.0;
+  xxx.0: float = fdiv x.1 two_f.0;
+  n_minus_one.0: int = sub n.1 one.0;
+  i.0: int = const 0;
+  num_iter.0: int = const 20;
+  xxx.1: float = id xxx.0;
+  pow_n_minus_one.0: float = const 0.0;
+  pow_n.0: float = const 0.0;
+  numerator.0: float = const 0.0;
+  i.1: int = id i.0;
+  frac.0: float = const 0.0;
+  denominator.0: float = const 0.0;
+  b.0: bool = const false;
+.while:
+  b.1: bool = lt i.1 num_iter.0;
+  br b.1 .continue .endwhile;
+.continue:
+  pow_n_minus_one.1: float = call @pow xxx.1 n_minus_one.0;
+  pow_n.1: float = fmul pow_n_minus_one.1 xxx.1;
+  numerator.1: float = fsub pow_n.1 x.1;
+  denominator.1: float = fmul x.1 pow_n_minus_one.1;
+  frac.1: float = fdiv numerator.1 denominator.1;
+  xxx.2: float = fsub xxx.1 frac.1;
+  i.2: int = add i.1 one.0;
+  xxx.1: float = id xxx.2;
+  pow_n_minus_one.0: float = id pow_n_minus_one.1;
+  pow_n.0: float = id pow_n.1;
+  numerator.0: float = id numerator.1;
+  i.1: int = id i.2;
+  frac.0: float = id frac.1;
+  denominator.0: float = id denominator.1;
+  b.0: bool = id b.1;
+  jmp .while;
+.endwhile:
+  ret xxx.1;
+}
+@main {
+.main.b0:
+  x.0: float = const 8.0;
+  n.0: int = const 5;
+  result.0: float = call @n_root x.0 n.0;
+  print result.0;
+}

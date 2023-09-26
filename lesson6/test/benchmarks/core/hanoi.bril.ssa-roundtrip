@@ -1,0 +1,32 @@
+@hanoi(disks.0: int, src.0: int, dst.0: int, spare.0: int) {
+.hanoi.b0:
+  disks.1: int = id disks.0;
+  src.1: int = id src.0;
+  dst.1: int = id dst.0;
+  spare.1: int = id spare.0;
+.hanoi.b1:
+  zero.0: int = const 0;
+  pos.0: bool = gt disks.1 zero.0;
+  one.1: int = const 0;
+  above.1: int = const 0;
+  br pos.0 .then .else;
+.then:
+  one.0: int = const 1;
+  above.0: int = sub disks.1 one.0;
+  call @hanoi above.0 src.1 spare.1 dst.1;
+  print src.1 dst.1;
+  call @hanoi above.0 spare.1 dst.1 src.1;
+  one.1: int = id one.0;
+  above.1: int = id above.0;
+.else:
+  ret;
+}
+@main(disks.0: int) {
+.main.b0:
+  disks.1: int = id disks.0;
+.main.b1:
+  src.0: int = const 0;
+  dst.0: int = const 2;
+  spare.0: int = const 1;
+  call @hanoi disks.1 src.0 dst.0 spare.0;
+}

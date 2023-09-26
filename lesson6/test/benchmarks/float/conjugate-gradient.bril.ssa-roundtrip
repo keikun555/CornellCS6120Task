@@ -1,0 +1,508 @@
+@main(n.0: int) {
+.main.b0:
+  n.1: int = id n.0;
+.main.b1:
+  one.0: int = const 1;
+  fone.0: float = const 1;
+  a.0: ptr<float> = call @get_sym n.1;
+  x0.0: ptr<float> = alloc n.1;
+  b.0: ptr<float> = alloc n.1;
+  i.0: int = const 0;
+  v.0: float = const 5;
+  v.1: float = id v.0;
+  idx_x0.0.size: int = const 1;
+  idx_x0.0: ptr<float> = alloc idx_x0.0.size;
+  free idx_x0.0;
+  idx_b.0.size: int = const 1;
+  idx_b.0: ptr<float> = alloc idx_b.0.size;
+  free idx_b.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.for.set.cond:
+  cond.1: bool = lt i.1 n.1;
+  br cond.1 .for.set.body .for.set.end;
+.for.set.body:
+  idx_b.1: ptr<float> = ptradd b.0 i.1;
+  idx_x0.1: ptr<float> = ptradd x0.0 i.1;
+  store idx_b.1 v.1;
+  store idx_x0.1 fone.0;
+  i.2: int = add i.1 one.0;
+  v.2: float = fadd v.1 fone.0;
+  v.1: float = id v.2;
+  idx_x0.0: ptr<float> = id idx_x0.1;
+  idx_b.0: ptr<float> = id idx_b.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .for.set.cond;
+.for.set.end:
+  x_sol.0: ptr<float> = call @cg n.1 a.0 x0.0 b.0;
+  call @disp_vec n.1 x_sol.0;
+  free x_sol.0;
+  free x0.0;
+  free b.0;
+  free a.0;
+}
+@vec_mul(size.0: int, c.0: float, v.0: ptr<float>): ptr<float> {
+.vec_mul.b0:
+  size.1: int = id size.0;
+  c.1: float = id c.0;
+  v.1: ptr<float> = id v.0;
+.vec_mul.b1:
+  v_copy.0: ptr<float> = alloc size.1;
+  one.0: int = const 1;
+  i.0: int = const 0;
+  v_val.0: float = const 0.0;
+  v_ptr.0.size: int = const 1;
+  v_ptr.0: ptr<float> = alloc v_ptr.0.size;
+  free v_ptr.0;
+  v_copy_ptr.0.size: int = const 1;
+  v_copy_ptr.0: ptr<float> = alloc v_copy_ptr.0.size;
+  free v_copy_ptr.0;
+  i.1: int = id i.0;
+  cv_val.0: float = const 0.0;
+  cond.0: bool = const false;
+.for.cond:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .for.body .for.end;
+.for.body:
+  v_ptr.1: ptr<float> = ptradd v.1 i.1;
+  v_copy_ptr.1: ptr<float> = ptradd v_copy.0 i.1;
+  v_val.1: float = load v_ptr.1;
+  cv_val.1: float = fmul c.1 v_val.1;
+  store v_copy_ptr.1 cv_val.1;
+  i.2: int = add i.1 one.0;
+  v_val.0: float = id v_val.1;
+  v_ptr.0: ptr<float> = id v_ptr.1;
+  v_copy_ptr.0: ptr<float> = id v_copy_ptr.1;
+  i.1: int = id i.2;
+  cv_val.0: float = id cv_val.1;
+  cond.0: bool = id cond.1;
+  jmp .for.cond;
+.for.end:
+  ret v_copy.0;
+}
+@vec_copy(size.0: int, v.0: ptr<float>): ptr<float> {
+.vec_copy.b0:
+  size.1: int = id size.0;
+  v.1: ptr<float> = id v.0;
+.vec_copy.b1:
+  fone.0: float = const 1;
+  v_copy.0: ptr<float> = call @vec_mul size.1 fone.0 v.1;
+  ret v_copy.0;
+}
+@dot_p(size.0: int, u.0: ptr<float>, v.0: ptr<float>): float {
+.dot_p.b0:
+  size.1: int = id size.0;
+  u.1: ptr<float> = id u.0;
+  v.1: ptr<float> = id v.0;
+.dot_p.b1:
+  one.0: int = const 1;
+  i.0: int = const 0;
+  acc.0: float = const 0;
+  v_val.0: float = const 0.0;
+  v_ptr.0.size: int = const 1;
+  v_ptr.0: ptr<float> = alloc v_ptr.0.size;
+  free v_ptr.0;
+  uv.0: float = const 0.0;
+  u_val.0: float = const 0.0;
+  u_ptr.0.size: int = const 1;
+  u_ptr.0: ptr<float> = alloc u_ptr.0.size;
+  free u_ptr.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+  acc.1: float = id acc.0;
+.for.cond:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .for.body .for.end;
+.for.body:
+  u_ptr.1: ptr<float> = ptradd u.1 i.1;
+  v_ptr.1: ptr<float> = ptradd v.1 i.1;
+  u_val.1: float = load u_ptr.1;
+  v_val.1: float = load v_ptr.1;
+  uv.1: float = fmul u_val.1 v_val.1;
+  acc.2: float = fadd uv.1 acc.1;
+  i.2: int = add i.1 one.0;
+  v_val.0: float = id v_val.1;
+  v_ptr.0: ptr<float> = id v_ptr.1;
+  uv.0: float = id uv.1;
+  u_val.0: float = id u_val.1;
+  u_ptr.0: ptr<float> = id u_ptr.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  acc.1: float = id acc.2;
+  jmp .for.cond;
+.for.end:
+  ret acc.1;
+}
+@vec_sub(size.0: int, u.0: ptr<float>, v.0: ptr<float>): ptr<float> {
+.vec_sub.b0:
+  size.1: int = id size.0;
+  u.1: ptr<float> = id u.0;
+  v.1: ptr<float> = id v.0;
+.vec_sub.b1:
+  fnegone.0: float = const -1;
+  minus_v.0: ptr<float> = call @vec_mul size.1 fnegone.0 v.1;
+  diff.0: ptr<float> = call @vec_add size.1 u.1 minus_v.0;
+  free minus_v.0;
+  ret diff.0;
+}
+@vec_add(size.0: int, u.0: ptr<float>, v.0: ptr<float>): ptr<float> {
+.vec_add.b0:
+  size.1: int = id size.0;
+  u.1: ptr<float> = id u.0;
+  v.1: ptr<float> = id v.0;
+.vec_add.b1:
+  sum.0: ptr<float> = alloc size.1;
+  one.0: int = const 1;
+  i.0: int = const 0;
+  v_val.0: float = const 0.0;
+  v_ptr.0.size: int = const 1;
+  v_ptr.0: ptr<float> = alloc v_ptr.0.size;
+  free v_ptr.0;
+  u_val.0: float = const 0.0;
+  u_ptr.0.size: int = const 1;
+  u_ptr.0: ptr<float> = alloc u_ptr.0.size;
+  free u_ptr.0;
+  u_add_v.0: float = const 0.0;
+  sum_ptr.0.size: int = const 1;
+  sum_ptr.0: ptr<float> = alloc sum_ptr.0.size;
+  free sum_ptr.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.for.cond:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .for.body .for.end;
+.for.body:
+  u_ptr.1: ptr<float> = ptradd u.1 i.1;
+  v_ptr.1: ptr<float> = ptradd v.1 i.1;
+  sum_ptr.1: ptr<float> = ptradd sum.0 i.1;
+  u_val.1: float = load u_ptr.1;
+  v_val.1: float = load v_ptr.1;
+  u_add_v.1: float = fadd u_val.1 v_val.1;
+  store sum_ptr.1 u_add_v.1;
+  i.2: int = add i.1 one.0;
+  v_val.0: float = id v_val.1;
+  v_ptr.0: ptr<float> = id v_ptr.1;
+  u_val.0: float = id u_val.1;
+  u_ptr.0: ptr<float> = id u_ptr.1;
+  u_add_v.0: float = id u_add_v.1;
+  sum_ptr.0: ptr<float> = id sum_ptr.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .for.cond;
+.for.end:
+  ret sum.0;
+}
+@vec_add_inp(size.0: int, u.0: ptr<float>, v.0: ptr<float>): ptr<float> {
+.vec_add_inp.b0:
+  size.1: int = id size.0;
+  u.1: ptr<float> = id u.0;
+  v.1: ptr<float> = id v.0;
+.vec_add_inp.b1:
+  sum.0: ptr<float> = call @vec_add size.1 u.1 v.1;
+  free u.1;
+  ret sum.0;
+}
+@vec_sub_inp(size.0: int, u.0: ptr<float>, v.0: ptr<float>): ptr<float> {
+.vec_sub_inp.b0:
+  size.1: int = id size.0;
+  u.1: ptr<float> = id u.0;
+  v.1: ptr<float> = id v.0;
+.vec_sub_inp.b1:
+  diff.0: ptr<float> = call @vec_sub size.1 u.1 v.1;
+  free u.1;
+  ret diff.0;
+}
+@mat_vec(size.0: int, a.0: ptr<float>, v.0: ptr<float>): ptr<float> {
+.mat_vec.b0:
+  size.1: int = id size.0;
+  a.1: ptr<float> = id a.0;
+  v.1: ptr<float> = id v.0;
+.mat_vec.b1:
+  prod.0: ptr<float> = alloc size.1;
+  row.0: int = const 0;
+  one.0: int = const 1;
+  v_val_ptr.0.size: int = const 1;
+  v_val_ptr.0: ptr<float> = alloc v_val_ptr.0.size;
+  free v_val_ptr.0;
+  v_val.0: float = const 0.0;
+  v_idx.0: int = const 0;
+  row.1: int = id row.0;
+  prod_ptr.0.size: int = const 1;
+  prod_ptr.0: ptr<float> = alloc prod_ptr.0.size;
+  free prod_ptr.0;
+  p.0: float = const 0.0;
+  cond_row.0: bool = const false;
+  cond_col.0: bool = const false;
+  col.0: int = const 0;
+  acc.0: float = const 0.0;
+  a_val_ptr.0.size: int = const 1;
+  a_val_ptr.0: ptr<float> = alloc a_val_ptr.0.size;
+  free a_val_ptr.0;
+  a_val.0: float = const 0.0;
+  a_row_idx.0: int = const 0;
+  a_idx.0: int = const 0;
+  a_col_idx.0: int = const 0;
+.for.row.cond:
+  cond_row.1: bool = lt row.1 size.1;
+  br cond_row.1 .for.row.body .for.row.end;
+.for.row.body:
+  col.1: int = const 0;
+  acc.1: float = const 0;
+  v_val_ptr.1: ptr<float> = id v_val_ptr.0;
+  v_val.1: float = id v_val.0;
+  v_idx.1: int = id v_idx.0;
+  p.1: float = id p.0;
+  cond_col.1: bool = id cond_col.0;
+  col.2: int = id col.1;
+  acc.2: float = id acc.1;
+  a_val_ptr.1: ptr<float> = id a_val_ptr.0;
+  a_val.1: float = id a_val.0;
+  a_row_idx.1: int = id a_row_idx.0;
+  a_idx.1: int = id a_idx.0;
+  a_col_idx.1: int = id a_col_idx.0;
+.for.col.cond:
+  cond_col.2: bool = lt col.2 size.1;
+  br cond_col.2 .for.col.body .for.col.end;
+.for.col.body:
+  a_row_idx.2: int = mul size.1 row.1;
+  a_col_idx.2: int = id col.2;
+  a_idx.2: int = add a_row_idx.2 a_col_idx.2;
+  a_val_ptr.2: ptr<float> = ptradd a.1 a_idx.2;
+  a_val.2: float = load a_val_ptr.2;
+  v_idx.2: int = id col.2;
+  v_val_ptr.2: ptr<float> = ptradd v.1 v_idx.2;
+  v_val.2: float = load v_val_ptr.2;
+  p.2: float = fmul a_val.2 v_val.2;
+  acc.3: float = fadd p.2 acc.2;
+  col.3: int = add col.2 one.0;
+  v_val_ptr.1: ptr<float> = id v_val_ptr.2;
+  v_val.1: float = id v_val.2;
+  v_idx.1: int = id v_idx.2;
+  p.1: float = id p.2;
+  cond_col.1: bool = id cond_col.2;
+  col.2: int = id col.3;
+  acc.2: float = id acc.3;
+  a_val_ptr.1: ptr<float> = id a_val_ptr.2;
+  a_val.1: float = id a_val.2;
+  a_row_idx.1: int = id a_row_idx.2;
+  a_idx.1: int = id a_idx.2;
+  a_col_idx.1: int = id a_col_idx.2;
+  jmp .for.col.cond;
+.for.col.end:
+  prod_ptr.1: ptr<float> = ptradd prod.0 row.1;
+  store prod_ptr.1 acc.2;
+  row.2: int = add row.1 one.0;
+  v_val_ptr.0: ptr<float> = id v_val_ptr.1;
+  v_val.0: float = id v_val.1;
+  v_idx.0: int = id v_idx.1;
+  row.1: int = id row.2;
+  prod_ptr.0: ptr<float> = id prod_ptr.1;
+  p.0: float = id p.1;
+  cond_row.0: bool = id cond_row.1;
+  cond_col.0: bool = id cond_col.2;
+  col.0: int = id col.2;
+  acc.0: float = id acc.2;
+  a_val_ptr.0: ptr<float> = id a_val_ptr.1;
+  a_val.0: float = id a_val.1;
+  a_row_idx.0: int = id a_row_idx.1;
+  a_idx.0: int = id a_idx.1;
+  a_col_idx.0: int = id a_col_idx.1;
+  jmp .for.row.cond;
+.for.row.end:
+  ret prod.0;
+}
+@get_sym(size.0: int): ptr<float> {
+.get_sym.b0:
+  size.1: int = id size.0;
+.get_sym.b1:
+  nnz.0: int = mul size.1 size.1;
+  a.0: ptr<float> = alloc nnz.0;
+  one.0: int = const 1;
+  fone.0: float = const 1;
+  fzero.0: float = const 0;
+  i.0: int = const 0;
+  idx.0.size: int = const 1;
+  idx.0: ptr<float> = alloc idx.0.size;
+  free idx.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.for.zero.cond:
+  cond.1: bool = lt i.1 nnz.0;
+  br cond.1 .for.zero.body .for.zero.end;
+.for.zero.body:
+  idx.1: ptr<float> = ptradd a.0 i.1;
+  store idx.1 fzero.0;
+  i.2: int = add i.1 one.0;
+  idx.0: ptr<float> = id idx.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .for.zero.cond;
+.for.zero.end:
+  i.3: int = const 0;
+  val.0: float = const 1;
+  loop_end.0: int = sub size.1 one.0;
+  val.1: float = id val.0;
+  row_offset.0: int = const 0;
+  offset.0: int = const 0;
+  idx.2: ptr<float> = id idx.0;
+  i.4: int = id i.3;
+  cond.2: bool = id cond.1;
+  col_offset.0: int = const 0;
+.for.cond:
+  cond.3: bool = le i.4 loop_end.0;
+  br cond.3 .for.body .for.end;
+.for.body:
+  row_offset.1: int = mul i.4 size.1;
+  col_offset.1: int = id i.4;
+  offset.1: int = add row_offset.1 col_offset.1;
+  idx.3: ptr<float> = ptradd a.0 offset.1;
+  store idx.3 val.1;
+  val.2: float = fadd val.1 fone.0;
+  i.5: int = add i.4 one.0;
+  val.1: float = id val.2;
+  row_offset.0: int = id row_offset.1;
+  offset.0: int = id offset.1;
+  idx.2: ptr<float> = id idx.3;
+  i.4: int = id i.5;
+  cond.2: bool = id cond.3;
+  col_offset.0: int = id col_offset.1;
+  jmp .for.cond;
+.for.end:
+  ret a.0;
+}
+@disp_vec(size.0: int, v.0: ptr<float>) {
+.disp_vec.b0:
+  size.1: int = id size.0;
+  v.1: ptr<float> = id v.0;
+.disp_vec.b1:
+  i.0: int = const 0;
+  one.0: int = const 1;
+  val.0: float = const 0.0;
+  ptr.0.size: int = const 1;
+  ptr.0: ptr<float> = alloc ptr.0.size;
+  free ptr.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.for.cond:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .for.body .for.end;
+.for.body:
+  ptr.1: ptr<float> = ptradd v.1 i.1;
+  val.1: float = load ptr.1;
+  print val.1;
+  i.2: int = add i.1 one.0;
+  val.0: float = id val.1;
+  ptr.0: ptr<float> = id ptr.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .for.cond;
+.for.end:
+  ret;
+}
+@cg(size.0: int, a.0: ptr<float>, x0.0: ptr<float>, b.0: ptr<float>): ptr<float> {
+.cg.b0:
+  size.1: int = id size.0;
+  a.1: ptr<float> = id a.0;
+  x0.1: ptr<float> = id x0.0;
+  b.1: ptr<float> = id b.0;
+.cg.b1:
+  max_iter.0: int = const 1000;
+  inv_tol.0: float = const 100;
+  fone.0: float = const 1;
+  tol.0: float = fdiv fone.0 inv_tol.0;
+  x.0: ptr<float> = call @vec_copy size.1 x0.1;
+  a_dot_x.0: ptr<float> = call @mat_vec size.1 a.1 x.0;
+  r.0: ptr<float> = call @vec_sub size.1 b.1 a_dot_x.0;
+  p.0: ptr<float> = call @vec_copy size.1 r.0;
+  rs_old.0: float = call @dot_p size.1 r.0 r.0;
+  i.0: int = const 0;
+  one.0: int = const 1;
+  x.1: ptr<float> = id x.0;
+  tol_cond.0: bool = const false;
+  rs_old.1: float = id rs_old.0;
+  rs_new.0: float = const 0.0;
+  r_p.0.size: int = const 1;
+  r_p.0: ptr<float> = alloc r_p.0.size;
+  free r_p.0;
+  r_new_old.0: float = const 0.0;
+  r.1: ptr<float> = id r.0;
+  p_ap.0: float = const 0.0;
+  p.1: ptr<float> = id p.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+  alpha_p.0.size: int = const 1;
+  alpha_p.0: ptr<float> = alloc alpha_p.0.size;
+  free alpha_p.0;
+  alpha_ap.0.size: int = const 1;
+  alpha_ap.0: ptr<float> = alloc alpha_ap.0.size;
+  free alpha_ap.0;
+  alpha.0: float = const 0.0;
+  a_p.0.size: int = const 1;
+  a_p.0: ptr<float> = alloc a_p.0.size;
+  free a_p.0;
+.for.cond:
+  cond.1: bool = lt i.1 max_iter.0;
+  x.3: ptr<float> = id x.1;
+  tol_cond.2: bool = id tol_cond.0;
+  rs_new.2: float = id rs_new.0;
+  r.3: ptr<float> = id r.1;
+  p_ap.2: float = id p_ap.0;
+  alpha_p.2: ptr<float> = id alpha_p.0;
+  alpha_ap.2: ptr<float> = id alpha_ap.0;
+  alpha.2: float = id alpha.0;
+  a_p.2: ptr<float> = id a_p.0;
+  br cond.1 .for.body .for.end;
+.for.body:
+  a_p.1: ptr<float> = call @mat_vec size.1 a.1 p.1;
+  p_ap.1: float = call @dot_p size.1 p.1 a_p.1;
+  alpha.1: float = fdiv rs_old.1 p_ap.1;
+  alpha_p.1: ptr<float> = call @vec_mul size.1 alpha.1 p.1;
+  alpha_ap.1: ptr<float> = call @vec_mul size.1 alpha.1 a_p.1;
+  x.2: ptr<float> = call @vec_add_inp size.1 x.1 alpha_p.1;
+  r.2: ptr<float> = call @vec_sub_inp size.1 r.1 alpha_ap.1;
+  free a_p.1;
+  free alpha_p.1;
+  free alpha_ap.1;
+  rs_new.1: float = call @dot_p size.1 r.2 r.2;
+  tol_cond.1: bool = flt rs_new.1 tol.0;
+  x.3: ptr<float> = id x.2;
+  tol_cond.2: bool = id tol_cond.1;
+  rs_new.2: float = id rs_new.1;
+  r.3: ptr<float> = id r.2;
+  p_ap.2: float = id p_ap.1;
+  alpha_p.2: ptr<float> = id alpha_p.1;
+  alpha_ap.2: ptr<float> = id alpha_ap.1;
+  alpha.2: float = id alpha.1;
+  a_p.2: ptr<float> = id a_p.1;
+  br tol_cond.1 .for.end .cont;
+.cont:
+  r_new_old.1: float = fdiv rs_new.1 rs_old.1;
+  r_p.1: ptr<float> = call @vec_mul size.1 r_new_old.1 p.1;
+  free p.1;
+  p.2: ptr<float> = call @vec_add size.1 r.2 r_p.1;
+  rs_old.2: float = id rs_new.1;
+  free r_p.1;
+  i.2: int = add i.1 one.0;
+  x.1: ptr<float> = id x.2;
+  tol_cond.0: bool = id tol_cond.1;
+  rs_old.1: float = id rs_old.2;
+  rs_new.0: float = id rs_new.1;
+  r_p.0: ptr<float> = id r_p.1;
+  r_new_old.0: float = id r_new_old.1;
+  r.1: ptr<float> = id r.2;
+  p_ap.0: float = id p_ap.1;
+  p.1: ptr<float> = id p.2;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  alpha_p.0: ptr<float> = id alpha_p.1;
+  alpha_ap.0: ptr<float> = id alpha_ap.1;
+  alpha.0: float = id alpha.1;
+  a_p.0: ptr<float> = id a_p.1;
+  jmp .for.cond;
+.for.end:
+  free a_dot_x.0;
+  free r.3;
+  free p.1;
+  ret x.3;
+}

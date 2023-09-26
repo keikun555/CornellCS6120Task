@@ -1,0 +1,58 @@
+@main(input.0: int) {
+.main.b0:
+  input.1: int = id input.0;
+.main.b1:
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  neg_one.0: int = const -1;
+  vals.0: ptr<int> = alloc input.1;
+  store vals.0 zero.0;
+  vals_i.0: ptr<int> = ptradd vals.0 one.0;
+  store vals_i.0 one.0;
+  i.0: int = const 2;
+  i_minus_one.0: int = add i.0 neg_one.0;
+  i_minus_two.0: int = add i_minus_one.0 neg_one.0;
+  vals_i_minus_two.0.size: int = const 1;
+  vals_i_minus_two.0: ptr<int> = alloc vals_i_minus_two.0.size;
+  free vals_i_minus_two.0;
+  vals_i_minus_one.0.size: int = const 1;
+  vals_i_minus_one.0: ptr<int> = alloc vals_i_minus_one.0.size;
+  free vals_i_minus_one.0;
+  vals_i.1: ptr<int> = id vals_i.0;
+  tmp2.0: int = const 0;
+  tmp.0: int = const 0;
+  i_minus_two.1: int = id i_minus_two.0;
+  i_minus_one.1: int = id i_minus_one.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.loop:
+  cond.1: bool = lt i.1 input.1;
+  br cond.1 .body .done;
+.body:
+  vals_i.2: ptr<int> = ptradd vals.0 i.1;
+  vals_i_minus_one.1: ptr<int> = ptradd vals.0 i_minus_one.1;
+  vals_i_minus_two.1: ptr<int> = ptradd vals.0 i_minus_two.1;
+  tmp.1: int = load vals_i_minus_one.1;
+  tmp2.1: int = load vals_i_minus_two.1;
+  tmp.2: int = add tmp.1 tmp2.1;
+  store vals_i.2 tmp.2;
+  i.2: int = add i.1 one.0;
+  i_minus_one.2: int = add i_minus_one.1 one.0;
+  i_minus_two.2: int = add i_minus_two.1 one.0;
+  vals_i_minus_two.0: ptr<int> = id vals_i_minus_two.1;
+  vals_i_minus_one.0: ptr<int> = id vals_i_minus_one.1;
+  vals_i.1: ptr<int> = id vals_i.2;
+  tmp2.0: int = id tmp2.1;
+  tmp.0: int = id tmp.2;
+  i_minus_two.1: int = id i_minus_two.2;
+  i_minus_one.1: int = id i_minus_one.2;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .loop;
+.done:
+  last.0: ptr<int> = ptradd vals.0 i_minus_one.1;
+  tmp.3: int = load last.0;
+  print tmp.3;
+  free vals.0;
+  ret;
+}

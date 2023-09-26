@@ -1,0 +1,55 @@
+@main(input.0: int) {
+.main.b0:
+  input.1: int = id input.0;
+.main.b1:
+  n.0: int = id input.1;
+  v0.0: int = const 0;
+  v1.0: int = const 1;
+  v2.0: int = const 2;
+  sum.0: int = id v1.0;
+  i.0: int = id v2.0;
+  result.0: int = id v1.0;
+  sum.1: int = id sum.0;
+  qut.0: int = const 0;
+  mpt.0: int = const 0;
+  ii.0: int = const 0;
+  i.1: int = id i.0;
+  dif.0: int = const 0;
+  comp1.0: bool = const false;
+  comp.0: bool = const false;
+.for.cond.1:
+  ii.1: int = mul i.1 i.1;
+  comp.1: bool = gt ii.1 n.0;
+  br comp.1 .for.end .for.body;
+.for.body:
+  qut.1: int = div n.0 i.1;
+  mpt.1: int = mul qut.1 i.1;
+  dif.1: int = sub n.0 mpt.1;
+  comp1.1: bool = eq dif.1 v0.0;
+  sum.4: int = id sum.1;
+  br comp1.1 .if.body .for.incre;
+.if.body:
+  sum.2: int = add sum.1 i.1;
+  sum.3: int = add sum.2 qut.1;
+  sum.4: int = id sum.3;
+.for.incre:
+  i.2: int = add i.1 v1.0;
+  sum.1: int = id sum.4;
+  qut.0: int = id qut.1;
+  mpt.0: int = id mpt.1;
+  ii.0: int = id ii.1;
+  i.1: int = id i.2;
+  dif.0: int = id dif.1;
+  comp1.0: bool = id comp1.1;
+  comp.0: bool = id comp.1;
+  jmp .for.cond.1;
+.for.end:
+  comp2.0: bool = eq sum.1 n.0;
+  result.1: int = id result.0;
+  br comp2.0 .if.success .if.failure.end;
+.if.success:
+  result.2: int = id v0.0;
+  result.1: int = id result.2;
+.if.failure.end:
+  print result.1;
+}

@@ -1,0 +1,49 @@
+@main(input.0: int) {
+.main.b0:
+  input.1: int = id input.0;
+.main.b1:
+  catn.0: int = call @catalan input.1;
+  print catn.0;
+}
+@catalan(n.0: int): int {
+.catalan.b0:
+  n.1: int = id n.0;
+.catalan.b1:
+  one.0: int = const 1;
+  zero.0: int = const 0;
+  guard0.0: bool = eq n.1 zero.0;
+  br guard0.0 .if .else;
+.if:
+  ret one.0;
+.else:
+  sum.0: int = id zero.0;
+  idx.0: int = id zero.0;
+  n.2: int = sub n.1 one.0;
+  v2.0: int = const 0;
+  v1.0: int = const 0;
+  sum.1: int = id sum.0;
+  n2.0: int = const 0;
+  idx.1: int = id idx.0;
+  guard1.0: bool = const false;
+  elti.0: int = const 0;
+.while:
+  guard1.1: bool = le idx.1 n.2;
+  br guard1.1 .while.body .while.end;
+.while.body:
+  n2.1: int = sub n.2 idx.1;
+  v1.1: int = call @catalan idx.1;
+  v2.1: int = call @catalan n2.1;
+  elti.1: int = mul v1.1 v2.1;
+  sum.2: int = add sum.1 elti.1;
+  idx.2: int = add idx.1 one.0;
+  v2.0: int = id v2.1;
+  v1.0: int = id v1.1;
+  sum.1: int = id sum.2;
+  n2.0: int = id n2.1;
+  idx.1: int = id idx.2;
+  guard1.0: bool = id guard1.1;
+  elti.0: int = id elti.1;
+  jmp .while;
+.while.end:
+  ret sum.1;
+}

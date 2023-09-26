@@ -1,0 +1,102 @@
+@main(n.0: int) {
+.main.b0:
+  n.1: int = id n.0;
+.main.b1:
+  print n.1;
+  tot.0: int = call @totient n.1;
+  print tot.0;
+}
+@totient(n.0: int): int {
+.totient.b0:
+  n.1: int = id n.0;
+.totient.b1:
+  result.0: int = id n.1;
+  p.0: int = const 2;
+  one.0: int = const 1;
+  zero.0: int = const 0;
+  while_cond.0: bool = const false;
+  result.1: int = id result.0;
+  resdiv.0: int = const 0;
+  pp.0: int = const 0;
+  p.1: int = id p.0;
+  npmod.0: int = const 0;
+  npdiv.0: int = const 0;
+  n.2: int = id n.1;
+  if_cond.0: bool = const false;
+  cond.0: bool = const false;
+.for.set.cond:
+  pp.1: int = mul p.1 p.1;
+  cond.1: bool = le pp.1 n.2;
+  br cond.1 .for.set.body .for.set.end;
+.for.set.body:
+  npmod.1: int = call @mod n.2 p.1;
+  if_cond.1: bool = eq npmod.1 zero.0;
+  while_cond.1: bool = id while_cond.0;
+  result.4: int = id result.1;
+  resdiv.3: int = id resdiv.0;
+  npmod.2: int = id npmod.1;
+  npdiv.1: int = id npdiv.0;
+  n.3: int = id n.2;
+  br if_cond.1 .if_lbl .else_lbl;
+.if_lbl:
+  while_cond.2: bool = id while_cond.0;
+  npmod.3: int = id npmod.1;
+  npdiv.2: int = id npdiv.0;
+  n.4: int = id n.2;
+.while.set.cond:
+  npmod.4: int = call @mod n.4 p.1;
+  while_cond.3: bool = eq npmod.4 zero.0;
+  br while_cond.3 .while.body .while.end;
+.while.body:
+  npdiv.3: int = div n.4 p.1;
+  n.5: int = id npdiv.3;
+  while_cond.2: bool = id while_cond.3;
+  npmod.3: int = id npmod.4;
+  npdiv.2: int = id npdiv.3;
+  n.4: int = id n.5;
+  jmp .while.set.cond;
+.while.end:
+  resdiv.4: int = div result.1 p.1;
+  result.5: int = sub result.1 resdiv.4;
+  while_cond.1: bool = id while_cond.3;
+  result.4: int = id result.5;
+  resdiv.3: int = id resdiv.4;
+  npmod.2: int = id npmod.4;
+  npdiv.1: int = id npdiv.2;
+  n.3: int = id n.4;
+.else_lbl:
+  p.2: int = add p.1 one.0;
+  while_cond.0: bool = id while_cond.1;
+  result.1: int = id result.4;
+  resdiv.0: int = id resdiv.3;
+  pp.0: int = id pp.1;
+  p.1: int = id p.2;
+  npmod.0: int = id npmod.2;
+  npdiv.0: int = id npdiv.1;
+  n.2: int = id n.3;
+  if_cond.0: bool = id if_cond.1;
+  cond.0: bool = id cond.1;
+  jmp .for.set.cond;
+.for.set.end:
+  final_if_cond.0: bool = gt n.2 one.0;
+  result.3: int = id result.1;
+  resdiv.2: int = id resdiv.0;
+  br final_if_cond.0 .final_if_label .final_else_label;
+.final_if_label:
+  resdiv.1: int = div result.1 n.2;
+  result.2: int = sub result.1 resdiv.1;
+  result.3: int = id result.2;
+  resdiv.2: int = id resdiv.1;
+.final_else_label:
+  ret result.3;
+}
+@mod(a.0: int, b.0: int): int {
+.mod.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.mod.b1:
+  ad.0: int = div a.1 b.1;
+  mad.0: int = mul b.1 ad.0;
+  ans.0: int = sub a.1 mad.0;
+  ret ans.0;
+}

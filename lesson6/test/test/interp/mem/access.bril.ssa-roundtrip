@@ -1,0 +1,23 @@
+@main {
+.main.b0:
+  inc.0: int = const 1;
+  v.0: int = const 1000000;
+  max.0: int = const 1000000;
+  p.0: ptr<int> = alloc v.0;
+  count.0: int = const 0;
+  val.0: int = const 0;
+  loop.0: bool = const false;
+  count.1: int = id count.0;
+.lbl:
+  count.2: int = add count.1 inc.0;
+  store p.0 v.0;
+  val.1: int = load p.0;
+  loop.1: bool = ge count.2 max.0;
+  val.0: int = id val.1;
+  loop.0: bool = id loop.1;
+  count.1: int = id count.2;
+  br loop.1 .end .lbl;
+.end:
+  free p.0;
+  print count.2;
+}

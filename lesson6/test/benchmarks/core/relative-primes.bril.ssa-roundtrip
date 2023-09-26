@@ -1,0 +1,212 @@
+@main {
+.main.b0:
+  v0.0: int = const 20;
+  a.0: int = id v0.0;
+  v1.0: int = id a.0;
+  call @relative_primes v1.0;
+  v2.0: int = const 0;
+}
+@mod(a.0: int, b.0: int): int {
+.mod.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.mod.b1:
+  v0.0: int = id a.1;
+  v1.0: int = id b.1;
+  v2.0: int = div v0.0 v1.0;
+  v3.0: int = mul v2.0 v1.0;
+  v4.0: int = sub v0.0 v3.0;
+  ret v4.0;
+}
+@gcd(a.0: int, b.0: int): int {
+.gcd.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.gcd.b1:
+  v1.0: int = id b.1;
+  v2.0: int = id a.1;
+  v3.0: bool = gt v1.0 v2.0;
+  br v3.0 .then.0 .else.0;
+.then.0:
+  v4.0: int = id a.1;
+  tmp.0: int = id v4.0;
+  v5.0: int = id b.1;
+  a.2: int = id v5.0;
+  v6.0: int = id tmp.0;
+  b.2: int = id v6.0;
+  v6.1: int = id v6.0;
+  v5.1: int = id v5.0;
+  v4.1: int = id v4.0;
+  tmp.1: int = id tmp.0;
+  b.3: int = id b.2;
+  a.3: int = id a.2;
+  jmp .endif.0;
+.else.0:
+  v6.1: int = const 0;
+  v5.1: int = const 0;
+  v4.1: int = const 0;
+  tmp.1: int = const 0;
+  b.3: int = id b.1;
+  a.3: int = id a.1;
+.endif.0:
+  v8.0: int = id a.3;
+  v9.0: int = const 0;
+  v10.0: bool = eq v8.0 v9.0;
+  br v10.0 .then.7 .else.7;
+.then.7:
+  v11.0: int = id b.3;
+  ret v11.0;
+.gcd.b2:
+  v6.3: int = const 0;
+  v5.3: int = const 0;
+  v4.3: int = const 0;
+  v21.1: int = const 0;
+  v20.1: int = const 0;
+  v19.1: int = const 0;
+  v18.1: int = const 0;
+  v17.1: int = const 0;
+  v16.2: int = const 0;
+  v11.2: int = const 0;
+  tmp.3: int = const 0;
+  remainder.1: int = const 0;
+  g.1: int = const 0;
+  b.5: int = const 0;
+  a.5: int = const 0;
+  jmp .endif.7;
+.else.7:
+  v13.0: int = id b.3;
+  v14.0: int = const 0;
+  v15.0: bool = eq v13.0 v14.0;
+  br v15.0 .then.12 .else.12;
+.then.12:
+  v16.0: int = id a.3;
+  ret v16.0;
+.gcd.b3:
+  v6.2: int = const 0;
+  v5.2: int = const 0;
+  v4.2: int = const 0;
+  v21.0: int = const 0;
+  v20.0: int = const 0;
+  v19.0: int = const 0;
+  v18.0: int = const 0;
+  v17.0: int = const 0;
+  v16.1: int = const 0;
+  v11.1: int = const 0;
+  tmp.2: int = const 0;
+  remainder.0: int = const 0;
+  g.0: int = const 0;
+  b.4: int = const 0;
+  a.4: int = const 0;
+  jmp .endif.12;
+.else.12:
+  v6.2: int = id v6.1;
+  v5.2: int = id v5.1;
+  v4.2: int = id v4.1;
+  v21.0: int = const 0;
+  v20.0: int = const 0;
+  v19.0: int = const 0;
+  v18.0: int = const 0;
+  v17.0: int = const 0;
+  v16.1: int = const 0;
+  v11.1: int = const 0;
+  tmp.2: int = id tmp.1;
+  remainder.0: int = const 0;
+  g.0: int = const 0;
+  b.4: int = id b.3;
+  a.4: int = id a.3;
+.endif.12:
+  v6.3: int = id v6.2;
+  v5.3: int = id v5.2;
+  v4.3: int = id v4.2;
+  v21.1: int = id v21.0;
+  v20.1: int = id v20.0;
+  v19.1: int = id v19.0;
+  v18.1: int = id v18.0;
+  v17.1: int = id v17.0;
+  v16.2: int = id v16.1;
+  v11.2: int = id v11.1;
+  tmp.3: int = id tmp.2;
+  remainder.1: int = id remainder.0;
+  g.1: int = id g.0;
+  b.5: int = id b.4;
+  a.5: int = id a.4;
+.endif.7:
+  v17.2: int = id a.5;
+  v18.2: int = id b.5;
+  remainder.2: int = call @mod v17.2 v18.2;
+  remainder.3: int = id remainder.2;
+  v19.2: int = id b.5;
+  v20.2: int = id remainder.3;
+  g.2: int = call @gcd v19.2 v20.2;
+  g.3: int = id g.2;
+  v21.2: int = id g.3;
+  ret v21.2;
+}
+@relative_primes(a.0: int) {
+.relative_primes.b0:
+  a.1: int = id a.0;
+.relative_primes.b1:
+  v1.0: int = id a.1;
+  b.0: int = id v1.0;
+  v9.0: int = const 0;
+  v8.0: int = const 0;
+  v6.0: int = const 0;
+  v5.0: int = const 0;
+  v4.0: bool = const false;
+  v3.0: int = const 0;
+  v2.0: int = const 0;
+  v15.0: int = const 0;
+  v14.0: int = const 0;
+  v13.0: int = const 0;
+  v12.0: int = const 0;
+  v11.0: int = const 0;
+  v10.0: bool = const false;
+  g.0: int = const 0;
+  b.1: int = id b.0;
+.for.cond.0:
+  v2.1: int = id b.1;
+  v3.1: int = const 1;
+  v4.1: bool = ge v2.1 v3.1;
+  br v4.1 .for.body.0 .for.end.0;
+.for.body.0:
+  v5.1: int = id a.1;
+  v6.1: int = id b.1;
+  g.1: int = call @gcd v5.1 v6.1;
+  g.2: int = id g.1;
+  v8.1: int = id g.2;
+  v9.1: int = const 1;
+  v10.1: bool = eq v8.1 v9.1;
+  br v10.1 .then.7 .else.7;
+.then.7:
+  v11.1: int = id b.1;
+  print v11.1;
+  v12.1: int = const 0;
+  v12.2: int = id v12.1;
+  v11.2: int = id v11.1;
+  jmp .endif.7;
+.else.7:
+  v12.2: int = id v12.0;
+  v11.2: int = id v11.0;
+.endif.7:
+  v13.1: int = id b.1;
+  v14.1: int = const 1;
+  v15.1: int = sub v13.1 v14.1;
+  b.2: int = id v15.1;
+  v9.0: int = id v9.1;
+  v8.0: int = id v8.1;
+  v6.0: int = id v6.1;
+  v5.0: int = id v5.1;
+  v4.0: bool = id v4.1;
+  v3.0: int = id v3.1;
+  v2.0: int = id v2.1;
+  v15.0: int = id v15.1;
+  v14.0: int = id v14.1;
+  v13.0: int = id v13.1;
+  v12.0: int = id v12.2;
+  v11.0: int = id v11.2;
+  v10.0: bool = id v10.1;
+  g.0: int = id g.2;
+  b.1: int = id b.2;
+  jmp .for.cond.0;
+.for.end.0:
+}

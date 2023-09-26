@@ -1,0 +1,36 @@
+@pow(base.0: int, exp.0: int): int {
+.pow.b0:
+  base.1: int = id base.0;
+  exp.1: int = id exp.0;
+.pow.b1:
+  out.0: int = const 1;
+  one.0: int = const 1;
+  out.1: int = id out.0;
+  exp.2: int = id exp.1;
+  end.0: bool = const false;
+.loop:
+  end.1: bool = lt exp.2 one.0;
+  br end.1 .ret .body;
+.body:
+  out.2: int = mul out.1 base.1;
+  exp.3: int = sub exp.2 one.0;
+  out.1: int = id out.2;
+  exp.2: int = id exp.3;
+  end.0: bool = id end.1;
+  jmp .loop;
+.ret:
+  ret out.1;
+}
+@main {
+.main.b0:
+  one.0: int = const 1;
+  two.0: int = const 2;
+  sixtytwo.0: int = const 62;
+  half.0: int = call @pow two.0 sixtytwo.0;
+  print half.0;
+  smaller.0: int = sub half.0 one.0;
+  maxint.0: int = add half.0 smaller.0;
+  print maxint.0;
+  overflow.0: int = add maxint.0 one.0;
+  print overflow.0;
+}

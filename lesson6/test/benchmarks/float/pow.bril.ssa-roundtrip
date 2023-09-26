@@ -1,0 +1,68 @@
+@main {
+.main.b0:
+  v0.0: float = const 3.2;
+  x.0: float = id v0.0;
+  v1.0: int = const 2;
+  n.0: int = id v1.0;
+  v2.0: float = id x.0;
+  v3.0: int = id n.0;
+  call @pow v2.0 v3.0;
+  v4.0: int = const 0;
+}
+@pow(x.0: float, n.0: int) {
+.pow.b0:
+  x.1: float = id x.0;
+  n.1: int = id n.0;
+.pow.b1:
+  v0.0: float = id x.1;
+  res.0: float = id v0.0;
+  v2.0: int = const 0;
+  _i.0: int = id v2.0;
+  v9.0: float = const 0.0;
+  v8.0: float = const 0.0;
+  v7.0: bool = const false;
+  v6.0: int = const 0;
+  v5.0: int = const 0;
+  v4.0: int = const 0;
+  v3.0: int = const 0;
+  v13.0: int = const 0;
+  v12.0: int = const 0;
+  v11.0: int = const 0;
+  v10.0: float = const 0.0;
+  res.1: float = id res.0;
+  _i.1: int = id _i.0;
+.for.cond.1:
+  v3.1: int = id _i.1;
+  v4.1: int = id n.1;
+  v5.1: int = const 1;
+  v6.1: int = sub v4.1 v5.1;
+  v7.1: bool = lt v3.1 v6.1;
+  br v7.1 .for.body.1 .for.end.1;
+.for.body.1:
+  v8.1: float = id res.1;
+  v9.1: float = id x.1;
+  v10.1: float = fmul v8.1 v9.1;
+  res.2: float = id v10.1;
+  v11.1: int = id _i.1;
+  v12.1: int = const 1;
+  v13.1: int = add v11.1 v12.1;
+  _i.2: int = id v13.1;
+  v9.0: float = id v9.1;
+  v8.0: float = id v8.1;
+  v7.0: bool = id v7.1;
+  v6.0: int = id v6.1;
+  v5.0: int = id v5.1;
+  v4.0: int = id v4.1;
+  v3.0: int = id v3.1;
+  v13.0: int = id v13.1;
+  v12.0: int = id v12.1;
+  v11.0: int = id v11.1;
+  v10.0: float = id v10.1;
+  res.1: float = id res.2;
+  _i.1: int = id _i.2;
+  jmp .for.cond.1;
+.for.end.1:
+  v14.0: float = id res.1;
+  print v14.0;
+  v15.0: int = const 0;
+}

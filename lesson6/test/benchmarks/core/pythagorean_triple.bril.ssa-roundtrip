@@ -1,0 +1,53 @@
+@main(n.0: int) {
+.main.b0:
+  n.1: int = id n.0;
+.main.b1:
+  one.0: int = const 1;
+  n_sq.0: int = mul n.1 n.1;
+  a.0: int = id one.0;
+  sum.0: int = const 0;
+  found.0: bool = const false;
+  done.0: bool = const false;
+  b_sq.0: int = const 0;
+  b.0: int = const 0;
+  a_sq.0: int = const 0;
+  a.1: int = id a.0;
+.outer_loop:
+  b.1: int = id one.0;
+  sum.1: int = id sum.0;
+  found.1: bool = id found.0;
+  done.1: bool = id done.0;
+  b_sq.1: int = id b_sq.0;
+  b.2: int = id b.1;
+  a_sq.1: int = id a_sq.0;
+.inner_loop:
+  a_sq.2: int = mul a.1 a.1;
+  b_sq.2: int = mul b.2 b.2;
+  sum.2: int = add a_sq.2 b_sq.2;
+  found.2: bool = eq sum.2 n_sq.0;
+  br found.2 .found .inner_continue;
+.found:
+  print b.2 a.1;
+.inner_continue:
+  b.3: int = add b.2 one.0;
+  done.2: bool = ge b.3 a.1;
+  sum.1: int = id sum.2;
+  found.1: bool = id found.2;
+  done.1: bool = id done.2;
+  b_sq.1: int = id b_sq.2;
+  b.2: int = id b.3;
+  a_sq.1: int = id a_sq.2;
+  br done.2 .outer_continue .inner_loop;
+.outer_continue:
+  a.2: int = add a.1 one.0;
+  done.3: bool = ge a.2 n.1;
+  sum.0: int = id sum.2;
+  found.0: bool = id found.2;
+  done.0: bool = id done.3;
+  b_sq.0: int = id b_sq.2;
+  b.0: int = id b.3;
+  a_sq.0: int = id a_sq.2;
+  a.1: int = id a.2;
+  br done.3 .finish .outer_loop;
+.finish:
+}
