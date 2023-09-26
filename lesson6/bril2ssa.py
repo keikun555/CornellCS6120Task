@@ -116,7 +116,7 @@ def insert_phi_nodes(
     var_to_type: dict[Variable, BrilType],
 ) -> SSABasicBlockFunction:
     """Insert Phi nodes and return SSA basic block function"""
-    cfg: ControlFlowGraph = control_flow_graph_from_instructions(bb_func['instrs'])
+    cfg: ControlFlowGraph = control_flow_graph_from_instructions(bb_func["instrs"])
     dominance_frontier_indices = dominance_frontier_indices_get(cfg)
 
     ssa_bb_function: SSABasicBlockFunction = cast(
@@ -193,6 +193,18 @@ def bb_func_to_ssa_bb_func(
 
     dominator_tree = index_dominator_tree_get(cfg)
 
+    def determine_phi_label_index(
+        immediate_dominator_index: DominanceAnalysis,
+        phi_label_index_candidates: set[int],
+        predecessor_index: int,
+    ) -> int | None:
+        index = predecessor_index
+        while index not in phi_label_index_candidates:
+            if len(immediate_dominator_index[index]) <= 0:
+                return None
+            index = next(iter(immediate_dominator_index[index]))
+        return index
+
     def rename(block_index: int):
         block = ssa_basic_blocks[block_index]
 
@@ -240,18 +252,6 @@ def bb_func_to_ssa_bb_func(
                     )
 
                 stack, _, _ = variable_dict[old_variable]
-
-                def determine_phi_label_index(
-                    immediate_dominator_index: DominanceAnalysis,
-                    phi_label_index_candidates: set[int],
-                    predecessor_index: int,
-                ) -> int | None:
-                    index = predecessor_index
-                    while index not in phi_label_index_candidates:
-                        if len(immediate_dominator_index[index]) <= 0:
-                            return None
-                        index = next(iter(immediate_dominator_index[index]))
-                    return index
 
                 phi_label_index_to_arg_dict: dict[int, Variable] = {
                     index: arg for arg, index in stack

@@ -4,6 +4,7 @@ from typing_extensions import NotRequired
 
 
 Operation: TypeAlias = Literal[
+    "const",
     # core
     "add",
     "mul",
@@ -25,6 +26,7 @@ Operation: TypeAlias = Literal[
     "print",
     "nop",
     # memory
+    "free",
     "alloc",
     "store",
     "load",
