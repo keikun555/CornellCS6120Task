@@ -1,0 +1,4 @@
+[envs.llvm-pass]
+command = "(cd build; cmake ..); make -C build; clang -fpass-plugin=build/pass/SkeletonPass.so {filename}; rm a.out"
+output."pass.out" = "-"
+output."pass.err" = "2"
