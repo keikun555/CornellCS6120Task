@@ -1,13 +1,14 @@
-I saw a function called add4!
-Basic Block.
-Instruction:   %2 = alloca i32, align 4
-Instruction:   store i32 %0, i32* %2, align 4
-Instruction:   %3 = load i32, i32* %2, align 4
-Instruction:   %4 = add nsw i32 %3, 4
-Instruction:   ret i32 %4
-I saw a function called main!
-Basic Block.
-Instruction:   %1 = alloca i32, align 4
-Instruction:   store i32 0, i32* %1, align 4
-Instruction:   %2 = call i32 @add4(i32 noundef 38)
-Instruction:   ret i32 %2
+WOULD BE DEAD:  %2 = alloca i32, align 4
+WOULD BE DEAD:  %3 = alloca i32, align 4
+WOULD BE DEAD:  %4 = alloca i32, align 4
+WOULD BE DEAD:  %5 = alloca i32, align 4
+WOULD BE DEAD:  %7 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %8 = icmp slt i32 %7, 1000000000
+WOULD BE DEAD:  %10 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %11 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %12 = add nsw i32 %10, %11
+WOULD BE DEAD:  %14 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %15 = add nsw i32 %14, 1
+WOULD BE DEAD:  %17 = load i32, i32* %2, align 4
+WOULD BE DEAD:  %18 = add nsw i32 %17, 4
+WOULD BE DEAD:  %1 = alloca i32, align 4
