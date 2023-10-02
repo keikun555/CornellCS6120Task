@@ -19,8 +19,14 @@ struct DeadCodeAnalysis
     for (auto &F : M) {
       for (auto &B : F) {
         for (auto &I : B) {
+          if (llvm::isInstructionTriviallyDead(&I, nullptr)) {
+            errs() << "TRIVIALLY_DEAD:               " << I << "\n";
+          }
           if (llvm::wouldInstructionBeTriviallyDead(&I, nullptr)) {
-            errs() << "WOULD BE DEAD:" << I << "\n";
+            errs() << "WOULD_BE_TRIVIALLY_DEAD:      " << I << "\n";
+          }
+          if (llvm::wouldInstructionBeTriviallyDeadOnUnusedPaths(&I, nullptr)) {
+            errs() << "WOULD_BE_DEAD_ON_UNUSED_PATHS:" << I << "\n";
           }
         }
       }

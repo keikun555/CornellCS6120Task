@@ -1,3 +1,6 @@
+# Compiled bin files
+*.bin
+
 # vim swap files
 *.swp
 *.swo

@@ -1,0 +1,16 @@
+-- Registering Skeleton as a pass plugin (static build: OFF)
+-- Registering DCA as a pass plugin (static build: OFF)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kei/course/6120/task/lesson7/build
+make: Entering directory '/home/kei/course/6120/task/lesson7/build'
+make[1]: Entering directory '/home/kei/course/6120/task/lesson7/build'
+make[2]: Entering directory '/home/kei/course/6120/task/lesson7/build'
+make[3]: Entering directory '/home/kei/course/6120/task/lesson7/build'
+Consolidate compiler generated dependencies of target DCA
+make[3]: Leaving directory '/home/kei/course/6120/task/lesson7/build'
+[100%] Built target DCA
+make[2]: Leaving directory '/home/kei/course/6120/task/lesson7/build'
+make[1]: Leaving directory '/home/kei/course/6120/task/lesson7/build'
+make: Leaving directory '/home/kei/course/6120/task/lesson7/build'
+225

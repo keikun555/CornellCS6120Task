@@ -1,0 +1,40 @@
+WOULD BE DEAD:  %1 = alloca i32, align 4
+WOULD BE DEAD:  %2 = alloca i32, align 4
+WOULD BE DEAD:  %3 = alloca i32, align 4
+WOULD BE DEAD:  %4 = alloca i32, align 4
+WOULD BE DEAD:  %9 = load i32, i32* %2, align 4
+WOULD BE DEAD:  %10 = load i32, i32* %3, align 4
+WOULD BE DEAD:  %12 = load i32, i32* %2, align 4
+WOULD BE DEAD:  %15 = load i32, i32* %3, align 4
+WOULD BE DEAD:  %18 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %3 = alloca i32, align 4
+WOULD BE DEAD:  %4 = alloca i32, align 4
+WOULD BE DEAD:  %5 = alloca i32, align 4
+WOULD BE DEAD:  %6 = load i32, i32* %5, align 4
+WOULD BE DEAD:  %7 = icmp ne i32 %6, 0
+WOULD BE DEAD:  %9 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %10 = load i32, i32* %4, align 4
+WOULD BE DEAD:  %11 = load i32, i32* %5, align 4
+WOULD BE DEAD:  %12 = sub nsw i32 %11, 1
+WOULD BE DEAD:  %14 = mul nsw i32 %9, %13
+WOULD BE DEAD:  %17 = load i32, i32* %3, align 4
+/usr/bin/ld: /tmp/power-c74cad.o: in function `main':
+power.cpp:(.text+0x12): undefined reference to `std::cout'
+/usr/bin/ld: power.cpp:(.text+0x1e): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)'
+/usr/bin/ld: power.cpp:(.text+0x25): undefined reference to `std::cin'
+/usr/bin/ld: power.cpp:(.text+0x2e): undefined reference to `std::istream::operator>>(int&)'
+/usr/bin/ld: power.cpp:(.text+0x35): undefined reference to `std::cout'
+/usr/bin/ld: power.cpp:(.text+0x41): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)'
+/usr/bin/ld: power.cpp:(.text+0x48): undefined reference to `std::cin'
+/usr/bin/ld: power.cpp:(.text+0x51): undefined reference to `std::istream::operator>>(int&)'
+/usr/bin/ld: power.cpp:(.text+0x69): undefined reference to `std::cout'
+/usr/bin/ld: power.cpp:(.text+0x6e): undefined reference to `std::ostream::operator<<(int)'
+/usr/bin/ld: power.cpp:(.text+0x7d): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)'
+/usr/bin/ld: power.cpp:(.text+0x88): undefined reference to `std::ostream::operator<<(int)'
+/usr/bin/ld: power.cpp:(.text+0x97): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)'
+/usr/bin/ld: power.cpp:(.text+0xa2): undefined reference to `std::ostream::operator<<(int)'
+/usr/bin/ld: /tmp/power-c74cad.o: in function `__cxx_global_var_init':
+power.cpp:(.text.startup+0xc): undefined reference to `std::ios_base::Init::Init()'
+/usr/bin/ld: power.cpp:(.text.startup+0x13): undefined reference to `std::ios_base::Init::~Init()'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/bin/sh: 1: ./power-tdce: not found
