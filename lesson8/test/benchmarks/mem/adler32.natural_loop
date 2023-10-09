@@ -1,0 +1,57 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "fill_array": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop"
+        ]
+      }
+    ]
+  },
+  "bitwise_or": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "false",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "true",
+          "false"
+        ]
+      }
+    ]
+  },
+  "adler32": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop"
+        ]
+      }
+    ]
+  }
+}

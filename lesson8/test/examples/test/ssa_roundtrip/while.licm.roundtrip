@@ -1,0 +1,22 @@
+@main(a.0: int) {
+.main.b0:
+  a.1: int = id a.0;
+  zero.0: int = const 0;
+  one.0: int = const 0;
+  is_term.0: bool = const false;
+  a.2: int = id a.1;
+.while.cond:
+  zero.1: int = const 0;
+  is_term.1: bool = eq a.2 zero.1;
+  br is_term.1 .while.finish .while.body;
+.while.body:
+  one.1: int = const 1;
+  a.3: int = sub a.2 one.1;
+  zero.0: int = id zero.1;
+  one.0: int = id one.1;
+  is_term.0: bool = id is_term.1;
+  a.2: int = id a.3;
+  jmp .while.cond;
+.while.finish:
+  print a.2;
+}

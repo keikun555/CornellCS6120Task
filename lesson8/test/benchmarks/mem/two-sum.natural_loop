@@ -1,0 +1,57 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "initArr": {
+    "reducible": true,
+    "backedges": []
+  },
+  "twoSum": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "twoSum.b1",
+          "endif.23"
+        ],
+        "header": "endif.23",
+        "natural_loop": [
+          "twoSum.b1",
+          "endif.23"
+        ]
+      },
+      {
+        "backedge": [
+          "for.end.7",
+          "for.cond.2"
+        ],
+        "header": "for.cond.2",
+        "natural_loop": [
+          "for.cond.2",
+          "for.body.2",
+          "for.cond.7",
+          "for.body.7",
+          "twoSum.b1",
+          "else.23",
+          "endif.23",
+          "for.end.7"
+        ]
+      },
+      {
+        "backedge": [
+          "endif.23",
+          "for.cond.7"
+        ],
+        "header": "for.cond.7",
+        "natural_loop": [
+          "for.cond.7",
+          "for.body.7",
+          "twoSum.b1",
+          "else.23",
+          "endif.23"
+        ]
+      }
+    ]
+  }
+}

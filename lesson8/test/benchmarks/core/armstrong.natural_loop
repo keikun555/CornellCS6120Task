@@ -1,0 +1,42 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "body",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body"
+        ]
+      }
+    ]
+  },
+  "getDigits": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "power": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "body",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body"
+        ]
+      }
+    ]
+  }
+}

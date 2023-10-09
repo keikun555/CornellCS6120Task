@@ -1,0 +1,8 @@
+@main {
+.main.b0:
+  speculate;
+  commit;
+  f: bool = const false;
+  guard f .lbl;
+.lbl:
+}

@@ -1,0 +1,37 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "if.2",
+          "cmp.val"
+        ],
+        "header": "cmp.val",
+        "natural_loop": [
+          "cmp.val",
+          "if.1",
+          "else.1",
+          "loop.bound",
+          "update.val",
+          "if.2"
+        ]
+      },
+      {
+        "backedge": [
+          "else.2",
+          "cmp.val"
+        ],
+        "header": "cmp.val",
+        "natural_loop": [
+          "cmp.val",
+          "if.1",
+          "else.1",
+          "loop.bound",
+          "update.val",
+          "else.2"
+        ]
+      }
+    ]
+  }
+}

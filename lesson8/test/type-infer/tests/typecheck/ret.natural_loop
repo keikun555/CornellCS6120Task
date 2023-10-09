@@ -1,0 +1,18 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "main.b1",
+          "EXIT"
+        ],
+        "header": "EXIT",
+        "natural_loop": [
+          "main.b1",
+          "EXIT"
+        ]
+      }
+    ]
+  }
+}

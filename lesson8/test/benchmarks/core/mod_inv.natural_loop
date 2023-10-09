@@ -1,0 +1,25 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.11",
+          "for.cond.6"
+        ],
+        "header": "for.cond.6",
+        "natural_loop": [
+          "for.cond.6",
+          "for.body.6",
+          "then.11",
+          "else.11",
+          "endif.11"
+        ]
+      }
+    ]
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  }
+}

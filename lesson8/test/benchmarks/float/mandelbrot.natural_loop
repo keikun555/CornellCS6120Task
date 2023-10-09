@@ -1,0 +1,70 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.end.27",
+          "for.cond.20"
+        ],
+        "header": "for.cond.20",
+        "natural_loop": [
+          "for.cond.20",
+          "for.body.20",
+          "for.cond.27",
+          "for.body.27",
+          "then.37",
+          "else.37",
+          "endif.37",
+          "for.end.27"
+        ]
+      },
+      {
+        "backedge": [
+          "endif.37",
+          "for.cond.27"
+        ],
+        "header": "for.cond.27",
+        "natural_loop": [
+          "for.cond.27",
+          "for.body.27",
+          "then.37",
+          "else.37",
+          "endif.37"
+        ]
+      }
+    ]
+  },
+  "f": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "f.b1",
+          "endif.11"
+        ],
+        "header": "endif.11",
+        "natural_loop": [
+          "f.b1",
+          "endif.11"
+        ]
+      }
+    ]
+  },
+  "pow10": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body.0",
+          "for.cond.0"
+        ],
+        "header": "for.cond.0",
+        "natural_loop": [
+          "for.cond.0",
+          "for.body.0"
+        ]
+      }
+    ]
+  }
+}

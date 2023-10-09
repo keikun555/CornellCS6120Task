@@ -1,0 +1,8 @@
+@main {
+.main.b0:
+  two: int = const 2;
+  p: ptr<int> = alloc two;
+  p1: ptr<int> = ptradd p two;
+  store p1 two;
+  free p;
+}

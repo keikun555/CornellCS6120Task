@@ -1,0 +1,26 @@
+{
+  "nothing": {
+    "reducible": true,
+    "backedges": []
+  },
+  "retint": {
+    "reducible": true,
+    "backedges": []
+  },
+  "argint": {
+    "reducible": true,
+    "backedges": []
+  },
+  "noret": {
+    "reducible": true,
+    "backedges": []
+  },
+  "yesret": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

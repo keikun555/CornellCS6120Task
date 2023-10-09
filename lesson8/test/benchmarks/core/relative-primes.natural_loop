@@ -1,0 +1,56 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "gcd": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "gcd.b2",
+          "endif.12"
+        ],
+        "header": "endif.12",
+        "natural_loop": [
+          "gcd.b2",
+          "endif.12"
+        ]
+      },
+      {
+        "backedge": [
+          "gcd.b1",
+          "endif.7"
+        ],
+        "header": "endif.7",
+        "natural_loop": [
+          "gcd.b1",
+          "endif.7"
+        ]
+      }
+    ]
+  },
+  "relative_primes": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.7",
+          "for.cond.0"
+        ],
+        "header": "for.cond.0",
+        "natural_loop": [
+          "for.cond.0",
+          "for.body.0",
+          "then.7",
+          "else.7",
+          "endif.7"
+        ]
+      }
+    ]
+  }
+}

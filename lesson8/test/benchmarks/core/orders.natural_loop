@@ -1,0 +1,53 @@
+{
+  "abs": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "gcd": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while.cond"
+        ],
+        "header": "while.cond",
+        "natural_loop": [
+          "while.cond",
+          "while.body"
+        ]
+      }
+    ]
+  },
+  "lcm": {
+    "reducible": true,
+    "backedges": []
+  },
+  "orders": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body.print",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body",
+          "lcm",
+          "gcd",
+          "for.body.print"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

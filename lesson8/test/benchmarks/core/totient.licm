@@ -1,0 +1,80 @@
+@main(n.0: int) {
+.main.b0:
+  n.1: int = id n.0;
+.main.b1:
+  print n.1;
+  tot.0: int = call @totient n.1;
+  print tot.0;
+}
+@totient(n.0: int): int {
+.totient.b0:
+  n.1: int = id n.0;
+.totient.b1:
+  result.0: int = id n.1;
+  p.0: int = const 2;
+  one.0: int = const 1;
+  zero.0: int = const 0;
+.for.set.cond:
+  while_cond.0: bool = phi while_cond.1 .else_lbl;
+  result.1: int = phi result.0 result.4 .totient.b1 .else_lbl;
+  resdiv.0: int = phi resdiv.3 .else_lbl;
+  pp.0: int = phi pp.1 .else_lbl;
+  p.1: int = phi p.0 p.2 .totient.b1 .else_lbl;
+  npmod.0: int = phi npmod.2 .else_lbl;
+  npdiv.0: int = phi npdiv.1 .else_lbl;
+  n.2: int = phi n.1 n.3 .totient.b1 .else_lbl;
+  if_cond.0: bool = phi if_cond.1 .else_lbl;
+  cond.0: bool = phi cond.1 .else_lbl;
+  pp.1: int = mul p.1 p.1;
+  cond.1: bool = le pp.1 n.2;
+  br cond.1 .for.set.body .for.set.end;
+.for.set.body:
+  npmod.1: int = call @mod n.2 p.1;
+  if_cond.1: bool = eq npmod.1 zero.0;
+  br if_cond.1 .if_lbl .else_lbl;
+.if_lbl:
+.while.set.cond:
+  while_cond.2: bool = phi while_cond.0 while_cond.3 .if_lbl .while.body;
+  npmod.3: int = phi npmod.1 npmod.4 .if_lbl .while.body;
+  npdiv.2: int = phi npdiv.0 npdiv.3 .if_lbl .while.body;
+  n.4: int = phi n.2 n.5 .if_lbl .while.body;
+  npmod.4: int = call @mod n.4 p.1;
+  while_cond.3: bool = eq npmod.4 zero.0;
+  br while_cond.3 .while.body .while.end;
+.while.body:
+  npdiv.3: int = div n.4 p.1;
+  n.5: int = id npdiv.3;
+  jmp .while.set.cond;
+.while.end:
+  resdiv.4: int = div result.1 p.1;
+  result.5: int = sub result.1 resdiv.4;
+.else_lbl:
+  while_cond.1: bool = phi while_cond.0 while_cond.3 .for.set.body .while.end;
+  result.4: int = phi result.1 result.5 .for.set.body .while.end;
+  resdiv.3: int = phi resdiv.0 resdiv.4 .for.set.body .while.end;
+  npmod.2: int = phi npmod.1 npmod.4 .for.set.body .while.end;
+  npdiv.1: int = phi npdiv.0 npdiv.2 .for.set.body .while.end;
+  n.3: int = phi n.2 n.4 .for.set.body .while.end;
+  p.2: int = add p.1 one.0;
+  jmp .for.set.cond;
+.for.set.end:
+  final_if_cond.0: bool = gt n.2 one.0;
+  br final_if_cond.0 .final_if_label .final_else_label;
+.final_if_label:
+  resdiv.1: int = div result.1 n.2;
+  result.2: int = sub result.1 resdiv.1;
+.final_else_label:
+  result.3: int = phi result.1 result.2 .for.set.end .final_if_label;
+  resdiv.2: int = phi resdiv.0 resdiv.1 .for.set.end .final_if_label;
+  ret result.3;
+}
+@mod(a.0: int, b.0: int): int {
+.mod.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.mod.b1:
+  ad.0: int = div a.1 b.1;
+  mad.0: int = mul b.1 ad.0;
+  ans.0: int = sub a.1 mad.0;
+  ret ans.0;
+}

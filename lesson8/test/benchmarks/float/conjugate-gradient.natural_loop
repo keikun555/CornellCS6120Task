@@ -1,0 +1,172 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.set.body",
+          "for.set.cond"
+        ],
+        "header": "for.set.cond",
+        "natural_loop": [
+          "for.set.cond",
+          "for.set.body"
+        ]
+      }
+    ]
+  },
+  "vec_mul": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body"
+        ]
+      }
+    ]
+  },
+  "vec_copy": {
+    "reducible": true,
+    "backedges": []
+  },
+  "dot_p": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body"
+        ]
+      }
+    ]
+  },
+  "vec_sub": {
+    "reducible": true,
+    "backedges": []
+  },
+  "vec_add": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body"
+        ]
+      }
+    ]
+  },
+  "vec_add_inp": {
+    "reducible": true,
+    "backedges": []
+  },
+  "vec_sub_inp": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mat_vec": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.col.end",
+          "for.row.cond"
+        ],
+        "header": "for.row.cond",
+        "natural_loop": [
+          "for.row.cond",
+          "for.row.body",
+          "for.col.cond",
+          "for.col.body",
+          "for.col.end"
+        ]
+      },
+      {
+        "backedge": [
+          "for.col.body",
+          "for.col.cond"
+        ],
+        "header": "for.col.cond",
+        "natural_loop": [
+          "for.col.cond",
+          "for.col.body"
+        ]
+      }
+    ]
+  },
+  "get_sym": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body"
+        ]
+      },
+      {
+        "backedge": [
+          "for.zero.body",
+          "for.zero.cond"
+        ],
+        "header": "for.zero.cond",
+        "natural_loop": [
+          "for.zero.cond",
+          "for.zero.body"
+        ]
+      }
+    ]
+  },
+  "disp_vec": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body"
+        ]
+      }
+    ]
+  },
+  "cg": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "cont",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body",
+          "cont"
+        ]
+      }
+    ]
+  }
+}

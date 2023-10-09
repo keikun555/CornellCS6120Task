@@ -1,0 +1,39 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "process_result",
+          "check_result"
+        ],
+        "header": "check_result",
+        "natural_loop": [
+          "check_result",
+          "process_result"
+        ]
+      },
+      {
+        "backedge": [
+          "check_done",
+          "begin"
+        ],
+        "header": "begin",
+        "natural_loop": [
+          "begin",
+          "check_result",
+          "process_result",
+          "check_done"
+        ]
+      }
+    ]
+  },
+  "is_single_digit": {
+    "reducible": true,
+    "backedges": []
+  },
+  "peel_last_digit": {
+    "reducible": true,
+    "backedges": []
+  }
+}

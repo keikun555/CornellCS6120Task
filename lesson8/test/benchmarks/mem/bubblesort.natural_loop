@@ -1,0 +1,60 @@
+{
+  "pack": {
+    "reducible": true,
+    "backedges": []
+  },
+  "print_array": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "swap_cond": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_endj",
+          "loopj"
+        ],
+        "header": "loopj",
+        "natural_loop": [
+          "loopj",
+          "bodyj",
+          "loop_endj"
+        ]
+      },
+      {
+        "backedge": [
+          "loopi_end",
+          "loopi"
+        ],
+        "header": "loopi",
+        "natural_loop": [
+          "loopi",
+          "bodyi",
+          "loopj",
+          "bodyj",
+          "loop_endj",
+          "donej",
+          "loopi_end"
+        ]
+      }
+    ]
+  }
+}

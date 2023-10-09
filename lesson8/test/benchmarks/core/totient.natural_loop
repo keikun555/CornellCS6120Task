@@ -1,0 +1,42 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "totient": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while.set.cond"
+        ],
+        "header": "while.set.cond",
+        "natural_loop": [
+          "while.set.cond",
+          "while.body"
+        ]
+      },
+      {
+        "backedge": [
+          "else_lbl",
+          "for.set.cond"
+        ],
+        "header": "for.set.cond",
+        "natural_loop": [
+          "for.set.cond",
+          "for.set.body",
+          "if_lbl",
+          "while.set.cond",
+          "while.body",
+          "while.end",
+          "else_lbl"
+        ]
+      }
+    ]
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  }
+}

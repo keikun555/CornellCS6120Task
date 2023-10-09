@@ -1,0 +1,76 @@
+{
+  "pow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "continue",
+          "while"
+        ],
+        "header": "while",
+        "natural_loop": [
+          "while",
+          "continue"
+        ]
+      }
+    ]
+  },
+  "n_root": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "continue",
+          "while"
+        ],
+        "header": "while",
+        "natural_loop": [
+          "while",
+          "continue"
+        ]
+      }
+    ]
+  },
+  "pack": {
+    "reducible": true,
+    "backedges": []
+  },
+  "print_array": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "euclidean_norm": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

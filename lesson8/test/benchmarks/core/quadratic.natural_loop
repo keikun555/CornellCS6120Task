@@ -1,0 +1,28 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "sqrt": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.7",
+          "for.cond.0"
+        ],
+        "header": "for.cond.0",
+        "natural_loop": [
+          "for.cond.0",
+          "for.body.0",
+          "else.7",
+          "endif.7"
+        ]
+      }
+    ]
+  },
+  "quadratic": {
+    "reducible": true,
+    "backedges": []
+  }
+}

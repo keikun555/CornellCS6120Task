@@ -1,0 +1,59 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "qsort": {
+    "reducible": true,
+    "backedges": []
+  },
+  "partition": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "swap",
+          "loop.init"
+        ],
+        "header": "loop.init",
+        "natural_loop": [
+          "loop.init",
+          "body",
+          "swap"
+        ]
+      },
+      {
+        "backedge": [
+          "body",
+          "loop.init"
+        ],
+        "header": "loop.init",
+        "natural_loop": [
+          "loop.init",
+          "body"
+        ]
+      }
+    ]
+  },
+  "pack": {
+    "reducible": true,
+    "backedges": []
+  },
+  "print_array": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  }
+}

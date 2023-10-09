@@ -1,0 +1,236 @@
+@rand(seq.0: ptr<int>, max.0: int): int {
+.rand.b0:
+  seq.1: ptr<int> = id seq.0;
+  max.1: int = id max.0;
+.rand.b1:
+  a.0: int = const 25214903917;
+  c.0: int = const 11;
+  m.0: int = const 281474976710656;
+  x.0: int = load seq.1;
+  ax.0: int = mul a.0 x.0;
+  axpc.0: int = add ax.0 c.0;
+  next.0: int = div axpc.0 m.0;
+  next.1: int = mul next.0 m.0;
+  next.2: int = sub axpc.0 next.1;
+  store seq.1 next.2;
+  val.0: int = div next.2 max.1;
+  val.1: int = mul val.0 max.1;
+  val.2: int = sub next.2 val.1;
+  ret val.2;
+}
+@randarray(size.0: int, rng.0: ptr<int>): ptr<int> {
+.randarray.b0:
+  size.1: int = id size.0;
+  rng.1: ptr<int> = id rng.0;
+.randarray.b1:
+  arr.0: ptr<int> = alloc size.1;
+  i.0: int = const 0;
+  max.0: int = const 1000;
+  one.0: int = const 1;
+  val.0: int = const 0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<int> = alloc loc.0.size;
+  free loc.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.loop:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .body .done;
+.body:
+  val.1: int = call @rand rng.1 max.0;
+  loc.1: ptr<int> = ptradd arr.0 i.1;
+  store loc.1 val.1;
+.loop_end:
+  i.2: int = add i.1 one.0;
+  val.0: int = id val.1;
+  loc.0: ptr<int> = id loc.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .loop;
+.done:
+  ret arr.0;
+}
+@printarray(size.0: int, arr.0: ptr<int>) {
+.printarray.b0:
+  size.1: int = id size.0;
+  arr.1: ptr<int> = id arr.0;
+.printarray.b1:
+  i.0: int = const 0;
+  one.0: int = const 1;
+  val.0: int = const 0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<int> = alloc loc.0.size;
+  free loc.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.loop:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .body .done;
+.body:
+  loc.1: ptr<int> = ptradd arr.1 i.1;
+  val.1: int = load loc.1;
+  print val.1;
+.loop_end:
+  i.2: int = add i.1 one.0;
+  val.0: int = id val.1;
+  loc.0: ptr<int> = id loc.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .loop;
+.done:
+  ret;
+}
+@matmul(size.0: int, arr1.0: ptr<int>, arr2.0: ptr<int>, dest.0: ptr<int>) {
+.matmul.b0:
+  size.1: int = id size.0;
+  arr1.1: ptr<int> = id arr1.0;
+  arr2.1: ptr<int> = id arr2.0;
+  dest.1: ptr<int> = id dest.0;
+.matmul.b1:
+  one.0: int = const 1;
+  row.0: int = const 0;
+  sum.0: int = const 0;
+  rvalloc.0.size: int = const 1;
+  rvalloc.0: ptr<int> = alloc rvalloc.0.size;
+  free rvalloc.0;
+  rval.0: int = const 0;
+  row.1: int = id row.0;
+  ridx.0: int = const 0;
+  prod.0: int = const 0;
+  lvalloc.0.size: int = const 1;
+  lvalloc.0: ptr<int> = alloc lvalloc.0.size;
+  free lvalloc.0;
+  lval.0: int = const 0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<int> = alloc loc.0.size;
+  free loc.0;
+  lidx.0: int = const 0;
+  idx.0: int = const 0;
+  i.0: int = const 0;
+  cond.0: bool = const false;
+  col.0: int = const 0;
+.row.loop:
+  cond.1: bool = lt row.1 size.1;
+  br cond.1 .row.body .row.done;
+.row.body:
+  col.1: int = const 0;
+  lidx.3: int = mul row.1 size.1;
+  idx.2: int = mul row.1 size.1;
+  sum.1: int = id sum.0;
+  rvalloc.1: ptr<int> = id rvalloc.0;
+  rval.1: int = id rval.0;
+  ridx.1: int = id ridx.0;
+  prod.1: int = id prod.0;
+  lvalloc.1: ptr<int> = id lvalloc.0;
+  lval.1: int = id lval.0;
+  loc.1: ptr<int> = id loc.0;
+  lidx.1: int = id lidx.0;
+  idx.1: int = id idx.0;
+  i.1: int = id i.0;
+  cond.2: bool = id cond.1;
+  col.2: int = id col.1;
+.col.loop:
+  cond.3: bool = lt col.2 size.1;
+  br cond.3 .col.body .col.done;
+.col.body:
+  sum.2: int = const 0;
+  i.2: int = const 0;
+  sum.3: int = id sum.2;
+  rvalloc.2: ptr<int> = id rvalloc.1;
+  rval.2: int = id rval.1;
+  ridx.2: int = id ridx.1;
+  prod.2: int = id prod.1;
+  lvalloc.2: ptr<int> = id lvalloc.1;
+  lval.2: int = id lval.1;
+  lidx.2: int = id lidx.1;
+  i.3: int = id i.2;
+  cond.4: bool = id cond.3;
+.sum.loop:
+  cond.5: bool = lt i.3 size.1;
+  br cond.5 .sum.body .sum.done;
+.sum.body:
+  lidx.4: int = add lidx.3 i.3;
+  ridx.3: int = mul i.3 size.1;
+  ridx.4: int = add ridx.3 col.2;
+  lvalloc.3: ptr<int> = ptradd arr1.1 lidx.4;
+  lval.3: int = load lvalloc.3;
+  rvalloc.3: ptr<int> = ptradd arr2.1 ridx.4;
+  rval.3: int = load rvalloc.3;
+  prod.3: int = mul lval.3 rval.3;
+  sum.4: int = add sum.3 prod.3;
+.sum.loop_end:
+  i.4: int = add i.3 one.0;
+  sum.3: int = id sum.4;
+  rvalloc.2: ptr<int> = id rvalloc.3;
+  rval.2: int = id rval.3;
+  ridx.2: int = id ridx.4;
+  prod.2: int = id prod.3;
+  lvalloc.2: ptr<int> = id lvalloc.3;
+  lval.2: int = id lval.3;
+  lidx.2: int = id lidx.4;
+  i.3: int = id i.4;
+  cond.4: bool = id cond.5;
+  jmp .sum.loop;
+.sum.done:
+  idx.3: int = add idx.2 col.2;
+  loc.2: ptr<int> = ptradd dest.1 idx.3;
+  store loc.2 sum.3;
+.col.loop_end:
+  col.3: int = add col.2 one.0;
+  sum.1: int = id sum.3;
+  rvalloc.1: ptr<int> = id rvalloc.2;
+  rval.1: int = id rval.2;
+  ridx.1: int = id ridx.2;
+  prod.1: int = id prod.2;
+  lvalloc.1: ptr<int> = id lvalloc.2;
+  lval.1: int = id lval.2;
+  loc.1: ptr<int> = id loc.2;
+  lidx.1: int = id lidx.2;
+  idx.1: int = id idx.3;
+  i.1: int = id i.3;
+  cond.2: bool = id cond.5;
+  col.2: int = id col.3;
+  jmp .col.loop;
+.col.done:
+.row.loop_end:
+  row.2: int = add row.1 one.0;
+  sum.0: int = id sum.1;
+  rvalloc.0: ptr<int> = id rvalloc.1;
+  rval.0: int = id rval.1;
+  row.1: int = id row.2;
+  ridx.0: int = id ridx.1;
+  prod.0: int = id prod.1;
+  lvalloc.0: ptr<int> = id lvalloc.1;
+  lval.0: int = id lval.1;
+  loc.0: ptr<int> = id loc.1;
+  lidx.0: int = id lidx.1;
+  idx.0: int = id idx.1;
+  i.0: int = id i.1;
+  cond.0: bool = id cond.3;
+  col.0: int = id col.2;
+  jmp .row.loop;
+.row.done:
+  ret;
+}
+@main(size.0: int, seed.0: int) {
+.main.b0:
+  size.1: int = id size.0;
+  seed.1: int = id seed.0;
+.main.b1:
+  one.0: int = const 1;
+  rng.0: ptr<int> = alloc one.0;
+  store rng.0 seed.1;
+  sqsize.0: int = mul size.1 size.1;
+  arr1.0: ptr<int> = call @randarray sqsize.0 rng.0;
+  arr2.0: ptr<int> = call @randarray sqsize.0 rng.0;
+  dest.0: ptr<int> = call @randarray sqsize.0 rng.0;
+  call @matmul size.1 arr1.0 arr2.0 dest.0;
+  call @printarray sqsize.0 arr1.0;
+  call @printarray sqsize.0 arr2.0;
+  call @printarray sqsize.0 dest.0;
+  free arr1.0;
+  free arr2.0;
+  free dest.0;
+  free rng.0;
+  ret;
+}

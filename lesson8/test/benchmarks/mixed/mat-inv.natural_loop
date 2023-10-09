@@ -1,0 +1,73 @@
+{
+  "matget": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "determinant": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop"
+        ]
+      }
+    ]
+  },
+  "inverse": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "continue",
+          "outer"
+        ],
+        "header": "outer",
+        "natural_loop": [
+          "outer",
+          "inner",
+          "continue"
+        ]
+      },
+      {
+        "backedge": [
+          "inner",
+          "inner"
+        ],
+        "header": "inner",
+        "natural_loop": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "printarray": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  }
+}

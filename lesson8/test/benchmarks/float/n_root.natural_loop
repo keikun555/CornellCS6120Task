@@ -1,0 +1,38 @@
+{
+  "pow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "continue",
+          "while"
+        ],
+        "header": "while",
+        "natural_loop": [
+          "while",
+          "continue"
+        ]
+      }
+    ]
+  },
+  "n_root": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "continue",
+          "while"
+        ],
+        "header": "while",
+        "natural_loop": [
+          "while",
+          "continue"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

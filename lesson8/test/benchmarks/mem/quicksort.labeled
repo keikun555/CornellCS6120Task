@@ -1,0 +1,100 @@
+@main(n1: int, n2: int, n3: int, n4: int, n5: int, n6: int) {
+.main.b0:
+  size: int = const 6;
+  array: ptr<int> = call @pack size n1 n2 n3 n4 n5 n6;
+  one: int = const 1;
+  size_minus_one: int = sub size one;
+  zero: int = const 0;
+  call @qsort array zero size_minus_one;
+  call @print_array array size;
+  free array;
+}
+@qsort(array: ptr<int>, l: int, r: int) {
+.qsort.b0:
+  l_ge_r: bool = ge l r;
+  zero: int = const 0;
+  neg_r: bool = lt r zero;
+  ret_cond: bool = or l_ge_r neg_r;
+  br ret_cond .done .continue;
+.continue:
+  p: int = call @partition array l r;
+  one: int = const 1;
+  p_minus_one: int = sub p one;
+  p_plus_one: int = add p one;
+  call @qsort array l p_minus_one;
+  call @qsort array p_plus_one r;
+.done:
+  ret;
+}
+@partition(array: ptr<int>, l: int, r: int): int {
+.partition.b0:
+  pivot_loc: ptr<int> = ptradd array r;
+  pivot: int = load pivot_loc;
+  one: int = const 1;
+  i: int = sub l one;
+  j: int = id i;
+.loop.init:
+  j: int = add j one;
+  cond: bool = lt j r;
+  br cond .body .post.loop;
+.body:
+  j_loc: ptr<int> = ptradd array j;
+  a_j: int = load j_loc;
+  swap_cond: bool = le a_j pivot;
+  br swap_cond .swap .loop.init;
+.swap:
+  i: int = add i one;
+  i_loc: ptr<int> = ptradd array i;
+  a_i: int = load i_loc;
+  store j_loc a_i;
+  store i_loc a_j;
+  jmp .loop.init;
+.post.loop:
+  i: int = add i one;
+  i_loc: ptr<int> = ptradd array i;
+  a_i: int = load i_loc;
+  store i_loc pivot;
+  store pivot_loc a_i;
+  ret i;
+}
+@pack(size: int, n1: int, n2: int, n3: int, n4: int, n5: int, n6: int): ptr<int> {
+.pack.b0:
+  one: int = const 1;
+  i: int = const 0;
+  array: ptr<int> = alloc size;
+  loc: ptr<int> = ptradd array i;
+  store loc n1;
+  i: int = add i one;
+  loc: ptr<int> = ptradd array i;
+  store loc n2;
+  i: int = add i one;
+  loc: ptr<int> = ptradd array i;
+  store loc n3;
+  i: int = add i one;
+  loc: ptr<int> = ptradd array i;
+  store loc n4;
+  i: int = add i one;
+  loc: ptr<int> = ptradd array i;
+  store loc n5;
+  i: int = add i one;
+  loc: ptr<int> = ptradd array i;
+  store loc n6;
+  ret array;
+}
+@print_array(array: ptr<int>, size: int) {
+.print_array.b0:
+  i: int = const 0;
+  one: int = const 1;
+.loop:
+  cond: bool = lt i size;
+  br cond .body .done;
+.body:
+  loc: ptr<int> = ptradd array i;
+  val: int = load loc;
+  print val;
+.loop_end:
+  i: int = add i one;
+  jmp .loop;
+.done:
+  ret;
+}

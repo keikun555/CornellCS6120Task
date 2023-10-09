@@ -1,0 +1,31 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "ifyes",
+          "loopcheck"
+        ],
+        "header": "loopcheck",
+        "natural_loop": [
+          "loopcheck",
+          "loopbody",
+          "ifyes"
+        ]
+      },
+      {
+        "backedge": [
+          "ifno",
+          "loopcheck"
+        ],
+        "header": "loopcheck",
+        "natural_loop": [
+          "loopcheck",
+          "loopbody",
+          "ifno"
+        ]
+      }
+    ]
+  }
+}

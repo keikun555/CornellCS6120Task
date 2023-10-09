@@ -1,0 +1,266 @@
+@rem(a.0: int, b.0: int): int {
+.rem.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.rem.b1:
+  quotient.0: int = div a.1 b.1;
+  guess.0: int = mul b.1 quotient.0;
+  rem.0: int = sub a.1 guess.0;
+  ret rem.0;
+}
+@divides(m.0: int, n.0: int): bool {
+.divides.b0:
+  m.1: int = id m.0;
+  n.1: int = id n.0;
+.divides.b1:
+  zero.0: int = const 0;
+  quotient.0: int = div n.1 m.1;
+  guess.0: int = mul m.1 quotient.0;
+  rem.0: int = sub n.1 guess.0;
+  res.0: bool = eq rem.0 zero.0;
+  ret res.0;
+}
+@prepend(n.0: int, ns.0: ptr<int>, l.0: int): ptr<int> {
+.prepend.b0:
+  n.1: int = id n.0;
+  ns.1: ptr<int> = id ns.0;
+  l.1: int = id l.0;
+.prepend.b1:
+  one.0: int = const 1;
+  new.0: int = add l.1 one.0;
+  out.0: ptr<int> = alloc new.0;
+  i.0: int = const 0;
+  store out.0 n.1;
+  curr.0: ptr<int> = id ns.1;
+  curr2.0: ptr<int> = ptradd out.0 one.0;
+  tmp.0: int = const 0;
+  stop.0: bool = const false;
+  i.1: int = id i.0;
+  curr2.1: ptr<int> = id curr2.0;
+  curr.1: ptr<int> = id curr.0;
+.repeat:
+  stop.1: bool = lt i.1 l.1;
+  br stop.1 .next .exit;
+.next:
+  tmp.1: int = load curr.1;
+  store curr2.1 tmp.1;
+  i.2: int = add i.1 one.0;
+  curr.2: ptr<int> = ptradd curr.1 one.0;
+  curr2.2: ptr<int> = ptradd curr2.1 one.0;
+  tmp.0: int = id tmp.1;
+  stop.0: bool = id stop.1;
+  i.1: int = id i.2;
+  curr2.1: ptr<int> = id curr2.2;
+  curr.1: ptr<int> = id curr.2;
+  jmp .repeat;
+.exit:
+  free ns.1;
+  ret out.0;
+}
+@prime_factor(n.0: int): int {
+.prime_factor.b0:
+  n.1: int = id n.0;
+.prime_factor.b1:
+  guess.0: int = const 2;
+  inc.0: int = const 1;
+  works.0: bool = const false;
+  square.0: int = const 0;
+  guess.1: int = id guess.0;
+  continue.0: bool = const false;
+.continue:
+  square.1: int = mul guess.1 guess.1;
+  continue.1: bool = lt square.1 n.1;
+  works.1: bool = call @divides guess.1 n.1;
+  br works.1 .yay .inc;
+.yay:
+  ret guess.1;
+.inc:
+  guess.2: int = add guess.1 inc.0;
+  works.0: bool = id works.1;
+  square.0: int = id square.1;
+  guess.1: int = id guess.2;
+  continue.0: bool = id continue.1;
+  br continue.1 .continue .giveup;
+.giveup:
+  ret n.1;
+}
+@prime_factors(n.0: int, num_factors.0: ptr<int>): ptr<int> {
+.prime_factors.b0:
+  n.1: int = id n.0;
+  num_factors.1: ptr<int> = id num_factors.0;
+.prime_factors.b1:
+  count.0: int = const 1;
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  ans.0: ptr<int> = alloc count.0;
+  store ans.0 zero.0;
+  tmp.0: int = const 0;
+  prime.0: int = const 0;
+  n.2: int = id n.1;
+  exit.0: bool = const false;
+  divides.0: bool = const false;
+  count.1: int = id count.0;
+  ans.1: ptr<int> = id ans.0;
+.continue:
+  exit.1: bool = eq n.2 one.0;
+  br exit.1 .exit .next;
+.next:
+  prime.1: int = call @prime_factor n.2;
+  n.3: int = id n.2;
+  divides.1: bool = id divides.0;
+.repeat:
+  n.4: int = div n.3 prime.1;
+  divides.2: bool = call @divides prime.1 n.4;
+  n.3: int = id n.4;
+  divides.1: bool = id divides.2;
+  br divides.2 .repeat .divided;
+.divided:
+  tmp.1: int = sub count.1 one.0;
+  ans.2: ptr<int> = call @prepend prime.1 ans.1 count.1;
+  count.2: int = add count.1 one.0;
+  tmp.0: int = id tmp.1;
+  prime.0: int = id prime.1;
+  n.2: int = id n.4;
+  exit.0: bool = id exit.1;
+  divides.0: bool = id divides.2;
+  count.1: int = id count.2;
+  ans.1: ptr<int> = id ans.2;
+  jmp .continue;
+.exit:
+  store num_factors.1 count.1;
+  ret ans.1;
+}
+@modexp(a.0: int, k.0: int, m.0: int): int {
+.modexp.b0:
+  a.1: int = id a.0;
+  k.1: int = id k.0;
+  m.1: int = id m.0;
+.modexp.b1:
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  two.0: int = const 2;
+  a.2: int = call @rem a.1 m.1;
+  eq_zero.0: bool = eq zero.0 k.1;
+  br eq_zero.0 .exp_zero .not_zero;
+.exp_zero:
+  ret one.0;
+.not_zero:
+  eq_one.0: bool = eq one.0 k.1;
+  br eq_one.0 .exp_one .not_one;
+.exp_one:
+  ret a.2;
+.not_one:
+  rem_two.0: int = call @rem k.1 two.0;
+  post_mul.0: bool = eq rem_two.0 one.0;
+  half_exp.0: int = div k.1 two.0;
+  sqrt.0: int = call @modexp a.2 half_exp.0 m.1;
+  res.0: int = mul sqrt.0 sqrt.0;
+  res.1: int = call @rem res.0 m.1;
+  res.4: int = id res.1;
+  br post_mul.0 .post_multiply .no_post;
+.post_multiply:
+  res.2: int = mul res.1 a.2;
+  res.3: int = call @rem res.2 m.1;
+  res.4: int = id res.3;
+.no_post:
+.exit:
+  ret res.4;
+}
+@check_ord(p.0: int, phi_p.0: int, factors.0: ptr<int>, guess.0: int): bool {
+.check_ord.b0:
+  p.1: int = id p.0;
+  phi_p.1: int = id phi_p.0;
+  factors.1: ptr<int> = id factors.0;
+  guess.1: int = id guess.0;
+.check_ord.b1:
+  count.0: int = const 0;
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  ptr.0: ptr<int> = id factors.1;
+  stop.0: bool = const false;
+  ptr.1: ptr<int> = id ptr.0;
+  power.0: int = const 0;
+  is_one.0: bool = const false;
+  factor.0: int = const 0;
+  exp.0: int = const 0;
+  count.1: int = id count.0;
+.check_power:
+  factor.1: int = load ptr.1;
+  stop.1: bool = eq factor.1 zero.0;
+  br stop.1 .ret_true .next1;
+.next1:
+  power.1: int = div phi_p.1 factor.1;
+  exp.1: int = call @modexp guess.1 power.1 p.1;
+  is_one.1: bool = eq exp.1 one.0;
+  br is_one.1 .ret_false .next2;
+.next2:
+  ptr.2: ptr<int> = ptradd ptr.1 one.0;
+  count.2: int = add count.1 one.0;
+  stop.0: bool = id stop.1;
+  ptr.1: ptr<int> = id ptr.2;
+  power.0: int = id power.1;
+  is_one.0: bool = id is_one.1;
+  factor.0: int = id factor.1;
+  exp.0: int = id exp.1;
+  count.1: int = id count.2;
+  jmp .check_power;
+.ret_true:
+  t.1: bool = const true;
+  ret t.1;
+.ret_false:
+  t.0: bool = const false;
+  ret t.0;
+}
+@search_primitive(p.0: int, phi_p.0: int, factors.0: ptr<int>, start.0: int): int {
+.search_primitive.b0:
+  p.1: int = id p.0;
+  phi_p.1: int = id phi_p.0;
+  factors.1: ptr<int> = id factors.0;
+  start.1: int = id start.0;
+.search_primitive.b1:
+  fallback.0: int = const -999;
+  one.0: int = const 1;
+  guess.0: int = id start.1;
+  works.0: bool = const false;
+  too_big.0: bool = const false;
+  guess.1: int = id guess.0;
+.eval:
+  too_big.1: bool = ge guess.1 p.1;
+  br too_big.1 .done_guess .keep_trying;
+.keep_trying:
+  works.1: bool = call @check_ord p.1 phi_p.1 factors.1 guess.1;
+  br works.1 .ret .inc;
+.ret:
+  ret guess.1;
+.inc:
+  guess.2: int = add guess.1 one.0;
+  works.0: bool = id works.1;
+  too_big.0: bool = id too_big.1;
+  guess.1: int = id guess.2;
+  jmp .eval;
+.done_guess:
+  ret fallback.0;
+}
+@phi(p.0: int): int {
+.phi.b0:
+  p.1: int = id p.0;
+.phi.b1:
+  one.0: int = const 1;
+  q.0: int = sub p.1 one.0;
+  ret q.0;
+}
+@main(p.0: int) {
+.main.b0:
+  p.1: int = id p.0;
+.main.b1:
+  zero.0: int = const 0;
+  one.0: int = const 1;
+  phi_p.0: int = call @phi p.1;
+  count_result.0: ptr<int> = alloc one.0;
+  prime_factors.0: ptr<int> = call @prime_factors phi_p.0 count_result.0;
+  num_factors.0: int = load count_result.0;
+  res.0: int = call @search_primitive p.1 phi_p.0 prime_factors.0 one.0;
+  print res.0;
+  free count_result.0;
+  free prime_factors.0;
+}

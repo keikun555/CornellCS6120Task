@@ -1,0 +1,42 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "if.inner.end",
+          "for.inner.cond"
+        ],
+        "header": "for.inner.cond",
+        "natural_loop": [
+          "for.inner.cond",
+          "for.inner.body",
+          "if.inner.end"
+        ]
+      },
+      {
+        "backedge": [
+          "if.outer.end",
+          "for.outer.cond"
+        ],
+        "header": "for.outer.cond",
+        "natural_loop": [
+          "for.outer.cond",
+          "for.outer.body",
+          "for.inner.init",
+          "for.inner.cond",
+          "for.inner.body",
+          "if.inner.body",
+          "if.inner.end",
+          "for.inner.end",
+          "if.outer.body",
+          "if.outer.end"
+        ]
+      }
+    ]
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  }
+}

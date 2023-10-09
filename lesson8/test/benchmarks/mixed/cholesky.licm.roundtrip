@@ -1,0 +1,662 @@
+@fillarray: ptr<float> {
+.fillarray.b0:
+  a00.0: float = const 34;
+  a01.0: float = const 28;
+  a02.0: float = const 38;
+  a03.0: float = const 29;
+  a10.0: float = const 26;
+  a11.0: float = const 78;
+  a12.0: float = const 91;
+  a13.0: float = const 83;
+  a20.0: float = const 67;
+  a21.0: float = const 92;
+  a22.0: float = const 56;
+  a23.0: float = const 92;
+  a30.0: float = const 67;
+  a31.0: float = const 826;
+  a32.0: float = const 38;
+  a33.0: float = const 43;
+  size.0: int = const 16;
+  return_ptr.0: ptr<float> = alloc size.0;
+  arr.0: ptr<float> = id return_ptr.0;
+  one.0: int = const 1;
+  store arr.0 a00.0;
+  arr.1: ptr<float> = ptradd arr.0 one.0;
+  store arr.1 a01.0;
+  arr.2: ptr<float> = ptradd arr.1 one.0;
+  store arr.2 a02.0;
+  arr.3: ptr<float> = ptradd arr.2 one.0;
+  store arr.3 a03.0;
+  arr.4: ptr<float> = ptradd arr.3 one.0;
+  store arr.4 a10.0;
+  arr.5: ptr<float> = ptradd arr.4 one.0;
+  store arr.5 a11.0;
+  arr.6: ptr<float> = ptradd arr.5 one.0;
+  store arr.6 a12.0;
+  arr.7: ptr<float> = ptradd arr.6 one.0;
+  store arr.7 a13.0;
+  arr.8: ptr<float> = ptradd arr.7 one.0;
+  store arr.8 a20.0;
+  arr.9: ptr<float> = ptradd arr.8 one.0;
+  store arr.9 a21.0;
+  arr.10: ptr<float> = ptradd arr.9 one.0;
+  store arr.10 a22.0;
+  arr.11: ptr<float> = ptradd arr.10 one.0;
+  store arr.11 a23.0;
+  arr.12: ptr<float> = ptradd arr.11 one.0;
+  store arr.12 a30.0;
+  arr.13: ptr<float> = ptradd arr.12 one.0;
+  store arr.13 a31.0;
+  arr.14: ptr<float> = ptradd arr.13 one.0;
+  store arr.14 a32.0;
+  arr.15: ptr<float> = ptradd arr.14 one.0;
+  store arr.15 a33.0;
+  ret return_ptr.0;
+}
+@zeros(sqsize.0: int): ptr<float> {
+.zeros.b0:
+  sqsize.1: int = id sqsize.0;
+.zeros.b1:
+  arr.0: ptr<float> = alloc sqsize.1;
+  i.0: int = const 0;
+  one.0: int = const 1;
+  zero.0: float = const 0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<float> = alloc loc.0.size;
+  free loc.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.loop:
+  cond.1: bool = lt i.1 sqsize.1;
+  br cond.1 .body .done;
+.body:
+  loc.1: ptr<float> = ptradd arr.0 i.1;
+  store loc.1 zero.0;
+.loop_end:
+  i.2: int = add i.1 one.0;
+  loc.0: ptr<float> = id loc.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .loop;
+.done:
+  ret arr.0;
+}
+@printarray(size.0: int, arr.0: ptr<float>) {
+.printarray.b0:
+  size.1: int = id size.0;
+  arr.1: ptr<float> = id arr.0;
+.printarray.b1:
+  i.0: int = const 0;
+  one.0: int = const 1;
+  val.0: float = const 0.0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<float> = alloc loc.0.size;
+  free loc.0;
+  i.1: int = id i.0;
+  cond.0: bool = const false;
+.loop:
+  cond.1: bool = lt i.1 size.1;
+  br cond.1 .body .done;
+.body:
+  loc.1: ptr<float> = ptradd arr.1 i.1;
+  val.1: float = load loc.1;
+  print val.1;
+.loop_end:
+  i.2: int = add i.1 one.0;
+  val.0: float = id val.1;
+  loc.0: ptr<float> = id loc.1;
+  i.1: int = id i.2;
+  cond.0: bool = id cond.1;
+  jmp .loop;
+.done:
+  ret;
+}
+@matmul(size.0: int, arr1.0: ptr<float>, arr2.0: ptr<float>, dest.0: ptr<float>) {
+.matmul.b0:
+  size.1: int = id size.0;
+  arr1.1: ptr<float> = id arr1.0;
+  arr2.1: ptr<float> = id arr2.0;
+  dest.1: ptr<float> = id dest.0;
+.matmul.b1:
+  one.0: int = const 1;
+  row.0: int = const 0;
+  sum.0: float = const 0.0;
+  rvalloc.0.size: int = const 1;
+  rvalloc.0: ptr<float> = alloc rvalloc.0.size;
+  free rvalloc.0;
+  rval.0: float = const 0.0;
+  row.1: int = id row.0;
+  ridx.0: int = const 0;
+  prod.0: float = const 0.0;
+  lvalloc.0.size: int = const 1;
+  lvalloc.0: ptr<float> = alloc lvalloc.0.size;
+  free lvalloc.0;
+  lval.0: float = const 0.0;
+  loc.0.size: int = const 1;
+  loc.0: ptr<float> = alloc loc.0.size;
+  free loc.0;
+  lidx.0: int = const 0;
+  idx.0: int = const 0;
+  i.0: int = const 0;
+  cond.0: bool = const false;
+  col.0: int = const 0;
+.row.loop:
+  cond.1: bool = lt row.1 size.1;
+  br cond.1 .row.body .row.done;
+.row.body:
+  col.1: int = const 0;
+  lidx.3: int = mul row.1 size.1;
+  idx.2: int = mul row.1 size.1;
+  sum.1: float = id sum.0;
+  rvalloc.1: ptr<float> = id rvalloc.0;
+  rval.1: float = id rval.0;
+  ridx.1: int = id ridx.0;
+  prod.1: float = id prod.0;
+  lvalloc.1: ptr<float> = id lvalloc.0;
+  lval.1: float = id lval.0;
+  loc.1: ptr<float> = id loc.0;
+  lidx.1: int = id lidx.0;
+  idx.1: int = id idx.0;
+  i.1: int = id i.0;
+  cond.2: bool = id cond.1;
+  col.2: int = id col.1;
+.col.loop:
+  cond.3: bool = lt col.2 size.1;
+  br cond.3 .col.body .col.done;
+.col.body:
+  sum.2: float = const 0.0;
+  i.2: int = const 0;
+  sum.3: float = id sum.2;
+  rvalloc.2: ptr<float> = id rvalloc.1;
+  rval.2: float = id rval.1;
+  ridx.2: int = id ridx.1;
+  prod.2: float = id prod.1;
+  lvalloc.2: ptr<float> = id lvalloc.1;
+  lval.2: float = id lval.1;
+  lidx.2: int = id lidx.1;
+  i.3: int = id i.2;
+  cond.4: bool = id cond.3;
+.sum.loop:
+  cond.5: bool = lt i.3 size.1;
+  br cond.5 .sum.body .sum.done;
+.sum.body:
+  lidx.4: int = add lidx.3 i.3;
+  ridx.3: int = mul i.3 size.1;
+  ridx.4: int = add ridx.3 col.2;
+  lvalloc.3: ptr<float> = ptradd arr1.1 lidx.4;
+  lval.3: float = load lvalloc.3;
+  rvalloc.3: ptr<float> = ptradd arr2.1 ridx.4;
+  rval.3: float = load rvalloc.3;
+  prod.3: float = fmul lval.3 rval.3;
+  sum.4: float = fadd sum.3 prod.3;
+.sum.loop_end:
+  i.4: int = add i.3 one.0;
+  sum.3: float = id sum.4;
+  rvalloc.2: ptr<float> = id rvalloc.3;
+  rval.2: float = id rval.3;
+  ridx.2: int = id ridx.4;
+  prod.2: float = id prod.3;
+  lvalloc.2: ptr<float> = id lvalloc.3;
+  lval.2: float = id lval.3;
+  lidx.2: int = id lidx.4;
+  i.3: int = id i.4;
+  cond.4: bool = id cond.5;
+  jmp .sum.loop;
+.sum.done:
+  idx.3: int = add idx.2 col.2;
+  loc.2: ptr<float> = ptradd dest.1 idx.3;
+  store loc.2 sum.3;
+.col.loop_end:
+  col.3: int = add col.2 one.0;
+  sum.1: float = id sum.3;
+  rvalloc.1: ptr<float> = id rvalloc.2;
+  rval.1: float = id rval.2;
+  ridx.1: int = id ridx.2;
+  prod.1: float = id prod.2;
+  lvalloc.1: ptr<float> = id lvalloc.2;
+  lval.1: float = id lval.2;
+  loc.1: ptr<float> = id loc.2;
+  lidx.1: int = id lidx.2;
+  idx.1: int = id idx.3;
+  i.1: int = id i.3;
+  cond.2: bool = id cond.5;
+  col.2: int = id col.3;
+  jmp .col.loop;
+.col.done:
+.row.loop_end:
+  row.2: int = add row.1 one.0;
+  sum.0: float = id sum.1;
+  rvalloc.0: ptr<float> = id rvalloc.1;
+  rval.0: float = id rval.1;
+  row.1: int = id row.2;
+  ridx.0: int = id ridx.1;
+  prod.0: float = id prod.1;
+  lvalloc.0: ptr<float> = id lvalloc.1;
+  lval.0: float = id lval.1;
+  loc.0: ptr<float> = id loc.1;
+  lidx.0: int = id lidx.1;
+  idx.0: int = id idx.1;
+  i.0: int = id i.1;
+  cond.0: bool = id cond.3;
+  col.0: int = id col.2;
+  jmp .row.loop;
+.row.done:
+  ret;
+}
+@transpose(size.0: int, input.0: ptr<float>, output.0: ptr<float>) {
+.transpose.b0:
+  size.1: int = id size.0;
+  input.1: ptr<float> = id input.0;
+  output.1: ptr<float> = id output.0;
+.transpose.b1:
+  one.0: int = const 1;
+  row.0: int = const 0;
+  value.0: float = const 0.0;
+  srcptr.0.size: int = const 1;
+  srcptr.0: ptr<float> = alloc srcptr.0.size;
+  free srcptr.0;
+  srcidx.0: int = const 0;
+  row.1: int = id row.0;
+  dstptr.0.size: int = const 1;
+  dstptr.0: ptr<float> = alloc dstptr.0.size;
+  free dstptr.0;
+  dstidx.0: int = const 0;
+  cond.0: bool = const false;
+  col.0: int = const 0;
+.row.loop:
+  cond.1: bool = lt row.1 size.1;
+  br cond.1 .row.body .row.done;
+.row.body:
+  col.1: int = const 0;
+  srcidx.2: int = mul row.1 size.1;
+  value.1: float = id value.0;
+  srcptr.1: ptr<float> = id srcptr.0;
+  srcidx.1: int = id srcidx.0;
+  dstptr.1: ptr<float> = id dstptr.0;
+  dstidx.1: int = id dstidx.0;
+  cond.2: bool = id cond.1;
+  col.2: int = id col.1;
+.col.loop:
+  cond.3: bool = lt col.2 size.1;
+  br cond.3 .col.body .col.done;
+.col.body:
+  srcidx.3: int = add srcidx.2 col.2;
+  dstidx.2: int = mul col.2 size.1;
+  dstidx.3: int = add dstidx.2 row.1;
+  srcptr.2: ptr<float> = ptradd input.1 srcidx.3;
+  dstptr.2: ptr<float> = ptradd output.1 dstidx.3;
+  value.2: float = load srcptr.2;
+  store dstptr.2 value.2;
+.col.loop_end:
+  col.3: int = add col.2 one.0;
+  value.1: float = id value.2;
+  srcptr.1: ptr<float> = id srcptr.2;
+  srcidx.1: int = id srcidx.3;
+  dstptr.1: ptr<float> = id dstptr.2;
+  dstidx.1: int = id dstidx.3;
+  cond.2: bool = id cond.3;
+  col.2: int = id col.3;
+  jmp .col.loop;
+.col.done:
+.row.loop_end:
+  row.2: int = add row.1 one.0;
+  value.0: float = id value.1;
+  srcptr.0: ptr<float> = id srcptr.1;
+  srcidx.0: int = id srcidx.1;
+  row.1: int = id row.2;
+  dstptr.0: ptr<float> = id dstptr.1;
+  dstidx.0: int = id dstidx.1;
+  cond.0: bool = id cond.3;
+  col.0: int = id col.2;
+  jmp .row.loop;
+.row.done:
+  ret;
+}
+@sqrt(input.0: float): float {
+.sqrt.b0:
+  input.1: float = id input.0;
+.sqrt.b1:
+  n.0: float = id input.1;
+  v1.0: float = const 1e-05;
+  precision.0: float = id v1.0;
+  v2.0: float = id n.0;
+  x.0: float = id v2.0;
+  v3.0: bool = const true;
+  notdone.0: bool = id v3.0;
+  v6.1: float = id n.0;
+  v27.1: float = id precision.0;
+  x.1: float = id x.0;
+  v9.0: float = const 0.0;
+  v8.0: float = const 0.0;
+  v7.0: float = const 0.0;
+  v6.0: float = const 0.0;
+  v5.0: bool = const false;
+  v30.0: float = const 0.0;
+  v29.0: bool = const false;
+  v28.0: bool = const false;
+  v27.0: float = const 0.0;
+  v26.0: float = const 0.0;
+  v24.0: float = const 0.0;
+  v23.0: float = const 0.0;
+  v22.0: float = const 0.0;
+  v21.0: bool = const false;
+  v20.0: float = const 0.0;
+  v19.0: float = const 0.0;
+  v17.0: float = const 0.0;
+  v16.0: float = const 0.0;
+  v15.0: float = const 0.0;
+  v14.0: float = const 0.0;
+  v13.0: float = const 0.0;
+  v12.0: float = const 0.0;
+  v11.0: float = const 0.0;
+  v10.0: float = const 0.0;
+  root.0: float = const 0.0;
+  notdone.1: bool = id notdone.0;
+  diff.0: float = const 0.0;
+.for.cond.4:
+  v5.1: bool = id notdone.1;
+  br v5.1 .for.body.4 .for.end.4;
+.for.body.4:
+  v7.1: float = id x.1;
+  v8.1: float = fdiv v6.1 v7.1;
+  root.1: float = id v8.1;
+  v9.1: float = id x.1;
+  v10.1: float = id root.1;
+  v11.1: float = fadd v9.1 v10.1;
+  root.2: float = id v11.1;
+  v12.1: float = const 0.5;
+  v13.1: float = id root.2;
+  v14.1: float = fmul v12.1 v13.1;
+  root.3: float = id v14.1;
+  v15.1: float = id root.3;
+  v16.1: float = id x.1;
+  v17.1: float = fsub v15.1 v16.1;
+  diff.1: float = id v17.1;
+  v19.1: float = id diff.1;
+  v20.1: float = const 0;
+  v21.1: bool = flt v19.1 v20.1;
+  br v21.1 .then.18 .else.18;
+.then.18:
+  v22.1: float = const 0;
+  v23.1: float = id diff.1;
+  v24.1: float = fsub v22.1 v23.1;
+  diff.2: float = id v24.1;
+  v24.2: float = id v24.1;
+  v23.2: float = id v23.1;
+  v22.2: float = id v22.1;
+  diff.3: float = id diff.2;
+  jmp .endif.18;
+.else.18:
+  v24.2: float = id v24.0;
+  v23.2: float = id v23.0;
+  v22.2: float = id v22.0;
+  diff.3: float = id diff.1;
+.endif.18:
+  v26.1: float = id diff.3;
+  v28.1: bool = flt v26.1 v27.1;
+  br v28.1 .then.25 .else.25;
+.then.25:
+  v29.2: bool = const false;
+  notdone.3: bool = id v29.2;
+  v29.1: bool = id v29.2;
+  notdone.2: bool = id notdone.3;
+  jmp .endif.25;
+.else.25:
+  v29.1: bool = id v29.0;
+  notdone.2: bool = id notdone.1;
+.endif.25:
+  v30.1: float = id root.3;
+  x.2: float = id v30.1;
+  x.1: float = id x.2;
+  v9.0: float = id v9.1;
+  v8.0: float = id v8.1;
+  v7.0: float = id v7.1;
+  v6.0: float = id v6.1;
+  v5.0: bool = id v5.1;
+  v30.0: float = id v30.1;
+  v29.0: bool = id v29.1;
+  v28.0: bool = id v28.1;
+  v27.0: float = id v27.1;
+  v26.0: float = id v26.1;
+  v24.0: float = id v24.2;
+  v23.0: float = id v23.2;
+  v22.0: float = id v22.2;
+  v21.0: bool = id v21.1;
+  v20.0: float = id v20.1;
+  v19.0: float = id v19.1;
+  v17.0: float = id v17.1;
+  v16.0: float = id v16.1;
+  v15.0: float = id v15.1;
+  v14.0: float = id v14.1;
+  v13.0: float = id v13.1;
+  v12.0: float = id v12.1;
+  v11.0: float = id v11.1;
+  v10.0: float = id v10.1;
+  root.0: float = id root.3;
+  notdone.1: bool = id notdone.2;
+  diff.0: float = id diff.3;
+  jmp .for.cond.4;
+.for.end.4:
+  ret x.1;
+}
+@cholesky(size.0: int, arr1.0: ptr<float>, arr2.0: ptr<float>) {
+.cholesky.b0:
+  size.1: int = id size.0;
+  arr1.1: ptr<float> = id arr1.0;
+  arr2.1: ptr<float> = id arr2.0;
+.cholesky.b1:
+  one.0: int = const 1;
+  i.0: int = const 0;
+  value.0: float = const 0.0;
+  sqrt_value.0: float = const 0.0;
+  k.0: int = const 0;
+  jk_ptr.0.size: int = const 1;
+  jk_ptr.0: ptr<float> = alloc jk_ptr.0.size;
+  free jk_ptr.0;
+  jk_index.0: int = const 0;
+  jj_ptr.0.size: int = const 1;
+  jj_ptr.0: ptr<float> = alloc jj_ptr.0.size;
+  free jj_ptr.0;
+  jj_index.0: int = const 0;
+  j.0: int = const 0;
+  ik_ptr.0.size: int = const 1;
+  ik_ptr.0: ptr<float> = alloc ik_ptr.0.size;
+  free ik_ptr.0;
+  ik_index.0: int = const 0;
+  ij_ptr.0.size: int = const 1;
+  ij_ptr.0: ptr<float> = alloc ij_ptr.0.size;
+  free ij_ptr.0;
+  ij_index.0: int = const 0;
+  ii_index.0: int = const 0;
+  i.1: int = id i.0;
+  condk.0: bool = const false;
+  condj.0: bool = const false;
+  condi.0: bool = const false;
+  b_jk.0: float = const 0.0;
+  b_jj.0: float = const 0.0;
+  b_ik.0: float = const 0.0;
+  b_ij_ptr.0.size: int = const 1;
+  b_ij_ptr.0: ptr<float> = alloc b_ij_ptr.0.size;
+  free b_ij_ptr.0;
+  b_ij.0: float = const 0.0;
+  b_ii_ptr.0.size: int = const 1;
+  b_ii_ptr.0: ptr<float> = alloc b_ii_ptr.0.size;
+  free b_ii_ptr.0;
+  a_ij_ptr.0.size: int = const 1;
+  a_ij_ptr.0: ptr<float> = alloc a_ij_ptr.0.size;
+  free a_ij_ptr.0;
+  a_ij.0: float = const 0.0;
+  a_ii_ptr.0.size: int = const 1;
+  a_ii_ptr.0: ptr<float> = alloc a_ii_ptr.0.size;
+  free a_ii_ptr.0;
+.i.loop:
+  condi.1: bool = lt i.1 size.1;
+  br condi.1 .i.body .i.done;
+.i.body:
+  j.1: int = const 0;
+  ik_index.3: int = mul i.1 size.1;
+  ij_index.5: int = mul i.1 size.1;
+  ij_index.3: int = mul i.1 size.1;
+  value.1: float = id value.0;
+  k.1: int = id k.0;
+  jk_ptr.1: ptr<float> = id jk_ptr.0;
+  jk_index.1: int = id jk_index.0;
+  jj_ptr.1: ptr<float> = id jj_ptr.0;
+  jj_index.1: int = id jj_index.0;
+  j.2: int = id j.1;
+  ik_ptr.1: ptr<float> = id ik_ptr.0;
+  ik_index.1: int = id ik_index.0;
+  ij_ptr.1: ptr<float> = id ij_ptr.0;
+  ij_index.1: int = id ij_index.0;
+  condk.1: bool = id condk.0;
+  condj.1: bool = id condj.0;
+  b_jk.1: float = id b_jk.0;
+  b_jj.1: float = id b_jj.0;
+  b_ik.1: float = id b_ik.0;
+  b_ij_ptr.1: ptr<float> = id b_ij_ptr.0;
+  b_ij.1: float = id b_ij.0;
+  a_ij_ptr.1: ptr<float> = id a_ij_ptr.0;
+  a_ij.1: float = id a_ij.0;
+.j.loop:
+  condj.2: bool = le j.2 i.1;
+  br condj.2 .j.body .j.done;
+.j.body:
+  k.2: int = const 0;
+  jk_index.3: int = mul j.2 size.1;
+  value.3: float = id value.1;
+  k.3: int = id k.2;
+  jk_ptr.2: ptr<float> = id jk_ptr.1;
+  jk_index.2: int = id jk_index.1;
+  ik_ptr.2: ptr<float> = id ik_ptr.1;
+  ik_index.2: int = id ik_index.1;
+  ij_ptr.2: ptr<float> = id ij_ptr.1;
+  ij_index.2: int = id ij_index.1;
+  condk.2: bool = id condk.1;
+  b_jk.2: float = id b_jk.1;
+  b_ik.2: float = id b_ik.1;
+  a_ij.2: float = id a_ij.1;
+.k.loop:
+  condk.3: bool = lt k.3 j.2;
+  br condk.3 .k.body .k.done;
+.k.body:
+  ik_index.4: int = add ik_index.3 k.3;
+  jk_index.4: int = add jk_index.3 k.3;
+  ij_index.6: int = add ij_index.5 j.2;
+  ik_ptr.3: ptr<float> = ptradd arr2.1 ik_index.4;
+  b_ik.3: float = load ik_ptr.3;
+  jk_ptr.3: ptr<float> = ptradd arr2.1 jk_index.4;
+  b_jk.3: float = load jk_ptr.3;
+  ij_ptr.3: ptr<float> = ptradd arr1.1 ij_index.6;
+  a_ij.4: float = load ij_ptr.3;
+  value.5: float = fmul b_ik.3 b_jk.3;
+  value.6: float = fsub a_ij.4 value.5;
+  store ij_ptr.3 value.6;
+.k.loop_end:
+  k.4: int = add k.3 one.0;
+  value.3: float = id value.6;
+  k.3: int = id k.4;
+  jk_ptr.2: ptr<float> = id jk_ptr.3;
+  jk_index.2: int = id jk_index.4;
+  ik_ptr.2: ptr<float> = id ik_ptr.3;
+  ik_index.2: int = id ik_index.4;
+  ij_ptr.2: ptr<float> = id ij_ptr.3;
+  ij_index.2: int = id ij_index.6;
+  condk.2: bool = id condk.3;
+  b_jk.2: float = id b_jk.3;
+  b_ik.2: float = id b_ik.3;
+  a_ij.2: float = id a_ij.4;
+  jmp .k.loop;
+.k.done:
+  ij_index.4: int = add ij_index.3 j.2;
+  jj_index.2: int = mul j.2 size.1;
+  jj_index.3: int = add jj_index.2 j.2;
+  a_ij_ptr.2: ptr<float> = ptradd arr1.1 ij_index.4;
+  b_ij_ptr.2: ptr<float> = ptradd arr2.1 ij_index.4;
+  jj_ptr.2: ptr<float> = ptradd arr2.1 jj_index.3;
+  a_ij.3: float = load a_ij_ptr.2;
+  b_ij.2: float = load b_ij_ptr.2;
+  b_jj.2: float = load jj_ptr.2;
+  value.4: float = fdiv a_ij.3 b_jj.2;
+  store b_ij_ptr.2 value.4;
+.j.loop_end:
+  j.3: int = add j.2 one.0;
+  value.1: float = id value.4;
+  k.1: int = id k.3;
+  jk_ptr.1: ptr<float> = id jk_ptr.2;
+  jk_index.1: int = id jk_index.2;
+  jj_ptr.1: ptr<float> = id jj_ptr.2;
+  jj_index.1: int = id jj_index.3;
+  j.2: int = id j.3;
+  ik_ptr.1: ptr<float> = id ik_ptr.2;
+  ik_index.1: int = id ik_index.2;
+  ij_ptr.1: ptr<float> = id ij_ptr.2;
+  ij_index.1: int = id ij_index.4;
+  condk.1: bool = id condk.3;
+  condj.1: bool = id condj.2;
+  b_jk.1: float = id b_jk.2;
+  b_jj.1: float = id b_jj.2;
+  b_ik.1: float = id b_ik.2;
+  b_ij_ptr.1: ptr<float> = id b_ij_ptr.2;
+  b_ij.1: float = id b_ij.2;
+  a_ij_ptr.1: ptr<float> = id a_ij_ptr.2;
+  a_ij.1: float = id a_ij.3;
+  jmp .j.loop;
+.j.done:
+  ii_index.1: int = mul i.1 size.1;
+  ii_index.2: int = add ii_index.1 i.1;
+  a_ii_ptr.1: ptr<float> = ptradd arr1.1 ii_index.2;
+  b_ii_ptr.1: ptr<float> = ptradd arr2.1 ii_index.2;
+  value.2: float = load a_ii_ptr.1;
+  sqrt_value.1: float = call @sqrt value.2;
+  store b_ii_ptr.1 sqrt_value.1;
+.i.loop_end:
+  i.2: int = add i.1 one.0;
+  value.0: float = id value.2;
+  sqrt_value.0: float = id sqrt_value.1;
+  k.0: int = id k.1;
+  jk_ptr.0: ptr<float> = id jk_ptr.1;
+  jk_index.0: int = id jk_index.1;
+  jj_ptr.0: ptr<float> = id jj_ptr.1;
+  jj_index.0: int = id jj_index.1;
+  j.0: int = id j.2;
+  ik_ptr.0: ptr<float> = id ik_ptr.1;
+  ik_index.0: int = id ik_index.1;
+  ij_ptr.0: ptr<float> = id ij_ptr.1;
+  ij_index.0: int = id ij_index.1;
+  ii_index.0: int = id ii_index.2;
+  i.1: int = id i.2;
+  condk.0: bool = id condk.1;
+  condj.0: bool = id condj.2;
+  condi.0: bool = id condi.1;
+  b_jk.0: float = id b_jk.1;
+  b_jj.0: float = id b_jj.1;
+  b_ik.0: float = id b_ik.1;
+  b_ij_ptr.0: ptr<float> = id b_ij_ptr.1;
+  b_ij.0: float = id b_ij.1;
+  b_ii_ptr.0: ptr<float> = id b_ii_ptr.1;
+  a_ij_ptr.0: ptr<float> = id a_ij_ptr.1;
+  a_ij.0: float = id a_ij.1;
+  a_ii_ptr.0: ptr<float> = id a_ii_ptr.1;
+  jmp .i.loop;
+.i.done:
+  ret;
+}
+@main {
+.main.b0:
+  one.0: int = const 1;
+  size.0: int = const 4;
+  sqsize.0: int = mul size.0 size.0;
+  arr1.0: ptr<float> = call @fillarray;
+  arr1_transposed.0: ptr<float> = call @fillarray;
+  hermitian.0: ptr<float> = call @fillarray;
+  res.0: ptr<float> = call @zeros sqsize.0;
+  call @transpose size.0 arr1.0 arr1_transposed.0;
+  call @matmul size.0 arr1.0 arr1_transposed.0 hermitian.0;
+  call @cholesky size.0 hermitian.0 res.0;
+  call @printarray sqsize.0 res.0;
+  free arr1.0;
+  free arr1_transposed.0;
+  free hermitian.0;
+  free res.0;
+  ret;
+}

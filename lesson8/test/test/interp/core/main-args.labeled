@@ -1,0 +1,5 @@
+@main(x: int, y: int) {
+.main.b0:
+  v: int = add x y;
+  print v;
+}

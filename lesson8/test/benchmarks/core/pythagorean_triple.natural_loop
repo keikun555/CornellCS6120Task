@@ -1,0 +1,33 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "outer_continue",
+          "outer_loop"
+        ],
+        "header": "outer_loop",
+        "natural_loop": [
+          "outer_loop",
+          "inner_loop",
+          "found",
+          "inner_continue",
+          "outer_continue"
+        ]
+      },
+      {
+        "backedge": [
+          "inner_continue",
+          "inner_loop"
+        ],
+        "header": "inner_loop",
+        "natural_loop": [
+          "inner_loop",
+          "found",
+          "inner_continue"
+        ]
+      }
+    ]
+  }
+}

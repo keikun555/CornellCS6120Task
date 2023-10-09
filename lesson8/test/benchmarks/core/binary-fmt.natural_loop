@@ -1,0 +1,14 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "printBinary": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  }
+}

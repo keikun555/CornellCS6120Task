@@ -1,0 +1,10 @@
+@main {
+.main.b0:
+  v: int = const 1;
+  print v;
+}
+@main {
+.main.b0:
+  v: int = const 2;
+  print v;
+}

@@ -1,0 +1,21 @@
+{
+  "dot_product": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

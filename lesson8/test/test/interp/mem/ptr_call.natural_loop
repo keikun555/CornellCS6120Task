@@ -1,0 +1,10 @@
+{
+  "funcA": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

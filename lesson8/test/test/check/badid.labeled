@@ -1,0 +1,6 @@
+@main(a: int) {
+.main.b0:
+  b: bool = id a;
+  id a;
+  c: int = id;
+}

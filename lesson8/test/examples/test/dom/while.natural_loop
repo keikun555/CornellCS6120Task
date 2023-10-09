@@ -1,0 +1,18 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while.cond"
+        ],
+        "header": "while.cond",
+        "natural_loop": [
+          "while.cond",
+          "while.body"
+        ]
+      }
+    ]
+  }
+}

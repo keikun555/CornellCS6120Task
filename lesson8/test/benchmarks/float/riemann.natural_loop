@@ -1,0 +1,58 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "square_function": {
+    "reducible": true,
+    "backedges": []
+  },
+  "left_riemann": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while.header"
+        ],
+        "header": "while.header",
+        "natural_loop": [
+          "while.header",
+          "while.body"
+        ]
+      }
+    ]
+  },
+  "right_riemann": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while.header"
+        ],
+        "header": "while.header",
+        "natural_loop": [
+          "while.header",
+          "while.body"
+        ]
+      }
+    ]
+  },
+  "midpoint_riemann": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while.header"
+        ],
+        "header": "while.header",
+        "natural_loop": [
+          "while.header",
+          "while.body"
+        ]
+      }
+    ]
+  }
+}

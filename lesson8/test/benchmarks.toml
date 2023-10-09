@@ -1,0 +1,41 @@
+extract = 'total_dyn_inst: (\d+)'
+benchmarks = './benchmarks/*/*.bril'
+timeout = 20
+
+[runs.baseline]
+pipeline = [
+    "bril2json",
+    "brili -p {args}",
+]
+
+[runs.ssa]
+pipeline = [
+    "bril2json",
+    "python3 ../bril2ssa.py",
+    "brili -p {args}",
+]
+
+[runs.ssa_roundtrip]
+pipeline = [
+    "bril2json",
+    "python3 ../bril2ssa.py",
+    "python3 ../ssa2bril.py",
+    "brili -p {args}",
+]
+
+[runs.ssa_licm]
+pipeline = [
+    "bril2json",
+    "python3 ../bril2ssa.py",
+    "python3 ../licm.py",
+    "brili -p {args}",
+]
+
+[runs.ssa_licm_roundtrip]
+pipeline = [
+    "bril2json",
+    "python3 ../bril2ssa.py",
+    "python3 ../licm.py",
+    "python3 ../ssa2bril.py",
+    "brili -p {args}",
+]

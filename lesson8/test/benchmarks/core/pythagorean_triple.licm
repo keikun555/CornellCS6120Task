@@ -1,0 +1,40 @@
+@main(n.0: int) {
+.main.b0:
+  n.1: int = id n.0;
+.main.b1:
+  one.0: int = const 1;
+  n_sq.0: int = mul n.1 n.1;
+  a.0: int = id one.0;
+  b.1: int = id one.0;
+.outer_loop:
+  sum.0: int = phi sum.2 .outer_continue;
+  found.0: bool = phi found.2 .outer_continue;
+  done.0: bool = phi done.3 .outer_continue;
+  b_sq.0: int = phi b_sq.2 .outer_continue;
+  b.0: int = phi b.3 .outer_continue;
+  a_sq.0: int = phi a_sq.2 .outer_continue;
+  a.1: int = phi a.0 a.2 .main.b1 .outer_continue;
+.inner_loop:
+  sum.1: int = phi sum.0 sum.2 .outer_loop .inner_continue;
+  found.1: bool = phi found.0 found.2 .outer_loop .inner_continue;
+  done.1: bool = phi done.0 done.2 .outer_loop .inner_continue;
+  b_sq.1: int = phi b_sq.0 b_sq.2 .outer_loop .inner_continue;
+  b.2: int = phi b.1 b.3 .outer_loop .inner_continue;
+  a_sq.1: int = phi a_sq.0 a_sq.2 .outer_loop .inner_continue;
+  a_sq.2: int = mul a.1 a.1;
+  b_sq.2: int = mul b.2 b.2;
+  sum.2: int = add a_sq.2 b_sq.2;
+  found.2: bool = eq sum.2 n_sq.0;
+  br found.2 .found .inner_continue;
+.found:
+  print b.2 a.1;
+.inner_continue:
+  b.3: int = add b.2 one.0;
+  done.2: bool = ge b.3 a.1;
+  br done.2 .outer_continue .inner_loop;
+.outer_continue:
+  a.2: int = add a.1 one.0;
+  done.3: bool = ge a.2 n.1;
+  br done.3 .finish .outer_loop;
+.finish:
+}

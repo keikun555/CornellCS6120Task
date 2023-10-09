@@ -1,0 +1,30 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "earlier",
+          "EXIT"
+        ],
+        "header": "EXIT",
+        "natural_loop": [
+          "earlier",
+          "later",
+          "EXIT"
+        ]
+      },
+      {
+        "backedge": [
+          "later",
+          "earlier"
+        ],
+        "header": "earlier",
+        "natural_loop": [
+          "earlier",
+          "later"
+        ]
+      }
+    ]
+  }
+}

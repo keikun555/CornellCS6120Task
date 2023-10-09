@@ -1,0 +1,47 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "check",
+          "begin"
+        ],
+        "header": "begin",
+        "natural_loop": [
+          "begin",
+          "check"
+        ]
+      },
+      {
+        "backedge": [
+          "body",
+          "begin"
+        ],
+        "header": "begin",
+        "natural_loop": [
+          "begin",
+          "check",
+          "body"
+        ]
+      },
+      {
+        "backedge": [
+          "then",
+          "begin"
+        ],
+        "header": "begin",
+        "natural_loop": [
+          "begin",
+          "check",
+          "body",
+          "then"
+        ]
+      }
+    ]
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  }
+}

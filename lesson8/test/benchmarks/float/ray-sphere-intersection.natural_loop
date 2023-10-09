@@ -1,0 +1,14 @@
+{
+  "RaySphereIntersection": {
+    "reducible": true,
+    "backedges": []
+  },
+  "DotProduct": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

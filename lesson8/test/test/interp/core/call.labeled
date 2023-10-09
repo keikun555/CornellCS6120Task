@@ -1,0 +1,12 @@
+@main {
+.main.b0:
+  v: int = const 2;
+  call @print4;
+  print v;
+}
+@print4 {
+.print4.b0:
+  v: int = const 4;
+  print v;
+  ret;
+}

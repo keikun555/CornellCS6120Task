@@ -1,0 +1,31 @@
+[envs.natural-loop]
+command = "bril2json < {filename} | python3 ../loop.py | jq ."
+output."natural_loop" = "-"
+
+[envs.labeled]
+command = "bril2json < {filename} | python3 ../bril_labeler.py | bril2txt"
+output."labeled" = "-"
+
+[envs.licm]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../licm.py | bril2txt"
+output."licm" = "-"
+
+[envs.licm-roundtrip]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../licm.py | python3 ../ssa2bril.py | bril2txt"
+output."licm.roundtrip" = "-"
+
+[envs.original-eval]
+command = "bril2json < {filename} | brili {args}"
+output.out = "-"
+
+[envs.ssa-eval]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | brili {args}"
+output.out = "-"
+
+[envs.licm-eval]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../licm.py | brili {args}"
+output.out = "-"
+
+[envs.licm-roundtrip-eval]
+command = "bril2json < {filename} | python3 ../bril2ssa.py | python3 ../licm.py | python3 ../ssa2bril.py | brili {args}"
+output.out = "-"

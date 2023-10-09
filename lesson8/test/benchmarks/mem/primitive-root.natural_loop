@@ -1,0 +1,116 @@
+{
+  "rem": {
+    "reducible": true,
+    "backedges": []
+  },
+  "divides": {
+    "reducible": true,
+    "backedges": []
+  },
+  "prepend": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "next",
+          "repeat"
+        ],
+        "header": "repeat",
+        "natural_loop": [
+          "repeat",
+          "next"
+        ]
+      }
+    ]
+  },
+  "prime_factor": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "inc",
+          "continue"
+        ],
+        "header": "continue",
+        "natural_loop": [
+          "continue",
+          "inc"
+        ]
+      }
+    ]
+  },
+  "prime_factors": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "repeat",
+          "repeat"
+        ],
+        "header": "repeat",
+        "natural_loop": [
+          "repeat"
+        ]
+      },
+      {
+        "backedge": [
+          "divided",
+          "continue"
+        ],
+        "header": "continue",
+        "natural_loop": [
+          "continue",
+          "next",
+          "repeat",
+          "divided"
+        ]
+      }
+    ]
+  },
+  "modexp": {
+    "reducible": true,
+    "backedges": []
+  },
+  "check_ord": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "next2",
+          "check_power"
+        ],
+        "header": "check_power",
+        "natural_loop": [
+          "check_power",
+          "next1",
+          "next2"
+        ]
+      }
+    ]
+  },
+  "search_primitive": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "inc",
+          "eval"
+        ],
+        "header": "eval",
+        "natural_loop": [
+          "eval",
+          "keep_trying",
+          "inc"
+        ]
+      }
+    ]
+  },
+  "phi": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

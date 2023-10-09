@@ -1,0 +1,34 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "fact": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.0",
+          "EXIT"
+        ],
+        "header": "EXIT",
+        "natural_loop": [
+          "fact.b1",
+          "endif.0",
+          "EXIT"
+        ]
+      },
+      {
+        "backedge": [
+          "fact.b1",
+          "endif.0"
+        ],
+        "header": "endif.0",
+        "natural_loop": [
+          "fact.b1",
+          "endif.0"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "ident": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

@@ -1,0 +1,4 @@
+@main(a: int, b: int) {
+.main.b0:
+  c: int = add a;
+}

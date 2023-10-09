@@ -1,0 +1,6 @@
+@main {
+.main.b0:
+  a: int = const 100;
+  a: int = const 42;
+  print a;
+}

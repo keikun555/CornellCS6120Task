@@ -1,0 +1,22 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "generateNthRow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body.3",
+          "for.cond.3"
+        ],
+        "header": "for.cond.3",
+        "natural_loop": [
+          "for.cond.3",
+          "for.body.3"
+        ]
+      }
+    ]
+  }
+}

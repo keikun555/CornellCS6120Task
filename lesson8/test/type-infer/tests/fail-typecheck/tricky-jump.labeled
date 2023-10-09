@@ -1,0 +1,7 @@
+@main {
+.main.b0:
+  jmp x;
+.earlier:
+  x = id y;
+  ret;
+.later:

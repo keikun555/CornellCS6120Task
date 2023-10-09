@@ -1,0 +1,5 @@
+@main {
+.main.b0:
+  a: bool = const true;
+  a: int = const 4;
+}

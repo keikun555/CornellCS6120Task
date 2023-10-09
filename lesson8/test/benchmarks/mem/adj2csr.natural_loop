@@ -1,0 +1,97 @@
+{
+  "rand": {
+    "reducible": true,
+    "backedges": []
+  },
+  "randarray": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "if_body",
+          "if_done",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "printarray": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "zeroarray": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "adj2csr": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "row_end",
+          "iter_row"
+        ],
+        "header": "iter_row",
+        "natural_loop": [
+          "iter_row",
+          "iter_col",
+          "col_body",
+          "if_body",
+          "col_end",
+          "col_done",
+          "row_end"
+        ]
+      },
+      {
+        "backedge": [
+          "col_end",
+          "iter_col"
+        ],
+        "header": "iter_col",
+        "natural_loop": [
+          "iter_col",
+          "col_body",
+          "if_body",
+          "col_end"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

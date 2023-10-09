@@ -1,0 +1,46 @@
+{
+  "pow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.0",
+          "EXIT"
+        ],
+        "header": "EXIT",
+        "natural_loop": [
+          "pow.b1",
+          "endif.0",
+          "EXIT"
+        ]
+      },
+      {
+        "backedge": [
+          "pow.b1",
+          "endif.0"
+        ],
+        "header": "endif.0",
+        "natural_loop": [
+          "pow.b1",
+          "endif.0"
+        ]
+      }
+    ]
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "LEFTSHIFT": {
+    "reducible": true,
+    "backedges": []
+  },
+  "RIGHTSHIFT": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

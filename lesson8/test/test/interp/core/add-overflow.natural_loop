@@ -1,0 +1,22 @@
+{
+  "pow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "body",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

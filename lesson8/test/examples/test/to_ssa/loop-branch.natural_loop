@@ -1,0 +1,28 @@
+{
+  "func": {
+    "reducible": true,
+    "backedges": []
+  },
+  "loop": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop.next",
+          "loop.header"
+        ],
+        "header": "loop.header",
+        "natural_loop": [
+          "loop.header",
+          "loop.body",
+          "loop.print",
+          "loop.next"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

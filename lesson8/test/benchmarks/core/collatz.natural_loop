@@ -1,0 +1,33 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "odd",
+          "print"
+        ],
+        "header": "print",
+        "natural_loop": [
+          "cond",
+          "loop",
+          "odd",
+          "print"
+        ]
+      },
+      {
+        "backedge": [
+          "even",
+          "print"
+        ],
+        "header": "print",
+        "natural_loop": [
+          "cond",
+          "loop",
+          "even",
+          "print"
+        ]
+      }
+    ]
+  }
+}

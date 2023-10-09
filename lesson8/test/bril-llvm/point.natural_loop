@@ -1,0 +1,10 @@
+{
+  "print_point": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

@@ -1,0 +1,18 @@
+@main {
+.entry:
+  one.0: int = const 1;
+  zero.0: int = const 0;
+  x.0: int = const 5;
+  x.1: int = id x.0;
+  done.0: bool = const false;
+.loop:
+  x.2: int = sub x.1 one.0;
+  done.1: bool = eq x.2 zero.0;
+.br:
+  x.1: int = id x.2;
+  done.0: bool = id done.1;
+  br done.1 .exit .loop;
+.exit:
+  print x.2;
+  ret;
+}

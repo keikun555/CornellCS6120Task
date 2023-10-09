@@ -1,0 +1,25 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "up_arrow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "finally",
+          "loopstart"
+        ],
+        "header": "loopstart",
+        "natural_loop": [
+          "loopstart",
+          "loopbody",
+          "base",
+          "arrowsgreaterthan1",
+          "finally"
+        ]
+      }
+    ]
+  }
+}

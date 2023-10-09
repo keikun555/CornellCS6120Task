@@ -1,0 +1,2726 @@
+1..274
+ok 1 - ./benchmarks/core/ackermann.bril natural-loop
+ok 2 - ./benchmarks/core/ackermann.bril labeled
+ok 3 - ./benchmarks/core/ackermann.bril licm
+ok 4 - ./benchmarks/core/ackermann.bril licm-roundtrip
+ok 5 - ./benchmarks/core/ackermann.bril original-eval
+ok 6 - ./benchmarks/core/ackermann.bril ssa-eval
+ok 7 - ./benchmarks/core/ackermann.bril licm-eval
+ok 8 - ./benchmarks/core/ackermann.bril licm-roundtrip-eval
+ok 9 - ./benchmarks/core/armstrong.bril natural-loop
+ok 10 - ./benchmarks/core/armstrong.bril labeled
+ok 11 - ./benchmarks/core/armstrong.bril licm
+ok 12 - ./benchmarks/core/armstrong.bril licm-roundtrip
+ok 13 - ./benchmarks/core/armstrong.bril original-eval
+ok 14 - ./benchmarks/core/armstrong.bril ssa-eval
+ok 15 - ./benchmarks/core/armstrong.bril licm-eval
+ok 16 - ./benchmarks/core/armstrong.bril licm-roundtrip-eval
+ok 17 - ./benchmarks/core/binary-fmt.bril natural-loop
+ok 18 - ./benchmarks/core/binary-fmt.bril labeled
+ok 19 - ./benchmarks/core/binary-fmt.bril licm
+ok 20 - ./benchmarks/core/binary-fmt.bril licm-roundtrip
+ok 21 - ./benchmarks/core/binary-fmt.bril original-eval
+ok 22 - ./benchmarks/core/binary-fmt.bril ssa-eval
+ok 23 - ./benchmarks/core/binary-fmt.bril licm-eval
+ok 24 - ./benchmarks/core/binary-fmt.bril licm-roundtrip-eval
+ok 25 - ./benchmarks/core/bitshift.bril natural-loop
+ok 26 - ./benchmarks/core/bitshift.bril labeled
+ok 27 - ./benchmarks/core/bitshift.bril licm
+ok 28 - ./benchmarks/core/bitshift.bril licm-roundtrip
+ok 29 - ./benchmarks/core/bitshift.bril original-eval
+ok 30 - ./benchmarks/core/bitshift.bril ssa-eval
+ok 31 - ./benchmarks/core/bitshift.bril licm-eval
+ok 32 - ./benchmarks/core/bitshift.bril licm-roundtrip-eval
+ok 33 - ./benchmarks/core/bitwise-ops.bril natural-loop
+ok 34 - ./benchmarks/core/bitwise-ops.bril labeled
+ok 35 - ./benchmarks/core/bitwise-ops.bril licm
+ok 36 - ./benchmarks/core/bitwise-ops.bril licm-roundtrip
+ok 37 - ./benchmarks/core/bitwise-ops.bril original-eval
+ok 38 - ./benchmarks/core/bitwise-ops.bril ssa-eval
+ok 39 - ./benchmarks/core/bitwise-ops.bril licm-eval
+ok 40 - ./benchmarks/core/bitwise-ops.bril licm-roundtrip-eval
+ok 41 - ./benchmarks/core/catalan.bril natural-loop
+ok 42 - ./benchmarks/core/catalan.bril labeled
+ok 43 - ./benchmarks/core/catalan.bril licm
+ok 44 - ./benchmarks/core/catalan.bril licm-roundtrip
+ok 45 - ./benchmarks/core/catalan.bril original-eval
+ok 46 - ./benchmarks/core/catalan.bril ssa-eval
+ok 47 - ./benchmarks/core/catalan.bril licm-eval
+ok 48 - ./benchmarks/core/catalan.bril licm-roundtrip-eval
+ok 49 - ./benchmarks/core/check-primes.bril natural-loop
+ok 50 - ./benchmarks/core/check-primes.bril labeled
+ok 51 - ./benchmarks/core/check-primes.bril licm
+ok 52 - ./benchmarks/core/check-primes.bril licm-roundtrip
+ok 53 - ./benchmarks/core/check-primes.bril original-eval
+ok 54 - ./benchmarks/core/check-primes.bril ssa-eval
+ok 55 - ./benchmarks/core/check-primes.bril licm-eval
+ok 56 - ./benchmarks/core/check-primes.bril licm-roundtrip-eval
+ok 57 - ./benchmarks/core/collatz.bril natural-loop
+ok 58 - ./benchmarks/core/collatz.bril labeled
+ok 59 - ./benchmarks/core/collatz.bril licm
+ok 60 - ./benchmarks/core/collatz.bril licm-roundtrip
+ok 61 - ./benchmarks/core/collatz.bril original-eval
+ok 62 - ./benchmarks/core/collatz.bril ssa-eval
+ok 63 - ./benchmarks/core/collatz.bril licm-eval
+ok 64 - ./benchmarks/core/collatz.bril licm-roundtrip-eval
+ok 65 - ./benchmarks/core/digital-root.bril natural-loop
+ok 66 - ./benchmarks/core/digital-root.bril labeled
+ok 67 - ./benchmarks/core/digital-root.bril licm
+ok 68 - ./benchmarks/core/digital-root.bril licm-roundtrip
+ok 69 - ./benchmarks/core/digital-root.bril original-eval
+ok 70 - ./benchmarks/core/digital-root.bril ssa-eval
+ok 71 - ./benchmarks/core/digital-root.bril licm-eval
+ok 72 - ./benchmarks/core/digital-root.bril licm-roundtrip-eval
+ok 73 - ./benchmarks/core/dot-product.bril natural-loop
+ok 74 - ./benchmarks/core/dot-product.bril labeled
+ok 75 - ./benchmarks/core/dot-product.bril licm
+ok 76 - ./benchmarks/core/dot-product.bril licm-roundtrip
+ok 77 - ./benchmarks/core/dot-product.bril original-eval
+ok 78 - ./benchmarks/core/dot-product.bril ssa-eval
+ok 79 - ./benchmarks/core/dot-product.bril licm-eval
+ok 80 - ./benchmarks/core/dot-product.bril licm-roundtrip-eval
+ok 81 - ./benchmarks/core/euclid.bril natural-loop
+ok 82 - ./benchmarks/core/euclid.bril labeled
+ok 83 - ./benchmarks/core/euclid.bril licm
+ok 84 - ./benchmarks/core/euclid.bril licm-roundtrip
+ok 85 - ./benchmarks/core/euclid.bril original-eval
+ok 86 - ./benchmarks/core/euclid.bril ssa-eval
+ok 87 - ./benchmarks/core/euclid.bril licm-eval
+ok 88 - ./benchmarks/core/euclid.bril licm-roundtrip-eval
+ok 89 - ./benchmarks/core/fact.bril natural-loop
+ok 90 - ./benchmarks/core/fact.bril labeled
+ok 91 - ./benchmarks/core/fact.bril licm
+ok 92 - ./benchmarks/core/fact.bril licm-roundtrip
+ok 93 - ./benchmarks/core/fact.bril original-eval
+ok 94 - ./benchmarks/core/fact.bril ssa-eval
+ok 95 - ./benchmarks/core/fact.bril licm-eval
+ok 96 - ./benchmarks/core/fact.bril licm-roundtrip-eval
+ok 97 - ./benchmarks/core/factors.bril natural-loop
+ok 98 - ./benchmarks/core/factors.bril labeled
+ok 99 - ./benchmarks/core/factors.bril licm
+ok 100 - ./benchmarks/core/factors.bril licm-roundtrip
+ok 101 - ./benchmarks/core/factors.bril original-eval
+ok 102 - ./benchmarks/core/factors.bril ssa-eval
+ok 103 - ./benchmarks/core/factors.bril licm-eval
+ok 104 - ./benchmarks/core/factors.bril licm-roundtrip-eval
+ok 105 - ./benchmarks/core/fizz-buzz.bril natural-loop
+ok 106 - ./benchmarks/core/fizz-buzz.bril labeled
+ok 107 - ./benchmarks/core/fizz-buzz.bril licm
+ok 108 - ./benchmarks/core/fizz-buzz.bril licm-roundtrip
+ok 109 - ./benchmarks/core/fizz-buzz.bril original-eval
+ok 110 - ./benchmarks/core/fizz-buzz.bril ssa-eval
+ok 111 - ./benchmarks/core/fizz-buzz.bril licm-eval
+ok 112 - ./benchmarks/core/fizz-buzz.bril licm-roundtrip-eval
+ok 113 - ./benchmarks/core/gcd.bril natural-loop
+ok 114 - ./benchmarks/core/gcd.bril labeled
+ok 115 - ./benchmarks/core/gcd.bril licm
+ok 116 - ./benchmarks/core/gcd.bril licm-roundtrip
+ok 117 - ./benchmarks/core/gcd.bril original-eval
+ok 118 - ./benchmarks/core/gcd.bril ssa-eval
+ok 119 - ./benchmarks/core/gcd.bril licm-eval
+ok 120 - ./benchmarks/core/gcd.bril licm-roundtrip-eval
+ok 121 - ./benchmarks/core/hanoi.bril natural-loop
+ok 122 - ./benchmarks/core/hanoi.bril labeled
+ok 123 - ./benchmarks/core/hanoi.bril licm
+ok 124 - ./benchmarks/core/hanoi.bril licm-roundtrip
+ok 125 - ./benchmarks/core/hanoi.bril original-eval
+ok 126 - ./benchmarks/core/hanoi.bril ssa-eval
+ok 127 - ./benchmarks/core/hanoi.bril licm-eval
+ok 128 - ./benchmarks/core/hanoi.bril licm-roundtrip-eval
+ok 129 - ./benchmarks/core/loopfact.bril natural-loop
+ok 130 - ./benchmarks/core/loopfact.bril labeled
+ok 131 - ./benchmarks/core/loopfact.bril licm
+ok 132 - ./benchmarks/core/loopfact.bril licm-roundtrip
+ok 133 - ./benchmarks/core/loopfact.bril original-eval
+ok 134 - ./benchmarks/core/loopfact.bril ssa-eval
+ok 135 - ./benchmarks/core/loopfact.bril licm-eval
+ok 136 - ./benchmarks/core/loopfact.bril licm-roundtrip-eval
+ok 137 - ./benchmarks/core/mod_inv.bril natural-loop
+ok 138 - ./benchmarks/core/mod_inv.bril labeled
+ok 139 - ./benchmarks/core/mod_inv.bril licm
+ok 140 - ./benchmarks/core/mod_inv.bril licm-roundtrip
+ok 141 - ./benchmarks/core/mod_inv.bril original-eval
+ok 142 - ./benchmarks/core/mod_inv.bril ssa-eval
+ok 143 - ./benchmarks/core/mod_inv.bril licm-eval
+ok 144 - ./benchmarks/core/mod_inv.bril licm-roundtrip-eval
+ok 145 - ./benchmarks/core/orders.bril natural-loop
+ok 146 - ./benchmarks/core/orders.bril labeled
+ok 147 - ./benchmarks/core/orders.bril licm
+ok 148 - ./benchmarks/core/orders.bril licm-roundtrip
+ok 149 - ./benchmarks/core/orders.bril original-eval
+ok 150 - ./benchmarks/core/orders.bril ssa-eval
+ok 151 - ./benchmarks/core/orders.bril licm-eval
+ok 152 - ./benchmarks/core/orders.bril licm-roundtrip-eval
+ok 153 - ./benchmarks/core/palindrome.bril natural-loop
+ok 154 - ./benchmarks/core/palindrome.bril labeled
+ok 155 - ./benchmarks/core/palindrome.bril licm
+ok 156 - ./benchmarks/core/palindrome.bril licm-roundtrip
+ok 157 - ./benchmarks/core/palindrome.bril original-eval
+ok 158 - ./benchmarks/core/palindrome.bril ssa-eval
+ok 159 - ./benchmarks/core/palindrome.bril licm-eval
+ok 160 - ./benchmarks/core/palindrome.bril licm-roundtrip-eval
+ok 161 - ./benchmarks/core/pascals-row.bril natural-loop
+ok 162 - ./benchmarks/core/pascals-row.bril labeled
+ok 163 - ./benchmarks/core/pascals-row.bril licm
+ok 164 - ./benchmarks/core/pascals-row.bril licm-roundtrip
+ok 165 - ./benchmarks/core/pascals-row.bril original-eval
+ok 166 - ./benchmarks/core/pascals-row.bril ssa-eval
+ok 167 - ./benchmarks/core/pascals-row.bril licm-eval
+ok 168 - ./benchmarks/core/pascals-row.bril licm-roundtrip-eval
+ok 169 - ./benchmarks/core/perfect.bril natural-loop
+ok 170 - ./benchmarks/core/perfect.bril labeled
+ok 171 - ./benchmarks/core/perfect.bril licm
+ok 172 - ./benchmarks/core/perfect.bril licm-roundtrip
+ok 173 - ./benchmarks/core/perfect.bril original-eval
+ok 174 - ./benchmarks/core/perfect.bril ssa-eval
+ok 175 - ./benchmarks/core/perfect.bril licm-eval
+ok 176 - ./benchmarks/core/perfect.bril licm-roundtrip-eval
+ok 177 - ./benchmarks/core/primes-between.bril natural-loop
+ok 178 - ./benchmarks/core/primes-between.bril labeled
+ok 179 - ./benchmarks/core/primes-between.bril licm
+ok 180 - ./benchmarks/core/primes-between.bril licm-roundtrip
+ok 181 - ./benchmarks/core/primes-between.bril original-eval
+ok 182 - ./benchmarks/core/primes-between.bril ssa-eval
+ok 183 - ./benchmarks/core/primes-between.bril licm-eval
+ok 184 - ./benchmarks/core/primes-between.bril licm-roundtrip-eval
+ok 185 - ./benchmarks/core/pythagorean_triple.bril natural-loop
+ok 186 - ./benchmarks/core/pythagorean_triple.bril labeled
+ok 187 - ./benchmarks/core/pythagorean_triple.bril licm
+ok 188 - ./benchmarks/core/pythagorean_triple.bril licm-roundtrip
+ok 189 - ./benchmarks/core/pythagorean_triple.bril original-eval
+ok 190 - ./benchmarks/core/pythagorean_triple.bril ssa-eval
+ok 191 - ./benchmarks/core/pythagorean_triple.bril licm-eval
+ok 192 - ./benchmarks/core/pythagorean_triple.bril licm-roundtrip-eval
+ok 193 - ./benchmarks/core/quadratic.bril natural-loop
+ok 194 - ./benchmarks/core/quadratic.bril labeled
+ok 195 - ./benchmarks/core/quadratic.bril licm
+ok 196 - ./benchmarks/core/quadratic.bril licm-roundtrip
+ok 197 - ./benchmarks/core/quadratic.bril original-eval
+ok 198 - ./benchmarks/core/quadratic.bril ssa-eval
+ok 199 - ./benchmarks/core/quadratic.bril licm-eval
+ok 200 - ./benchmarks/core/quadratic.bril licm-roundtrip-eval
+ok 201 - ./benchmarks/core/recfact.bril natural-loop
+ok 202 - ./benchmarks/core/recfact.bril labeled
+ok 203 - ./benchmarks/core/recfact.bril licm
+ok 204 - ./benchmarks/core/recfact.bril licm-roundtrip
+ok 205 - ./benchmarks/core/recfact.bril original-eval
+ok 206 - ./benchmarks/core/recfact.bril ssa-eval
+ok 207 - ./benchmarks/core/recfact.bril licm-eval
+ok 208 - ./benchmarks/core/recfact.bril licm-roundtrip-eval
+ok 209 - ./benchmarks/core/rectangles-area-difference.bril natural-loop
+ok 210 - ./benchmarks/core/rectangles-area-difference.bril labeled
+ok 211 - ./benchmarks/core/rectangles-area-difference.bril licm
+ok 212 - ./benchmarks/core/rectangles-area-difference.bril licm-roundtrip
+ok 213 - ./benchmarks/core/rectangles-area-difference.bril original-eval
+ok 214 - ./benchmarks/core/rectangles-area-difference.bril ssa-eval
+ok 215 - ./benchmarks/core/rectangles-area-difference.bril licm-eval
+ok 216 - ./benchmarks/core/rectangles-area-difference.bril licm-roundtrip-eval
+ok 217 - ./benchmarks/core/relative-primes.bril natural-loop
+ok 218 - ./benchmarks/core/relative-primes.bril labeled
+ok 219 - ./benchmarks/core/relative-primes.bril licm
+ok 220 - ./benchmarks/core/relative-primes.bril licm-roundtrip
+ok 221 - ./benchmarks/core/relative-primes.bril original-eval
+ok 222 - ./benchmarks/core/relative-primes.bril ssa-eval
+ok 223 - ./benchmarks/core/relative-primes.bril licm-eval
+ok 224 - ./benchmarks/core/relative-primes.bril licm-roundtrip-eval
+ok 225 - ./benchmarks/core/reverse.bril natural-loop
+ok 226 - ./benchmarks/core/reverse.bril labeled
+ok 227 - ./benchmarks/core/reverse.bril licm
+ok 228 - ./benchmarks/core/reverse.bril licm-roundtrip
+ok 229 - ./benchmarks/core/reverse.bril original-eval
+ok 230 - ./benchmarks/core/reverse.bril ssa-eval
+ok 231 - ./benchmarks/core/reverse.bril licm-eval
+ok 232 - ./benchmarks/core/reverse.bril licm-roundtrip-eval
+ok 233 - ./benchmarks/core/sum-bits.bril natural-loop
+ok 234 - ./benchmarks/core/sum-bits.bril labeled
+ok 235 - ./benchmarks/core/sum-bits.bril licm
+ok 236 - ./benchmarks/core/sum-bits.bril licm-roundtrip
+ok 237 - ./benchmarks/core/sum-bits.bril original-eval
+ok 238 - ./benchmarks/core/sum-bits.bril ssa-eval
+ok 239 - ./benchmarks/core/sum-bits.bril licm-eval
+ok 240 - ./benchmarks/core/sum-bits.bril licm-roundtrip-eval
+ok 241 - ./benchmarks/core/sum-divisors.bril natural-loop
+ok 242 - ./benchmarks/core/sum-divisors.bril labeled
+ok 243 - ./benchmarks/core/sum-divisors.bril licm
+ok 244 - ./benchmarks/core/sum-divisors.bril licm-roundtrip
+ok 245 - ./benchmarks/core/sum-divisors.bril original-eval
+ok 246 - ./benchmarks/core/sum-divisors.bril ssa-eval
+ok 247 - ./benchmarks/core/sum-divisors.bril licm-eval
+ok 248 - ./benchmarks/core/sum-divisors.bril licm-roundtrip-eval
+ok 249 - ./benchmarks/core/sum-sq-diff.bril natural-loop
+ok 250 - ./benchmarks/core/sum-sq-diff.bril labeled
+ok 251 - ./benchmarks/core/sum-sq-diff.bril licm
+ok 252 - ./benchmarks/core/sum-sq-diff.bril licm-roundtrip
+ok 253 - ./benchmarks/core/sum-sq-diff.bril original-eval
+ok 254 - ./benchmarks/core/sum-sq-diff.bril ssa-eval
+ok 255 - ./benchmarks/core/sum-sq-diff.bril licm-eval
+ok 256 - ./benchmarks/core/sum-sq-diff.bril licm-roundtrip-eval
+ok 257 - ./benchmarks/core/totient.bril natural-loop
+ok 258 - ./benchmarks/core/totient.bril labeled
+ok 259 - ./benchmarks/core/totient.bril licm
+ok 260 - ./benchmarks/core/totient.bril licm-roundtrip
+ok 261 - ./benchmarks/core/totient.bril original-eval
+ok 262 - ./benchmarks/core/totient.bril ssa-eval
+ok 263 - ./benchmarks/core/totient.bril licm-eval
+ok 264 - ./benchmarks/core/totient.bril licm-roundtrip-eval
+ok 265 - ./benchmarks/core/up-arrow.bril natural-loop
+ok 266 - ./benchmarks/core/up-arrow.bril labeled
+ok 267 - ./benchmarks/core/up-arrow.bril licm
+ok 268 - ./benchmarks/core/up-arrow.bril licm-roundtrip
+ok 269 - ./benchmarks/core/up-arrow.bril original-eval
+ok 270 - ./benchmarks/core/up-arrow.bril ssa-eval
+ok 271 - ./benchmarks/core/up-arrow.bril licm-eval
+ok 272 - ./benchmarks/core/up-arrow.bril licm-roundtrip-eval
+ok 273 - ./benchmarks/float/conjugate-gradient.bril natural-loop
+ok 274 - ./benchmarks/float/conjugate-gradient.bril labeled
+ok 275 - ./benchmarks/float/conjugate-gradient.bril licm
+ok 276 - ./benchmarks/float/conjugate-gradient.bril licm-roundtrip
+ok 277 - ./benchmarks/float/conjugate-gradient.bril original-eval
+ok 278 - ./benchmarks/float/conjugate-gradient.bril ssa-eval
+ok 279 - ./benchmarks/float/conjugate-gradient.bril licm-eval
+ok 280 - ./benchmarks/float/conjugate-gradient.bril licm-roundtrip-eval
+ok 281 - ./benchmarks/float/cordic.bril natural-loop
+ok 282 - ./benchmarks/float/cordic.bril labeled
+ok 283 - ./benchmarks/float/cordic.bril licm
+ok 284 - ./benchmarks/float/cordic.bril licm-roundtrip
+ok 285 - ./benchmarks/float/cordic.bril original-eval
+ok 286 - ./benchmarks/float/cordic.bril ssa-eval
+ok 287 - ./benchmarks/float/cordic.bril licm-eval
+ok 288 - ./benchmarks/float/cordic.bril licm-roundtrip-eval
+ok 289 - ./benchmarks/float/euler.bril natural-loop
+ok 290 - ./benchmarks/float/euler.bril labeled
+ok 291 - ./benchmarks/float/euler.bril licm
+ok 292 - ./benchmarks/float/euler.bril licm-roundtrip
+ok 293 - ./benchmarks/float/euler.bril original-eval
+ok 294 - ./benchmarks/float/euler.bril ssa-eval
+ok 295 - ./benchmarks/float/euler.bril licm-eval
+ok 296 - ./benchmarks/float/euler.bril licm-roundtrip-eval
+ok 297 - ./benchmarks/float/mandelbrot.bril natural-loop
+ok 298 - ./benchmarks/float/mandelbrot.bril labeled
+ok 299 - ./benchmarks/float/mandelbrot.bril licm
+ok 300 - ./benchmarks/float/mandelbrot.bril licm-roundtrip
+ok 301 - ./benchmarks/float/mandelbrot.bril original-eval
+ok 302 - ./benchmarks/float/mandelbrot.bril ssa-eval
+ok 303 - ./benchmarks/float/mandelbrot.bril licm-eval
+ok 304 - ./benchmarks/float/mandelbrot.bril licm-roundtrip-eval
+ok 305 - ./benchmarks/float/newton.bril natural-loop
+ok 306 - ./benchmarks/float/newton.bril labeled
+ok 307 - ./benchmarks/float/newton.bril licm
+ok 308 - ./benchmarks/float/newton.bril licm-roundtrip
+ok 309 - ./benchmarks/float/newton.bril original-eval
+ok 310 - ./benchmarks/float/newton.bril ssa-eval
+ok 311 - ./benchmarks/float/newton.bril licm-eval
+ok 312 - ./benchmarks/float/newton.bril licm-roundtrip-eval
+ok 313 - ./benchmarks/float/norm.bril natural-loop
+ok 314 - ./benchmarks/float/norm.bril labeled
+ok 315 - ./benchmarks/float/norm.bril licm
+ok 316 - ./benchmarks/float/norm.bril licm-roundtrip
+ok 317 - ./benchmarks/float/norm.bril original-eval
+ok 318 - ./benchmarks/float/norm.bril ssa-eval
+ok 319 - ./benchmarks/float/norm.bril licm-eval
+ok 320 - ./benchmarks/float/norm.bril licm-roundtrip-eval
+ok 321 - ./benchmarks/float/n_root.bril natural-loop
+ok 322 - ./benchmarks/float/n_root.bril labeled
+ok 323 - ./benchmarks/float/n_root.bril licm
+ok 324 - ./benchmarks/float/n_root.bril licm-roundtrip
+ok 325 - ./benchmarks/float/n_root.bril original-eval
+ok 326 - ./benchmarks/float/n_root.bril ssa-eval
+ok 327 - ./benchmarks/float/n_root.bril licm-eval
+ok 328 - ./benchmarks/float/n_root.bril licm-roundtrip-eval
+ok 329 - ./benchmarks/float/pow.bril natural-loop
+ok 330 - ./benchmarks/float/pow.bril labeled
+ok 331 - ./benchmarks/float/pow.bril licm
+ok 332 - ./benchmarks/float/pow.bril licm-roundtrip
+ok 333 - ./benchmarks/float/pow.bril original-eval
+ok 334 - ./benchmarks/float/pow.bril ssa-eval
+ok 335 - ./benchmarks/float/pow.bril licm-eval
+ok 336 - ./benchmarks/float/pow.bril licm-roundtrip-eval
+ok 337 - ./benchmarks/float/ray-sphere-intersection.bril natural-loop
+ok 338 - ./benchmarks/float/ray-sphere-intersection.bril labeled
+ok 339 - ./benchmarks/float/ray-sphere-intersection.bril licm
+ok 340 - ./benchmarks/float/ray-sphere-intersection.bril licm-roundtrip
+ok 341 - ./benchmarks/float/ray-sphere-intersection.bril original-eval
+ok 342 - ./benchmarks/float/ray-sphere-intersection.bril ssa-eval
+ok 343 - ./benchmarks/float/ray-sphere-intersection.bril licm-eval
+ok 344 - ./benchmarks/float/ray-sphere-intersection.bril licm-roundtrip-eval
+ok 345 - ./benchmarks/float/riemann.bril natural-loop
+ok 346 - ./benchmarks/float/riemann.bril labeled
+ok 347 - ./benchmarks/float/riemann.bril licm
+ok 348 - ./benchmarks/float/riemann.bril licm-roundtrip
+ok 349 - ./benchmarks/float/riemann.bril original-eval
+ok 350 - ./benchmarks/float/riemann.bril ssa-eval
+ok 351 - ./benchmarks/float/riemann.bril licm-eval
+ok 352 - ./benchmarks/float/riemann.bril licm-roundtrip-eval
+ok 353 - ./benchmarks/float/sqrt.bril natural-loop
+ok 354 - ./benchmarks/float/sqrt.bril labeled
+ok 355 - ./benchmarks/float/sqrt.bril licm
+ok 356 - ./benchmarks/float/sqrt.bril licm-roundtrip
+ok 357 - ./benchmarks/float/sqrt.bril original-eval
+ok 358 - ./benchmarks/float/sqrt.bril ssa-eval
+ok 359 - ./benchmarks/float/sqrt.bril licm-eval
+ok 360 - ./benchmarks/float/sqrt.bril licm-roundtrip-eval
+ok 361 - ./benchmarks/long/function_call.bril natural-loop
+ok 362 - ./benchmarks/long/function_call.bril labeled
+ok 363 - ./benchmarks/long/function_call.bril licm
+ok 364 - ./benchmarks/long/function_call.bril licm-roundtrip
+ok 365 - ./benchmarks/long/function_call.bril original-eval
+ok 366 - ./benchmarks/long/function_call.bril ssa-eval
+ok 367 - ./benchmarks/long/function_call.bril licm-eval
+ok 368 - ./benchmarks/long/function_call.bril licm-roundtrip-eval
+ok 369 - ./benchmarks/mem/adj2csr.bril natural-loop
+ok 370 - ./benchmarks/mem/adj2csr.bril labeled
+ok 371 - ./benchmarks/mem/adj2csr.bril licm
+ok 372 - ./benchmarks/mem/adj2csr.bril licm-roundtrip
+ok 373 - ./benchmarks/mem/adj2csr.bril original-eval
+ok 374 - ./benchmarks/mem/adj2csr.bril ssa-eval
+ok 375 - ./benchmarks/mem/adj2csr.bril licm-eval
+ok 376 - ./benchmarks/mem/adj2csr.bril licm-roundtrip-eval
+ok 377 - ./benchmarks/mem/adler32.bril natural-loop
+ok 378 - ./benchmarks/mem/adler32.bril labeled
+ok 379 - ./benchmarks/mem/adler32.bril licm
+ok 380 - ./benchmarks/mem/adler32.bril licm-roundtrip
+ok 381 - ./benchmarks/mem/adler32.bril original-eval
+ok 382 - ./benchmarks/mem/adler32.bril ssa-eval
+ok 383 - ./benchmarks/mem/adler32.bril licm-eval
+ok 384 - ./benchmarks/mem/adler32.bril licm-roundtrip-eval
+ok 385 - ./benchmarks/mem/binary-search.bril natural-loop
+ok 386 - ./benchmarks/mem/binary-search.bril labeled
+ok 387 - ./benchmarks/mem/binary-search.bril licm
+ok 388 - ./benchmarks/mem/binary-search.bril licm-roundtrip
+ok 389 - ./benchmarks/mem/binary-search.bril original-eval
+ok 390 - ./benchmarks/mem/binary-search.bril ssa-eval
+ok 391 - ./benchmarks/mem/binary-search.bril licm-eval
+ok 392 - ./benchmarks/mem/binary-search.bril licm-roundtrip-eval
+ok 393 - ./benchmarks/mem/bubblesort.bril natural-loop
+ok 394 - ./benchmarks/mem/bubblesort.bril labeled
+ok 395 - ./benchmarks/mem/bubblesort.bril licm
+ok 396 - ./benchmarks/mem/bubblesort.bril licm-roundtrip
+ok 397 - ./benchmarks/mem/bubblesort.bril original-eval
+ok 398 - ./benchmarks/mem/bubblesort.bril ssa-eval
+ok 399 - ./benchmarks/mem/bubblesort.bril licm-eval
+ok 400 - ./benchmarks/mem/bubblesort.bril licm-roundtrip-eval
+ok 401 - ./benchmarks/mem/eight-queens.bril natural-loop
+ok 402 - ./benchmarks/mem/eight-queens.bril labeled
+ok 403 - ./benchmarks/mem/eight-queens.bril licm
+ok 404 - ./benchmarks/mem/eight-queens.bril licm-roundtrip
+ok 405 - ./benchmarks/mem/eight-queens.bril original-eval
+ok 406 - ./benchmarks/mem/eight-queens.bril ssa-eval
+ok 407 - ./benchmarks/mem/eight-queens.bril licm-eval
+ok 408 - ./benchmarks/mem/eight-queens.bril licm-roundtrip-eval
+ok 409 - ./benchmarks/mem/fib.bril natural-loop
+ok 410 - ./benchmarks/mem/fib.bril labeled
+ok 411 - ./benchmarks/mem/fib.bril licm
+ok 412 - ./benchmarks/mem/fib.bril licm-roundtrip
+ok 413 - ./benchmarks/mem/fib.bril original-eval
+ok 414 - ./benchmarks/mem/fib.bril ssa-eval
+ok 415 - ./benchmarks/mem/fib.bril licm-eval
+ok 416 - ./benchmarks/mem/fib.bril licm-roundtrip-eval
+ok 417 - ./benchmarks/mem/mat-mul.bril natural-loop
+ok 418 - ./benchmarks/mem/mat-mul.bril labeled
+ok 419 - ./benchmarks/mem/mat-mul.bril licm
+ok 420 - ./benchmarks/mem/mat-mul.bril licm-roundtrip
+ok 421 - ./benchmarks/mem/mat-mul.bril original-eval
+ok 422 - ./benchmarks/mem/mat-mul.bril ssa-eval
+ok 423 - ./benchmarks/mem/mat-mul.bril licm-eval
+ok 424 - ./benchmarks/mem/mat-mul.bril licm-roundtrip-eval
+ok 425 - ./benchmarks/mem/max-subarray.bril natural-loop
+ok 426 - ./benchmarks/mem/max-subarray.bril labeled
+ok 427 - ./benchmarks/mem/max-subarray.bril licm
+ok 428 - ./benchmarks/mem/max-subarray.bril licm-roundtrip
+ok 429 - ./benchmarks/mem/max-subarray.bril original-eval
+ok 430 - ./benchmarks/mem/max-subarray.bril ssa-eval
+ok 431 - ./benchmarks/mem/max-subarray.bril licm-eval
+ok 432 - ./benchmarks/mem/max-subarray.bril licm-roundtrip-eval
+ok 433 - ./benchmarks/mem/primitive-root.bril natural-loop
+ok 434 - ./benchmarks/mem/primitive-root.bril labeled
+ok 435 - ./benchmarks/mem/primitive-root.bril licm
+ok 436 - ./benchmarks/mem/primitive-root.bril licm-roundtrip
+ok 437 - ./benchmarks/mem/primitive-root.bril original-eval
+ok 438 - ./benchmarks/mem/primitive-root.bril ssa-eval
+ok 439 - ./benchmarks/mem/primitive-root.bril licm-eval
+ok 440 - ./benchmarks/mem/primitive-root.bril licm-roundtrip-eval
+ok 441 - ./benchmarks/mem/quicksort.bril natural-loop
+ok 442 - ./benchmarks/mem/quicksort.bril labeled
+ok 443 - ./benchmarks/mem/quicksort.bril licm
+ok 444 - ./benchmarks/mem/quicksort.bril licm-roundtrip
+ok 445 - ./benchmarks/mem/quicksort.bril original-eval
+ok 446 - ./benchmarks/mem/quicksort.bril ssa-eval
+ok 447 - ./benchmarks/mem/quicksort.bril licm-eval
+ok 448 - ./benchmarks/mem/quicksort.bril licm-roundtrip-eval
+ok 449 - ./benchmarks/mem/sieve.bril natural-loop
+ok 450 - ./benchmarks/mem/sieve.bril labeled
+ok 451 - ./benchmarks/mem/sieve.bril licm
+ok 452 - ./benchmarks/mem/sieve.bril licm-roundtrip
+ok 453 - ./benchmarks/mem/sieve.bril original-eval
+ok 454 - ./benchmarks/mem/sieve.bril ssa-eval
+ok 455 - ./benchmarks/mem/sieve.bril licm-eval
+ok 456 - ./benchmarks/mem/sieve.bril licm-roundtrip-eval
+ok 457 - ./benchmarks/mem/two-sum.bril natural-loop
+ok 458 - ./benchmarks/mem/two-sum.bril labeled
+ok 459 - ./benchmarks/mem/two-sum.bril licm
+ok 460 - ./benchmarks/mem/two-sum.bril licm-roundtrip
+ok 461 - ./benchmarks/mem/two-sum.bril original-eval
+ok 462 - ./benchmarks/mem/two-sum.bril ssa-eval
+ok 463 - ./benchmarks/mem/two-sum.bril licm-eval
+ok 464 - ./benchmarks/mem/two-sum.bril licm-roundtrip-eval
+ok 465 - ./benchmarks/mem/vsmul.bril natural-loop
+ok 466 - ./benchmarks/mem/vsmul.bril labeled
+ok 467 - ./benchmarks/mem/vsmul.bril licm
+ok 468 - ./benchmarks/mem/vsmul.bril licm-roundtrip
+ok 469 - ./benchmarks/mem/vsmul.bril original-eval
+ok 470 - ./benchmarks/mem/vsmul.bril ssa-eval
+ok 471 - ./benchmarks/mem/vsmul.bril licm-eval
+ok 472 - ./benchmarks/mem/vsmul.bril licm-roundtrip-eval
+ok 473 - ./benchmarks/mixed/cholesky.bril natural-loop
+ok 474 - ./benchmarks/mixed/cholesky.bril labeled
+ok 475 - ./benchmarks/mixed/cholesky.bril licm
+ok 476 - ./benchmarks/mixed/cholesky.bril licm-roundtrip
+ok 477 - ./benchmarks/mixed/cholesky.bril original-eval
+ok 478 - ./benchmarks/mixed/cholesky.bril ssa-eval
+ok 479 - ./benchmarks/mixed/cholesky.bril licm-eval
+ok 480 - ./benchmarks/mixed/cholesky.bril licm-roundtrip-eval
+ok 481 - ./benchmarks/mixed/mat-inv.bril natural-loop
+ok 482 - ./benchmarks/mixed/mat-inv.bril labeled
+ok 483 - ./benchmarks/mixed/mat-inv.bril licm
+ok 484 - ./benchmarks/mixed/mat-inv.bril licm-roundtrip
+ok 485 - ./benchmarks/mixed/mat-inv.bril original-eval
+ok 486 - ./benchmarks/mixed/mat-inv.bril ssa-eval
+ok 487 - ./benchmarks/mixed/mat-inv.bril licm-eval
+ok 488 - ./benchmarks/mixed/mat-inv.bril licm-roundtrip-eval
+ok 489 - ./bril-llvm/linkedlist.bril natural-loop
+ok 490 - ./bril-llvm/linkedlist.bril labeled
+ok 491 - ./bril-llvm/linkedlist.bril licm
+ok 492 - ./bril-llvm/linkedlist.bril licm-roundtrip
+not ok 493 - ./bril-llvm/linkedlist.bril original-eval
+# exit code: 2
+not ok 494 - ./bril-llvm/linkedlist.bril ssa-eval
+# exit code: 2
+not ok 495 - ./bril-llvm/linkedlist.bril licm-eval
+# exit code: 2
+not ok 496 - ./bril-llvm/linkedlist.bril licm-roundtrip-eval
+# exit code: 2
+ok 497 - ./bril-llvm/point.bril natural-loop
+ok 498 - ./bril-llvm/point.bril labeled
+ok 499 - ./bril-llvm/point.bril licm
+ok 500 - ./bril-llvm/point.bril licm-roundtrip
+not ok 501 - ./bril-llvm/point.bril original-eval
+# exit code: 2
+not ok 502 - ./bril-llvm/point.bril ssa-eval
+# exit code: 2
+not ok 503 - ./bril-llvm/point.bril licm-eval
+# exit code: 2
+not ok 504 - ./bril-llvm/point.bril licm-roundtrip-eval
+# exit code: 2
+ok 505 - ./bril-ocaml/test/count/bools.bril natural-loop
+ok 506 - ./bril-ocaml/test/count/bools.bril labeled
+ok 507 - ./bril-ocaml/test/count/bools.bril licm
+ok 508 - ./bril-ocaml/test/count/bools.bril licm-roundtrip
+ok 509 - ./bril-ocaml/test/count/bools.bril original-eval
+ok 510 - ./bril-ocaml/test/count/bools.bril ssa-eval
+ok 511 - ./bril-ocaml/test/count/bools.bril licm-eval
+ok 512 - ./bril-ocaml/test/count/bools.bril licm-roundtrip-eval
+ok 513 - ./bril-ocaml/test/count/empty.bril natural-loop
+ok 514 - ./bril-ocaml/test/count/empty.bril labeled
+ok 515 - ./bril-ocaml/test/count/empty.bril licm
+ok 516 - ./bril-ocaml/test/count/empty.bril licm-roundtrip
+ok 517 - ./bril-ocaml/test/count/empty.bril original-eval
+ok 518 - ./bril-ocaml/test/count/empty.bril ssa-eval
+ok 519 - ./bril-ocaml/test/count/empty.bril licm-eval
+ok 520 - ./bril-ocaml/test/count/empty.bril licm-roundtrip-eval
+ok 521 - ./bril-ocaml/test/count/funcs.bril natural-loop
+ok 522 - ./bril-ocaml/test/count/funcs.bril labeled
+ok 523 - ./bril-ocaml/test/count/funcs.bril licm
+ok 524 - ./bril-ocaml/test/count/funcs.bril licm-roundtrip
+ok 525 - ./bril-ocaml/test/count/funcs.bril original-eval
+ok 526 - ./bril-ocaml/test/count/funcs.bril ssa-eval
+ok 527 - ./bril-ocaml/test/count/funcs.bril licm-eval
+ok 528 - ./bril-ocaml/test/count/funcs.bril licm-roundtrip-eval
+ok 529 - ./bril-ocaml/test/count/ints.bril natural-loop
+ok 530 - ./bril-ocaml/test/count/ints.bril labeled
+ok 531 - ./bril-ocaml/test/count/ints.bril licm
+ok 532 - ./bril-ocaml/test/count/ints.bril licm-roundtrip
+ok 533 - ./bril-ocaml/test/count/ints.bril original-eval
+ok 534 - ./bril-ocaml/test/count/ints.bril ssa-eval
+ok 535 - ./bril-ocaml/test/count/ints.bril licm-eval
+ok 536 - ./bril-ocaml/test/count/ints.bril licm-roundtrip-eval
+ok 537 - ./examples/test/df/cond-args.bril natural-loop
+ok 538 - ./examples/test/df/cond-args.bril labeled
+ok 539 - ./examples/test/df/cond-args.bril licm
+ok 540 - ./examples/test/df/cond-args.bril licm-roundtrip
+not ok 541 - ./examples/test/df/cond-args.bril original-eval
+# exit code: 2
+not ok 542 - ./examples/test/df/cond-args.bril ssa-eval
+# exit code: 2
+not ok 543 - ./examples/test/df/cond-args.bril licm-eval
+# exit code: 2
+not ok 544 - ./examples/test/df/cond-args.bril licm-roundtrip-eval
+# exit code: 2
+ok 545 - ./examples/test/df/cond.bril natural-loop
+ok 546 - ./examples/test/df/cond.bril labeled
+ok 547 - ./examples/test/df/cond.bril licm
+ok 548 - ./examples/test/df/cond.bril licm-roundtrip
+ok 549 - ./examples/test/df/cond.bril original-eval
+ok 550 - ./examples/test/df/cond.bril ssa-eval
+ok 551 - ./examples/test/df/cond.bril licm-eval
+ok 552 - ./examples/test/df/cond.bril licm-roundtrip-eval
+ok 553 - ./examples/test/df/fact.bril natural-loop
+ok 554 - ./examples/test/df/fact.bril labeled
+ok 555 - ./examples/test/df/fact.bril licm
+ok 556 - ./examples/test/df/fact.bril licm-roundtrip
+ok 557 - ./examples/test/df/fact.bril original-eval
+ok 558 - ./examples/test/df/fact.bril ssa-eval
+ok 559 - ./examples/test/df/fact.bril licm-eval
+ok 560 - ./examples/test/df/fact.bril licm-roundtrip-eval
+ok 561 - ./examples/test/dom/loopcond.bril natural-loop
+ok 562 - ./examples/test/dom/loopcond.bril labeled
+ok 563 - ./examples/test/dom/loopcond.bril licm
+ok 564 - ./examples/test/dom/loopcond.bril licm-roundtrip
+ok 565 - ./examples/test/dom/loopcond.bril original-eval
+ok 566 - ./examples/test/dom/loopcond.bril ssa-eval
+ok 567 - ./examples/test/dom/loopcond.bril licm-eval
+ok 568 - ./examples/test/dom/loopcond.bril licm-roundtrip-eval
+ok 569 - ./examples/test/dom/while.bril natural-loop
+ok 570 - ./examples/test/dom/while.bril labeled
+ok 571 - ./examples/test/dom/while.bril licm
+ok 572 - ./examples/test/dom/while.bril licm-roundtrip
+not ok 573 - ./examples/test/dom/while.bril original-eval
+# exit code: 2
+not ok 574 - ./examples/test/dom/while.bril ssa-eval
+# exit code: 2
+not ok 575 - ./examples/test/dom/while.bril licm-eval
+# exit code: 2
+not ok 576 - ./examples/test/dom/while.bril licm-roundtrip-eval
+# exit code: 2
+ok 577 - ./examples/test/lvn/clobber-arg.bril natural-loop
+ok 578 - ./examples/test/lvn/clobber-arg.bril labeled
+ok 579 - ./examples/test/lvn/clobber-arg.bril licm
+ok 580 - ./examples/test/lvn/clobber-arg.bril licm-roundtrip
+ok 581 - ./examples/test/lvn/clobber-arg.bril original-eval
+ok 582 - ./examples/test/lvn/clobber-arg.bril ssa-eval
+ok 583 - ./examples/test/lvn/clobber-arg.bril licm-eval
+ok 584 - ./examples/test/lvn/clobber-arg.bril licm-roundtrip-eval
+not ok 585 - ./examples/test/lvn/clobber.bril natural-loop
+# exit code: 1
+not ok 586 - ./examples/test/lvn/clobber.bril labeled
+# exit code: 1
+not ok 587 - ./examples/test/lvn/clobber.bril licm
+# exit code: 1
+not ok 588 - ./examples/test/lvn/clobber.bril licm-roundtrip
+# exit code: 1
+not ok 589 - ./examples/test/lvn/clobber.bril original-eval
+# exit code: 1
+not ok 590 - ./examples/test/lvn/clobber.bril ssa-eval
+# exit code: 1
+not ok 591 - ./examples/test/lvn/clobber.bril licm-eval
+# exit code: 1
+not ok 592 - ./examples/test/lvn/clobber.bril licm-roundtrip-eval
+# exit code: 1
+not ok 593 - ./examples/test/lvn/clobber-fold.bril natural-loop
+# exit code: 1
+not ok 594 - ./examples/test/lvn/clobber-fold.bril labeled
+# exit code: 1
+not ok 595 - ./examples/test/lvn/clobber-fold.bril licm
+# exit code: 1
+not ok 596 - ./examples/test/lvn/clobber-fold.bril licm-roundtrip
+# exit code: 1
+not ok 597 - ./examples/test/lvn/clobber-fold.bril original-eval
+# exit code: 1
+not ok 598 - ./examples/test/lvn/clobber-fold.bril ssa-eval
+# exit code: 1
+not ok 599 - ./examples/test/lvn/clobber-fold.bril licm-eval
+# exit code: 1
+not ok 600 - ./examples/test/lvn/clobber-fold.bril licm-roundtrip-eval
+# exit code: 1
+ok 601 - ./examples/test/lvn/commute.bril natural-loop
+ok 602 - ./examples/test/lvn/commute.bril labeled
+ok 603 - ./examples/test/lvn/commute.bril licm
+ok 604 - ./examples/test/lvn/commute.bril licm-roundtrip
+not ok 605 - ./examples/test/lvn/commute.bril original-eval
+# exit code: 2
+not ok 606 - ./examples/test/lvn/commute.bril ssa-eval
+# exit code: 2
+not ok 607 - ./examples/test/lvn/commute.bril licm-eval
+# exit code: 2
+not ok 608 - ./examples/test/lvn/commute.bril licm-roundtrip-eval
+# exit code: 2
+ok 609 - ./examples/test/lvn/divide-by-zero.bril natural-loop
+ok 610 - ./examples/test/lvn/divide-by-zero.bril labeled
+ok 611 - ./examples/test/lvn/divide-by-zero.bril licm
+ok 612 - ./examples/test/lvn/divide-by-zero.bril licm-roundtrip
+not ok 613 - ./examples/test/lvn/divide-by-zero.bril original-eval
+# exit code: 2
+not ok 614 - ./examples/test/lvn/divide-by-zero.bril ssa-eval
+# exit code: 2
+not ok 615 - ./examples/test/lvn/divide-by-zero.bril licm-eval
+# exit code: 2
+not ok 616 - ./examples/test/lvn/divide-by-zero.bril licm-roundtrip-eval
+# exit code: 2
+ok 617 - ./examples/test/lvn/fold-comparisons.bril natural-loop
+ok 618 - ./examples/test/lvn/fold-comparisons.bril labeled
+ok 619 - ./examples/test/lvn/fold-comparisons.bril licm
+ok 620 - ./examples/test/lvn/fold-comparisons.bril licm-roundtrip
+not ok 621 - ./examples/test/lvn/fold-comparisons.bril original-eval
+# exit code: 2
+not ok 622 - ./examples/test/lvn/fold-comparisons.bril ssa-eval
+# exit code: 2
+not ok 623 - ./examples/test/lvn/fold-comparisons.bril licm-eval
+# exit code: 2
+not ok 624 - ./examples/test/lvn/fold-comparisons.bril licm-roundtrip-eval
+# exit code: 2
+ok 625 - ./examples/test/lvn/idchain.bril natural-loop
+ok 626 - ./examples/test/lvn/idchain.bril labeled
+ok 627 - ./examples/test/lvn/idchain.bril licm
+ok 628 - ./examples/test/lvn/idchain.bril licm-roundtrip
+ok 629 - ./examples/test/lvn/idchain.bril original-eval
+ok 630 - ./examples/test/lvn/idchain.bril ssa-eval
+ok 631 - ./examples/test/lvn/idchain.bril licm-eval
+ok 632 - ./examples/test/lvn/idchain.bril licm-roundtrip-eval
+ok 633 - ./examples/test/lvn/idchain-nonlocal.bril natural-loop
+ok 634 - ./examples/test/lvn/idchain-nonlocal.bril labeled
+ok 635 - ./examples/test/lvn/idchain-nonlocal.bril licm
+ok 636 - ./examples/test/lvn/idchain-nonlocal.bril licm-roundtrip
+ok 637 - ./examples/test/lvn/idchain-nonlocal.bril original-eval
+ok 638 - ./examples/test/lvn/idchain-nonlocal.bril ssa-eval
+ok 639 - ./examples/test/lvn/idchain-nonlocal.bril licm-eval
+ok 640 - ./examples/test/lvn/idchain-nonlocal.bril licm-roundtrip-eval
+ok 641 - ./examples/test/lvn/idchain-prop.bril natural-loop
+ok 642 - ./examples/test/lvn/idchain-prop.bril labeled
+ok 643 - ./examples/test/lvn/idchain-prop.bril licm
+ok 644 - ./examples/test/lvn/idchain-prop.bril licm-roundtrip
+ok 645 - ./examples/test/lvn/idchain-prop.bril original-eval
+ok 646 - ./examples/test/lvn/idchain-prop.bril ssa-eval
+ok 647 - ./examples/test/lvn/idchain-prop.bril licm-eval
+ok 648 - ./examples/test/lvn/idchain-prop.bril licm-roundtrip-eval
+ok 649 - ./examples/test/lvn/logical-operators.bril natural-loop
+ok 650 - ./examples/test/lvn/logical-operators.bril labeled
+ok 651 - ./examples/test/lvn/logical-operators.bril licm
+ok 652 - ./examples/test/lvn/logical-operators.bril licm-roundtrip
+not ok 653 - ./examples/test/lvn/logical-operators.bril original-eval
+# exit code: 2
+not ok 654 - ./examples/test/lvn/logical-operators.bril ssa-eval
+# exit code: 2
+not ok 655 - ./examples/test/lvn/logical-operators.bril licm-eval
+# exit code: 2
+not ok 656 - ./examples/test/lvn/logical-operators.bril licm-roundtrip-eval
+# exit code: 2
+ok 657 - ./examples/test/lvn/nonlocal.bril natural-loop
+ok 658 - ./examples/test/lvn/nonlocal.bril labeled
+ok 659 - ./examples/test/lvn/nonlocal.bril licm
+ok 660 - ./examples/test/lvn/nonlocal.bril licm-roundtrip
+ok 661 - ./examples/test/lvn/nonlocal.bril original-eval
+ok 662 - ./examples/test/lvn/nonlocal.bril ssa-eval
+ok 663 - ./examples/test/lvn/nonlocal.bril licm-eval
+ok 664 - ./examples/test/lvn/nonlocal.bril licm-roundtrip-eval
+ok 665 - ./examples/test/lvn/nonlocal-clobber.bril natural-loop
+ok 666 - ./examples/test/lvn/nonlocal-clobber.bril labeled
+ok 667 - ./examples/test/lvn/nonlocal-clobber.bril licm
+ok 668 - ./examples/test/lvn/nonlocal-clobber.bril licm-roundtrip
+ok 669 - ./examples/test/lvn/nonlocal-clobber.bril original-eval
+ok 670 - ./examples/test/lvn/nonlocal-clobber.bril ssa-eval
+ok 671 - ./examples/test/lvn/nonlocal-clobber.bril licm-eval
+ok 672 - ./examples/test/lvn/nonlocal-clobber.bril licm-roundtrip-eval
+ok 673 - ./examples/test/lvn/reassign.bril natural-loop
+ok 674 - ./examples/test/lvn/reassign.bril labeled
+ok 675 - ./examples/test/lvn/reassign.bril licm
+ok 676 - ./examples/test/lvn/reassign.bril licm-roundtrip
+ok 677 - ./examples/test/lvn/reassign.bril original-eval
+ok 678 - ./examples/test/lvn/reassign.bril ssa-eval
+ok 679 - ./examples/test/lvn/reassign.bril licm-eval
+ok 680 - ./examples/test/lvn/reassign.bril licm-roundtrip-eval
+ok 681 - ./examples/test/lvn/redundant.bril natural-loop
+ok 682 - ./examples/test/lvn/redundant.bril labeled
+ok 683 - ./examples/test/lvn/redundant.bril licm
+ok 684 - ./examples/test/lvn/redundant.bril licm-roundtrip
+ok 685 - ./examples/test/lvn/redundant.bril original-eval
+ok 686 - ./examples/test/lvn/redundant.bril ssa-eval
+ok 687 - ./examples/test/lvn/redundant.bril licm-eval
+ok 688 - ./examples/test/lvn/redundant.bril licm-roundtrip-eval
+not ok 689 - ./examples/test/lvn/redundant-dce.bril natural-loop
+# exit code: 1
+not ok 690 - ./examples/test/lvn/redundant-dce.bril labeled
+# exit code: 1
+not ok 691 - ./examples/test/lvn/redundant-dce.bril licm
+# exit code: 1
+not ok 692 - ./examples/test/lvn/redundant-dce.bril licm-roundtrip
+# exit code: 1
+not ok 693 - ./examples/test/lvn/redundant-dce.bril original-eval
+# exit code: 1
+not ok 694 - ./examples/test/lvn/redundant-dce.bril ssa-eval
+# exit code: 1
+not ok 695 - ./examples/test/lvn/redundant-dce.bril licm-eval
+# exit code: 1
+not ok 696 - ./examples/test/lvn/redundant-dce.bril licm-roundtrip-eval
+# exit code: 1
+not ok 697 - ./examples/test/lvn/rename-fold.bril natural-loop
+# exit code: 1
+not ok 698 - ./examples/test/lvn/rename-fold.bril labeled
+# exit code: 1
+not ok 699 - ./examples/test/lvn/rename-fold.bril licm
+# exit code: 1
+not ok 700 - ./examples/test/lvn/rename-fold.bril licm-roundtrip
+# exit code: 1
+not ok 701 - ./examples/test/lvn/rename-fold.bril original-eval
+# exit code: 1
+not ok 702 - ./examples/test/lvn/rename-fold.bril ssa-eval
+# exit code: 1
+not ok 703 - ./examples/test/lvn/rename-fold.bril licm-eval
+# exit code: 1
+not ok 704 - ./examples/test/lvn/rename-fold.bril licm-roundtrip-eval
+# exit code: 1
+ok 705 - ./examples/test/ssa/if-orig.bril natural-loop
+ok 706 - ./examples/test/ssa/if-orig.bril labeled
+ok 707 - ./examples/test/ssa/if-orig.bril licm
+ok 708 - ./examples/test/ssa/if-orig.bril licm-roundtrip
+not ok 709 - ./examples/test/ssa/if-orig.bril original-eval
+# exit code: 2
+not ok 710 - ./examples/test/ssa/if-orig.bril ssa-eval
+# exit code: 2
+not ok 711 - ./examples/test/ssa/if-orig.bril licm-eval
+# exit code: 2
+not ok 712 - ./examples/test/ssa/if-orig.bril licm-roundtrip-eval
+# exit code: 2
+ok 713 - ./examples/test/ssa/if-ssa.bril natural-loop
+ok 714 - ./examples/test/ssa/if-ssa.bril labeled
+ok 715 - ./examples/test/ssa/if-ssa.bril licm
+ok 716 - ./examples/test/ssa/if-ssa.bril licm-roundtrip
+not ok 717 - ./examples/test/ssa/if-ssa.bril original-eval
+# exit code: 2
+not ok 718 - ./examples/test/ssa/if-ssa.bril ssa-eval
+# exit code: 2
+not ok 719 - ./examples/test/ssa/if-ssa.bril licm-eval
+# exit code: 2
+not ok 720 - ./examples/test/ssa/if-ssa.bril licm-roundtrip-eval
+# exit code: 2
+ok 721 - ./examples/test/ssa/loop-orig.bril natural-loop
+ok 722 - ./examples/test/ssa/loop-orig.bril labeled
+ok 723 - ./examples/test/ssa/loop-orig.bril licm
+ok 724 - ./examples/test/ssa/loop-orig.bril licm-roundtrip
+ok 725 - ./examples/test/ssa/loop-orig.bril original-eval
+ok 726 - ./examples/test/ssa/loop-orig.bril ssa-eval
+ok 727 - ./examples/test/ssa/loop-orig.bril licm-eval
+ok 728 - ./examples/test/ssa/loop-orig.bril licm-roundtrip-eval
+ok 729 - ./examples/test/ssa/loop-ssa.bril natural-loop
+ok 730 - ./examples/test/ssa/loop-ssa.bril labeled
+ok 731 - ./examples/test/ssa/loop-ssa.bril licm
+ok 732 - ./examples/test/ssa/loop-ssa.bril licm-roundtrip
+ok 733 - ./examples/test/ssa/loop-ssa.bril original-eval
+ok 734 - ./examples/test/ssa/loop-ssa.bril ssa-eval
+ok 735 - ./examples/test/ssa/loop-ssa.bril licm-eval
+ok 736 - ./examples/test/ssa/loop-ssa.bril licm-roundtrip-eval
+ok 737 - ./examples/test/ssa_roundtrip/argwrite.bril natural-loop
+ok 738 - ./examples/test/ssa_roundtrip/argwrite.bril labeled
+ok 739 - ./examples/test/ssa_roundtrip/argwrite.bril licm
+ok 740 - ./examples/test/ssa_roundtrip/argwrite.bril licm-roundtrip
+ok 741 - ./examples/test/ssa_roundtrip/argwrite.bril original-eval
+ok 742 - ./examples/test/ssa_roundtrip/argwrite.bril ssa-eval
+ok 743 - ./examples/test/ssa_roundtrip/argwrite.bril licm-eval
+ok 744 - ./examples/test/ssa_roundtrip/argwrite.bril licm-roundtrip-eval
+ok 745 - ./examples/test/ssa_roundtrip/if.bril natural-loop
+ok 746 - ./examples/test/ssa_roundtrip/if.bril labeled
+ok 747 - ./examples/test/ssa_roundtrip/if.bril licm
+ok 748 - ./examples/test/ssa_roundtrip/if.bril licm-roundtrip
+ok 749 - ./examples/test/ssa_roundtrip/if.bril original-eval
+ok 750 - ./examples/test/ssa_roundtrip/if.bril ssa-eval
+ok 751 - ./examples/test/ssa_roundtrip/if.bril licm-eval
+ok 752 - ./examples/test/ssa_roundtrip/if.bril licm-roundtrip-eval
+ok 753 - ./examples/test/ssa_roundtrip/if-const.bril natural-loop
+ok 754 - ./examples/test/ssa_roundtrip/if-const.bril labeled
+ok 755 - ./examples/test/ssa_roundtrip/if-const.bril licm
+ok 756 - ./examples/test/ssa_roundtrip/if-const.bril licm-roundtrip
+ok 757 - ./examples/test/ssa_roundtrip/if-const.bril original-eval
+ok 758 - ./examples/test/ssa_roundtrip/if-const.bril ssa-eval
+ok 759 - ./examples/test/ssa_roundtrip/if-const.bril licm-eval
+ok 760 - ./examples/test/ssa_roundtrip/if-const.bril licm-roundtrip-eval
+ok 761 - ./examples/test/ssa_roundtrip/loop.bril natural-loop
+ok 762 - ./examples/test/ssa_roundtrip/loop.bril labeled
+ok 763 - ./examples/test/ssa_roundtrip/loop.bril licm
+ok 764 - ./examples/test/ssa_roundtrip/loop.bril licm-roundtrip
+ok 765 - ./examples/test/ssa_roundtrip/loop.bril original-eval
+ok 766 - ./examples/test/ssa_roundtrip/loop.bril ssa-eval
+ok 767 - ./examples/test/ssa_roundtrip/loop.bril licm-eval
+ok 768 - ./examples/test/ssa_roundtrip/loop.bril licm-roundtrip-eval
+ok 769 - ./examples/test/ssa_roundtrip/selfloop.bril natural-loop
+ok 770 - ./examples/test/ssa_roundtrip/selfloop.bril labeled
+ok 771 - ./examples/test/ssa_roundtrip/selfloop.bril licm
+ok 772 - ./examples/test/ssa_roundtrip/selfloop.bril licm-roundtrip
+ok 773 - ./examples/test/ssa_roundtrip/selfloop.bril original-eval
+ok 774 - ./examples/test/ssa_roundtrip/selfloop.bril ssa-eval
+ok 775 - ./examples/test/ssa_roundtrip/selfloop.bril licm-eval
+ok 776 - ./examples/test/ssa_roundtrip/selfloop.bril licm-roundtrip-eval
+ok 777 - ./examples/test/ssa_roundtrip/while.bril natural-loop
+ok 778 - ./examples/test/ssa_roundtrip/while.bril labeled
+ok 779 - ./examples/test/ssa_roundtrip/while.bril licm
+ok 780 - ./examples/test/ssa_roundtrip/while.bril licm-roundtrip
+ok 781 - ./examples/test/ssa_roundtrip/while.bril original-eval
+ok 782 - ./examples/test/ssa_roundtrip/while.bril ssa-eval
+ok 783 - ./examples/test/ssa_roundtrip/while.bril licm-eval
+ok 784 - ./examples/test/ssa_roundtrip/while.bril licm-roundtrip-eval
+ok 785 - ./examples/test/tdce/combo.bril natural-loop
+ok 786 - ./examples/test/tdce/combo.bril labeled
+ok 787 - ./examples/test/tdce/combo.bril licm
+ok 788 - ./examples/test/tdce/combo.bril licm-roundtrip
+not ok 789 - ./examples/test/tdce/combo.bril original-eval
+# exit code: 2
+not ok 790 - ./examples/test/tdce/combo.bril ssa-eval
+# exit code: 2
+not ok 791 - ./examples/test/tdce/combo.bril licm-eval
+# exit code: 2
+not ok 792 - ./examples/test/tdce/combo.bril licm-roundtrip-eval
+# exit code: 2
+ok 793 - ./examples/test/tdce/diamond.bril natural-loop
+ok 794 - ./examples/test/tdce/diamond.bril labeled
+ok 795 - ./examples/test/tdce/diamond.bril licm
+ok 796 - ./examples/test/tdce/diamond.bril licm-roundtrip
+ok 797 - ./examples/test/tdce/diamond.bril original-eval
+ok 798 - ./examples/test/tdce/diamond.bril ssa-eval
+ok 799 - ./examples/test/tdce/diamond.bril licm-eval
+ok 800 - ./examples/test/tdce/diamond.bril licm-roundtrip-eval
+ok 801 - ./examples/test/tdce/double.bril natural-loop
+ok 802 - ./examples/test/tdce/double.bril labeled
+ok 803 - ./examples/test/tdce/double.bril licm
+ok 804 - ./examples/test/tdce/double.bril licm-roundtrip
+ok 805 - ./examples/test/tdce/double.bril original-eval
+ok 806 - ./examples/test/tdce/double.bril ssa-eval
+ok 807 - ./examples/test/tdce/double.bril licm-eval
+ok 808 - ./examples/test/tdce/double.bril licm-roundtrip-eval
+ok 809 - ./examples/test/tdce/double-pass.bril natural-loop
+ok 810 - ./examples/test/tdce/double-pass.bril labeled
+ok 811 - ./examples/test/tdce/double-pass.bril licm
+ok 812 - ./examples/test/tdce/double-pass.bril licm-roundtrip
+not ok 813 - ./examples/test/tdce/double-pass.bril original-eval
+# exit code: 2
+not ok 814 - ./examples/test/tdce/double-pass.bril ssa-eval
+# exit code: 2
+not ok 815 - ./examples/test/tdce/double-pass.bril licm-eval
+# exit code: 2
+not ok 816 - ./examples/test/tdce/double-pass.bril licm-roundtrip-eval
+# exit code: 2
+ok 817 - ./examples/test/tdce/reassign.bril natural-loop
+ok 818 - ./examples/test/tdce/reassign.bril labeled
+ok 819 - ./examples/test/tdce/reassign.bril licm
+ok 820 - ./examples/test/tdce/reassign.bril licm-roundtrip
+ok 821 - ./examples/test/tdce/reassign.bril original-eval
+ok 822 - ./examples/test/tdce/reassign.bril ssa-eval
+ok 823 - ./examples/test/tdce/reassign.bril licm-eval
+ok 824 - ./examples/test/tdce/reassign.bril licm-roundtrip-eval
+ok 825 - ./examples/test/tdce/reassign-dkp.bril natural-loop
+ok 826 - ./examples/test/tdce/reassign-dkp.bril labeled
+ok 827 - ./examples/test/tdce/reassign-dkp.bril licm
+ok 828 - ./examples/test/tdce/reassign-dkp.bril licm-roundtrip
+not ok 829 - ./examples/test/tdce/reassign-dkp.bril original-eval
+# exit code: 2
+not ok 830 - ./examples/test/tdce/reassign-dkp.bril ssa-eval
+# exit code: 2
+not ok 831 - ./examples/test/tdce/reassign-dkp.bril licm-eval
+# exit code: 2
+not ok 832 - ./examples/test/tdce/reassign-dkp.bril licm-roundtrip-eval
+# exit code: 2
+ok 833 - ./examples/test/tdce/simple.bril natural-loop
+ok 834 - ./examples/test/tdce/simple.bril labeled
+ok 835 - ./examples/test/tdce/simple.bril licm
+ok 836 - ./examples/test/tdce/simple.bril licm-roundtrip
+ok 837 - ./examples/test/tdce/simple.bril original-eval
+ok 838 - ./examples/test/tdce/simple.bril ssa-eval
+ok 839 - ./examples/test/tdce/simple.bril licm-eval
+ok 840 - ./examples/test/tdce/simple.bril licm-roundtrip-eval
+ok 841 - ./examples/test/tdce/skipped.bril natural-loop
+ok 842 - ./examples/test/tdce/skipped.bril labeled
+ok 843 - ./examples/test/tdce/skipped.bril licm
+ok 844 - ./examples/test/tdce/skipped.bril licm-roundtrip
+ok 845 - ./examples/test/tdce/skipped.bril original-eval
+ok 846 - ./examples/test/tdce/skipped.bril ssa-eval
+ok 847 - ./examples/test/tdce/skipped.bril licm-eval
+ok 848 - ./examples/test/tdce/skipped.bril licm-roundtrip-eval
+ok 849 - ./examples/test/to_ssa/argwrite.bril natural-loop
+ok 850 - ./examples/test/to_ssa/argwrite.bril labeled
+ok 851 - ./examples/test/to_ssa/argwrite.bril licm
+ok 852 - ./examples/test/to_ssa/argwrite.bril licm-roundtrip
+not ok 853 - ./examples/test/to_ssa/argwrite.bril original-eval
+# exit code: 2
+not ok 854 - ./examples/test/to_ssa/argwrite.bril ssa-eval
+# exit code: 2
+not ok 855 - ./examples/test/to_ssa/argwrite.bril licm-eval
+# exit code: 2
+not ok 856 - ./examples/test/to_ssa/argwrite.bril licm-roundtrip-eval
+# exit code: 2
+ok 857 - ./examples/test/to_ssa/if.bril natural-loop
+ok 858 - ./examples/test/to_ssa/if.bril labeled
+ok 859 - ./examples/test/to_ssa/if.bril licm
+ok 860 - ./examples/test/to_ssa/if.bril licm-roundtrip
+not ok 861 - ./examples/test/to_ssa/if.bril original-eval
+# exit code: 2
+not ok 862 - ./examples/test/to_ssa/if.bril ssa-eval
+# exit code: 2
+not ok 863 - ./examples/test/to_ssa/if.bril licm-eval
+# exit code: 2
+not ok 864 - ./examples/test/to_ssa/if.bril licm-roundtrip-eval
+# exit code: 2
+ok 865 - ./examples/test/to_ssa/if-const.bril natural-loop
+ok 866 - ./examples/test/to_ssa/if-const.bril labeled
+ok 867 - ./examples/test/to_ssa/if-const.bril licm
+ok 868 - ./examples/test/to_ssa/if-const.bril licm-roundtrip
+ok 869 - ./examples/test/to_ssa/if-const.bril original-eval
+ok 870 - ./examples/test/to_ssa/if-const.bril ssa-eval
+ok 871 - ./examples/test/to_ssa/if-const.bril licm-eval
+ok 872 - ./examples/test/to_ssa/if-const.bril licm-roundtrip-eval
+ok 873 - ./examples/test/to_ssa/if-ssa.bril natural-loop
+ok 874 - ./examples/test/to_ssa/if-ssa.bril labeled
+ok 875 - ./examples/test/to_ssa/if-ssa.bril licm
+ok 876 - ./examples/test/to_ssa/if-ssa.bril licm-roundtrip
+not ok 877 - ./examples/test/to_ssa/if-ssa.bril original-eval
+# exit code: 2
+not ok 878 - ./examples/test/to_ssa/if-ssa.bril ssa-eval
+# exit code: 2
+not ok 879 - ./examples/test/to_ssa/if-ssa.bril licm-eval
+# exit code: 2
+not ok 880 - ./examples/test/to_ssa/if-ssa.bril licm-roundtrip-eval
+# exit code: 2
+ok 881 - ./examples/test/to_ssa/loop-branch.bril natural-loop
+ok 882 - ./examples/test/to_ssa/loop-branch.bril labeled
+ok 883 - ./examples/test/to_ssa/loop-branch.bril licm
+ok 884 - ./examples/test/to_ssa/loop-branch.bril licm-roundtrip
+ok 885 - ./examples/test/to_ssa/loop-branch.bril original-eval
+ok 886 - ./examples/test/to_ssa/loop-branch.bril ssa-eval
+ok 887 - ./examples/test/to_ssa/loop-branch.bril licm-eval
+ok 888 - ./examples/test/to_ssa/loop-branch.bril licm-roundtrip-eval
+ok 889 - ./examples/test/to_ssa/loop.bril natural-loop
+ok 890 - ./examples/test/to_ssa/loop.bril labeled
+ok 891 - ./examples/test/to_ssa/loop.bril licm
+ok 892 - ./examples/test/to_ssa/loop.bril licm-roundtrip
+ok 893 - ./examples/test/to_ssa/loop.bril original-eval
+ok 894 - ./examples/test/to_ssa/loop.bril ssa-eval
+ok 895 - ./examples/test/to_ssa/loop.bril licm-eval
+ok 896 - ./examples/test/to_ssa/loop.bril licm-roundtrip-eval
+ok 897 - ./examples/test/to_ssa/selfloop.bril natural-loop
+ok 898 - ./examples/test/to_ssa/selfloop.bril labeled
+ok 899 - ./examples/test/to_ssa/selfloop.bril licm
+ok 900 - ./examples/test/to_ssa/selfloop.bril licm-roundtrip
+ok 901 - ./examples/test/to_ssa/selfloop.bril original-eval
+ok 902 - ./examples/test/to_ssa/selfloop.bril ssa-eval
+ok 903 - ./examples/test/to_ssa/selfloop.bril licm-eval
+ok 904 - ./examples/test/to_ssa/selfloop.bril licm-roundtrip-eval
+ok 905 - ./examples/test/to_ssa/while.bril natural-loop
+ok 906 - ./examples/test/to_ssa/while.bril labeled
+ok 907 - ./examples/test/to_ssa/while.bril licm
+ok 908 - ./examples/test/to_ssa/while.bril licm-roundtrip
+not ok 909 - ./examples/test/to_ssa/while.bril original-eval
+# exit code: 2
+not ok 910 - ./examples/test/to_ssa/while.bril ssa-eval
+# exit code: 2
+not ok 911 - ./examples/test/to_ssa/while.bril licm-eval
+# exit code: 2
+not ok 912 - ./examples/test/to_ssa/while.bril licm-roundtrip-eval
+# exit code: 2
+ok 913 - ./irreducible.bril natural-loop
+ok 914 - ./irreducible.bril labeled
+ok 915 - ./irreducible.bril licm
+ok 916 - ./irreducible.bril licm-roundtrip
+ok 917 - ./irreducible.bril original-eval
+ok 918 - ./irreducible.bril ssa-eval
+ok 919 - ./irreducible.bril licm-eval
+ok 920 - ./irreducible.bril licm-roundtrip-eval
+ok 921 - ./test/check/argtype.bril natural-loop
+ok 922 - ./test/check/argtype.bril labeled
+ok 923 - ./test/check/argtype.bril licm
+ok 924 - ./test/check/argtype.bril licm-roundtrip
+not ok 925 - ./test/check/argtype.bril original-eval
+# exit code: 2
+not ok 926 - ./test/check/argtype.bril ssa-eval
+# exit code: 2
+not ok 927 - ./test/check/argtype.bril licm-eval
+# exit code: 2
+not ok 928 - ./test/check/argtype.bril licm-roundtrip-eval
+# exit code: 2
+ok 929 - ./test/check/badcall.bril natural-loop
+ok 930 - ./test/check/badcall.bril labeled
+ok 931 - ./test/check/badcall.bril licm
+ok 932 - ./test/check/badcall.bril licm-roundtrip
+not ok 933 - ./test/check/badcall.bril original-eval
+# exit code: 2
+not ok 934 - ./test/check/badcall.bril ssa-eval
+# exit code: 2
+not ok 935 - ./test/check/badcall.bril licm-eval
+# exit code: 2
+not ok 936 - ./test/check/badcall.bril licm-roundtrip-eval
+# exit code: 2
+ok 937 - ./test/check/badconst.bril natural-loop
+ok 938 - ./test/check/badconst.bril labeled
+ok 939 - ./test/check/badconst.bril licm
+ok 940 - ./test/check/badconst.bril licm-roundtrip
+ok 941 - ./test/check/badconst.bril original-eval
+ok 942 - ./test/check/badconst.bril ssa-eval
+ok 943 - ./test/check/badconst.bril licm-eval
+ok 944 - ./test/check/badconst.bril licm-roundtrip-eval
+ok 945 - ./test/check/badid.bril natural-loop
+ok 946 - ./test/check/badid.bril labeled
+ok 947 - ./test/check/badid.bril licm
+ok 948 - ./test/check/badid.bril licm-roundtrip
+not ok 949 - ./test/check/badid.bril original-eval
+# exit code: 2
+not ok 950 - ./test/check/badid.bril ssa-eval
+# exit code: 2
+not ok 951 - ./test/check/badid.bril licm-eval
+# exit code: 2
+not ok 952 - ./test/check/badid.bril licm-roundtrip-eval
+# exit code: 2
+ok 953 - ./test/check/badmem.bril natural-loop
+ok 954 - ./test/check/badmem.bril labeled
+ok 955 - ./test/check/badmem.bril licm
+ok 956 - ./test/check/badmem.bril licm-roundtrip
+not ok 957 - ./test/check/badmem.bril original-eval
+# exit code: 2
+not ok 958 - ./test/check/badmem.bril ssa-eval
+# exit code: 2
+not ok 959 - ./test/check/badmem.bril licm-eval
+# exit code: 2
+not ok 960 - ./test/check/badmem.bril licm-roundtrip-eval
+# exit code: 2
+ok 961 - ./test/check/char.bril natural-loop
+ok 962 - ./test/check/char.bril labeled
+ok 963 - ./test/check/char.bril licm
+ok 964 - ./test/check/char.bril licm-roundtrip
+not ok 965 - ./test/check/char.bril original-eval
+# exit code: 2
+not ok 966 - ./test/check/char.bril ssa-eval
+# exit code: 2
+not ok 967 - ./test/check/char.bril licm-eval
+# exit code: 2
+not ok 968 - ./test/check/char.bril licm-roundtrip-eval
+# exit code: 2
+ok 969 - ./test/check/extra.bril natural-loop
+ok 970 - ./test/check/extra.bril labeled
+ok 971 - ./test/check/extra.bril licm
+ok 972 - ./test/check/extra.bril licm-roundtrip
+not ok 973 - ./test/check/extra.bril original-eval
+# exit code: 2
+not ok 974 - ./test/check/extra.bril ssa-eval
+# exit code: 2
+not ok 975 - ./test/check/extra.bril licm-eval
+# exit code: 2
+not ok 976 - ./test/check/extra.bril licm-roundtrip-eval
+# exit code: 2
+ok 977 - ./test/check/labels.bril natural-loop
+not ok 978 - ./test/check/labels.bril labeled
+# exit code: 1
+not ok 979 - ./test/check/labels.bril licm
+# exit code: 1
+not ok 980 - ./test/check/labels.bril licm-roundtrip
+# exit code: 1
+not ok 981 - ./test/check/labels.bril original-eval
+# exit code: 2
+not ok 982 - ./test/check/labels.bril ssa-eval
+# exit code: 1
+not ok 983 - ./test/check/labels.bril licm-eval
+# exit code: 1
+not ok 984 - ./test/check/labels.bril licm-roundtrip-eval
+# exit code: 1
+ok 985 - ./test/check/main-args.bril natural-loop
+ok 986 - ./test/check/main-args.bril labeled
+ok 987 - ./test/check/main-args.bril licm
+ok 988 - ./test/check/main-args.bril licm-roundtrip
+ok 989 - ./test/check/main-args.bril original-eval
+ok 990 - ./test/check/main-args.bril ssa-eval
+ok 991 - ./test/check/main-args.bril licm-eval
+ok 992 - ./test/check/main-args.bril licm-roundtrip-eval
+ok 993 - ./test/check/mem.bril natural-loop
+ok 994 - ./test/check/mem.bril labeled
+ok 995 - ./test/check/mem.bril licm
+ok 996 - ./test/check/mem.bril licm-roundtrip
+not ok 997 - ./test/check/mem.bril original-eval
+# exit code: 2
+not ok 998 - ./test/check/mem.bril ssa-eval
+# exit code: 2
+not ok 999 - ./test/check/mem.bril licm-eval
+# exit code: 2
+not ok 1000 - ./test/check/mem.bril licm-roundtrip-eval
+# exit code: 2
+ok 1001 - ./test/check/missarg.bril natural-loop
+ok 1002 - ./test/check/missarg.bril labeled
+ok 1003 - ./test/check/missarg.bril licm
+ok 1004 - ./test/check/missarg.bril licm-roundtrip
+not ok 1005 - ./test/check/missarg.bril original-eval
+# exit code: 2
+not ok 1006 - ./test/check/missarg.bril ssa-eval
+# exit code: 2
+not ok 1007 - ./test/check/missarg.bril licm-eval
+# exit code: 2
+not ok 1008 - ./test/check/missarg.bril licm-roundtrip-eval
+# exit code: 2
+ok 1009 - ./test/check/missdest.bril natural-loop
+ok 1010 - ./test/check/missdest.bril labeled
+ok 1011 - ./test/check/missdest.bril licm
+ok 1012 - ./test/check/missdest.bril licm-roundtrip
+not ok 1013 - ./test/check/missdest.bril original-eval
+# exit code: 2
+not ok 1014 - ./test/check/missdest.bril ssa-eval
+# exit code: 2
+not ok 1015 - ./test/check/missdest.bril licm-eval
+# exit code: 2
+not ok 1016 - ./test/check/missdest.bril licm-roundtrip-eval
+# exit code: 2
+ok 1017 - ./test/check/printres.bril natural-loop
+ok 1018 - ./test/check/printres.bril labeled
+ok 1019 - ./test/check/printres.bril licm
+ok 1020 - ./test/check/printres.bril licm-roundtrip
+not ok 1021 - ./test/check/printres.bril original-eval
+# exit code: 2
+not ok 1022 - ./test/check/printres.bril ssa-eval
+# exit code: 2
+not ok 1023 - ./test/check/printres.bril licm-eval
+# exit code: 2
+not ok 1024 - ./test/check/printres.bril licm-roundtrip-eval
+# exit code: 2
+ok 1025 - ./test/check/ptr.bril natural-loop
+ok 1026 - ./test/check/ptr.bril labeled
+ok 1027 - ./test/check/ptr.bril licm
+ok 1028 - ./test/check/ptr.bril licm-roundtrip
+not ok 1029 - ./test/check/ptr.bril original-eval
+# exit code: 2
+not ok 1030 - ./test/check/ptr.bril ssa-eval
+# exit code: 2
+not ok 1031 - ./test/check/ptr.bril licm-eval
+# exit code: 2
+not ok 1032 - ./test/check/ptr.bril licm-roundtrip-eval
+# exit code: 2
+ok 1033 - ./test/check/speculate.bril natural-loop
+ok 1034 - ./test/check/speculate.bril labeled
+ok 1035 - ./test/check/speculate.bril licm
+ok 1036 - ./test/check/speculate.bril licm-roundtrip
+not ok 1037 - ./test/check/speculate.bril original-eval
+# exit code: 2
+not ok 1038 - ./test/check/speculate.bril ssa-eval
+# exit code: 2
+not ok 1039 - ./test/check/speculate.bril licm-eval
+# exit code: 2
+not ok 1040 - ./test/check/speculate.bril licm-roundtrip-eval
+# exit code: 2
+ok 1041 - ./test/check/ssa.bril natural-loop
+ok 1042 - ./test/check/ssa.bril labeled
+ok 1043 - ./test/check/ssa.bril licm
+ok 1044 - ./test/check/ssa.bril licm-roundtrip
+not ok 1045 - ./test/check/ssa.bril original-eval
+# exit code: 2
+not ok 1046 - ./test/check/ssa.bril ssa-eval
+# exit code: 2
+not ok 1047 - ./test/check/ssa.bril licm-eval
+# exit code: 2
+ok 1048 - ./test/check/ssa.bril licm-roundtrip-eval
+ok 1049 - ./test/check/tiny.bril natural-loop
+ok 1050 - ./test/check/tiny.bril labeled
+ok 1051 - ./test/check/tiny.bril licm
+ok 1052 - ./test/check/tiny.bril licm-roundtrip
+ok 1053 - ./test/check/tiny.bril original-eval
+ok 1054 - ./test/check/tiny.bril ssa-eval
+ok 1055 - ./test/check/tiny.bril licm-eval
+ok 1056 - ./test/check/tiny.bril licm-roundtrip-eval
+ok 1057 - ./test/check/typeconflict.bril natural-loop
+ok 1058 - ./test/check/typeconflict.bril labeled
+ok 1059 - ./test/check/typeconflict.bril licm
+ok 1060 - ./test/check/typeconflict.bril licm-roundtrip
+ok 1061 - ./test/check/typeconflict.bril original-eval
+ok 1062 - ./test/check/typeconflict.bril ssa-eval
+ok 1063 - ./test/check/typeconflict.bril licm-eval
+ok 1064 - ./test/check/typeconflict.bril licm-roundtrip-eval
+ok 1065 - ./test/check/undef.bril natural-loop
+ok 1066 - ./test/check/undef.bril labeled
+not ok 1067 - ./test/check/undef.bril licm
+# exit code: 1
+not ok 1068 - ./test/check/undef.bril licm-roundtrip
+# exit code: 1
+not ok 1069 - ./test/check/undef.bril original-eval
+# exit code: 2
+not ok 1070 - ./test/check/undef.bril ssa-eval
+# exit code: 1
+not ok 1071 - ./test/check/undef.bril licm-eval
+# exit code: 1
+not ok 1072 - ./test/check/undef.bril licm-roundtrip-eval
+# exit code: 1
+ok 1073 - ./test/interp/char/char_args.bril natural-loop
+ok 1074 - ./test/interp/char/char_args.bril labeled
+ok 1075 - ./test/interp/char/char_args.bril licm
+ok 1076 - ./test/interp/char/char_args.bril licm-roundtrip
+ok 1077 - ./test/interp/char/char_args.bril original-eval
+ok 1078 - ./test/interp/char/char_args.bril ssa-eval
+ok 1079 - ./test/interp/char/char_args.bril licm-eval
+ok 1080 - ./test/interp/char/char_args.bril licm-roundtrip-eval
+ok 1081 - ./test/interp/char/char.bril natural-loop
+ok 1082 - ./test/interp/char/char.bril labeled
+ok 1083 - ./test/interp/char/char.bril licm
+ok 1084 - ./test/interp/char/char.bril licm-roundtrip
+ok 1085 - ./test/interp/char/char.bril original-eval
+ok 1086 - ./test/interp/char/char.bril ssa-eval
+ok 1087 - ./test/interp/char/char.bril licm-eval
+ok 1088 - ./test/interp/char/char.bril licm-roundtrip-eval
+ok 1089 - ./test/interp/char/char_ops.bril natural-loop
+ok 1090 - ./test/interp/char/char_ops.bril labeled
+ok 1091 - ./test/interp/char/char_ops.bril licm
+ok 1092 - ./test/interp/char/char_ops.bril licm-roundtrip
+ok 1093 - ./test/interp/char/char_ops.bril original-eval
+ok 1094 - ./test/interp/char/char_ops.bril ssa-eval
+ok 1095 - ./test/interp/char/char_ops.bril licm-eval
+ok 1096 - ./test/interp/char/char_ops.bril licm-roundtrip-eval
+ok 1097 - ./test/interp/char/control_char.bril natural-loop
+ok 1098 - ./test/interp/char/control_char.bril labeled
+ok 1099 - ./test/interp/char/control_char.bril licm
+ok 1100 - ./test/interp/char/control_char.bril licm-roundtrip
+ok 1101 - ./test/interp/char/control_char.bril original-eval
+ok 1102 - ./test/interp/char/control_char.bril ssa-eval
+ok 1103 - ./test/interp/char/control_char.bril licm-eval
+ok 1104 - ./test/interp/char/control_char.bril licm-roundtrip-eval
+ok 1105 - ./test/interp/char/conversions.bril natural-loop
+ok 1106 - ./test/interp/char/conversions.bril labeled
+ok 1107 - ./test/interp/char/conversions.bril licm
+ok 1108 - ./test/interp/char/conversions.bril licm-roundtrip
+ok 1109 - ./test/interp/char/conversions.bril original-eval
+ok 1110 - ./test/interp/char/conversions.bril ssa-eval
+ok 1111 - ./test/interp/char/conversions.bril licm-eval
+ok 1112 - ./test/interp/char/conversions.bril licm-roundtrip-eval
+ok 1113 - ./test/interp/core/add-overflow.bril natural-loop
+ok 1114 - ./test/interp/core/add-overflow.bril labeled
+ok 1115 - ./test/interp/core/add-overflow.bril licm
+ok 1116 - ./test/interp/core/add-overflow.bril licm-roundtrip
+ok 1117 - ./test/interp/core/add-overflow.bril original-eval
+ok 1118 - ./test/interp/core/add-overflow.bril ssa-eval
+ok 1119 - ./test/interp/core/add-overflow.bril licm-eval
+ok 1120 - ./test/interp/core/add-overflow.bril licm-roundtrip-eval
+ok 1121 - ./test/interp/core/br.bril natural-loop
+ok 1122 - ./test/interp/core/br.bril labeled
+ok 1123 - ./test/interp/core/br.bril licm
+ok 1124 - ./test/interp/core/br.bril licm-roundtrip
+ok 1125 - ./test/interp/core/br.bril original-eval
+ok 1126 - ./test/interp/core/br.bril ssa-eval
+ok 1127 - ./test/interp/core/br.bril licm-eval
+ok 1128 - ./test/interp/core/br.bril licm-roundtrip-eval
+ok 1129 - ./test/interp/core/call.bril natural-loop
+ok 1130 - ./test/interp/core/call.bril labeled
+ok 1131 - ./test/interp/core/call.bril licm
+ok 1132 - ./test/interp/core/call.bril licm-roundtrip
+ok 1133 - ./test/interp/core/call.bril original-eval
+ok 1134 - ./test/interp/core/call.bril ssa-eval
+ok 1135 - ./test/interp/core/call.bril licm-eval
+ok 1136 - ./test/interp/core/call.bril licm-roundtrip-eval
+ok 1137 - ./test/interp/core/call-with-args.bril natural-loop
+ok 1138 - ./test/interp/core/call-with-args.bril labeled
+ok 1139 - ./test/interp/core/call-with-args.bril licm
+ok 1140 - ./test/interp/core/call-with-args.bril licm-roundtrip
+ok 1141 - ./test/interp/core/call-with-args.bril original-eval
+ok 1142 - ./test/interp/core/call-with-args.bril ssa-eval
+ok 1143 - ./test/interp/core/call-with-args.bril licm-eval
+ok 1144 - ./test/interp/core/call-with-args.bril licm-roundtrip-eval
+ok 1145 - ./test/interp/core/div.bril natural-loop
+ok 1146 - ./test/interp/core/div.bril labeled
+ok 1147 - ./test/interp/core/div.bril licm
+ok 1148 - ./test/interp/core/div.bril licm-roundtrip
+ok 1149 - ./test/interp/core/div.bril original-eval
+ok 1150 - ./test/interp/core/div.bril ssa-eval
+ok 1151 - ./test/interp/core/div.bril licm-eval
+ok 1152 - ./test/interp/core/div.bril licm-roundtrip-eval
+ok 1153 - ./test/interp/core/jmp.bril natural-loop
+ok 1154 - ./test/interp/core/jmp.bril labeled
+ok 1155 - ./test/interp/core/jmp.bril licm
+ok 1156 - ./test/interp/core/jmp.bril licm-roundtrip
+ok 1157 - ./test/interp/core/jmp.bril original-eval
+ok 1158 - ./test/interp/core/jmp.bril ssa-eval
+ok 1159 - ./test/interp/core/jmp.bril licm-eval
+ok 1160 - ./test/interp/core/jmp.bril licm-roundtrip-eval
+ok 1161 - ./test/interp/core/main-args.bril natural-loop
+ok 1162 - ./test/interp/core/main-args.bril labeled
+ok 1163 - ./test/interp/core/main-args.bril licm
+ok 1164 - ./test/interp/core/main-args.bril licm-roundtrip
+ok 1165 - ./test/interp/core/main-args.bril original-eval
+ok 1166 - ./test/interp/core/main-args.bril ssa-eval
+ok 1167 - ./test/interp/core/main-args.bril licm-eval
+ok 1168 - ./test/interp/core/main-args.bril licm-roundtrip-eval
+ok 1169 - ./test/interp/core/main-bool-args.bril natural-loop
+ok 1170 - ./test/interp/core/main-bool-args.bril labeled
+ok 1171 - ./test/interp/core/main-bool-args.bril licm
+ok 1172 - ./test/interp/core/main-bool-args.bril licm-roundtrip
+ok 1173 - ./test/interp/core/main-bool-args.bril original-eval
+ok 1174 - ./test/interp/core/main-bool-args.bril ssa-eval
+ok 1175 - ./test/interp/core/main-bool-args.bril licm-eval
+ok 1176 - ./test/interp/core/main-bool-args.bril licm-roundtrip-eval
+ok 1177 - ./test/interp/core/nop.bril natural-loop
+ok 1178 - ./test/interp/core/nop.bril labeled
+ok 1179 - ./test/interp/core/nop.bril licm
+ok 1180 - ./test/interp/core/nop.bril licm-roundtrip
+ok 1181 - ./test/interp/core/nop.bril original-eval
+ok 1182 - ./test/interp/core/nop.bril ssa-eval
+ok 1183 - ./test/interp/core/nop.bril licm-eval
+ok 1184 - ./test/interp/core/nop.bril licm-roundtrip-eval
+ok 1185 - ./test/interp/core/ret.bril natural-loop
+ok 1186 - ./test/interp/core/ret.bril labeled
+ok 1187 - ./test/interp/core/ret.bril licm
+ok 1188 - ./test/interp/core/ret.bril licm-roundtrip
+ok 1189 - ./test/interp/core/ret.bril original-eval
+ok 1190 - ./test/interp/core/ret.bril ssa-eval
+ok 1191 - ./test/interp/core/ret.bril licm-eval
+ok 1192 - ./test/interp/core/ret.bril licm-roundtrip-eval
+ok 1193 - ./test/interp/core/tiny.bril natural-loop
+ok 1194 - ./test/interp/core/tiny.bril labeled
+ok 1195 - ./test/interp/core/tiny.bril licm
+ok 1196 - ./test/interp/core/tiny.bril licm-roundtrip
+ok 1197 - ./test/interp/core/tiny.bril original-eval
+ok 1198 - ./test/interp/core/tiny.bril ssa-eval
+ok 1199 - ./test/interp/core/tiny.bril licm-eval
+ok 1200 - ./test/interp/core/tiny.bril licm-roundtrip-eval
+ok 1201 - ./test/interp-error/char-error/badconversion.bril natural-loop
+ok 1202 - ./test/interp-error/char-error/badconversion.bril labeled
+ok 1203 - ./test/interp-error/char-error/badconversion.bril licm
+ok 1204 - ./test/interp-error/char-error/badconversion.bril licm-roundtrip
+not ok 1205 - ./test/interp-error/char-error/badconversion.bril original-eval
+# exit code: 2
+not ok 1206 - ./test/interp-error/char-error/badconversion.bril ssa-eval
+# exit code: 2
+not ok 1207 - ./test/interp-error/char-error/badconversion.bril licm-eval
+# exit code: 2
+not ok 1208 - ./test/interp-error/char-error/badconversion.bril licm-roundtrip-eval
+# exit code: 2
+ok 1209 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril natural-loop
+ok 1210 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril labeled
+ok 1211 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril licm
+ok 1212 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril licm-roundtrip
+not ok 1213 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril original-eval
+# exit code: 2
+not ok 1214 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril ssa-eval
+# exit code: 2
+not ok 1215 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril licm-eval
+# exit code: 2
+not ok 1216 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril licm-roundtrip-eval
+# exit code: 2
+ok 1217 - ./test/interp-error/core-error/call-return-nothing-error.bril natural-loop
+ok 1218 - ./test/interp-error/core-error/call-return-nothing-error.bril labeled
+ok 1219 - ./test/interp-error/core-error/call-return-nothing-error.bril licm
+ok 1220 - ./test/interp-error/core-error/call-return-nothing-error.bril licm-roundtrip
+not ok 1221 - ./test/interp-error/core-error/call-return-nothing-error.bril original-eval
+# exit code: 2
+not ok 1222 - ./test/interp-error/core-error/call-return-nothing-error.bril ssa-eval
+# exit code: 2
+not ok 1223 - ./test/interp-error/core-error/call-return-nothing-error.bril licm-eval
+# exit code: 2
+not ok 1224 - ./test/interp-error/core-error/call-return-nothing-error.bril licm-roundtrip-eval
+# exit code: 2
+ok 1225 - ./test/interp-error/core-error/call-return-wrong-type.bril natural-loop
+ok 1226 - ./test/interp-error/core-error/call-return-wrong-type.bril labeled
+ok 1227 - ./test/interp-error/core-error/call-return-wrong-type.bril licm
+ok 1228 - ./test/interp-error/core-error/call-return-wrong-type.bril licm-roundtrip
+not ok 1229 - ./test/interp-error/core-error/call-return-wrong-type.bril original-eval
+# exit code: 2
+not ok 1230 - ./test/interp-error/core-error/call-return-wrong-type.bril ssa-eval
+# exit code: 2
+not ok 1231 - ./test/interp-error/core-error/call-return-wrong-type.bril licm-eval
+# exit code: 2
+not ok 1232 - ./test/interp-error/core-error/call-return-wrong-type.bril licm-roundtrip-eval
+# exit code: 2
+ok 1233 - ./test/interp-error/core-error/call-void-return-error.bril natural-loop
+ok 1234 - ./test/interp-error/core-error/call-void-return-error.bril labeled
+ok 1235 - ./test/interp-error/core-error/call-void-return-error.bril licm
+ok 1236 - ./test/interp-error/core-error/call-void-return-error.bril licm-roundtrip
+not ok 1237 - ./test/interp-error/core-error/call-void-return-error.bril original-eval
+# exit code: 2
+not ok 1238 - ./test/interp-error/core-error/call-void-return-error.bril ssa-eval
+# exit code: 2
+not ok 1239 - ./test/interp-error/core-error/call-void-return-error.bril licm-eval
+# exit code: 2
+not ok 1240 - ./test/interp-error/core-error/call-void-return-error.bril licm-roundtrip-eval
+# exit code: 2
+ok 1241 - ./test/interp-error/core-error/call-wrong-argument-types.bril natural-loop
+ok 1242 - ./test/interp-error/core-error/call-wrong-argument-types.bril labeled
+ok 1243 - ./test/interp-error/core-error/call-wrong-argument-types.bril licm
+ok 1244 - ./test/interp-error/core-error/call-wrong-argument-types.bril licm-roundtrip
+not ok 1245 - ./test/interp-error/core-error/call-wrong-argument-types.bril original-eval
+# exit code: 2
+not ok 1246 - ./test/interp-error/core-error/call-wrong-argument-types.bril ssa-eval
+# exit code: 2
+not ok 1247 - ./test/interp-error/core-error/call-wrong-argument-types.bril licm-eval
+# exit code: 2
+not ok 1248 - ./test/interp-error/core-error/call-wrong-argument-types.bril licm-roundtrip-eval
+# exit code: 2
+ok 1249 - ./test/interp-error/core-error/call-wrong-arity.bril natural-loop
+ok 1250 - ./test/interp-error/core-error/call-wrong-arity.bril labeled
+ok 1251 - ./test/interp-error/core-error/call-wrong-arity.bril licm
+ok 1252 - ./test/interp-error/core-error/call-wrong-arity.bril licm-roundtrip
+not ok 1253 - ./test/interp-error/core-error/call-wrong-arity.bril original-eval
+# exit code: 2
+not ok 1254 - ./test/interp-error/core-error/call-wrong-arity.bril ssa-eval
+# exit code: 2
+not ok 1255 - ./test/interp-error/core-error/call-wrong-arity.bril licm-eval
+# exit code: 2
+not ok 1256 - ./test/interp-error/core-error/call-wrong-arity.bril licm-roundtrip-eval
+# exit code: 2
+ok 1257 - ./test/interp-error/core-error/call-wrong-declared-type.bril natural-loop
+ok 1258 - ./test/interp-error/core-error/call-wrong-declared-type.bril labeled
+ok 1259 - ./test/interp-error/core-error/call-wrong-declared-type.bril licm
+ok 1260 - ./test/interp-error/core-error/call-wrong-declared-type.bril licm-roundtrip
+not ok 1261 - ./test/interp-error/core-error/call-wrong-declared-type.bril original-eval
+# exit code: 2
+not ok 1262 - ./test/interp-error/core-error/call-wrong-declared-type.bril ssa-eval
+# exit code: 2
+not ok 1263 - ./test/interp-error/core-error/call-wrong-declared-type.bril licm-eval
+# exit code: 2
+not ok 1264 - ./test/interp-error/core-error/call-wrong-declared-type.bril licm-roundtrip-eval
+# exit code: 2
+ok 1265 - ./test/interp-error/core-error/divide_by_zero.bril natural-loop
+ok 1266 - ./test/interp-error/core-error/divide_by_zero.bril labeled
+ok 1267 - ./test/interp-error/core-error/divide_by_zero.bril licm
+ok 1268 - ./test/interp-error/core-error/divide_by_zero.bril licm-roundtrip
+not ok 1269 - ./test/interp-error/core-error/divide_by_zero.bril original-eval
+# exit code: 2
+not ok 1270 - ./test/interp-error/core-error/divide_by_zero.bril ssa-eval
+# exit code: 2
+not ok 1271 - ./test/interp-error/core-error/divide_by_zero.bril licm-eval
+# exit code: 2
+not ok 1272 - ./test/interp-error/core-error/divide_by_zero.bril licm-roundtrip-eval
+# exit code: 2
+ok 1273 - ./test/interp-error/core-error/duplicate_function.bril natural-loop
+ok 1274 - ./test/interp-error/core-error/duplicate_function.bril labeled
+ok 1275 - ./test/interp-error/core-error/duplicate_function.bril licm
+ok 1276 - ./test/interp-error/core-error/duplicate_function.bril licm-roundtrip
+not ok 1277 - ./test/interp-error/core-error/duplicate_function.bril original-eval
+# exit code: 2
+not ok 1278 - ./test/interp-error/core-error/duplicate_function.bril ssa-eval
+# exit code: 2
+not ok 1279 - ./test/interp-error/core-error/duplicate_function.bril licm-eval
+# exit code: 2
+not ok 1280 - ./test/interp-error/core-error/duplicate_function.bril licm-roundtrip-eval
+# exit code: 2
+ok 1281 - ./test/interp-error/core-error/duplicate_main.bril natural-loop
+ok 1282 - ./test/interp-error/core-error/duplicate_main.bril labeled
+ok 1283 - ./test/interp-error/core-error/duplicate_main.bril licm
+ok 1284 - ./test/interp-error/core-error/duplicate_main.bril licm-roundtrip
+not ok 1285 - ./test/interp-error/core-error/duplicate_main.bril original-eval
+# exit code: 2
+not ok 1286 - ./test/interp-error/core-error/duplicate_main.bril ssa-eval
+# exit code: 2
+not ok 1287 - ./test/interp-error/core-error/duplicate_main.bril licm-eval
+# exit code: 2
+not ok 1288 - ./test/interp-error/core-error/duplicate_main.bril licm-roundtrip-eval
+# exit code: 2
+ok 1289 - ./test/interp-error/core-error/undefined-func.bril natural-loop
+ok 1290 - ./test/interp-error/core-error/undefined-func.bril labeled
+ok 1291 - ./test/interp-error/core-error/undefined-func.bril licm
+ok 1292 - ./test/interp-error/core-error/undefined-func.bril licm-roundtrip
+not ok 1293 - ./test/interp-error/core-error/undefined-func.bril original-eval
+# exit code: 2
+not ok 1294 - ./test/interp-error/core-error/undefined-func.bril ssa-eval
+# exit code: 2
+not ok 1295 - ./test/interp-error/core-error/undefined-func.bril licm-eval
+# exit code: 2
+not ok 1296 - ./test/interp-error/core-error/undefined-func.bril licm-roundtrip-eval
+# exit code: 2
+ok 1297 - ./test/interp-error/mem-error/double_free.bril natural-loop
+ok 1298 - ./test/interp-error/mem-error/double_free.bril labeled
+ok 1299 - ./test/interp-error/mem-error/double_free.bril licm
+ok 1300 - ./test/interp-error/mem-error/double_free.bril licm-roundtrip
+not ok 1301 - ./test/interp-error/mem-error/double_free.bril original-eval
+# exit code: 2
+not ok 1302 - ./test/interp-error/mem-error/double_free.bril ssa-eval
+# exit code: 2
+not ok 1303 - ./test/interp-error/mem-error/double_free.bril licm-eval
+# exit code: 2
+not ok 1304 - ./test/interp-error/mem-error/double_free.bril licm-roundtrip-eval
+# exit code: 2
+ok 1305 - ./test/interp-error/mem-error/free_offset.bril natural-loop
+ok 1306 - ./test/interp-error/mem-error/free_offset.bril labeled
+ok 1307 - ./test/interp-error/mem-error/free_offset.bril licm
+ok 1308 - ./test/interp-error/mem-error/free_offset.bril licm-roundtrip
+not ok 1309 - ./test/interp-error/mem-error/free_offset.bril original-eval
+# exit code: 2
+not ok 1310 - ./test/interp-error/mem-error/free_offset.bril ssa-eval
+# exit code: 2
+not ok 1311 - ./test/interp-error/mem-error/free_offset.bril licm-eval
+# exit code: 2
+not ok 1312 - ./test/interp-error/mem-error/free_offset.bril licm-roundtrip-eval
+# exit code: 2
+ok 1313 - ./test/interp-error/mem-error/leak.bril natural-loop
+ok 1314 - ./test/interp-error/mem-error/leak.bril labeled
+ok 1315 - ./test/interp-error/mem-error/leak.bril licm
+ok 1316 - ./test/interp-error/mem-error/leak.bril licm-roundtrip
+not ok 1317 - ./test/interp-error/mem-error/leak.bril original-eval
+# exit code: 2
+not ok 1318 - ./test/interp-error/mem-error/leak.bril ssa-eval
+# exit code: 2
+not ok 1319 - ./test/interp-error/mem-error/leak.bril licm-eval
+# exit code: 2
+not ok 1320 - ./test/interp-error/mem-error/leak.bril licm-roundtrip-eval
+# exit code: 2
+ok 1321 - ./test/interp-error/mem-error/out_of_bounds_2.bril natural-loop
+ok 1322 - ./test/interp-error/mem-error/out_of_bounds_2.bril labeled
+ok 1323 - ./test/interp-error/mem-error/out_of_bounds_2.bril licm
+ok 1324 - ./test/interp-error/mem-error/out_of_bounds_2.bril licm-roundtrip
+not ok 1325 - ./test/interp-error/mem-error/out_of_bounds_2.bril original-eval
+# exit code: 2
+not ok 1326 - ./test/interp-error/mem-error/out_of_bounds_2.bril ssa-eval
+# exit code: 2
+not ok 1327 - ./test/interp-error/mem-error/out_of_bounds_2.bril licm-eval
+# exit code: 2
+not ok 1328 - ./test/interp-error/mem-error/out_of_bounds_2.bril licm-roundtrip-eval
+# exit code: 2
+ok 1329 - ./test/interp-error/mem-error/out_of_bounds.bril natural-loop
+ok 1330 - ./test/interp-error/mem-error/out_of_bounds.bril labeled
+ok 1331 - ./test/interp-error/mem-error/out_of_bounds.bril licm
+ok 1332 - ./test/interp-error/mem-error/out_of_bounds.bril licm-roundtrip
+not ok 1333 - ./test/interp-error/mem-error/out_of_bounds.bril original-eval
+# exit code: 2
+not ok 1334 - ./test/interp-error/mem-error/out_of_bounds.bril ssa-eval
+# exit code: 2
+not ok 1335 - ./test/interp-error/mem-error/out_of_bounds.bril licm-eval
+# exit code: 2
+not ok 1336 - ./test/interp-error/mem-error/out_of_bounds.bril licm-roundtrip-eval
+# exit code: 2
+ok 1337 - ./test/interp-error/mem-error/uninit_read.bril natural-loop
+ok 1338 - ./test/interp-error/mem-error/uninit_read.bril labeled
+ok 1339 - ./test/interp-error/mem-error/uninit_read.bril licm
+ok 1340 - ./test/interp-error/mem-error/uninit_read.bril licm-roundtrip
+not ok 1341 - ./test/interp-error/mem-error/uninit_read.bril original-eval
+# exit code: 2
+not ok 1342 - ./test/interp-error/mem-error/uninit_read.bril ssa-eval
+# exit code: 2
+not ok 1343 - ./test/interp-error/mem-error/uninit_read.bril licm-eval
+# exit code: 2
+not ok 1344 - ./test/interp-error/mem-error/uninit_read.bril licm-roundtrip-eval
+# exit code: 2
+ok 1345 - ./test/interp-error/mem-error/wrong_write.bril natural-loop
+ok 1346 - ./test/interp-error/mem-error/wrong_write.bril labeled
+ok 1347 - ./test/interp-error/mem-error/wrong_write.bril licm
+ok 1348 - ./test/interp-error/mem-error/wrong_write.bril licm-roundtrip
+not ok 1349 - ./test/interp-error/mem-error/wrong_write.bril original-eval
+# exit code: 2
+not ok 1350 - ./test/interp-error/mem-error/wrong_write.bril ssa-eval
+# exit code: 2
+not ok 1351 - ./test/interp-error/mem-error/wrong_write.bril licm-eval
+# exit code: 2
+not ok 1352 - ./test/interp-error/mem-error/wrong_write.bril licm-roundtrip-eval
+# exit code: 2
+ok 1353 - ./test/interp-error/spec-error/spec-call.bril natural-loop
+ok 1354 - ./test/interp-error/spec-error/spec-call.bril labeled
+ok 1355 - ./test/interp-error/spec-error/spec-call.bril licm
+ok 1356 - ./test/interp-error/spec-error/spec-call.bril licm-roundtrip
+not ok 1357 - ./test/interp-error/spec-error/spec-call.bril original-eval
+# exit code: 2
+not ok 1358 - ./test/interp-error/spec-error/spec-call.bril ssa-eval
+# exit code: 2
+not ok 1359 - ./test/interp-error/spec-error/spec-call.bril licm-eval
+# exit code: 2
+not ok 1360 - ./test/interp-error/spec-error/spec-call.bril licm-roundtrip-eval
+# exit code: 2
+ok 1361 - ./test/interp-error/spec-error/spec-double-commit.bril natural-loop
+ok 1362 - ./test/interp-error/spec-error/spec-double-commit.bril labeled
+ok 1363 - ./test/interp-error/spec-error/spec-double-commit.bril licm
+ok 1364 - ./test/interp-error/spec-error/spec-double-commit.bril licm-roundtrip
+not ok 1365 - ./test/interp-error/spec-error/spec-double-commit.bril original-eval
+# exit code: 2
+not ok 1366 - ./test/interp-error/spec-error/spec-double-commit.bril ssa-eval
+# exit code: 2
+not ok 1367 - ./test/interp-error/spec-error/spec-double-commit.bril licm-eval
+# exit code: 2
+not ok 1368 - ./test/interp-error/spec-error/spec-double-commit.bril licm-roundtrip-eval
+# exit code: 2
+ok 1369 - ./test/interp-error/spec-error/spec-nonspec-abort.bril natural-loop
+ok 1370 - ./test/interp-error/spec-error/spec-nonspec-abort.bril labeled
+ok 1371 - ./test/interp-error/spec-error/spec-nonspec-abort.bril licm
+ok 1372 - ./test/interp-error/spec-error/spec-nonspec-abort.bril licm-roundtrip
+not ok 1373 - ./test/interp-error/spec-error/spec-nonspec-abort.bril original-eval
+# exit code: 2
+not ok 1374 - ./test/interp-error/spec-error/spec-nonspec-abort.bril ssa-eval
+# exit code: 2
+not ok 1375 - ./test/interp-error/spec-error/spec-nonspec-abort.bril licm-eval
+# exit code: 2
+not ok 1376 - ./test/interp-error/spec-error/spec-nonspec-abort.bril licm-roundtrip-eval
+# exit code: 2
+ok 1377 - ./test/interp-error/spec-error/spec-return.bril natural-loop
+ok 1378 - ./test/interp-error/spec-error/spec-return.bril labeled
+ok 1379 - ./test/interp-error/spec-error/spec-return.bril licm
+ok 1380 - ./test/interp-error/spec-error/spec-return.bril licm-roundtrip
+not ok 1381 - ./test/interp-error/spec-error/spec-return.bril original-eval
+# exit code: 2
+not ok 1382 - ./test/interp-error/spec-error/spec-return.bril ssa-eval
+# exit code: 2
+not ok 1383 - ./test/interp-error/spec-error/spec-return.bril licm-eval
+# exit code: 2
+not ok 1384 - ./test/interp-error/spec-error/spec-return.bril licm-roundtrip-eval
+# exit code: 2
+ok 1385 - ./test/interp-error/spec-error/spec-return-implicit.bril natural-loop
+ok 1386 - ./test/interp-error/spec-error/spec-return-implicit.bril labeled
+ok 1387 - ./test/interp-error/spec-error/spec-return-implicit.bril licm
+ok 1388 - ./test/interp-error/spec-error/spec-return-implicit.bril licm-roundtrip
+not ok 1389 - ./test/interp-error/spec-error/spec-return-implicit.bril original-eval
+# exit code: 2
+not ok 1390 - ./test/interp-error/spec-error/spec-return-implicit.bril ssa-eval
+# exit code: 2
+not ok 1391 - ./test/interp-error/spec-error/spec-return-implicit.bril licm-eval
+# exit code: 2
+not ok 1392 - ./test/interp-error/spec-error/spec-return-implicit.bril licm-roundtrip-eval
+# exit code: 2
+ok 1393 - ./test/interp-error/ssa-error/ssa-mismatch.bril natural-loop
+ok 1394 - ./test/interp-error/ssa-error/ssa-mismatch.bril labeled
+ok 1395 - ./test/interp-error/ssa-error/ssa-mismatch.bril licm
+ok 1396 - ./test/interp-error/ssa-error/ssa-mismatch.bril licm-roundtrip
+not ok 1397 - ./test/interp-error/ssa-error/ssa-mismatch.bril original-eval
+# exit code: 2
+not ok 1398 - ./test/interp-error/ssa-error/ssa-mismatch.bril ssa-eval
+# exit code: 2
+not ok 1399 - ./test/interp-error/ssa-error/ssa-mismatch.bril licm-eval
+# exit code: 2
+ok 1400 - ./test/interp-error/ssa-error/ssa-mismatch.bril licm-roundtrip-eval
+ok 1401 - ./test/interp-error/ssa-error/ssa-nolabel.bril natural-loop
+ok 1402 - ./test/interp-error/ssa-error/ssa-nolabel.bril labeled
+ok 1403 - ./test/interp-error/ssa-error/ssa-nolabel.bril licm
+ok 1404 - ./test/interp-error/ssa-error/ssa-nolabel.bril licm-roundtrip
+not ok 1405 - ./test/interp-error/ssa-error/ssa-nolabel.bril original-eval
+# exit code: 2
+not ok 1406 - ./test/interp-error/ssa-error/ssa-nolabel.bril ssa-eval
+# exit code: 2
+not ok 1407 - ./test/interp-error/ssa-error/ssa-nolabel.bril licm-eval
+# exit code: 2
+ok 1408 - ./test/interp-error/ssa-error/ssa-nolabel.bril licm-roundtrip-eval
+ok 1409 - ./test/interp/float/float_args.bril natural-loop
+ok 1410 - ./test/interp/float/float_args.bril labeled
+ok 1411 - ./test/interp/float/float_args.bril licm
+ok 1412 - ./test/interp/float/float_args.bril licm-roundtrip
+ok 1413 - ./test/interp/float/float_args.bril original-eval
+ok 1414 - ./test/interp/float/float_args.bril ssa-eval
+ok 1415 - ./test/interp/float/float_args.bril licm-eval
+ok 1416 - ./test/interp/float/float_args.bril licm-roundtrip-eval
+ok 1417 - ./test/interp/float/float.bril natural-loop
+ok 1418 - ./test/interp/float/float.bril labeled
+ok 1419 - ./test/interp/float/float.bril licm
+ok 1420 - ./test/interp/float/float.bril licm-roundtrip
+ok 1421 - ./test/interp/float/float.bril original-eval
+ok 1422 - ./test/interp/float/float.bril ssa-eval
+ok 1423 - ./test/interp/float/float.bril licm-eval
+ok 1424 - ./test/interp/float/float.bril licm-roundtrip-eval
+ok 1425 - ./test/interp/float/float_divide_by_zero.bril natural-loop
+ok 1426 - ./test/interp/float/float_divide_by_zero.bril labeled
+ok 1427 - ./test/interp/float/float_divide_by_zero.bril licm
+ok 1428 - ./test/interp/float/float_divide_by_zero.bril licm-roundtrip
+ok 1429 - ./test/interp/float/float_divide_by_zero.bril original-eval
+ok 1430 - ./test/interp/float/float_divide_by_zero.bril ssa-eval
+ok 1431 - ./test/interp/float/float_divide_by_zero.bril licm-eval
+ok 1432 - ./test/interp/float/float_divide_by_zero.bril licm-roundtrip-eval
+ok 1433 - ./test/interp/float/float_special.bril natural-loop
+ok 1434 - ./test/interp/float/float_special.bril labeled
+ok 1435 - ./test/interp/float/float_special.bril licm
+ok 1436 - ./test/interp/float/float_special.bril licm-roundtrip
+ok 1437 - ./test/interp/float/float_special.bril original-eval
+ok 1438 - ./test/interp/float/float_special.bril ssa-eval
+ok 1439 - ./test/interp/float/float_special.bril licm-eval
+ok 1440 - ./test/interp/float/float_special.bril licm-roundtrip-eval
+ok 1441 - ./test/interp/mem/access.bril natural-loop
+ok 1442 - ./test/interp/mem/access.bril labeled
+ok 1443 - ./test/interp/mem/access.bril licm
+ok 1444 - ./test/interp/mem/access.bril licm-roundtrip
+ok 1445 - ./test/interp/mem/access.bril original-eval
+ok 1446 - ./test/interp/mem/access.bril ssa-eval
+ok 1447 - ./test/interp/mem/access.bril licm-eval
+ok 1448 - ./test/interp/mem/access.bril licm-roundtrip-eval
+ok 1449 - ./test/interp/mem/access_many.bril natural-loop
+ok 1450 - ./test/interp/mem/access_many.bril labeled
+ok 1451 - ./test/interp/mem/access_many.bril licm
+ok 1452 - ./test/interp/mem/access_many.bril licm-roundtrip
+ok 1453 - ./test/interp/mem/access_many.bril original-eval
+ok 1454 - ./test/interp/mem/access_many.bril ssa-eval
+ok 1455 - ./test/interp/mem/access_many.bril licm-eval
+ok 1456 - ./test/interp/mem/access_many.bril licm-roundtrip-eval
+ok 1457 - ./test/interp/mem/access_ptr.bril natural-loop
+ok 1458 - ./test/interp/mem/access_ptr.bril labeled
+ok 1459 - ./test/interp/mem/access_ptr.bril licm
+ok 1460 - ./test/interp/mem/access_ptr.bril licm-roundtrip
+ok 1461 - ./test/interp/mem/access_ptr.bril original-eval
+ok 1462 - ./test/interp/mem/access_ptr.bril ssa-eval
+ok 1463 - ./test/interp/mem/access_ptr.bril licm-eval
+ok 1464 - ./test/interp/mem/access_ptr.bril licm-roundtrip-eval
+ok 1465 - ./test/interp/mem/alloc.bril natural-loop
+ok 1466 - ./test/interp/mem/alloc.bril labeled
+ok 1467 - ./test/interp/mem/alloc.bril licm
+ok 1468 - ./test/interp/mem/alloc.bril licm-roundtrip
+ok 1469 - ./test/interp/mem/alloc.bril original-eval
+ok 1470 - ./test/interp/mem/alloc.bril ssa-eval
+ok 1471 - ./test/interp/mem/alloc.bril licm-eval
+ok 1472 - ./test/interp/mem/alloc.bril licm-roundtrip-eval
+ok 1473 - ./test/interp/mem/alloc_large.bril natural-loop
+ok 1474 - ./test/interp/mem/alloc_large.bril labeled
+ok 1475 - ./test/interp/mem/alloc_large.bril licm
+ok 1476 - ./test/interp/mem/alloc_large.bril licm-roundtrip
+ok 1477 - ./test/interp/mem/alloc_large.bril original-eval
+ok 1478 - ./test/interp/mem/alloc_large.bril ssa-eval
+ok 1479 - ./test/interp/mem/alloc_large.bril licm-eval
+ok 1480 - ./test/interp/mem/alloc_large.bril licm-roundtrip-eval
+ok 1481 - ./test/interp/mem/alloc_many.bril natural-loop
+ok 1482 - ./test/interp/mem/alloc_many.bril labeled
+ok 1483 - ./test/interp/mem/alloc_many.bril licm
+ok 1484 - ./test/interp/mem/alloc_many.bril licm-roundtrip
+ok 1485 - ./test/interp/mem/alloc_many.bril original-eval
+ok 1486 - ./test/interp/mem/alloc_many.bril ssa-eval
+ok 1487 - ./test/interp/mem/alloc_many.bril licm-eval
+ok 1488 - ./test/interp/mem/alloc_many.bril licm-roundtrip-eval
+ok 1489 - ./test/interp/mem/fib.bril natural-loop
+ok 1490 - ./test/interp/mem/fib.bril labeled
+ok 1491 - ./test/interp/mem/fib.bril licm
+ok 1492 - ./test/interp/mem/fib.bril licm-roundtrip
+ok 1493 - ./test/interp/mem/fib.bril original-eval
+ok 1494 - ./test/interp/mem/fib.bril ssa-eval
+ok 1495 - ./test/interp/mem/fib.bril licm-eval
+ok 1496 - ./test/interp/mem/fib.bril licm-roundtrip-eval
+ok 1497 - ./test/interp/mem/mem_id.bril natural-loop
+ok 1498 - ./test/interp/mem/mem_id.bril labeled
+ok 1499 - ./test/interp/mem/mem_id.bril licm
+ok 1500 - ./test/interp/mem/mem_id.bril licm-roundtrip
+ok 1501 - ./test/interp/mem/mem_id.bril original-eval
+ok 1502 - ./test/interp/mem/mem_id.bril ssa-eval
+ok 1503 - ./test/interp/mem/mem_id.bril licm-eval
+ok 1504 - ./test/interp/mem/mem_id.bril licm-roundtrip-eval
+ok 1505 - ./test/interp/mem/ptr_call.bril natural-loop
+ok 1506 - ./test/interp/mem/ptr_call.bril labeled
+ok 1507 - ./test/interp/mem/ptr_call.bril licm
+ok 1508 - ./test/interp/mem/ptr_call.bril licm-roundtrip
+ok 1509 - ./test/interp/mem/ptr_call.bril original-eval
+ok 1510 - ./test/interp/mem/ptr_call.bril ssa-eval
+ok 1511 - ./test/interp/mem/ptr_call.bril licm-eval
+ok 1512 - ./test/interp/mem/ptr_call.bril licm-roundtrip-eval
+ok 1513 - ./test/interp/mem/ptr_ret.bril natural-loop
+ok 1514 - ./test/interp/mem/ptr_ret.bril labeled
+ok 1515 - ./test/interp/mem/ptr_ret.bril licm
+ok 1516 - ./test/interp/mem/ptr_ret.bril licm-roundtrip
+ok 1517 - ./test/interp/mem/ptr_ret.bril original-eval
+ok 1518 - ./test/interp/mem/ptr_ret.bril ssa-eval
+ok 1519 - ./test/interp/mem/ptr_ret.bril licm-eval
+ok 1520 - ./test/interp/mem/ptr_ret.bril licm-roundtrip-eval
+ok 1521 - ./test/interp/mixed/store-char.bril natural-loop
+ok 1522 - ./test/interp/mixed/store-char.bril labeled
+ok 1523 - ./test/interp/mixed/store-char.bril licm
+ok 1524 - ./test/interp/mixed/store-char.bril licm-roundtrip
+ok 1525 - ./test/interp/mixed/store-char.bril original-eval
+ok 1526 - ./test/interp/mixed/store-char.bril ssa-eval
+ok 1527 - ./test/interp/mixed/store-char.bril licm-eval
+ok 1528 - ./test/interp/mixed/store-char.bril licm-roundtrip-eval
+ok 1529 - ./test/interp/mixed/store-float.bril natural-loop
+ok 1530 - ./test/interp/mixed/store-float.bril labeled
+ok 1531 - ./test/interp/mixed/store-float.bril licm
+ok 1532 - ./test/interp/mixed/store-float.bril licm-roundtrip
+ok 1533 - ./test/interp/mixed/store-float.bril original-eval
+ok 1534 - ./test/interp/mixed/store-float.bril ssa-eval
+ok 1535 - ./test/interp/mixed/store-float.bril licm-eval
+ok 1536 - ./test/interp/mixed/store-float.bril licm-roundtrip-eval
+ok 1537 - ./test/interp/spec/spec-abort.bril natural-loop
+ok 1538 - ./test/interp/spec/spec-abort.bril labeled
+ok 1539 - ./test/interp/spec/spec-abort.bril licm
+ok 1540 - ./test/interp/spec/spec-abort.bril licm-roundtrip
+ok 1541 - ./test/interp/spec/spec-abort.bril original-eval
+ok 1542 - ./test/interp/spec/spec-abort.bril ssa-eval
+ok 1543 - ./test/interp/spec/spec-abort.bril licm-eval
+ok 1544 - ./test/interp/spec/spec-abort.bril licm-roundtrip-eval
+ok 1545 - ./test/interp/spec/spec-commit.bril natural-loop
+ok 1546 - ./test/interp/spec/spec-commit.bril labeled
+ok 1547 - ./test/interp/spec/spec-commit.bril licm
+ok 1548 - ./test/interp/spec/spec-commit.bril licm-roundtrip
+ok 1549 - ./test/interp/spec/spec-commit.bril original-eval
+ok 1550 - ./test/interp/spec/spec-commit.bril ssa-eval
+ok 1551 - ./test/interp/spec/spec-commit.bril licm-eval
+ok 1552 - ./test/interp/spec/spec-commit.bril licm-roundtrip-eval
+ok 1553 - ./test/interp/spec/spec-nested.bril natural-loop
+ok 1554 - ./test/interp/spec/spec-nested.bril labeled
+ok 1555 - ./test/interp/spec/spec-nested.bril licm
+ok 1556 - ./test/interp/spec/spec-nested.bril licm-roundtrip
+ok 1557 - ./test/interp/spec/spec-nested.bril original-eval
+not ok 1558 - ./test/interp/spec/spec-nested.bril ssa-eval
+# exit code: 2
+not ok 1559 - ./test/interp/spec/spec-nested.bril licm-eval
+# exit code: 2
+not ok 1560 - ./test/interp/spec/spec-nested.bril licm-roundtrip-eval
+# exit code: 2
+ok 1561 - ./test/interp/spec/spec-noabort.bril natural-loop
+ok 1562 - ./test/interp/spec/spec-noabort.bril labeled
+ok 1563 - ./test/interp/spec/spec-noabort.bril licm
+ok 1564 - ./test/interp/spec/spec-noabort.bril licm-roundtrip
+ok 1565 - ./test/interp/spec/spec-noabort.bril original-eval
+ok 1566 - ./test/interp/spec/spec-noabort.bril ssa-eval
+ok 1567 - ./test/interp/spec/spec-noabort.bril licm-eval
+ok 1568 - ./test/interp/spec/spec-noabort.bril licm-roundtrip-eval
+ok 1569 - ./test/interp/ssa/ssa-simple.bril natural-loop
+ok 1570 - ./test/interp/ssa/ssa-simple.bril labeled
+ok 1571 - ./test/interp/ssa/ssa-simple.bril licm
+ok 1572 - ./test/interp/ssa/ssa-simple.bril licm-roundtrip
+ok 1573 - ./test/interp/ssa/ssa-simple.bril original-eval
+ok 1574 - ./test/interp/ssa/ssa-simple.bril ssa-eval
+ok 1575 - ./test/interp/ssa/ssa-simple.bril licm-eval
+ok 1576 - ./test/interp/ssa/ssa-simple.bril licm-roundtrip-eval
+ok 1577 - ./test/interp/ssa/ssa-simple-inv.bril natural-loop
+ok 1578 - ./test/interp/ssa/ssa-simple-inv.bril labeled
+ok 1579 - ./test/interp/ssa/ssa-simple-inv.bril licm
+ok 1580 - ./test/interp/ssa/ssa-simple-inv.bril licm-roundtrip
+ok 1581 - ./test/interp/ssa/ssa-simple-inv.bril original-eval
+ok 1582 - ./test/interp/ssa/ssa-simple-inv.bril ssa-eval
+ok 1583 - ./test/interp/ssa/ssa-simple-inv.bril licm-eval
+ok 1584 - ./test/interp/ssa/ssa-simple-inv.bril licm-roundtrip-eval
+ok 1585 - ./test/linking/diamond.bril natural-loop
+not ok 1586 - ./test/linking/diamond.bril labeled
+# exit code: 1
+not ok 1587 - ./test/linking/diamond.bril licm
+# exit code: 1
+not ok 1588 - ./test/linking/diamond.bril licm-roundtrip
+# exit code: 1
+not ok 1589 - ./test/linking/diamond.bril original-eval
+# exit code: 1
+not ok 1590 - ./test/linking/diamond.bril ssa-eval
+# exit code: 1
+not ok 1591 - ./test/linking/diamond.bril licm-eval
+# exit code: 1
+not ok 1592 - ./test/linking/diamond.bril licm-roundtrip-eval
+# exit code: 1
+ok 1593 - ./test/linking/link_ops.bril natural-loop
+not ok 1594 - ./test/linking/link_ops.bril labeled
+# exit code: 1
+not ok 1595 - ./test/linking/link_ops.bril licm
+# exit code: 1
+not ok 1596 - ./test/linking/link_ops.bril licm-roundtrip
+# exit code: 1
+not ok 1597 - ./test/linking/link_ops.bril original-eval
+# exit code: 1
+not ok 1598 - ./test/linking/link_ops.bril ssa-eval
+# exit code: 1
+not ok 1599 - ./test/linking/link_ops.bril licm-eval
+# exit code: 1
+not ok 1600 - ./test/linking/link_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 1601 - ./test/linking/nested.bril natural-loop
+not ok 1602 - ./test/linking/nested.bril labeled
+# exit code: 1
+not ok 1603 - ./test/linking/nested.bril licm
+# exit code: 1
+not ok 1604 - ./test/linking/nested.bril licm-roundtrip
+# exit code: 1
+not ok 1605 - ./test/linking/nested.bril original-eval
+# exit code: 1
+not ok 1606 - ./test/linking/nested.bril ssa-eval
+# exit code: 1
+not ok 1607 - ./test/linking/nested.bril licm-eval
+# exit code: 1
+not ok 1608 - ./test/linking/nested.bril licm-roundtrip-eval
+# exit code: 1
+ok 1609 - ./test/linking/recursive.bril natural-loop
+not ok 1610 - ./test/linking/recursive.bril labeled
+# exit code: 1
+not ok 1611 - ./test/linking/recursive.bril licm
+# exit code: 1
+not ok 1612 - ./test/linking/recursive.bril licm-roundtrip
+# exit code: 1
+not ok 1613 - ./test/linking/recursive.bril original-eval
+# exit code: 1
+not ok 1614 - ./test/linking/recursive.bril ssa-eval
+# exit code: 1
+not ok 1615 - ./test/linking/recursive.bril licm-eval
+# exit code: 1
+not ok 1616 - ./test/linking/recursive.bril licm-roundtrip-eval
+# exit code: 1
+ok 1617 - ./test/parse/add.bril natural-loop
+ok 1618 - ./test/parse/add.bril labeled
+ok 1619 - ./test/parse/add.bril licm
+ok 1620 - ./test/parse/add.bril licm-roundtrip
+ok 1621 - ./test/parse/add.bril original-eval
+ok 1622 - ./test/parse/add.bril ssa-eval
+ok 1623 - ./test/parse/add.bril licm-eval
+ok 1624 - ./test/parse/add.bril licm-roundtrip-eval
+ok 1625 - ./test/parse/char.bril natural-loop
+ok 1626 - ./test/parse/char.bril labeled
+ok 1627 - ./test/parse/char.bril licm
+ok 1628 - ./test/parse/char.bril licm-roundtrip
+ok 1629 - ./test/parse/char.bril original-eval
+ok 1630 - ./test/parse/char.bril ssa-eval
+ok 1631 - ./test/parse/char.bril licm-eval
+ok 1632 - ./test/parse/char.bril licm-roundtrip-eval
+ok 1633 - ./test/parse/comment.bril natural-loop
+ok 1634 - ./test/parse/comment.bril labeled
+ok 1635 - ./test/parse/comment.bril licm
+ok 1636 - ./test/parse/comment.bril licm-roundtrip
+ok 1637 - ./test/parse/comment.bril original-eval
+ok 1638 - ./test/parse/comment.bril ssa-eval
+ok 1639 - ./test/parse/comment.bril licm-eval
+ok 1640 - ./test/parse/comment.bril licm-roundtrip-eval
+ok 1641 - ./test/parse/float.bril natural-loop
+ok 1642 - ./test/parse/float.bril labeled
+ok 1643 - ./test/parse/float.bril licm
+ok 1644 - ./test/parse/float.bril licm-roundtrip
+ok 1645 - ./test/parse/float.bril original-eval
+ok 1646 - ./test/parse/float.bril ssa-eval
+ok 1647 - ./test/parse/float.bril licm-eval
+ok 1648 - ./test/parse/float.bril licm-roundtrip-eval
+ok 1649 - ./test/parse/mem.bril natural-loop
+ok 1650 - ./test/parse/mem.bril labeled
+ok 1651 - ./test/parse/mem.bril licm
+ok 1652 - ./test/parse/mem.bril licm-roundtrip
+ok 1653 - ./test/parse/mem.bril original-eval
+ok 1654 - ./test/parse/mem.bril ssa-eval
+ok 1655 - ./test/parse/mem.bril licm-eval
+ok 1656 - ./test/parse/mem.bril licm-roundtrip-eval
+ok 1657 - ./test/parse/positions.bril natural-loop
+ok 1658 - ./test/parse/positions.bril labeled
+ok 1659 - ./test/parse/positions.bril licm
+ok 1660 - ./test/parse/positions.bril licm-roundtrip
+ok 1661 - ./test/parse/positions.bril original-eval
+ok 1662 - ./test/parse/positions.bril ssa-eval
+ok 1663 - ./test/parse/positions.bril licm-eval
+ok 1664 - ./test/parse/positions.bril licm-roundtrip-eval
+ok 1665 - ./test/parse/print.bril natural-loop
+ok 1666 - ./test/parse/print.bril labeled
+ok 1667 - ./test/parse/print.bril licm
+ok 1668 - ./test/parse/print.bril licm-roundtrip
+ok 1669 - ./test/parse/print.bril original-eval
+ok 1670 - ./test/parse/print.bril ssa-eval
+ok 1671 - ./test/parse/print.bril licm-eval
+ok 1672 - ./test/parse/print.bril licm-roundtrip-eval
+ok 1673 - ./test/print/add.bril natural-loop
+ok 1674 - ./test/print/add.bril labeled
+ok 1675 - ./test/print/add.bril licm
+ok 1676 - ./test/print/add.bril licm-roundtrip
+ok 1677 - ./test/print/add.bril original-eval
+ok 1678 - ./test/print/add.bril ssa-eval
+ok 1679 - ./test/print/add.bril licm-eval
+ok 1680 - ./test/print/add.bril licm-roundtrip-eval
+ok 1681 - ./test/print/call.bril natural-loop
+ok 1682 - ./test/print/call.bril labeled
+ok 1683 - ./test/print/call.bril licm
+ok 1684 - ./test/print/call.bril licm-roundtrip
+ok 1685 - ./test/print/call.bril original-eval
+ok 1686 - ./test/print/call.bril ssa-eval
+ok 1687 - ./test/print/call.bril licm-eval
+ok 1688 - ./test/print/call.bril licm-roundtrip-eval
+ok 1689 - ./test/print/char.bril natural-loop
+ok 1690 - ./test/print/char.bril labeled
+ok 1691 - ./test/print/char.bril licm
+ok 1692 - ./test/print/char.bril licm-roundtrip
+ok 1693 - ./test/print/char.bril original-eval
+ok 1694 - ./test/print/char.bril ssa-eval
+ok 1695 - ./test/print/char.bril licm-eval
+ok 1696 - ./test/print/char.bril licm-roundtrip-eval
+ok 1697 - ./test/print/eight-queens.bril natural-loop
+ok 1698 - ./test/print/eight-queens.bril labeled
+ok 1699 - ./test/print/eight-queens.bril licm
+ok 1700 - ./test/print/eight-queens.bril licm-roundtrip
+not ok 1701 - ./test/print/eight-queens.bril original-eval
+# exit code: 2
+not ok 1702 - ./test/print/eight-queens.bril ssa-eval
+# exit code: 2
+not ok 1703 - ./test/print/eight-queens.bril licm-eval
+# exit code: 2
+not ok 1704 - ./test/print/eight-queens.bril licm-roundtrip-eval
+# exit code: 2
+ok 1705 - ./test/print/ptr.bril natural-loop
+ok 1706 - ./test/print/ptr.bril labeled
+ok 1707 - ./test/print/ptr.bril licm
+ok 1708 - ./test/print/ptr.bril licm-roundtrip
+ok 1709 - ./test/print/ptr.bril original-eval
+ok 1710 - ./test/print/ptr.bril ssa-eval
+ok 1711 - ./test/print/ptr.bril licm-eval
+ok 1712 - ./test/print/ptr.bril licm-roundtrip-eval
+ok 1713 - ./test/print/spec-abort.bril natural-loop
+ok 1714 - ./test/print/spec-abort.bril labeled
+ok 1715 - ./test/print/spec-abort.bril licm
+ok 1716 - ./test/print/spec-abort.bril licm-roundtrip
+ok 1717 - ./test/print/spec-abort.bril original-eval
+ok 1718 - ./test/print/spec-abort.bril ssa-eval
+ok 1719 - ./test/print/spec-abort.bril licm-eval
+ok 1720 - ./test/print/spec-abort.bril licm-roundtrip-eval
+not ok 1721 - ./type-infer/tests/fail-infer/arith_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1722 - ./type-infer/tests/fail-infer/arith_ops.bril labeled
+ok 1723 - ./type-infer/tests/fail-infer/arith_ops.bril licm
+ok 1724 - ./type-infer/tests/fail-infer/arith_ops.bril licm-roundtrip
+not ok 1725 - ./type-infer/tests/fail-infer/arith_ops.bril original-eval
+# exit code: 2, expected: 1
+ok 1726 - ./type-infer/tests/fail-infer/arith_ops.bril ssa-eval
+ok 1727 - ./type-infer/tests/fail-infer/arith_ops.bril licm-eval
+ok 1728 - ./type-infer/tests/fail-infer/arith_ops.bril licm-roundtrip-eval
+ok 1729 - ./type-infer/tests/fail-infer/assign_label.bril natural-loop
+not ok 1730 - ./type-infer/tests/fail-infer/assign_label.bril labeled
+# exit code: 1
+not ok 1731 - ./type-infer/tests/fail-infer/assign_label.bril licm
+# exit code: 1
+not ok 1732 - ./type-infer/tests/fail-infer/assign_label.bril licm-roundtrip
+# exit code: 1
+ok 1733 - ./type-infer/tests/fail-infer/assign_label.bril original-eval
+not ok 1734 - ./type-infer/tests/fail-infer/assign_label.bril ssa-eval
+# exit code: 1
+not ok 1735 - ./type-infer/tests/fail-infer/assign_label.bril licm-eval
+# exit code: 1
+not ok 1736 - ./type-infer/tests/fail-infer/assign_label.bril licm-roundtrip-eval
+# exit code: 1
+not ok 1737 - ./type-infer/tests/fail-infer/br.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1738 - ./type-infer/tests/fail-infer/br.bril labeled
+# exit code: 0, expected: 1
+not ok 1739 - ./type-infer/tests/fail-infer/br.bril licm
+# exit code: 0, expected: 1
+not ok 1740 - ./type-infer/tests/fail-infer/br.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1741 - ./type-infer/tests/fail-infer/br.bril original-eval
+# exit code: 2, expected: 1
+not ok 1742 - ./type-infer/tests/fail-infer/br.bril ssa-eval
+# exit code: 2, expected: 1
+not ok 1743 - ./type-infer/tests/fail-infer/br.bril licm-eval
+# exit code: 2, expected: 1
+not ok 1744 - ./type-infer/tests/fail-infer/br.bril licm-roundtrip-eval
+# exit code: 2, expected: 1
+not ok 1745 - ./type-infer/tests/fail-infer/comp_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1746 - ./type-infer/tests/fail-infer/comp_ops.bril labeled
+ok 1747 - ./type-infer/tests/fail-infer/comp_ops.bril licm
+ok 1748 - ./type-infer/tests/fail-infer/comp_ops.bril licm-roundtrip
+not ok 1749 - ./type-infer/tests/fail-infer/comp_ops.bril original-eval
+# exit code: 2, expected: 1
+ok 1750 - ./type-infer/tests/fail-infer/comp_ops.bril ssa-eval
+ok 1751 - ./type-infer/tests/fail-infer/comp_ops.bril licm-eval
+ok 1752 - ./type-infer/tests/fail-infer/comp_ops.bril licm-roundtrip-eval
+not ok 1753 - ./type-infer/tests/fail-infer/control_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1754 - ./type-infer/tests/fail-infer/control_ops.bril labeled
+ok 1755 - ./type-infer/tests/fail-infer/control_ops.bril licm
+ok 1756 - ./type-infer/tests/fail-infer/control_ops.bril licm-roundtrip
+not ok 1757 - ./type-infer/tests/fail-infer/control_ops.bril original-eval
+# exit code: 2, expected: 1
+ok 1758 - ./type-infer/tests/fail-infer/control_ops.bril ssa-eval
+ok 1759 - ./type-infer/tests/fail-infer/control_ops.bril licm-eval
+ok 1760 - ./type-infer/tests/fail-infer/control_ops.bril licm-roundtrip-eval
+not ok 1761 - ./type-infer/tests/fail-infer/div.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1762 - ./type-infer/tests/fail-infer/div.bril labeled
+# exit code: 0, expected: 1
+not ok 1763 - ./type-infer/tests/fail-infer/div.bril licm
+# exit code: 0, expected: 1
+not ok 1764 - ./type-infer/tests/fail-infer/div.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1765 - ./type-infer/tests/fail-infer/div.bril original-eval
+# exit code: 2, expected: 1
+not ok 1766 - ./type-infer/tests/fail-infer/div.bril ssa-eval
+# exit code: 2, expected: 1
+not ok 1767 - ./type-infer/tests/fail-infer/div.bril licm-eval
+# exit code: 2, expected: 1
+not ok 1768 - ./type-infer/tests/fail-infer/div.bril licm-roundtrip-eval
+# exit code: 2, expected: 1
+ok 1769 - ./type-infer/tests/fail-infer/idchain.bril natural-loop
+not ok 1770 - ./type-infer/tests/fail-infer/idchain.bril labeled
+# exit code: 1
+not ok 1771 - ./type-infer/tests/fail-infer/idchain.bril licm
+# exit code: 1
+not ok 1772 - ./type-infer/tests/fail-infer/idchain.bril licm-roundtrip
+# exit code: 1
+ok 1773 - ./type-infer/tests/fail-infer/idchain.bril original-eval
+not ok 1774 - ./type-infer/tests/fail-infer/idchain.bril ssa-eval
+# exit code: 1
+not ok 1775 - ./type-infer/tests/fail-infer/idchain.bril licm-eval
+# exit code: 1
+not ok 1776 - ./type-infer/tests/fail-infer/idchain.bril licm-roundtrip-eval
+# exit code: 1
+not ok 1777 - ./type-infer/tests/fail-infer/jmp.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1778 - ./type-infer/tests/fail-infer/jmp.bril labeled
+# exit code: 0, expected: 1
+not ok 1779 - ./type-infer/tests/fail-infer/jmp.bril licm
+# exit code: 0, expected: 1
+not ok 1780 - ./type-infer/tests/fail-infer/jmp.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1781 - ./type-infer/tests/fail-infer/jmp.bril original-eval
+# exit code: 0, expected: 1
+not ok 1782 - ./type-infer/tests/fail-infer/jmp.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1783 - ./type-infer/tests/fail-infer/jmp.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1784 - ./type-infer/tests/fail-infer/jmp.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1785 - ./type-infer/tests/fail-infer/logic_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1786 - ./type-infer/tests/fail-infer/logic_ops.bril labeled
+ok 1787 - ./type-infer/tests/fail-infer/logic_ops.bril licm
+ok 1788 - ./type-infer/tests/fail-infer/logic_ops.bril licm-roundtrip
+not ok 1789 - ./type-infer/tests/fail-infer/logic_ops.bril original-eval
+# exit code: 2, expected: 1
+ok 1790 - ./type-infer/tests/fail-infer/logic_ops.bril ssa-eval
+ok 1791 - ./type-infer/tests/fail-infer/logic_ops.bril licm-eval
+ok 1792 - ./type-infer/tests/fail-infer/logic_ops.bril licm-roundtrip-eval
+not ok 1793 - ./type-infer/tests/fail-infer/many_functions.bril natural-loop
+# exit code: 0, expected: 1
+ok 1794 - ./type-infer/tests/fail-infer/many_functions.bril labeled
+ok 1795 - ./type-infer/tests/fail-infer/many_functions.bril licm
+ok 1796 - ./type-infer/tests/fail-infer/many_functions.bril licm-roundtrip
+not ok 1797 - ./type-infer/tests/fail-infer/many_functions.bril original-eval
+# exit code: 0, expected: 1
+ok 1798 - ./type-infer/tests/fail-infer/many_functions.bril ssa-eval
+ok 1799 - ./type-infer/tests/fail-infer/many_functions.bril licm-eval
+ok 1800 - ./type-infer/tests/fail-infer/many_functions.bril licm-roundtrip-eval
+ok 1801 - ./type-infer/tests/fail-infer/tricky-jump.bril natural-loop
+not ok 1802 - ./type-infer/tests/fail-infer/tricky-jump.bril labeled
+# exit code: 1
+not ok 1803 - ./type-infer/tests/fail-infer/tricky-jump.bril licm
+# exit code: 1
+not ok 1804 - ./type-infer/tests/fail-infer/tricky-jump.bril licm-roundtrip
+# exit code: 1
+not ok 1805 - ./type-infer/tests/fail-infer/tricky-jump.bril original-eval
+# exit code: 2
+not ok 1806 - ./type-infer/tests/fail-infer/tricky-jump.bril ssa-eval
+# exit code: 1
+not ok 1807 - ./type-infer/tests/fail-infer/tricky-jump.bril licm-eval
+# exit code: 1
+not ok 1808 - ./type-infer/tests/fail-infer/tricky-jump.bril licm-roundtrip-eval
+# exit code: 1
+not ok 1809 - ./type-infer/tests/fail-typecheck/add.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1810 - ./type-infer/tests/fail-typecheck/add.bril labeled # differing: type-infer/tests/fail-typecheck/add.err
+not ok 1811 - ./type-infer/tests/fail-typecheck/add.bril licm # differing: type-infer/tests/fail-typecheck/add.err
+not ok 1812 - ./type-infer/tests/fail-typecheck/add.bril licm-roundtrip # differing: type-infer/tests/fail-typecheck/add.err
+not ok 1813 - ./type-infer/tests/fail-typecheck/add.bril original-eval
+# exit code: 0, expected: 1
+not ok 1814 - ./type-infer/tests/fail-typecheck/add.bril ssa-eval # differing: type-infer/tests/fail-typecheck/add.err
+not ok 1815 - ./type-infer/tests/fail-typecheck/add.bril licm-eval # differing: type-infer/tests/fail-typecheck/add.err
+ok 1816 - ./type-infer/tests/fail-typecheck/add.bril licm-roundtrip-eval
+not ok 1817 - ./type-infer/tests/fail-typecheck/arith_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1818 - ./type-infer/tests/fail-typecheck/arith_ops.bril labeled
+ok 1819 - ./type-infer/tests/fail-typecheck/arith_ops.bril licm
+ok 1820 - ./type-infer/tests/fail-typecheck/arith_ops.bril licm-roundtrip
+not ok 1821 - ./type-infer/tests/fail-typecheck/arith_ops.bril original-eval
+# exit code: 0, expected: 1
+ok 1822 - ./type-infer/tests/fail-typecheck/arith_ops.bril ssa-eval
+ok 1823 - ./type-infer/tests/fail-typecheck/arith_ops.bril licm-eval
+ok 1824 - ./type-infer/tests/fail-typecheck/arith_ops.bril licm-roundtrip-eval
+not ok 1825 - ./type-infer/tests/fail-typecheck/br.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1826 - ./type-infer/tests/fail-typecheck/br.bril labeled
+# exit code: 0, expected: 1
+not ok 1827 - ./type-infer/tests/fail-typecheck/br.bril licm
+# exit code: 0, expected: 1
+not ok 1828 - ./type-infer/tests/fail-typecheck/br.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1829 - ./type-infer/tests/fail-typecheck/br.bril original-eval
+# exit code: 0, expected: 1
+not ok 1830 - ./type-infer/tests/fail-typecheck/br.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1831 - ./type-infer/tests/fail-typecheck/br.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1832 - ./type-infer/tests/fail-typecheck/br.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1833 - ./type-infer/tests/fail-typecheck/comp_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1834 - ./type-infer/tests/fail-typecheck/comp_ops.bril labeled
+ok 1835 - ./type-infer/tests/fail-typecheck/comp_ops.bril licm
+ok 1836 - ./type-infer/tests/fail-typecheck/comp_ops.bril licm-roundtrip
+not ok 1837 - ./type-infer/tests/fail-typecheck/comp_ops.bril original-eval
+# exit code: 0, expected: 1
+ok 1838 - ./type-infer/tests/fail-typecheck/comp_ops.bril ssa-eval
+ok 1839 - ./type-infer/tests/fail-typecheck/comp_ops.bril licm-eval
+ok 1840 - ./type-infer/tests/fail-typecheck/comp_ops.bril licm-roundtrip-eval
+not ok 1841 - ./type-infer/tests/fail-typecheck/control_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1842 - ./type-infer/tests/fail-typecheck/control_ops.bril labeled
+ok 1843 - ./type-infer/tests/fail-typecheck/control_ops.bril licm
+ok 1844 - ./type-infer/tests/fail-typecheck/control_ops.bril licm-roundtrip
+not ok 1845 - ./type-infer/tests/fail-typecheck/control_ops.bril original-eval
+# exit code: 0, expected: 1
+ok 1846 - ./type-infer/tests/fail-typecheck/control_ops.bril ssa-eval
+ok 1847 - ./type-infer/tests/fail-typecheck/control_ops.bril licm-eval
+ok 1848 - ./type-infer/tests/fail-typecheck/control_ops.bril licm-roundtrip-eval
+not ok 1849 - ./type-infer/tests/fail-typecheck/div.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1850 - ./type-infer/tests/fail-typecheck/div.bril labeled
+# exit code: 0, expected: 1
+not ok 1851 - ./type-infer/tests/fail-typecheck/div.bril licm
+# exit code: 0, expected: 1
+not ok 1852 - ./type-infer/tests/fail-typecheck/div.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1853 - ./type-infer/tests/fail-typecheck/div.bril original-eval
+# exit code: 0, expected: 1
+not ok 1854 - ./type-infer/tests/fail-typecheck/div.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1855 - ./type-infer/tests/fail-typecheck/div.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1856 - ./type-infer/tests/fail-typecheck/div.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1857 - ./type-infer/tests/fail-typecheck/idchain.bril natural-loop
+# exit code: 0, expected: 1
+ok 1858 - ./type-infer/tests/fail-typecheck/idchain.bril labeled
+ok 1859 - ./type-infer/tests/fail-typecheck/idchain.bril licm
+ok 1860 - ./type-infer/tests/fail-typecheck/idchain.bril licm-roundtrip
+not ok 1861 - ./type-infer/tests/fail-typecheck/idchain.bril original-eval
+# exit code: 0, expected: 1
+ok 1862 - ./type-infer/tests/fail-typecheck/idchain.bril ssa-eval
+ok 1863 - ./type-infer/tests/fail-typecheck/idchain.bril licm-eval
+ok 1864 - ./type-infer/tests/fail-typecheck/idchain.bril licm-roundtrip-eval
+not ok 1865 - ./type-infer/tests/fail-typecheck/jmp.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1866 - ./type-infer/tests/fail-typecheck/jmp.bril labeled
+# exit code: 0, expected: 1
+not ok 1867 - ./type-infer/tests/fail-typecheck/jmp.bril licm
+# exit code: 0, expected: 1
+not ok 1868 - ./type-infer/tests/fail-typecheck/jmp.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1869 - ./type-infer/tests/fail-typecheck/jmp.bril original-eval
+# exit code: 0, expected: 1
+not ok 1870 - ./type-infer/tests/fail-typecheck/jmp.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1871 - ./type-infer/tests/fail-typecheck/jmp.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1872 - ./type-infer/tests/fail-typecheck/jmp.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1873 - ./type-infer/tests/fail-typecheck/logic_ops.bril natural-loop
+# exit code: 0, expected: 1
+ok 1874 - ./type-infer/tests/fail-typecheck/logic_ops.bril labeled
+ok 1875 - ./type-infer/tests/fail-typecheck/logic_ops.bril licm
+ok 1876 - ./type-infer/tests/fail-typecheck/logic_ops.bril licm-roundtrip
+not ok 1877 - ./type-infer/tests/fail-typecheck/logic_ops.bril original-eval
+# exit code: 0, expected: 1
+ok 1878 - ./type-infer/tests/fail-typecheck/logic_ops.bril ssa-eval
+ok 1879 - ./type-infer/tests/fail-typecheck/logic_ops.bril licm-eval
+ok 1880 - ./type-infer/tests/fail-typecheck/logic_ops.bril licm-roundtrip-eval
+not ok 1881 - ./type-infer/tests/fail-typecheck/many_functions.bril natural-loop
+# exit code: 0, expected: 1
+ok 1882 - ./type-infer/tests/fail-typecheck/many_functions.bril labeled
+ok 1883 - ./type-infer/tests/fail-typecheck/many_functions.bril licm
+ok 1884 - ./type-infer/tests/fail-typecheck/many_functions.bril licm-roundtrip
+not ok 1885 - ./type-infer/tests/fail-typecheck/many_functions.bril original-eval
+# exit code: 0, expected: 1
+ok 1886 - ./type-infer/tests/fail-typecheck/many_functions.bril ssa-eval
+ok 1887 - ./type-infer/tests/fail-typecheck/many_functions.bril licm-eval
+ok 1888 - ./type-infer/tests/fail-typecheck/many_functions.bril licm-roundtrip-eval
+not ok 1889 - ./type-infer/tests/fail-typecheck/nop.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1890 - ./type-infer/tests/fail-typecheck/nop.bril labeled
+# exit code: 0, expected: 1
+not ok 1891 - ./type-infer/tests/fail-typecheck/nop.bril licm
+# exit code: 0, expected: 1
+not ok 1892 - ./type-infer/tests/fail-typecheck/nop.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1893 - ./type-infer/tests/fail-typecheck/nop.bril original-eval
+# exit code: 0, expected: 1
+not ok 1894 - ./type-infer/tests/fail-typecheck/nop.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1895 - ./type-infer/tests/fail-typecheck/nop.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1896 - ./type-infer/tests/fail-typecheck/nop.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1897 - ./type-infer/tests/fail-typecheck/ret.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1898 - ./type-infer/tests/fail-typecheck/ret.bril labeled
+# exit code: 0, expected: 1
+not ok 1899 - ./type-infer/tests/fail-typecheck/ret.bril licm
+# exit code: 0, expected: 1
+not ok 1900 - ./type-infer/tests/fail-typecheck/ret.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1901 - ./type-infer/tests/fail-typecheck/ret.bril original-eval
+# exit code: 0, expected: 1
+not ok 1902 - ./type-infer/tests/fail-typecheck/ret.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1903 - ./type-infer/tests/fail-typecheck/ret.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1904 - ./type-infer/tests/fail-typecheck/ret.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1905 - ./type-infer/tests/fail-typecheck/tiny.bril natural-loop
+# exit code: 0, expected: 1
+not ok 1906 - ./type-infer/tests/fail-typecheck/tiny.bril labeled
+# exit code: 0, expected: 1
+not ok 1907 - ./type-infer/tests/fail-typecheck/tiny.bril licm
+# exit code: 0, expected: 1
+not ok 1908 - ./type-infer/tests/fail-typecheck/tiny.bril licm-roundtrip
+# exit code: 0, expected: 1
+not ok 1909 - ./type-infer/tests/fail-typecheck/tiny.bril original-eval
+# exit code: 0, expected: 1
+not ok 1910 - ./type-infer/tests/fail-typecheck/tiny.bril ssa-eval
+# exit code: 0, expected: 1
+not ok 1911 - ./type-infer/tests/fail-typecheck/tiny.bril licm-eval
+# exit code: 0, expected: 1
+not ok 1912 - ./type-infer/tests/fail-typecheck/tiny.bril licm-roundtrip-eval
+# exit code: 0, expected: 1
+not ok 1913 - ./type-infer/tests/fail-typecheck/tricky-jump.bril natural-loop
+# exit code: 0, expected: 1
+ok 1914 - ./type-infer/tests/fail-typecheck/tricky-jump.bril labeled
+ok 1915 - ./type-infer/tests/fail-typecheck/tricky-jump.bril licm
+ok 1916 - ./type-infer/tests/fail-typecheck/tricky-jump.bril licm-roundtrip
+not ok 1917 - ./type-infer/tests/fail-typecheck/tricky-jump.bril original-eval
+# exit code: 2, expected: 1
+ok 1918 - ./type-infer/tests/fail-typecheck/tricky-jump.bril ssa-eval
+ok 1919 - ./type-infer/tests/fail-typecheck/tricky-jump.bril licm-eval
+ok 1920 - ./type-infer/tests/fail-typecheck/tricky-jump.bril licm-roundtrip-eval
+ok 1921 - ./type-infer/tests/infer/addarg.bril natural-loop
+not ok 1922 - ./type-infer/tests/infer/addarg.bril labeled
+# exit code: 1
+not ok 1923 - ./type-infer/tests/infer/addarg.bril licm
+# exit code: 1
+not ok 1924 - ./type-infer/tests/infer/addarg.bril licm-roundtrip
+# exit code: 1
+not ok 1925 - ./type-infer/tests/infer/addarg.bril original-eval
+# exit code: 2
+not ok 1926 - ./type-infer/tests/infer/addarg.bril ssa-eval
+# exit code: 1
+not ok 1927 - ./type-infer/tests/infer/addarg.bril licm-eval
+# exit code: 1
+not ok 1928 - ./type-infer/tests/infer/addarg.bril licm-roundtrip-eval
+# exit code: 1
+ok 1929 - ./type-infer/tests/infer/arith_ops.bril natural-loop
+not ok 1930 - ./type-infer/tests/infer/arith_ops.bril labeled
+# exit code: 1
+not ok 1931 - ./type-infer/tests/infer/arith_ops.bril licm
+# exit code: 1
+not ok 1932 - ./type-infer/tests/infer/arith_ops.bril licm-roundtrip
+# exit code: 1
+ok 1933 - ./type-infer/tests/infer/arith_ops.bril original-eval
+not ok 1934 - ./type-infer/tests/infer/arith_ops.bril ssa-eval
+# exit code: 1
+not ok 1935 - ./type-infer/tests/infer/arith_ops.bril licm-eval
+# exit code: 1
+not ok 1936 - ./type-infer/tests/infer/arith_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 1937 - ./type-infer/tests/infer/br.bril natural-loop
+ok 1938 - ./type-infer/tests/infer/br.bril labeled
+ok 1939 - ./type-infer/tests/infer/br.bril licm
+ok 1940 - ./type-infer/tests/infer/br.bril licm-roundtrip
+ok 1941 - ./type-infer/tests/infer/br.bril original-eval
+ok 1942 - ./type-infer/tests/infer/br.bril ssa-eval
+ok 1943 - ./type-infer/tests/infer/br.bril licm-eval
+ok 1944 - ./type-infer/tests/infer/br.bril licm-roundtrip-eval
+ok 1945 - ./type-infer/tests/infer/comp_ops.bril natural-loop
+not ok 1946 - ./type-infer/tests/infer/comp_ops.bril labeled
+# exit code: 1
+not ok 1947 - ./type-infer/tests/infer/comp_ops.bril licm
+# exit code: 1
+not ok 1948 - ./type-infer/tests/infer/comp_ops.bril licm-roundtrip
+# exit code: 1
+ok 1949 - ./type-infer/tests/infer/comp_ops.bril original-eval
+not ok 1950 - ./type-infer/tests/infer/comp_ops.bril ssa-eval
+# exit code: 1
+not ok 1951 - ./type-infer/tests/infer/comp_ops.bril licm-eval
+# exit code: 1
+not ok 1952 - ./type-infer/tests/infer/comp_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 1953 - ./type-infer/tests/infer/control_ops.bril natural-loop
+not ok 1954 - ./type-infer/tests/infer/control_ops.bril labeled
+# exit code: 1
+not ok 1955 - ./type-infer/tests/infer/control_ops.bril licm
+# exit code: 1
+not ok 1956 - ./type-infer/tests/infer/control_ops.bril licm-roundtrip
+# exit code: 1
+ok 1957 - ./type-infer/tests/infer/control_ops.bril original-eval
+not ok 1958 - ./type-infer/tests/infer/control_ops.bril ssa-eval
+# exit code: 1
+not ok 1959 - ./type-infer/tests/infer/control_ops.bril licm-eval
+# exit code: 1
+not ok 1960 - ./type-infer/tests/infer/control_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 1961 - ./type-infer/tests/infer/div.bril natural-loop
+ok 1962 - ./type-infer/tests/infer/div.bril labeled
+ok 1963 - ./type-infer/tests/infer/div.bril licm
+ok 1964 - ./type-infer/tests/infer/div.bril licm-roundtrip
+ok 1965 - ./type-infer/tests/infer/div.bril original-eval
+ok 1966 - ./type-infer/tests/infer/div.bril ssa-eval
+ok 1967 - ./type-infer/tests/infer/div.bril licm-eval
+ok 1968 - ./type-infer/tests/infer/div.bril licm-roundtrip-eval
+ok 1969 - ./type-infer/tests/infer/idchain.bril natural-loop
+not ok 1970 - ./type-infer/tests/infer/idchain.bril labeled
+# exit code: 1
+not ok 1971 - ./type-infer/tests/infer/idchain.bril licm
+# exit code: 1
+not ok 1972 - ./type-infer/tests/infer/idchain.bril licm-roundtrip
+# exit code: 1
+ok 1973 - ./type-infer/tests/infer/idchain.bril original-eval
+not ok 1974 - ./type-infer/tests/infer/idchain.bril ssa-eval
+# exit code: 1
+not ok 1975 - ./type-infer/tests/infer/idchain.bril licm-eval
+# exit code: 1
+not ok 1976 - ./type-infer/tests/infer/idchain.bril licm-roundtrip-eval
+# exit code: 1
+ok 1977 - ./type-infer/tests/infer/jmp.bril natural-loop
+ok 1978 - ./type-infer/tests/infer/jmp.bril labeled
+ok 1979 - ./type-infer/tests/infer/jmp.bril licm
+ok 1980 - ./type-infer/tests/infer/jmp.bril licm-roundtrip
+ok 1981 - ./type-infer/tests/infer/jmp.bril original-eval
+ok 1982 - ./type-infer/tests/infer/jmp.bril ssa-eval
+ok 1983 - ./type-infer/tests/infer/jmp.bril licm-eval
+ok 1984 - ./type-infer/tests/infer/jmp.bril licm-roundtrip-eval
+ok 1985 - ./type-infer/tests/infer/logic_ops.bril natural-loop
+not ok 1986 - ./type-infer/tests/infer/logic_ops.bril labeled
+# exit code: 1
+not ok 1987 - ./type-infer/tests/infer/logic_ops.bril licm
+# exit code: 1
+not ok 1988 - ./type-infer/tests/infer/logic_ops.bril licm-roundtrip
+# exit code: 1
+ok 1989 - ./type-infer/tests/infer/logic_ops.bril original-eval
+not ok 1990 - ./type-infer/tests/infer/logic_ops.bril ssa-eval
+# exit code: 1
+not ok 1991 - ./type-infer/tests/infer/logic_ops.bril licm-eval
+# exit code: 1
+not ok 1992 - ./type-infer/tests/infer/logic_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 1993 - ./type-infer/tests/infer/many_functions.bril natural-loop
+not ok 1994 - ./type-infer/tests/infer/many_functions.bril labeled
+# exit code: 1
+not ok 1995 - ./type-infer/tests/infer/many_functions.bril licm
+# exit code: 1
+not ok 1996 - ./type-infer/tests/infer/many_functions.bril licm-roundtrip
+# exit code: 1
+ok 1997 - ./type-infer/tests/infer/many_functions.bril original-eval
+not ok 1998 - ./type-infer/tests/infer/many_functions.bril ssa-eval
+# exit code: 1
+not ok 1999 - ./type-infer/tests/infer/many_functions.bril licm-eval
+# exit code: 1
+not ok 2000 - ./type-infer/tests/infer/many_functions.bril licm-roundtrip-eval
+# exit code: 1
+ok 2001 - ./type-infer/tests/infer/nop.bril natural-loop
+ok 2002 - ./type-infer/tests/infer/nop.bril labeled
+ok 2003 - ./type-infer/tests/infer/nop.bril licm
+ok 2004 - ./type-infer/tests/infer/nop.bril licm-roundtrip
+ok 2005 - ./type-infer/tests/infer/nop.bril original-eval
+ok 2006 - ./type-infer/tests/infer/nop.bril ssa-eval
+ok 2007 - ./type-infer/tests/infer/nop.bril licm-eval
+ok 2008 - ./type-infer/tests/infer/nop.bril licm-roundtrip-eval
+ok 2009 - ./type-infer/tests/infer/ret.bril natural-loop
+ok 2010 - ./type-infer/tests/infer/ret.bril labeled
+ok 2011 - ./type-infer/tests/infer/ret.bril licm
+ok 2012 - ./type-infer/tests/infer/ret.bril licm-roundtrip
+ok 2013 - ./type-infer/tests/infer/ret.bril original-eval
+ok 2014 - ./type-infer/tests/infer/ret.bril ssa-eval
+ok 2015 - ./type-infer/tests/infer/ret.bril licm-eval
+ok 2016 - ./type-infer/tests/infer/ret.bril licm-roundtrip-eval
+ok 2017 - ./type-infer/tests/infer/tiny.bril natural-loop
+ok 2018 - ./type-infer/tests/infer/tiny.bril labeled
+ok 2019 - ./type-infer/tests/infer/tiny.bril licm
+ok 2020 - ./type-infer/tests/infer/tiny.bril licm-roundtrip
+ok 2021 - ./type-infer/tests/infer/tiny.bril original-eval
+ok 2022 - ./type-infer/tests/infer/tiny.bril ssa-eval
+ok 2023 - ./type-infer/tests/infer/tiny.bril licm-eval
+ok 2024 - ./type-infer/tests/infer/tiny.bril licm-roundtrip-eval
+ok 2025 - ./type-infer/tests/infer/tricky-jump.bril natural-loop
+not ok 2026 - ./type-infer/tests/infer/tricky-jump.bril labeled
+# exit code: 1
+not ok 2027 - ./type-infer/tests/infer/tricky-jump.bril licm
+# exit code: 1
+not ok 2028 - ./type-infer/tests/infer/tricky-jump.bril licm-roundtrip
+# exit code: 1
+ok 2029 - ./type-infer/tests/infer/tricky-jump.bril original-eval
+not ok 2030 - ./type-infer/tests/infer/tricky-jump.bril ssa-eval
+# exit code: 1
+not ok 2031 - ./type-infer/tests/infer/tricky-jump.bril licm-eval
+# exit code: 1
+not ok 2032 - ./type-infer/tests/infer/tricky-jump.bril licm-roundtrip-eval
+# exit code: 1
+ok 2033 - ./type-infer/tests/parse/add.bril natural-loop
+not ok 2034 - ./type-infer/tests/parse/add.bril labeled
+# exit code: 1
+not ok 2035 - ./type-infer/tests/parse/add.bril licm
+# exit code: 1
+not ok 2036 - ./type-infer/tests/parse/add.bril licm-roundtrip
+# exit code: 1
+ok 2037 - ./type-infer/tests/parse/add.bril original-eval
+not ok 2038 - ./type-infer/tests/parse/add.bril ssa-eval
+# exit code: 1
+not ok 2039 - ./type-infer/tests/parse/add.bril licm-eval
+# exit code: 1
+not ok 2040 - ./type-infer/tests/parse/add.bril licm-roundtrip-eval
+# exit code: 1
+ok 2041 - ./type-infer/tests/parse/div.bril natural-loop
+ok 2042 - ./type-infer/tests/parse/div.bril labeled
+ok 2043 - ./type-infer/tests/parse/div.bril licm
+ok 2044 - ./type-infer/tests/parse/div.bril licm-roundtrip
+ok 2045 - ./type-infer/tests/parse/div.bril original-eval
+ok 2046 - ./type-infer/tests/parse/div.bril ssa-eval
+ok 2047 - ./type-infer/tests/parse/div.bril licm-eval
+ok 2048 - ./type-infer/tests/parse/div.bril licm-roundtrip-eval
+ok 2049 - ./type-infer/tests/parse/partial.bril natural-loop
+not ok 2050 - ./type-infer/tests/parse/partial.bril labeled
+# exit code: 1
+not ok 2051 - ./type-infer/tests/parse/partial.bril licm
+# exit code: 1
+not ok 2052 - ./type-infer/tests/parse/partial.bril licm-roundtrip
+# exit code: 1
+ok 2053 - ./type-infer/tests/parse/partial.bril original-eval
+not ok 2054 - ./type-infer/tests/parse/partial.bril ssa-eval
+# exit code: 1
+not ok 2055 - ./type-infer/tests/parse/partial.bril licm-eval
+# exit code: 1
+not ok 2056 - ./type-infer/tests/parse/partial.bril licm-roundtrip-eval
+# exit code: 1
+ok 2057 - ./type-infer/tests/print/add.bril natural-loop
+not ok 2058 - ./type-infer/tests/print/add.bril labeled
+# exit code: 1
+not ok 2059 - ./type-infer/tests/print/add.bril licm
+# exit code: 1
+not ok 2060 - ./type-infer/tests/print/add.bril licm-roundtrip
+# exit code: 1
+ok 2061 - ./type-infer/tests/print/add.bril original-eval
+not ok 2062 - ./type-infer/tests/print/add.bril ssa-eval
+# exit code: 1
+not ok 2063 - ./type-infer/tests/print/add.bril licm-eval
+# exit code: 1
+not ok 2064 - ./type-infer/tests/print/add.bril licm-roundtrip-eval
+# exit code: 1
+ok 2065 - ./type-infer/tests/print/div.bril natural-loop
+ok 2066 - ./type-infer/tests/print/div.bril labeled
+ok 2067 - ./type-infer/tests/print/div.bril licm
+ok 2068 - ./type-infer/tests/print/div.bril licm-roundtrip
+ok 2069 - ./type-infer/tests/print/div.bril original-eval
+ok 2070 - ./type-infer/tests/print/div.bril ssa-eval
+ok 2071 - ./type-infer/tests/print/div.bril licm-eval
+ok 2072 - ./type-infer/tests/print/div.bril licm-roundtrip-eval
+ok 2073 - ./type-infer/tests/print/partial.bril natural-loop
+not ok 2074 - ./type-infer/tests/print/partial.bril labeled
+# exit code: 1
+not ok 2075 - ./type-infer/tests/print/partial.bril licm
+# exit code: 1
+not ok 2076 - ./type-infer/tests/print/partial.bril licm-roundtrip
+# exit code: 1
+ok 2077 - ./type-infer/tests/print/partial.bril original-eval
+not ok 2078 - ./type-infer/tests/print/partial.bril ssa-eval
+# exit code: 1
+not ok 2079 - ./type-infer/tests/print/partial.bril licm-eval
+# exit code: 1
+not ok 2080 - ./type-infer/tests/print/partial.bril licm-roundtrip-eval
+# exit code: 1
+ok 2081 - ./type-infer/tests/typecheck/arith_ops.bril natural-loop
+not ok 2082 - ./type-infer/tests/typecheck/arith_ops.bril labeled
+# exit code: 1
+not ok 2083 - ./type-infer/tests/typecheck/arith_ops.bril licm
+# exit code: 1
+not ok 2084 - ./type-infer/tests/typecheck/arith_ops.bril licm-roundtrip
+# exit code: 1
+ok 2085 - ./type-infer/tests/typecheck/arith_ops.bril original-eval
+not ok 2086 - ./type-infer/tests/typecheck/arith_ops.bril ssa-eval
+# exit code: 1
+not ok 2087 - ./type-infer/tests/typecheck/arith_ops.bril licm-eval
+# exit code: 1
+not ok 2088 - ./type-infer/tests/typecheck/arith_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 2089 - ./type-infer/tests/typecheck/br.bril natural-loop
+ok 2090 - ./type-infer/tests/typecheck/br.bril labeled
+ok 2091 - ./type-infer/tests/typecheck/br.bril licm
+ok 2092 - ./type-infer/tests/typecheck/br.bril licm-roundtrip
+ok 2093 - ./type-infer/tests/typecheck/br.bril original-eval
+ok 2094 - ./type-infer/tests/typecheck/br.bril ssa-eval
+ok 2095 - ./type-infer/tests/typecheck/br.bril licm-eval
+ok 2096 - ./type-infer/tests/typecheck/br.bril licm-roundtrip-eval
+ok 2097 - ./type-infer/tests/typecheck/comp_ops.bril natural-loop
+not ok 2098 - ./type-infer/tests/typecheck/comp_ops.bril labeled
+# exit code: 1
+not ok 2099 - ./type-infer/tests/typecheck/comp_ops.bril licm
+# exit code: 1
+not ok 2100 - ./type-infer/tests/typecheck/comp_ops.bril licm-roundtrip
+# exit code: 1
+ok 2101 - ./type-infer/tests/typecheck/comp_ops.bril original-eval
+not ok 2102 - ./type-infer/tests/typecheck/comp_ops.bril ssa-eval
+# exit code: 1
+not ok 2103 - ./type-infer/tests/typecheck/comp_ops.bril licm-eval
+# exit code: 1
+not ok 2104 - ./type-infer/tests/typecheck/comp_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 2105 - ./type-infer/tests/typecheck/control_ops.bril natural-loop
+not ok 2106 - ./type-infer/tests/typecheck/control_ops.bril labeled
+# exit code: 1
+not ok 2107 - ./type-infer/tests/typecheck/control_ops.bril licm
+# exit code: 1
+not ok 2108 - ./type-infer/tests/typecheck/control_ops.bril licm-roundtrip
+# exit code: 1
+ok 2109 - ./type-infer/tests/typecheck/control_ops.bril original-eval
+not ok 2110 - ./type-infer/tests/typecheck/control_ops.bril ssa-eval
+# exit code: 1
+not ok 2111 - ./type-infer/tests/typecheck/control_ops.bril licm-eval
+# exit code: 1
+not ok 2112 - ./type-infer/tests/typecheck/control_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 2113 - ./type-infer/tests/typecheck/div.bril natural-loop
+ok 2114 - ./type-infer/tests/typecheck/div.bril labeled
+ok 2115 - ./type-infer/tests/typecheck/div.bril licm
+ok 2116 - ./type-infer/tests/typecheck/div.bril licm-roundtrip
+ok 2117 - ./type-infer/tests/typecheck/div.bril original-eval
+ok 2118 - ./type-infer/tests/typecheck/div.bril ssa-eval
+ok 2119 - ./type-infer/tests/typecheck/div.bril licm-eval
+ok 2120 - ./type-infer/tests/typecheck/div.bril licm-roundtrip-eval
+ok 2121 - ./type-infer/tests/typecheck/idchain.bril natural-loop
+not ok 2122 - ./type-infer/tests/typecheck/idchain.bril labeled
+# exit code: 1
+not ok 2123 - ./type-infer/tests/typecheck/idchain.bril licm
+# exit code: 1
+not ok 2124 - ./type-infer/tests/typecheck/idchain.bril licm-roundtrip
+# exit code: 1
+ok 2125 - ./type-infer/tests/typecheck/idchain.bril original-eval
+not ok 2126 - ./type-infer/tests/typecheck/idchain.bril ssa-eval
+# exit code: 1
+not ok 2127 - ./type-infer/tests/typecheck/idchain.bril licm-eval
+# exit code: 1
+not ok 2128 - ./type-infer/tests/typecheck/idchain.bril licm-roundtrip-eval
+# exit code: 1
+ok 2129 - ./type-infer/tests/typecheck/jmp.bril natural-loop
+ok 2130 - ./type-infer/tests/typecheck/jmp.bril labeled
+ok 2131 - ./type-infer/tests/typecheck/jmp.bril licm
+ok 2132 - ./type-infer/tests/typecheck/jmp.bril licm-roundtrip
+ok 2133 - ./type-infer/tests/typecheck/jmp.bril original-eval
+ok 2134 - ./type-infer/tests/typecheck/jmp.bril ssa-eval
+ok 2135 - ./type-infer/tests/typecheck/jmp.bril licm-eval
+ok 2136 - ./type-infer/tests/typecheck/jmp.bril licm-roundtrip-eval
+ok 2137 - ./type-infer/tests/typecheck/logic_ops.bril natural-loop
+not ok 2138 - ./type-infer/tests/typecheck/logic_ops.bril labeled
+# exit code: 1
+not ok 2139 - ./type-infer/tests/typecheck/logic_ops.bril licm
+# exit code: 1
+not ok 2140 - ./type-infer/tests/typecheck/logic_ops.bril licm-roundtrip
+# exit code: 1
+ok 2141 - ./type-infer/tests/typecheck/logic_ops.bril original-eval
+not ok 2142 - ./type-infer/tests/typecheck/logic_ops.bril ssa-eval
+# exit code: 1
+not ok 2143 - ./type-infer/tests/typecheck/logic_ops.bril licm-eval
+# exit code: 1
+not ok 2144 - ./type-infer/tests/typecheck/logic_ops.bril licm-roundtrip-eval
+# exit code: 1
+ok 2145 - ./type-infer/tests/typecheck/many_functions.bril natural-loop
+not ok 2146 - ./type-infer/tests/typecheck/many_functions.bril labeled
+# exit code: 1
+not ok 2147 - ./type-infer/tests/typecheck/many_functions.bril licm
+# exit code: 1
+not ok 2148 - ./type-infer/tests/typecheck/many_functions.bril licm-roundtrip
+# exit code: 1
+ok 2149 - ./type-infer/tests/typecheck/many_functions.bril original-eval
+not ok 2150 - ./type-infer/tests/typecheck/many_functions.bril ssa-eval
+# exit code: 1
+not ok 2151 - ./type-infer/tests/typecheck/many_functions.bril licm-eval
+# exit code: 1
+not ok 2152 - ./type-infer/tests/typecheck/many_functions.bril licm-roundtrip-eval
+# exit code: 1
+ok 2153 - ./type-infer/tests/typecheck/nop.bril natural-loop
+ok 2154 - ./type-infer/tests/typecheck/nop.bril labeled
+ok 2155 - ./type-infer/tests/typecheck/nop.bril licm
+ok 2156 - ./type-infer/tests/typecheck/nop.bril licm-roundtrip
+ok 2157 - ./type-infer/tests/typecheck/nop.bril original-eval
+ok 2158 - ./type-infer/tests/typecheck/nop.bril ssa-eval
+ok 2159 - ./type-infer/tests/typecheck/nop.bril licm-eval
+ok 2160 - ./type-infer/tests/typecheck/nop.bril licm-roundtrip-eval
+ok 2161 - ./type-infer/tests/typecheck/ret.bril natural-loop
+ok 2162 - ./type-infer/tests/typecheck/ret.bril labeled
+ok 2163 - ./type-infer/tests/typecheck/ret.bril licm
+ok 2164 - ./type-infer/tests/typecheck/ret.bril licm-roundtrip
+ok 2165 - ./type-infer/tests/typecheck/ret.bril original-eval
+ok 2166 - ./type-infer/tests/typecheck/ret.bril ssa-eval
+ok 2167 - ./type-infer/tests/typecheck/ret.bril licm-eval
+ok 2168 - ./type-infer/tests/typecheck/ret.bril licm-roundtrip-eval
+ok 2169 - ./type-infer/tests/typecheck/tiny.bril natural-loop
+ok 2170 - ./type-infer/tests/typecheck/tiny.bril labeled
+ok 2171 - ./type-infer/tests/typecheck/tiny.bril licm
+ok 2172 - ./type-infer/tests/typecheck/tiny.bril licm-roundtrip
+ok 2173 - ./type-infer/tests/typecheck/tiny.bril original-eval
+ok 2174 - ./type-infer/tests/typecheck/tiny.bril ssa-eval
+ok 2175 - ./type-infer/tests/typecheck/tiny.bril licm-eval
+ok 2176 - ./type-infer/tests/typecheck/tiny.bril licm-roundtrip-eval
+ok 2177 - ./type-infer/tests/typecheck/tricky-jump.bril natural-loop
+not ok 2178 - ./type-infer/tests/typecheck/tricky-jump.bril labeled
+# exit code: 1
+not ok 2179 - ./type-infer/tests/typecheck/tricky-jump.bril licm
+# exit code: 1
+not ok 2180 - ./type-infer/tests/typecheck/tricky-jump.bril licm-roundtrip
+# exit code: 1
+ok 2181 - ./type-infer/tests/typecheck/tricky-jump.bril original-eval
+not ok 2182 - ./type-infer/tests/typecheck/tricky-jump.bril ssa-eval
+# exit code: 1
+not ok 2183 - ./type-infer/tests/typecheck/tricky-jump.bril licm-eval
+# exit code: 1
+not ok 2184 - ./type-infer/tests/typecheck/tricky-jump.bril licm-roundtrip-eval
+# exit code: 1
+ok 2185 - ./unnatural_loop.bril natural-loop
+ok 2186 - ./unnatural_loop.bril labeled
+ok 2187 - ./unnatural_loop.bril licm
+ok 2188 - ./unnatural_loop.bril licm-roundtrip
+ok 2189 - ./unnatural_loop.bril original-eval
+ok 2190 - ./unnatural_loop.bril ssa-eval
+ok 2191 - ./unnatural_loop.bril licm-eval
+ok 2192 - ./unnatural_loop.bril licm-roundtrip-eval

@@ -1,0 +1,15 @@
+@main {
+.main.b0:
+  a.0: int = const 2;
+  b.0: int = id a.0;
+  c.0: bool = eq a.0 b.0;
+  d.0: bool = id c.0;
+}
+@f(i.0: int): bool {
+.f.b0:
+  i.1: int = id i.0;
+.f.b1:
+  zero.0: int = const 0;
+  b.0: bool = eq i.1 zero.0;
+  ret b.0;
+}

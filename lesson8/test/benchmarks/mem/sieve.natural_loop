@@ -1,0 +1,87 @@
+{
+  "printUnmarked": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "print.unmarked.skip.print",
+          "print.unmarked.for.cond"
+        ],
+        "header": "print.unmarked.for.cond",
+        "natural_loop": [
+          "print.unmarked.for.cond",
+          "print.unmarked.for.body",
+          "print.unmarked.print",
+          "print.unmarked.skip.print"
+        ]
+      }
+    ]
+  },
+  "findNextP": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "find.next.p.in.bounds",
+          "find.next.p.continue"
+        ],
+        "header": "find.next.p.continue",
+        "natural_loop": [
+          "find.next.p.continue",
+          "find.next.p.in.bounds"
+        ]
+      }
+    ]
+  },
+  "markMultiples": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "mark.multiples.store",
+          "mark.multiples.continue"
+        ],
+        "header": "mark.multiples.continue",
+        "natural_loop": [
+          "mark.multiples.continue",
+          "mark.multiples.store"
+        ]
+      }
+    ]
+  },
+  "populateTable": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "populate.table.for.body",
+          "populate.table.for.cond"
+        ],
+        "header": "populate.table.for.cond",
+        "natural_loop": [
+          "populate.table.for.cond",
+          "populate.table.for.body"
+        ]
+      }
+    ]
+  },
+  "printPrimesUpTo": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "print.primes.up.to.continue",
+          "print.primes.up.to.continue"
+        ],
+        "header": "print.primes.up.to.continue",
+        "natural_loop": [
+          "print.primes.up.to.continue"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

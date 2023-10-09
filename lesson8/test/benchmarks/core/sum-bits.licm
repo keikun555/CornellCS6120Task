@@ -1,0 +1,34 @@
+@main(input.0: int) {
+.main.b0:
+  input.1: int = id input.0;
+.main.b1:
+  sum.0: int = const 0;
+  two.0: int = const 2;
+  zero.0: int = const 0;
+.loop:
+  sum.1: int = phi sum.0 sum.2 .main.b1 .body;
+  input.2: int = phi input.1 input.3 .main.b1 .body;
+  cond.0: bool = phi cond.1 .body;
+  bit.0: int = phi bit.1 .body;
+  cond.1: bool = eq input.2 zero.0;
+  br cond.1 .done .body;
+.body:
+  bit.1: int = call @mod input.2 two.0;
+  input.3: int = div input.2 two.0;
+  sum.2: int = add sum.1 bit.1;
+  jmp .loop;
+.done:
+  print sum.1;
+  ret;
+}
+@mod(dividend.0: int, divisor.0: int): int {
+.mod.b0:
+  dividend.1: int = id dividend.0;
+  divisor.1: int = id divisor.0;
+.mod.b1:
+  quotient.0: int = div dividend.1 divisor.1;
+  two.0: int = const 2;
+  prod.0: int = mul two.0 quotient.0;
+  diff.0: int = sub dividend.1 prod.0;
+  ret diff.0;
+}

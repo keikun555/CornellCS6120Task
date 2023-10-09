@@ -1,0 +1,129 @@
+@abs(a.0: int): int {
+.abs.b0:
+  a.1: int = id a.0;
+.abs.b1:
+  zero.0: int = const 0;
+  is_neg.0: bool = lt a.1 zero.0;
+  neg_one.1: int = const 0;
+  a.3: int = id a.1;
+  br is_neg.0 .mul_neg_one .abs_res;
+.mul_neg_one:
+  neg_one.0: int = const -1;
+  a.2: int = mul a.1 neg_one.0;
+  neg_one.1: int = id neg_one.0;
+  a.3: int = id a.2;
+.abs_res:
+  ret a.3;
+}
+@mod(a.0: int, b.0: int): int {
+.mod.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.mod.b1:
+  q.0: int = div a.1 b.1;
+  aq.0: int = mul b.1 q.0;
+  mod.0: int = sub a.1 aq.0;
+  ret mod.0;
+}
+@gcd(a.0: int, b.0: int): int {
+.gcd.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+  zero.0: int = const 0;
+  mod.0: int = const 0;
+  is_term.0: bool = const false;
+  b.2: int = id b.1;
+  a.2: int = id a.1;
+.while.cond:
+  mod.1: int = call @mod a.2 b.2;
+  zero.1: int = const 0;
+  is_term.1: bool = eq mod.1 zero.1;
+  br is_term.1 .while.finish .while.body;
+.while.body:
+  a.3: int = id b.2;
+  b.3: int = id mod.1;
+  zero.0: int = id zero.1;
+  mod.0: int = id mod.1;
+  is_term.0: bool = id is_term.1;
+  b.2: int = id b.3;
+  a.2: int = id a.3;
+  jmp .while.cond;
+.while.finish:
+  ret b.2;
+}
+@lcm(a.0: int, b.0: int): int {
+.lcm.b0:
+  a.1: int = id a.0;
+  b.1: int = id b.0;
+.lcm.b1:
+  zero.0: int = const 0;
+  a_is_zero.0: bool = eq a.1 zero.0;
+  b_is_zero.1: bool = const false;
+  br a_is_zero.0 .check_b .is_good;
+.check_b:
+  b_is_zero.0: bool = eq b.1 zero.0;
+  b_is_zero.1: bool = id b_is_zero.0;
+  br b_is_zero.0 .special_case .is_good;
+.special_case:
+  ret zero.0;
+.is_good:
+  ab.0: int = mul a.1 b.1;
+  ab.1: int = call @abs ab.0;
+  gcdab.0: int = call @gcd a.1 b.1;
+  lcm.0: int = div ab.1 gcdab.0;
+  ret lcm.0;
+}
+@orders(u.0: int, n.0: int, use_lcm.0: bool) {
+.orders.b0:
+  u.1: int = id u.0;
+  n.1: int = id n.0;
+  use_lcm.1: bool = id use_lcm.0;
+  u.2: int = id u.1;
+  ordu.0: int = const 0;
+  one.0: int = const 0;
+  lcm.0: int = const 0;
+  is_term.0: bool = const false;
+  gcdun.0: int = const 0;
+.for.cond:
+  is_term.1: bool = eq u.2 n.1;
+  br is_term.1 .for.finish .for.body;
+.for.body:
+  br use_lcm.1 .lcm .gcd;
+.lcm:
+  lcm.1: int = call @lcm u.2 n.1;
+  ordu.1: int = div lcm.1 u.2;
+  ordu.3: int = id ordu.1;
+  lcm.2: int = id lcm.1;
+  gcdun.2: int = id gcdun.0;
+  jmp .for.body.print;
+.gcd:
+  gcdun.1: int = call @gcd u.2 n.1;
+  ordu.2: int = div n.1 gcdun.1;
+  ordu.3: int = id ordu.2;
+  lcm.2: int = id lcm.0;
+  gcdun.2: int = id gcdun.1;
+.for.body.print:
+  print u.2 ordu.3;
+  one.1: int = const 1;
+  u.3: int = add u.2 one.1;
+  u.2: int = id u.3;
+  ordu.0: int = id ordu.3;
+  one.0: int = id one.1;
+  lcm.0: int = id lcm.2;
+  is_term.0: bool = id is_term.1;
+  gcdun.0: int = id gcdun.2;
+  jmp .for.cond;
+.for.finish:
+  ret;
+}
+@main(n.0: int, use_lcm.0: bool) {
+.main.b0:
+  n.1: int = id n.0;
+  use_lcm.1: bool = id use_lcm.0;
+.main.b1:
+  zero.0: int = const 0;
+  u.0: int = const 1;
+  n.2: int = call @abs n.1;
+  print zero.0 u.0;
+  call @orders u.0 n.2 use_lcm.1;
+}

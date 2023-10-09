@@ -1,0 +1,10 @@
+{
+  "helloBR": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

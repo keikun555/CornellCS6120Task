@@ -1,0 +1,26 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "mod": {
+    "reducible": true,
+    "backedges": []
+  },
+  "gcd": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body.5",
+          "for.cond.5"
+        ],
+        "header": "for.cond.5",
+        "natural_loop": [
+          "for.cond.5",
+          "for.body.5"
+        ]
+      }
+    ]
+  }
+}

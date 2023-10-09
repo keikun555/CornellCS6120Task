@@ -1,0 +1,17 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "lbl",
+          "lbl"
+        ],
+        "header": "lbl",
+        "natural_loop": [
+          "lbl"
+        ]
+      }
+    ]
+  }
+}

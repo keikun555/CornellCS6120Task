@@ -1,0 +1,64 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "if.true",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body",
+          "if.true"
+        ]
+      },
+      {
+        "backedge": [
+          "if.false",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body",
+          "if.false"
+        ]
+      }
+    ]
+  },
+  "pow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "if.true.pow",
+          "for.cond.pow"
+        ],
+        "header": "for.cond.pow",
+        "natural_loop": [
+          "for.cond.pow",
+          "for.body.pow",
+          "if.true.pow"
+        ]
+      },
+      {
+        "backedge": [
+          "if.false.pow",
+          "for.cond.pow"
+        ],
+        "header": "for.cond.pow",
+        "natural_loop": [
+          "for.cond.pow",
+          "for.body.pow",
+          "if.false.pow"
+        ]
+      }
+    ]
+  },
+  "palindrome": {
+    "reducible": true,
+    "backedges": []
+  }
+}

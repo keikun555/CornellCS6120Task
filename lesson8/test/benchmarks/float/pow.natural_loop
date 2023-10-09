@@ -1,0 +1,22 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "pow": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "for.body.1",
+          "for.cond.1"
+        ],
+        "header": "for.cond.1",
+        "natural_loop": [
+          "for.cond.1",
+          "for.body.1"
+        ]
+      }
+    ]
+  }
+}

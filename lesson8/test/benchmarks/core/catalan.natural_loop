@@ -1,0 +1,22 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "catalan": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "while.body",
+          "while"
+        ],
+        "header": "while",
+        "natural_loop": [
+          "while",
+          "while.body"
+        ]
+      }
+    ]
+  }
+}

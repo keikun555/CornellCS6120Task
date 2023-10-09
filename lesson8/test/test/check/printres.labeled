@@ -1,0 +1,4 @@
+@main(a: int) {
+.main.b0:
+  b: int = print a;
+}

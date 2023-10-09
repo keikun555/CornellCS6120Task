@@ -1,0 +1,26 @@
+{
+  "pack": {
+    "reducible": true,
+    "backedges": []
+  },
+  "max": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "bodyi",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "bodyi"
+        ]
+      }
+    ]
+  }
+}

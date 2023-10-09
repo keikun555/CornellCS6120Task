@@ -1,0 +1,10 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "area": {
+    "reducible": true,
+    "backedges": []
+  }
+}

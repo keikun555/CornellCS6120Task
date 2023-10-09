@@ -1,0 +1,39 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.7",
+          "for.cond.1"
+        ],
+        "header": "for.cond.1",
+        "natural_loop": [
+          "for.cond.1",
+          "for.body.1",
+          "then.7",
+          "else.7",
+          "endif.7"
+        ]
+      }
+    ]
+  },
+  "checkPrime": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "endif.18",
+          "for.cond.5"
+        ],
+        "header": "for.cond.5",
+        "natural_loop": [
+          "for.cond.5",
+          "for.body.5",
+          "else.18",
+          "endif.18"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+# ARGS: 10000
+@main(n: int) {
+  v0: int = const 0;
+  i: int = id v0;
+  v2: int = const 0;
+  i: int = id v2;
+.for.cond.1:
+  v3: int = id i;
+  v4: int = id n;
+  v5: bool = lt v3 v4;
+  br v5 .for.body.1 .for.end.1;
+.for.body.1:
+  v6: int = const 10;
+  j: int = id v6;
+  v7: int = id i;
+  v8: int = const 1;
+  v9: int = add v7 v8;
+  i: int = id v9;
+  jmp .for.cond.1;
+.for.end.1:
+  v10: int = id i;
+  print v10;
+  v11: int = const 0;
+}

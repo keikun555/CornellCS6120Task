@@ -1,0 +1,97 @@
+{
+  "rand": {
+    "reducible": true,
+    "backedges": []
+  },
+  "randarray": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "printarray": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "loop_end",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "body",
+          "loop_end"
+        ]
+      }
+    ]
+  },
+  "matmul": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "row.loop_end",
+          "row.loop"
+        ],
+        "header": "row.loop",
+        "natural_loop": [
+          "row.loop",
+          "row.body",
+          "col.loop",
+          "col.body",
+          "sum.loop",
+          "sum.body",
+          "sum.loop_end",
+          "sum.done",
+          "col.loop_end",
+          "col.done",
+          "row.loop_end"
+        ]
+      },
+      {
+        "backedge": [
+          "sum.loop_end",
+          "sum.loop"
+        ],
+        "header": "sum.loop",
+        "natural_loop": [
+          "sum.loop",
+          "sum.body",
+          "sum.loop_end"
+        ]
+      },
+      {
+        "backedge": [
+          "col.loop_end",
+          "col.loop"
+        ],
+        "header": "col.loop",
+        "natural_loop": [
+          "col.loop",
+          "col.body",
+          "sum.loop",
+          "sum.body",
+          "sum.loop_end",
+          "sum.done",
+          "col.loop_end"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

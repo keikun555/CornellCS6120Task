@@ -1,0 +1,10 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "add2": {
+    "reducible": true,
+    "backedges": []
+  }
+}

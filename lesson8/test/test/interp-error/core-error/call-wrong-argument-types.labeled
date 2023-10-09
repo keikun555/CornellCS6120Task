@@ -1,0 +1,11 @@
+@main {
+.main.b0:
+  x: int = const 1;
+  call @add2 x;
+}
+@add2(x: bool): int {
+.add2.b0:
+  z: int = const 2;
+  w: int = add x z;
+  print w;
+}

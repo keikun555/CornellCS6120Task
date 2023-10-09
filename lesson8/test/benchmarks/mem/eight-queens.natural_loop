@@ -1,0 +1,42 @@
+{
+  "main": {
+    "reducible": true,
+    "backedges": []
+  },
+  "queen": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "next.loop",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body",
+          "rec.func",
+          "next.loop"
+        ]
+      }
+    ]
+  },
+  "valid": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "false.loop",
+          "for.cond"
+        ],
+        "header": "for.cond",
+        "natural_loop": [
+          "for.cond",
+          "for.body",
+          "false.else",
+          "false.loop"
+        ]
+      }
+    ]
+  }
+}

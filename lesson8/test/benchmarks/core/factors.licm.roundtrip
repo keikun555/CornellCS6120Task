@@ -1,0 +1,46 @@
+@main(num.0: int) {
+.main.b0:
+  num.1: int = id num.0;
+.main.b1:
+  zer.0: int = const 0;
+  one.0: int = const 1;
+  fac.0: int = const 2;
+  tmp.0: int = const 0;
+  quo.0: int = const 0;
+  num.2: int = id num.1;
+  mod.0: int = const 0;
+  iszero.0: bool = const false;
+  ispos.0: bool = const false;
+  fac.1: int = id fac.0;
+.loopcheck:
+  ispos.1: bool = lt one.0 num.2;
+  br ispos.1 .loopbody .loopend;
+.loopbody:
+  quo.1: int = div num.2 fac.1;
+  tmp.1: int = mul quo.1 fac.1;
+  mod.1: int = sub num.2 tmp.1;
+  iszero.1: bool = eq mod.1 zer.0;
+  br iszero.1 .ifyes .ifno;
+.ifyes:
+  print fac.1;
+  num.3: int = div num.2 fac.1;
+  tmp.0: int = id tmp.1;
+  quo.0: int = id quo.1;
+  num.2: int = id num.3;
+  mod.0: int = id mod.1;
+  iszero.0: bool = id iszero.1;
+  ispos.0: bool = id ispos.1;
+  fac.1: int = id fac.1;
+  jmp .loopcheck;
+.ifno:
+  fac.2: int = add fac.1 one.0;
+  tmp.0: int = id tmp.1;
+  quo.0: int = id quo.1;
+  num.2: int = id num.2;
+  mod.0: int = id mod.1;
+  iszero.0: bool = id iszero.1;
+  ispos.0: bool = id ispos.1;
+  fac.1: int = id fac.2;
+  jmp .loopcheck;
+.loopend:
+}

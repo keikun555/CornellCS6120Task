@@ -1,0 +1,18 @@
+{
+  "cons": {
+    "reducible": true,
+    "backedges": []
+  },
+  "print_list": {
+    "reducible": true,
+    "backedges": []
+  },
+  "free_list": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}

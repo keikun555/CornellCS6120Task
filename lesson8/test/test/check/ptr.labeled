@@ -1,0 +1,5 @@
+@main(a: ptr<int>) {
+.main.b0:
+  b: ptr<int> = id a;
+  c: ptr<float> = id a;
+}

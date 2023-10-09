@@ -1,0 +1,42 @@
+{
+  "mod2": {
+    "reducible": true,
+    "backedges": []
+  },
+  "loop_subroutine": {
+    "reducible": true,
+    "backedges": [
+      {
+        "backedge": [
+          "end_loop",
+          "loop"
+        ],
+        "header": "loop",
+        "natural_loop": [
+          "loop",
+          "here",
+          "doOr",
+          "stay",
+          "add",
+          "end_loop"
+        ]
+      }
+    ]
+  },
+  "OR": {
+    "reducible": true,
+    "backedges": []
+  },
+  "AND": {
+    "reducible": true,
+    "backedges": []
+  },
+  "XOR": {
+    "reducible": true,
+    "backedges": []
+  },
+  "main": {
+    "reducible": true,
+    "backedges": []
+  }
+}
