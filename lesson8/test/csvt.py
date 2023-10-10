@@ -1,5 +1,6 @@
+"""Transposes brench outputs"""
+
 import csv
-import argparse
 import os
 import sys
 
@@ -17,7 +18,7 @@ if __name__ == "__main__":
         output_csv[-1][row["run"]] = row["result"]
         if row["run"] not in fieldnames:
             fieldnames.append(row["run"])
-            
+
     writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames)
 
     writer.writeheader()
