@@ -2,8 +2,8 @@
 
 from typing import Optional, cast
 
-from typing_bril import Label
 from basic_blocks import BasicBlock
+from typing_bril import Label
 
 
 def label_get(basic_block: BasicBlock) -> Optional[str]:

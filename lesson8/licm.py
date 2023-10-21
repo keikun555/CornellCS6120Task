@@ -2,44 +2,33 @@
 Performs loop invariant code motion on SSA form of BRIL
 """
 
-import sys
-import json
 import copy
-
-from typing import cast
+import json
+import sys
 from collections import defaultdict
+from typing import cast
 
 import click
-
-from typing_bril import (
-    SSAProgram,
-    SSAValue,
-    SSAInstruction,
-    Variable,
-    Effect,
-    Value,
-    Instruction,
-)
+from bril_analyze import can_error, is_terminator, is_value
+from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS
+from bril_labeler import index_to_label_dict_get
+from cfg import control_flow_graph_from_instructions
+from dominance_analysis import dominators_indices_get
+from loop import backedges_get, is_cfg_reducible, natural_loop_get
 from ssa_basic_blocks import (
     SSABasicBlockFunction,
-    ssa_program_from_ssa_basic_block_program,
     ssa_basic_block_program_from_ssa_program,
+    ssa_program_from_ssa_basic_block_program,
 )
-from cfg import (
-    control_flow_graph_from_instructions,
+from typing_bril import (
+    Effect,
+    Instruction,
+    SSAInstruction,
+    SSAProgram,
+    SSAValue,
+    Value,
+    Variable,
 )
-
-from bril_labeler import index_to_label_dict_get
-
-from bril_analyze import is_value, can_error, is_terminator
-
-from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS
-
-from dominance_analysis import (
-    dominators_indices_get,
-)
-
-from loop import backedges_get, is_cfg_reducible, natural_loop_get
 
 
 def var_to_use_blocks_def_block_get(

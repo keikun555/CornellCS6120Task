@@ -1,11 +1,10 @@
 """ Trivial Dead Code Elimination """
 import json
 import sys
-
 from typing import Set, cast
-from typing_bril import Program, Instruction, Function, Effect
 
 from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS
+from typing_bril import Effect, Function, Instruction, Program
 
 
 def eliminate_dead_code_trivially(function: Function) -> Function:

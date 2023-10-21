@@ -3,23 +3,12 @@ Generates a Control Flow Graph from a BasicBlockFunction
 """
 import json
 import sys
+from typing import DefaultDict, cast
 
-
-from typing import cast, DefaultDict
-
-from typing_bril import (
-    Program,
-    Label,
-    InstructionBase,
-    Effect,
-)
+from basic_blocks import BasicBlock, basic_block_program_from_program
 from bril_constants import TERMINATOR_OPERATORS
-
-from basic_blocks import (
-    basic_block_program_from_program,
-    BasicBlock,
-)
 from bril_extract import label_get
+from typing_bril import Effect, InstructionBase, Label, Program
 
 
 class ControlFlowGraph(DefaultDict[int, set[int]]):

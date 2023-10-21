@@ -3,9 +3,7 @@
 import csv
 import os
 import sys
-
 from collections import defaultdict
-
 
 if __name__ == "__main__":
     f = csv.DictReader(sys.stdin)

@@ -2,18 +2,17 @@
 Loop utility functions for BRIL
 """
 
-import sys
 import copy
 import json
-
+import sys
 from typing import NamedTuple, TypeAlias
 
 import click
-from typing_bril import Program
 from basic_blocks import BasicBlockProgram, basic_block_program_from_program
+from bril_labeler import index_to_label_dict_get
 from cfg import ControlFlowGraph, control_flow_graph_from_instructions
 from dominance_analysis import DominanceAnalysis, dominators_indices_get
-from bril_labeler import index_to_label_dict_get
+from typing_bril import Program
 
 BackEdge: TypeAlias = tuple[int, int]
 

@@ -1,26 +1,18 @@
 """ Local Value Numbering Optimization """
-import sys
 import json
+import sys
 import uuid
-from typing import Dict, cast, Generator, TypeAlias, List, Optional
+from typing import Dict, Generator, List, Optional, TypeAlias, cast
 
 import click
-
-from typing_bril import (
-    Program,
-    Operation,
-    Value,
-    Variable,
-    Constant,
-)
 from basic_blocks import (
-    BasicBlockProgram,
     BasicBlock,
+    BasicBlockProgram,
     basic_block_program_from_program,
     program_from_basic_block_program,
 )
-
-from bril_constants import OPERATIONS_WITH_SIDE_EFFECTS, COMMUTATIVE_OPERATIONS
+from bril_constants import COMMUTATIVE_OPERATIONS, OPERATIONS_WITH_SIDE_EFFECTS
+from typing_bril import Constant, Operation, Program, Value, Variable
 
 ValueTuple: TypeAlias = tuple[Operation, tuple[int, ...], Optional[str]]
 LocalValueNumberingRow: TypeAlias = tuple[int, ValueTuple, Variable]
@@ -133,7 +125,7 @@ def local_value_numbering(basic_block: BasicBlock, commutative: bool) -> BasicBl
                 var2num[arg] = num
 
         args: list[Variable]
-        if commutative and instruction['op'] in COMMUTATIVE_OPERATIONS:
+        if commutative and instruction["op"] in COMMUTATIVE_OPERATIONS:
             args = sorted(instruction.get("args", []))
         else:
             args = instruction.get("args", [])

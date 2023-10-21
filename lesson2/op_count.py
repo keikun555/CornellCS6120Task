@@ -6,7 +6,6 @@ Sorted in decreasing count order
 import collections
 import json
 import sys
-
 from typing import *
 
 

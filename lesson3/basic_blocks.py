@@ -1,16 +1,14 @@
 """
 Generates basic block structures from brili json dictionaries
 """
+import itertools
 import json
 import sys
-import itertools
-
 from typing import Generator, TypeAlias
-from typing_extensions import TypedDict
 
-from typing_bril import Function, FunctionBase, Instruction, Program
 from bril_constants import TERMINATOR_OPERATORS
-
+from typing_bril import Function, FunctionBase, Instruction, Program
+from typing_extensions import TypedDict
 
 BasicBlock: TypeAlias = list[Instruction]
 

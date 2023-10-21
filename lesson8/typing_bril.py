@@ -1,7 +1,7 @@
 """Defines types for bril"""
-from typing import TypedDict, TypeAlias, Any, Union, Dict, Literal
-from typing_extensions import NotRequired
+from typing import Any, Dict, Literal, TypeAlias, TypedDict, Union
 
+from typing_extensions import NotRequired
 
 Operation: TypeAlias = Literal[
     "const",

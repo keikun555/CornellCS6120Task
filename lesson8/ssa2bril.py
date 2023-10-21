@@ -2,46 +2,39 @@
 Converts SSA form Bril programs to non-SSA form
 """
 
-import sys
-import json
 import copy
-
-from typing import cast
+import json
+import sys
 from collections import defaultdict
+from typing import cast
 
 import click
-
-from typing_bril import (
-    Program,
-    SSAProgram,
-    SSAValue,
-    SSAInstruction,
-    Variable,
-    Effect,
-    Value,
-    Constant,
-)
 from basic_blocks import (
     BasicBlock,
     BasicBlockFunction,
     BasicBlockProgram,
     program_from_basic_block_program,
 )
+from bril_analyze import is_terminator
+from bril_extract import phi_nodes_get
+from bril_labeler import apply_labels, index_to_label_dict_get
+from cfg import control_flow_graph_from_instructions
 from ssa_basic_blocks import (
     SSABasicBlock,
     SSABasicBlockFunction,
     SSABasicBlockProgram,
     ssa_basic_block_program_from_ssa_program,
 )
-from cfg import (
-    control_flow_graph_from_instructions,
+from typing_bril import (
+    Constant,
+    Effect,
+    Program,
+    SSAInstruction,
+    SSAProgram,
+    SSAValue,
+    Value,
+    Variable,
 )
-
-from bril_labeler import index_to_label_dict_get, apply_labels
-
-from bril_extract import phi_nodes_get
-
-from bril_analyze import is_terminator
 
 
 def ssa_bb_func_to_bb_func(
@@ -76,17 +69,30 @@ def ssa_bb_func_to_bb_func(
                         for arg, label in zip(phi_node["args"], phi_node["labels"])
                         if label == predecessor_label
                     )
-                    instructions.append(SSAValue(op="id", type=type_, dest=dest, args=[arg]))
+                    instructions.append(
+                        SSAValue(op="id", type=type_, dest=dest, args=[arg])
+                    )
                 except StopIteration:
                     # Not in Phi node
                     if isinstance(type_, dict):
                         if "ptr" in type_:
-                            instructions.append(Constant(
-                                op="const", type="int", dest=Variable(f"{dest}.size"), value=1))
-                            instructions.append(Value(
-                                op="alloc", args=[Variable(f"{dest}.size")], dest=dest, type=type_))
-                            instructions.append(Effect(
-                                op="free", args=[dest]))
+                            instructions.append(
+                                Constant(
+                                    op="const",
+                                    type="int",
+                                    dest=Variable(f"{dest}.size"),
+                                    value=1,
+                                )
+                            )
+                            instructions.append(
+                                Value(
+                                    op="alloc",
+                                    args=[Variable(f"{dest}.size")],
+                                    dest=dest,
+                                    type=type_,
+                                )
+                            )
+                            instructions.append(Effect(op="free", args=[dest]))
                     else:
                         constant_value: int | float | bool
                         match type_:
@@ -97,10 +103,15 @@ def ssa_bb_func_to_bb_func(
                             case "bool":
                                 constant_value = bool()
                             case _:
-                                raise ValueError(f"Encountered unsupported type: {type_}")
+                                raise ValueError(
+                                    f"Encountered unsupported type: {type_}"
+                                )
 
-                        instructions.append(Constant(
-                            op="const", type=type_, dest=dest, value=constant_value))
+                        instructions.append(
+                            Constant(
+                                op="const", type=type_, dest=dest, value=constant_value
+                            )
+                        )
 
                 block_to_insert = ssa_bb_func["instrs"][predecessor_index]
                 if len(block_to_insert) <= 0 or not is_terminator(block_to_insert[-1]):

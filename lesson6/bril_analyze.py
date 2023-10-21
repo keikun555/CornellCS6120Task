@@ -3,10 +3,9 @@
 from typing import cast
 
 from basic_blocks import BasicBlock
+from bril_constants import TERMINATOR_OPERATORS
 from ssa_basic_blocks import SSABasicBlock
 from typing_bril import Instruction, SSAInstruction, Value
-
-from bril_constants import TERMINATOR_OPERATORS
 
 
 def has_label(basic_block: BasicBlock | SSABasicBlock) -> bool:

@@ -1,27 +1,17 @@
 """
 Generates a Control Flow Graph from a BasicBlockFunction
 """
-import json
-import sys
 import copy
+import json
 import queue
-
-
-from typing import cast, DefaultDict, Generator
+import sys
 from collections import defaultdict
+from typing import DefaultDict, Generator, cast
 
-from typing_bril import (
-    Program,
-    InstructionBase,
-    Effect,
-)
+from basic_blocks import BasicBlock, basic_block_program_from_program
 from bril_constants import TERMINATOR_OPERATORS
-
-from basic_blocks import (
-    basic_block_program_from_program,
-    BasicBlock,
-)
 from bril_extract import label_get
+from typing_bril import Effect, InstructionBase, Program
 
 
 class ControlFlowGraph(dict[int, set[int]]):
@@ -41,6 +31,7 @@ class ControlFlowGraph(dict[int, set[int]]):
     def reachable(self, start_index: int, dest_index: int) -> bool:
         """Tells us whether a block is reachable from the entry"""
         visited: set[int] = set()
+
         def helper(i: int):
             visited.add(i)
             if i == dest_index:

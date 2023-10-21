@@ -1,28 +1,22 @@
 """Creates labels for CFG blocks if it doesn't exist"""
 
-import sys
 import copy
 import json
-from typing import (
-    Generator,
-    TypeAlias,
-    Optional,
-)
+import sys
+from typing import Generator, Optional, TypeAlias
 
 import click
-
-from typing_bril import Program, Label
 from basic_blocks import (
-    BasicBlockProgram,
-    BasicBlockFunction,
     BasicBlock,
+    BasicBlockFunction,
+    BasicBlockProgram,
     basic_block_program_from_program,
     program_from_basic_block_program,
 )
-from cfg import ControlFlowGraph, control_flow_graph_from_instructions
-
 from bril_analyze import has_label
 from bril_extract import label_get
+from cfg import ControlFlowGraph, control_flow_graph_from_instructions
+from typing_bril import Label, Program
 
 ENTRY_BLOCK_LABEL = "ENTRY"
 EXIT_BLOCK_LABEL = "EXIT"
@@ -43,7 +37,7 @@ def unique_label_name_generator(
         i += 1
 
 
-def is_labeled(basic_blocks:list[BasicBlock]) -> bool:
+def is_labeled(basic_blocks: list[BasicBlock]) -> bool:
     """Returns whether basic blocks are labeled"""
     for basic_block in basic_blocks:
         if label_get(basic_block) is None:

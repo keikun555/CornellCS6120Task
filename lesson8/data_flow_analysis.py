@@ -1,31 +1,21 @@
 """Data Flow Analysis"""
 
-import sys
 import json
-from typing import (
-    cast,
-    Generator,
-    TypeAlias,
-    TypeVar,
-    Generic,
-    Optional,
-)
+import sys
 from abc import ABC, abstractmethod
 from enum import Enum
+from typing import Generator, Generic, Optional, TypeAlias, TypeVar, cast
 
 import click
-
-from typing_bril import Program, Value, Effect
 from basic_blocks import (
-    BasicBlockProgram,
-    BasicBlockFunction,
     BasicBlock,
+    BasicBlockFunction,
+    BasicBlockProgram,
     basic_block_program_from_program,
 )
-from cfg import ControlFlowGraph, control_flow_graph_from_instructions
-
 from bril_extract import label_get
-
+from cfg import ControlFlowGraph, control_flow_graph_from_instructions
+from typing_bril import Effect, Program, Value
 
 Domain = TypeVar("Domain")
 
