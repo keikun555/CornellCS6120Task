@@ -1,0 +1,14 @@
+[envs.original-eval]
+command = "bril2json < {filename} | brili {args}"
+output.out = "-"
+output.err = "2"
+
+[envs.copy-eval]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' {args}"
+output.out = "-"
+output."copy.err" = "2"
+
+[envs.gc]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' {args}"
+output.out = "-"
+output."gc.err" = "2"

@@ -1,0 +1,1090 @@
+1..272
+ok 1 - ./benchmarks/core/ackermann.bril original-eval
+ok 2 - ./benchmarks/core/ackermann.bril copy-eval
+ok 3 - ./benchmarks/core/ackermann.bril gc
+ok 4 - ./benchmarks/core/armstrong.bril original-eval
+ok 5 - ./benchmarks/core/armstrong.bril copy-eval
+ok 6 - ./benchmarks/core/armstrong.bril gc
+ok 7 - ./benchmarks/core/binary-fmt.bril original-eval
+ok 8 - ./benchmarks/core/binary-fmt.bril copy-eval
+ok 9 - ./benchmarks/core/binary-fmt.bril gc
+ok 10 - ./benchmarks/core/bitshift.bril original-eval
+ok 11 - ./benchmarks/core/bitshift.bril copy-eval
+ok 12 - ./benchmarks/core/bitshift.bril gc
+ok 13 - ./benchmarks/core/bitwise-ops.bril original-eval
+ok 14 - ./benchmarks/core/bitwise-ops.bril copy-eval
+ok 15 - ./benchmarks/core/bitwise-ops.bril gc
+ok 16 - ./benchmarks/core/catalan.bril original-eval
+ok 17 - ./benchmarks/core/catalan.bril copy-eval
+ok 18 - ./benchmarks/core/catalan.bril gc
+ok 19 - ./benchmarks/core/check-primes.bril original-eval
+ok 20 - ./benchmarks/core/check-primes.bril copy-eval
+ok 21 - ./benchmarks/core/check-primes.bril gc
+ok 22 - ./benchmarks/core/collatz.bril original-eval
+ok 23 - ./benchmarks/core/collatz.bril copy-eval
+ok 24 - ./benchmarks/core/collatz.bril gc
+ok 25 - ./benchmarks/core/digital-root.bril original-eval
+ok 26 - ./benchmarks/core/digital-root.bril copy-eval
+ok 27 - ./benchmarks/core/digital-root.bril gc
+ok 28 - ./benchmarks/core/dot-product.bril original-eval
+ok 29 - ./benchmarks/core/dot-product.bril copy-eval
+ok 30 - ./benchmarks/core/dot-product.bril gc
+ok 31 - ./benchmarks/core/euclid.bril original-eval
+ok 32 - ./benchmarks/core/euclid.bril copy-eval
+ok 33 - ./benchmarks/core/euclid.bril gc
+ok 34 - ./benchmarks/core/fact.bril original-eval
+ok 35 - ./benchmarks/core/fact.bril copy-eval
+ok 36 - ./benchmarks/core/fact.bril gc
+ok 37 - ./benchmarks/core/factors.bril original-eval
+ok 38 - ./benchmarks/core/factors.bril copy-eval
+ok 39 - ./benchmarks/core/factors.bril gc
+ok 40 - ./benchmarks/core/fizz-buzz.bril original-eval
+ok 41 - ./benchmarks/core/fizz-buzz.bril copy-eval
+ok 42 - ./benchmarks/core/fizz-buzz.bril gc
+ok 43 - ./benchmarks/core/gcd.bril original-eval
+ok 44 - ./benchmarks/core/gcd.bril copy-eval
+ok 45 - ./benchmarks/core/gcd.bril gc
+ok 46 - ./benchmarks/core/hanoi.bril original-eval
+ok 47 - ./benchmarks/core/hanoi.bril copy-eval
+ok 48 - ./benchmarks/core/hanoi.bril gc
+ok 49 - ./benchmarks/core/loopfact.bril original-eval
+ok 50 - ./benchmarks/core/loopfact.bril copy-eval
+ok 51 - ./benchmarks/core/loopfact.bril gc
+ok 52 - ./benchmarks/core/mod_inv.bril original-eval
+ok 53 - ./benchmarks/core/mod_inv.bril copy-eval
+ok 54 - ./benchmarks/core/mod_inv.bril gc
+ok 55 - ./benchmarks/core/orders.bril original-eval
+ok 56 - ./benchmarks/core/orders.bril copy-eval
+ok 57 - ./benchmarks/core/orders.bril gc
+ok 58 - ./benchmarks/core/palindrome.bril original-eval
+ok 59 - ./benchmarks/core/palindrome.bril copy-eval
+ok 60 - ./benchmarks/core/palindrome.bril gc
+ok 61 - ./benchmarks/core/pascals-row.bril original-eval
+ok 62 - ./benchmarks/core/pascals-row.bril copy-eval
+ok 63 - ./benchmarks/core/pascals-row.bril gc
+ok 64 - ./benchmarks/core/perfect.bril original-eval
+ok 65 - ./benchmarks/core/perfect.bril copy-eval
+ok 66 - ./benchmarks/core/perfect.bril gc
+ok 67 - ./benchmarks/core/primes-between.bril original-eval
+ok 68 - ./benchmarks/core/primes-between.bril copy-eval
+ok 69 - ./benchmarks/core/primes-between.bril gc
+ok 70 - ./benchmarks/core/pythagorean_triple.bril original-eval
+ok 71 - ./benchmarks/core/pythagorean_triple.bril copy-eval
+ok 72 - ./benchmarks/core/pythagorean_triple.bril gc
+ok 73 - ./benchmarks/core/quadratic.bril original-eval
+ok 74 - ./benchmarks/core/quadratic.bril copy-eval
+ok 75 - ./benchmarks/core/quadratic.bril gc
+ok 76 - ./benchmarks/core/recfact.bril original-eval
+ok 77 - ./benchmarks/core/recfact.bril copy-eval
+ok 78 - ./benchmarks/core/recfact.bril gc
+ok 79 - ./benchmarks/core/rectangles-area-difference.bril original-eval
+ok 80 - ./benchmarks/core/rectangles-area-difference.bril copy-eval
+ok 81 - ./benchmarks/core/rectangles-area-difference.bril gc
+ok 82 - ./benchmarks/core/relative-primes.bril original-eval
+ok 83 - ./benchmarks/core/relative-primes.bril copy-eval
+ok 84 - ./benchmarks/core/relative-primes.bril gc
+ok 85 - ./benchmarks/core/reverse.bril original-eval
+ok 86 - ./benchmarks/core/reverse.bril copy-eval
+ok 87 - ./benchmarks/core/reverse.bril gc
+ok 88 - ./benchmarks/core/sum-bits.bril original-eval
+ok 89 - ./benchmarks/core/sum-bits.bril copy-eval
+ok 90 - ./benchmarks/core/sum-bits.bril gc
+ok 91 - ./benchmarks/core/sum-divisors.bril original-eval
+ok 92 - ./benchmarks/core/sum-divisors.bril copy-eval
+ok 93 - ./benchmarks/core/sum-divisors.bril gc
+ok 94 - ./benchmarks/core/sum-sq-diff.bril original-eval
+ok 95 - ./benchmarks/core/sum-sq-diff.bril copy-eval
+ok 96 - ./benchmarks/core/sum-sq-diff.bril gc
+ok 97 - ./benchmarks/core/totient.bril original-eval
+ok 98 - ./benchmarks/core/totient.bril copy-eval
+ok 99 - ./benchmarks/core/totient.bril gc
+ok 100 - ./benchmarks/core/up-arrow.bril original-eval
+ok 101 - ./benchmarks/core/up-arrow.bril copy-eval
+ok 102 - ./benchmarks/core/up-arrow.bril gc
+ok 103 - ./benchmarks/float/conjugate-gradient.bril original-eval
+ok 104 - ./benchmarks/float/conjugate-gradient.bril copy-eval
+ok 105 - ./benchmarks/float/conjugate-gradient.bril gc
+ok 106 - ./benchmarks/float/cordic.bril original-eval
+ok 107 - ./benchmarks/float/cordic.bril copy-eval
+ok 108 - ./benchmarks/float/cordic.bril gc
+ok 109 - ./benchmarks/float/euler.bril original-eval
+ok 110 - ./benchmarks/float/euler.bril copy-eval
+ok 111 - ./benchmarks/float/euler.bril gc
+ok 112 - ./benchmarks/float/mandelbrot.bril original-eval
+ok 113 - ./benchmarks/float/mandelbrot.bril copy-eval
+ok 114 - ./benchmarks/float/mandelbrot.bril gc
+ok 115 - ./benchmarks/float/newton.bril original-eval
+ok 116 - ./benchmarks/float/newton.bril copy-eval
+ok 117 - ./benchmarks/float/newton.bril gc
+ok 118 - ./benchmarks/float/norm.bril original-eval
+ok 119 - ./benchmarks/float/norm.bril copy-eval
+ok 120 - ./benchmarks/float/norm.bril gc
+ok 121 - ./benchmarks/float/n_root.bril original-eval
+ok 122 - ./benchmarks/float/n_root.bril copy-eval
+ok 123 - ./benchmarks/float/n_root.bril gc
+ok 124 - ./benchmarks/float/pow.bril original-eval
+ok 125 - ./benchmarks/float/pow.bril copy-eval
+ok 126 - ./benchmarks/float/pow.bril gc
+ok 127 - ./benchmarks/float/ray-sphere-intersection.bril original-eval
+ok 128 - ./benchmarks/float/ray-sphere-intersection.bril copy-eval
+ok 129 - ./benchmarks/float/ray-sphere-intersection.bril gc
+ok 130 - ./benchmarks/float/riemann.bril original-eval
+ok 131 - ./benchmarks/float/riemann.bril copy-eval
+ok 132 - ./benchmarks/float/riemann.bril gc
+ok 133 - ./benchmarks/float/sqrt.bril original-eval
+ok 134 - ./benchmarks/float/sqrt.bril copy-eval
+ok 135 - ./benchmarks/float/sqrt.bril gc
+ok 136 - ./benchmarks/long/function_call.bril original-eval
+ok 137 - ./benchmarks/long/function_call.bril copy-eval
+ok 138 - ./benchmarks/long/function_call.bril gc
+ok 139 - ./benchmarks/mem/adj2csr.bril original-eval
+ok 140 - ./benchmarks/mem/adj2csr.bril copy-eval
+ok 141 - ./benchmarks/mem/adj2csr.bril gc
+ok 142 - ./benchmarks/mem/adler32.bril original-eval
+ok 143 - ./benchmarks/mem/adler32.bril copy-eval
+ok 144 - ./benchmarks/mem/adler32.bril gc
+ok 145 - ./benchmarks/mem/binary-search.bril original-eval
+ok 146 - ./benchmarks/mem/binary-search.bril copy-eval
+ok 147 - ./benchmarks/mem/binary-search.bril gc
+ok 148 - ./benchmarks/mem/bubblesort.bril original-eval
+ok 149 - ./benchmarks/mem/bubblesort.bril copy-eval
+ok 150 - ./benchmarks/mem/bubblesort.bril gc
+ok 151 - ./benchmarks/mem/eight-queens.bril original-eval
+ok 152 - ./benchmarks/mem/eight-queens.bril copy-eval
+ok 153 - ./benchmarks/mem/eight-queens.bril gc
+ok 154 - ./benchmarks/mem/fib.bril original-eval
+ok 155 - ./benchmarks/mem/fib.bril copy-eval
+ok 156 - ./benchmarks/mem/fib.bril gc
+ok 157 - ./benchmarks/mem/mat-mul.bril original-eval
+ok 158 - ./benchmarks/mem/mat-mul.bril copy-eval
+ok 159 - ./benchmarks/mem/mat-mul.bril gc
+ok 160 - ./benchmarks/mem/max-subarray.bril original-eval
+ok 161 - ./benchmarks/mem/max-subarray.bril copy-eval
+ok 162 - ./benchmarks/mem/max-subarray.bril gc
+ok 163 - ./benchmarks/mem/primitive-root.bril original-eval
+ok 164 - ./benchmarks/mem/primitive-root.bril copy-eval
+ok 165 - ./benchmarks/mem/primitive-root.bril gc
+ok 166 - ./benchmarks/mem/quicksort.bril original-eval
+ok 167 - ./benchmarks/mem/quicksort.bril copy-eval
+ok 168 - ./benchmarks/mem/quicksort.bril gc
+ok 169 - ./benchmarks/mem/sieve.bril original-eval
+ok 170 - ./benchmarks/mem/sieve.bril copy-eval
+ok 171 - ./benchmarks/mem/sieve.bril gc
+ok 172 - ./benchmarks/mem/two-sum.bril original-eval
+ok 173 - ./benchmarks/mem/two-sum.bril copy-eval
+ok 174 - ./benchmarks/mem/two-sum.bril gc
+ok 175 - ./benchmarks/mem/vsmul.bril original-eval
+ok 176 - ./benchmarks/mem/vsmul.bril copy-eval
+ok 177 - ./benchmarks/mem/vsmul.bril gc
+ok 178 - ./benchmarks/mixed/cholesky.bril original-eval
+ok 179 - ./benchmarks/mixed/cholesky.bril copy-eval
+ok 180 - ./benchmarks/mixed/cholesky.bril gc
+ok 181 - ./benchmarks/mixed/mat-inv.bril original-eval
+ok 182 - ./benchmarks/mixed/mat-inv.bril copy-eval
+ok 183 - ./benchmarks/mixed/mat-inv.bril gc
+not ok 184 - ./bril-llvm/linkedlist.bril original-eval
+# exit code: 2
+not ok 185 - ./bril-llvm/linkedlist.bril copy-eval
+# exit code: 2
+not ok 186 - ./bril-llvm/linkedlist.bril gc
+# exit code: 2
+not ok 187 - ./bril-llvm/point.bril original-eval
+# exit code: 2
+not ok 188 - ./bril-llvm/point.bril copy-eval
+# exit code: 2
+not ok 189 - ./bril-llvm/point.bril gc
+# exit code: 2
+ok 190 - ./bril-ocaml/test/count/bools.bril original-eval
+ok 191 - ./bril-ocaml/test/count/bools.bril copy-eval
+ok 192 - ./bril-ocaml/test/count/bools.bril gc
+ok 193 - ./bril-ocaml/test/count/empty.bril original-eval
+ok 194 - ./bril-ocaml/test/count/empty.bril copy-eval
+ok 195 - ./bril-ocaml/test/count/empty.bril gc
+ok 196 - ./bril-ocaml/test/count/funcs.bril original-eval
+ok 197 - ./bril-ocaml/test/count/funcs.bril copy-eval
+ok 198 - ./bril-ocaml/test/count/funcs.bril gc
+ok 199 - ./bril-ocaml/test/count/ints.bril original-eval
+ok 200 - ./bril-ocaml/test/count/ints.bril copy-eval
+ok 201 - ./bril-ocaml/test/count/ints.bril gc
+not ok 202 - ./examples/test/df/cond-args.bril original-eval
+# exit code: 2
+not ok 203 - ./examples/test/df/cond-args.bril copy-eval
+# exit code: 2
+not ok 204 - ./examples/test/df/cond-args.bril gc
+# exit code: 2
+ok 205 - ./examples/test/df/cond.bril original-eval
+ok 206 - ./examples/test/df/cond.bril copy-eval
+ok 207 - ./examples/test/df/cond.bril gc
+ok 208 - ./examples/test/df/fact.bril original-eval
+ok 209 - ./examples/test/df/fact.bril copy-eval
+ok 210 - ./examples/test/df/fact.bril gc
+ok 211 - ./examples/test/dom/loopcond.bril original-eval
+ok 212 - ./examples/test/dom/loopcond.bril copy-eval
+ok 213 - ./examples/test/dom/loopcond.bril gc
+not ok 214 - ./examples/test/dom/while.bril original-eval
+# exit code: 2
+not ok 215 - ./examples/test/dom/while.bril copy-eval
+# exit code: 2
+not ok 216 - ./examples/test/dom/while.bril gc
+# exit code: 2
+ok 217 - ./examples/test/lvn/clobber-arg.bril original-eval
+ok 218 - ./examples/test/lvn/clobber-arg.bril copy-eval
+ok 219 - ./examples/test/lvn/clobber-arg.bril gc
+not ok 220 - ./examples/test/lvn/clobber.bril original-eval
+# exit code: 1
+not ok 221 - ./examples/test/lvn/clobber.bril copy-eval
+# exit code: 1
+not ok 222 - ./examples/test/lvn/clobber.bril gc
+# exit code: 1
+not ok 223 - ./examples/test/lvn/clobber-fold.bril original-eval
+# exit code: 1
+not ok 224 - ./examples/test/lvn/clobber-fold.bril copy-eval
+# exit code: 1
+not ok 225 - ./examples/test/lvn/clobber-fold.bril gc
+# exit code: 1
+not ok 226 - ./examples/test/lvn/commute.bril original-eval
+# exit code: 2
+not ok 227 - ./examples/test/lvn/commute.bril copy-eval
+# exit code: 2
+not ok 228 - ./examples/test/lvn/commute.bril gc
+# exit code: 2
+not ok 229 - ./examples/test/lvn/divide-by-zero.bril original-eval
+# exit code: 2
+not ok 230 - ./examples/test/lvn/divide-by-zero.bril copy-eval
+# exit code: 2
+not ok 231 - ./examples/test/lvn/divide-by-zero.bril gc
+# exit code: 2
+not ok 232 - ./examples/test/lvn/fold-comparisons.bril original-eval
+# exit code: 2
+not ok 233 - ./examples/test/lvn/fold-comparisons.bril copy-eval
+# exit code: 2
+not ok 234 - ./examples/test/lvn/fold-comparisons.bril gc
+# exit code: 2
+ok 235 - ./examples/test/lvn/idchain.bril original-eval
+ok 236 - ./examples/test/lvn/idchain.bril copy-eval
+ok 237 - ./examples/test/lvn/idchain.bril gc
+ok 238 - ./examples/test/lvn/idchain-nonlocal.bril original-eval
+ok 239 - ./examples/test/lvn/idchain-nonlocal.bril copy-eval
+ok 240 - ./examples/test/lvn/idchain-nonlocal.bril gc
+ok 241 - ./examples/test/lvn/idchain-prop.bril original-eval
+ok 242 - ./examples/test/lvn/idchain-prop.bril copy-eval
+ok 243 - ./examples/test/lvn/idchain-prop.bril gc
+not ok 244 - ./examples/test/lvn/logical-operators.bril original-eval
+# exit code: 2
+not ok 245 - ./examples/test/lvn/logical-operators.bril copy-eval
+# exit code: 2
+not ok 246 - ./examples/test/lvn/logical-operators.bril gc
+# exit code: 2
+ok 247 - ./examples/test/lvn/nonlocal.bril original-eval
+ok 248 - ./examples/test/lvn/nonlocal.bril copy-eval
+ok 249 - ./examples/test/lvn/nonlocal.bril gc
+ok 250 - ./examples/test/lvn/nonlocal-clobber.bril original-eval
+ok 251 - ./examples/test/lvn/nonlocal-clobber.bril copy-eval
+ok 252 - ./examples/test/lvn/nonlocal-clobber.bril gc
+ok 253 - ./examples/test/lvn/reassign.bril original-eval
+ok 254 - ./examples/test/lvn/reassign.bril copy-eval
+ok 255 - ./examples/test/lvn/reassign.bril gc
+ok 256 - ./examples/test/lvn/redundant.bril original-eval
+ok 257 - ./examples/test/lvn/redundant.bril copy-eval
+ok 258 - ./examples/test/lvn/redundant.bril gc
+not ok 259 - ./examples/test/lvn/redundant-dce.bril original-eval
+# exit code: 1
+not ok 260 - ./examples/test/lvn/redundant-dce.bril copy-eval
+# exit code: 1
+not ok 261 - ./examples/test/lvn/redundant-dce.bril gc
+# exit code: 1
+not ok 262 - ./examples/test/lvn/rename-fold.bril original-eval
+# exit code: 1
+not ok 263 - ./examples/test/lvn/rename-fold.bril copy-eval
+# exit code: 1
+not ok 264 - ./examples/test/lvn/rename-fold.bril gc
+# exit code: 1
+not ok 265 - ./examples/test/ssa/if-orig.bril original-eval
+# exit code: 2
+not ok 266 - ./examples/test/ssa/if-orig.bril copy-eval
+# exit code: 2
+not ok 267 - ./examples/test/ssa/if-orig.bril gc
+# exit code: 2
+not ok 268 - ./examples/test/ssa/if-ssa.bril original-eval
+# exit code: 2
+not ok 269 - ./examples/test/ssa/if-ssa.bril copy-eval
+# exit code: 2
+not ok 270 - ./examples/test/ssa/if-ssa.bril gc
+# exit code: 2
+ok 271 - ./examples/test/ssa/loop-orig.bril original-eval
+ok 272 - ./examples/test/ssa/loop-orig.bril copy-eval
+ok 273 - ./examples/test/ssa/loop-orig.bril gc
+ok 274 - ./examples/test/ssa/loop-ssa.bril original-eval
+ok 275 - ./examples/test/ssa/loop-ssa.bril copy-eval
+ok 276 - ./examples/test/ssa/loop-ssa.bril gc
+ok 277 - ./examples/test/ssa_roundtrip/argwrite.bril original-eval
+ok 278 - ./examples/test/ssa_roundtrip/argwrite.bril copy-eval
+ok 279 - ./examples/test/ssa_roundtrip/argwrite.bril gc
+ok 280 - ./examples/test/ssa_roundtrip/if.bril original-eval
+ok 281 - ./examples/test/ssa_roundtrip/if.bril copy-eval
+ok 282 - ./examples/test/ssa_roundtrip/if.bril gc
+ok 283 - ./examples/test/ssa_roundtrip/if-const.bril original-eval
+ok 284 - ./examples/test/ssa_roundtrip/if-const.bril copy-eval
+ok 285 - ./examples/test/ssa_roundtrip/if-const.bril gc
+ok 286 - ./examples/test/ssa_roundtrip/loop.bril original-eval
+ok 287 - ./examples/test/ssa_roundtrip/loop.bril copy-eval
+ok 288 - ./examples/test/ssa_roundtrip/loop.bril gc
+ok 289 - ./examples/test/ssa_roundtrip/selfloop.bril original-eval
+ok 290 - ./examples/test/ssa_roundtrip/selfloop.bril copy-eval
+ok 291 - ./examples/test/ssa_roundtrip/selfloop.bril gc
+ok 292 - ./examples/test/ssa_roundtrip/while.bril original-eval
+ok 293 - ./examples/test/ssa_roundtrip/while.bril copy-eval
+ok 294 - ./examples/test/ssa_roundtrip/while.bril gc
+not ok 295 - ./examples/test/tdce/combo.bril original-eval
+# exit code: 2
+not ok 296 - ./examples/test/tdce/combo.bril copy-eval
+# exit code: 2
+not ok 297 - ./examples/test/tdce/combo.bril gc
+# exit code: 2
+ok 298 - ./examples/test/tdce/diamond.bril original-eval
+ok 299 - ./examples/test/tdce/diamond.bril copy-eval
+ok 300 - ./examples/test/tdce/diamond.bril gc
+ok 301 - ./examples/test/tdce/double.bril original-eval
+ok 302 - ./examples/test/tdce/double.bril copy-eval
+ok 303 - ./examples/test/tdce/double.bril gc
+not ok 304 - ./examples/test/tdce/double-pass.bril original-eval
+# exit code: 2
+not ok 305 - ./examples/test/tdce/double-pass.bril copy-eval
+# exit code: 2
+not ok 306 - ./examples/test/tdce/double-pass.bril gc
+# exit code: 2
+ok 307 - ./examples/test/tdce/reassign.bril original-eval
+ok 308 - ./examples/test/tdce/reassign.bril copy-eval
+ok 309 - ./examples/test/tdce/reassign.bril gc
+not ok 310 - ./examples/test/tdce/reassign-dkp.bril original-eval
+# exit code: 2
+not ok 311 - ./examples/test/tdce/reassign-dkp.bril copy-eval
+# exit code: 2
+not ok 312 - ./examples/test/tdce/reassign-dkp.bril gc
+# exit code: 2
+ok 313 - ./examples/test/tdce/simple.bril original-eval
+ok 314 - ./examples/test/tdce/simple.bril copy-eval
+ok 315 - ./examples/test/tdce/simple.bril gc
+ok 316 - ./examples/test/tdce/skipped.bril original-eval
+ok 317 - ./examples/test/tdce/skipped.bril copy-eval
+ok 318 - ./examples/test/tdce/skipped.bril gc
+not ok 319 - ./examples/test/to_ssa/argwrite.bril original-eval
+# exit code: 2
+not ok 320 - ./examples/test/to_ssa/argwrite.bril copy-eval
+# exit code: 2
+not ok 321 - ./examples/test/to_ssa/argwrite.bril gc
+# exit code: 2
+not ok 322 - ./examples/test/to_ssa/if.bril original-eval
+# exit code: 2
+not ok 323 - ./examples/test/to_ssa/if.bril copy-eval
+# exit code: 2
+not ok 324 - ./examples/test/to_ssa/if.bril gc
+# exit code: 2
+ok 325 - ./examples/test/to_ssa/if-const.bril original-eval
+ok 326 - ./examples/test/to_ssa/if-const.bril copy-eval
+ok 327 - ./examples/test/to_ssa/if-const.bril gc
+not ok 328 - ./examples/test/to_ssa/if-ssa.bril original-eval
+# exit code: 2
+not ok 329 - ./examples/test/to_ssa/if-ssa.bril copy-eval
+# exit code: 2
+not ok 330 - ./examples/test/to_ssa/if-ssa.bril gc
+# exit code: 2
+ok 331 - ./examples/test/to_ssa/loop-branch.bril original-eval
+ok 332 - ./examples/test/to_ssa/loop-branch.bril copy-eval
+ok 333 - ./examples/test/to_ssa/loop-branch.bril gc
+ok 334 - ./examples/test/to_ssa/loop.bril original-eval
+ok 335 - ./examples/test/to_ssa/loop.bril copy-eval
+ok 336 - ./examples/test/to_ssa/loop.bril gc
+ok 337 - ./examples/test/to_ssa/selfloop.bril original-eval
+ok 338 - ./examples/test/to_ssa/selfloop.bril copy-eval
+ok 339 - ./examples/test/to_ssa/selfloop.bril gc
+not ok 340 - ./examples/test/to_ssa/while.bril original-eval
+# exit code: 2
+not ok 341 - ./examples/test/to_ssa/while.bril copy-eval
+# exit code: 2
+not ok 342 - ./examples/test/to_ssa/while.bril gc
+# exit code: 2
+not ok 343 - ./test/check/argtype.bril original-eval
+# exit code: 2
+not ok 344 - ./test/check/argtype.bril copy-eval
+# exit code: 2
+not ok 345 - ./test/check/argtype.bril gc
+# exit code: 2
+not ok 346 - ./test/check/badcall.bril original-eval
+# exit code: 2
+not ok 347 - ./test/check/badcall.bril copy-eval
+# exit code: 2
+not ok 348 - ./test/check/badcall.bril gc
+# exit code: 2
+ok 349 - ./test/check/badconst.bril original-eval
+ok 350 - ./test/check/badconst.bril copy-eval
+ok 351 - ./test/check/badconst.bril gc
+not ok 352 - ./test/check/badid.bril original-eval
+# exit code: 2
+not ok 353 - ./test/check/badid.bril copy-eval
+# exit code: 2
+not ok 354 - ./test/check/badid.bril gc
+# exit code: 2
+not ok 355 - ./test/check/badmem.bril original-eval
+# exit code: 2
+not ok 356 - ./test/check/badmem.bril copy-eval
+# exit code: 2
+not ok 357 - ./test/check/badmem.bril gc
+# exit code: 2
+not ok 358 - ./test/check/char.bril original-eval
+# exit code: 2
+not ok 359 - ./test/check/char.bril copy-eval
+# exit code: 2
+not ok 360 - ./test/check/char.bril gc
+# exit code: 2
+not ok 361 - ./test/check/extra.bril original-eval
+# exit code: 2
+not ok 362 - ./test/check/extra.bril copy-eval
+# exit code: 2
+not ok 363 - ./test/check/extra.bril gc
+# exit code: 2
+not ok 364 - ./test/check/labels.bril original-eval
+# exit code: 2
+not ok 365 - ./test/check/labels.bril copy-eval
+# exit code: 2
+not ok 366 - ./test/check/labels.bril gc
+# exit code: 2
+ok 367 - ./test/check/main-args.bril original-eval
+ok 368 - ./test/check/main-args.bril copy-eval
+ok 369 - ./test/check/main-args.bril gc
+not ok 370 - ./test/check/mem.bril original-eval
+# exit code: 2
+not ok 371 - ./test/check/mem.bril copy-eval
+# exit code: 2
+not ok 372 - ./test/check/mem.bril gc
+# exit code: 2
+not ok 373 - ./test/check/missarg.bril original-eval
+# exit code: 2
+not ok 374 - ./test/check/missarg.bril copy-eval
+# exit code: 2
+not ok 375 - ./test/check/missarg.bril gc
+# exit code: 2
+not ok 376 - ./test/check/missdest.bril original-eval
+# exit code: 2
+not ok 377 - ./test/check/missdest.bril copy-eval
+# exit code: 2
+not ok 378 - ./test/check/missdest.bril gc
+# exit code: 2
+not ok 379 - ./test/check/printres.bril original-eval
+# exit code: 2
+not ok 380 - ./test/check/printres.bril copy-eval
+# exit code: 2
+not ok 381 - ./test/check/printres.bril gc
+# exit code: 2
+not ok 382 - ./test/check/ptr.bril original-eval
+# exit code: 2
+not ok 383 - ./test/check/ptr.bril copy-eval
+# exit code: 2
+not ok 384 - ./test/check/ptr.bril gc
+# exit code: 2
+not ok 385 - ./test/check/speculate.bril original-eval
+# exit code: 2
+not ok 386 - ./test/check/speculate.bril copy-eval
+# exit code: 2
+not ok 387 - ./test/check/speculate.bril gc
+# exit code: 2
+not ok 388 - ./test/check/ssa.bril original-eval
+# exit code: 2
+not ok 389 - ./test/check/ssa.bril copy-eval
+# exit code: 2
+not ok 390 - ./test/check/ssa.bril gc
+# exit code: 2
+ok 391 - ./test/check/tiny.bril original-eval
+ok 392 - ./test/check/tiny.bril copy-eval
+ok 393 - ./test/check/tiny.bril gc
+ok 394 - ./test/check/typeconflict.bril original-eval
+ok 395 - ./test/check/typeconflict.bril copy-eval
+ok 396 - ./test/check/typeconflict.bril gc
+not ok 397 - ./test/check/undef.bril original-eval
+# exit code: 2
+not ok 398 - ./test/check/undef.bril copy-eval
+# exit code: 2
+not ok 399 - ./test/check/undef.bril gc
+# exit code: 2
+ok 400 - ./test/interp/char/char_args.bril original-eval
+ok 401 - ./test/interp/char/char_args.bril copy-eval
+ok 402 - ./test/interp/char/char_args.bril gc
+ok 403 - ./test/interp/char/char.bril original-eval
+ok 404 - ./test/interp/char/char.bril copy-eval
+ok 405 - ./test/interp/char/char.bril gc
+ok 406 - ./test/interp/char/char_ops.bril original-eval
+ok 407 - ./test/interp/char/char_ops.bril copy-eval
+ok 408 - ./test/interp/char/char_ops.bril gc
+ok 409 - ./test/interp/char/control_char.bril original-eval
+ok 410 - ./test/interp/char/control_char.bril copy-eval
+ok 411 - ./test/interp/char/control_char.bril gc
+ok 412 - ./test/interp/char/conversions.bril original-eval
+ok 413 - ./test/interp/char/conversions.bril copy-eval
+ok 414 - ./test/interp/char/conversions.bril gc
+ok 415 - ./test/interp/core/add-overflow.bril original-eval
+ok 416 - ./test/interp/core/add-overflow.bril copy-eval
+ok 417 - ./test/interp/core/add-overflow.bril gc
+ok 418 - ./test/interp/core/br.bril original-eval
+ok 419 - ./test/interp/core/br.bril copy-eval
+ok 420 - ./test/interp/core/br.bril gc
+ok 421 - ./test/interp/core/call.bril original-eval
+ok 422 - ./test/interp/core/call.bril copy-eval
+ok 423 - ./test/interp/core/call.bril gc
+ok 424 - ./test/interp/core/call-with-args.bril original-eval
+ok 425 - ./test/interp/core/call-with-args.bril copy-eval
+ok 426 - ./test/interp/core/call-with-args.bril gc
+ok 427 - ./test/interp/core/div.bril original-eval
+ok 428 - ./test/interp/core/div.bril copy-eval
+ok 429 - ./test/interp/core/div.bril gc
+ok 430 - ./test/interp/core/jmp.bril original-eval
+ok 431 - ./test/interp/core/jmp.bril copy-eval
+ok 432 - ./test/interp/core/jmp.bril gc
+ok 433 - ./test/interp/core/main-args.bril original-eval
+ok 434 - ./test/interp/core/main-args.bril copy-eval
+ok 435 - ./test/interp/core/main-args.bril gc
+ok 436 - ./test/interp/core/main-bool-args.bril original-eval
+ok 437 - ./test/interp/core/main-bool-args.bril copy-eval
+ok 438 - ./test/interp/core/main-bool-args.bril gc
+ok 439 - ./test/interp/core/nop.bril original-eval
+ok 440 - ./test/interp/core/nop.bril copy-eval
+ok 441 - ./test/interp/core/nop.bril gc
+ok 442 - ./test/interp/core/ret.bril original-eval
+ok 443 - ./test/interp/core/ret.bril copy-eval
+ok 444 - ./test/interp/core/ret.bril gc
+ok 445 - ./test/interp/core/tiny.bril original-eval
+ok 446 - ./test/interp/core/tiny.bril copy-eval
+ok 447 - ./test/interp/core/tiny.bril gc
+not ok 448 - ./test/interp-error/char-error/badconversion.bril original-eval
+# exit code: 2
+not ok 449 - ./test/interp-error/char-error/badconversion.bril copy-eval
+# exit code: 2
+not ok 450 - ./test/interp-error/char-error/badconversion.bril gc
+# exit code: 2
+not ok 451 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril original-eval
+# exit code: 2
+not ok 452 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril copy-eval
+# exit code: 2
+not ok 453 - ./test/interp-error/core-error/call-nonvoid-return-nothing-error.bril gc
+# exit code: 2
+not ok 454 - ./test/interp-error/core-error/call-return-nothing-error.bril original-eval
+# exit code: 2
+not ok 455 - ./test/interp-error/core-error/call-return-nothing-error.bril copy-eval
+# exit code: 2
+not ok 456 - ./test/interp-error/core-error/call-return-nothing-error.bril gc
+# exit code: 2
+not ok 457 - ./test/interp-error/core-error/call-return-wrong-type.bril original-eval
+# exit code: 2
+not ok 458 - ./test/interp-error/core-error/call-return-wrong-type.bril copy-eval
+# exit code: 2
+not ok 459 - ./test/interp-error/core-error/call-return-wrong-type.bril gc
+# exit code: 2
+not ok 460 - ./test/interp-error/core-error/call-void-return-error.bril original-eval
+# exit code: 2
+not ok 461 - ./test/interp-error/core-error/call-void-return-error.bril copy-eval
+# exit code: 2
+not ok 462 - ./test/interp-error/core-error/call-void-return-error.bril gc
+# exit code: 2
+not ok 463 - ./test/interp-error/core-error/call-wrong-argument-types.bril original-eval
+# exit code: 2
+not ok 464 - ./test/interp-error/core-error/call-wrong-argument-types.bril copy-eval
+# exit code: 2
+not ok 465 - ./test/interp-error/core-error/call-wrong-argument-types.bril gc
+# exit code: 2
+not ok 466 - ./test/interp-error/core-error/call-wrong-arity.bril original-eval
+# exit code: 2
+not ok 467 - ./test/interp-error/core-error/call-wrong-arity.bril copy-eval
+# exit code: 2
+not ok 468 - ./test/interp-error/core-error/call-wrong-arity.bril gc
+# exit code: 2
+not ok 469 - ./test/interp-error/core-error/call-wrong-declared-type.bril original-eval
+# exit code: 2
+not ok 470 - ./test/interp-error/core-error/call-wrong-declared-type.bril copy-eval
+# exit code: 2
+not ok 471 - ./test/interp-error/core-error/call-wrong-declared-type.bril gc
+# exit code: 2
+not ok 472 - ./test/interp-error/core-error/divide_by_zero.bril original-eval
+# exit code: 2
+not ok 473 - ./test/interp-error/core-error/divide_by_zero.bril copy-eval
+# exit code: 2
+not ok 474 - ./test/interp-error/core-error/divide_by_zero.bril gc
+# exit code: 2
+not ok 475 - ./test/interp-error/core-error/duplicate_function.bril original-eval
+# exit code: 2
+not ok 476 - ./test/interp-error/core-error/duplicate_function.bril copy-eval
+# exit code: 2
+not ok 477 - ./test/interp-error/core-error/duplicate_function.bril gc
+# exit code: 2
+not ok 478 - ./test/interp-error/core-error/duplicate_main.bril original-eval
+# exit code: 2
+not ok 479 - ./test/interp-error/core-error/duplicate_main.bril copy-eval
+# exit code: 2
+not ok 480 - ./test/interp-error/core-error/duplicate_main.bril gc
+# exit code: 2
+not ok 481 - ./test/interp-error/core-error/undefined-func.bril original-eval
+# exit code: 2
+not ok 482 - ./test/interp-error/core-error/undefined-func.bril copy-eval
+# exit code: 2
+not ok 483 - ./test/interp-error/core-error/undefined-func.bril gc
+# exit code: 2
+not ok 484 - ./test/interp-error/mem-error/double_free.bril original-eval
+# exit code: 2
+not ok 485 - ./test/interp-error/mem-error/double_free.bril copy-eval
+# exit code: 2
+not ok 486 - ./test/interp-error/mem-error/double_free.bril gc
+# exit code: 2
+not ok 487 - ./test/interp-error/mem-error/free_offset.bril original-eval
+# exit code: 2
+not ok 488 - ./test/interp-error/mem-error/free_offset.bril copy-eval
+# exit code: 2
+not ok 489 - ./test/interp-error/mem-error/free_offset.bril gc
+# exit code: 2
+not ok 490 - ./test/interp-error/mem-error/leak.bril original-eval
+# exit code: 2
+not ok 491 - ./test/interp-error/mem-error/leak.bril copy-eval
+# exit code: 2
+not ok 492 - ./test/interp-error/mem-error/leak.bril gc
+# exit code: 2
+not ok 493 - ./test/interp-error/mem-error/out_of_bounds_2.bril original-eval
+# exit code: 2
+not ok 494 - ./test/interp-error/mem-error/out_of_bounds_2.bril copy-eval
+# exit code: 2
+not ok 495 - ./test/interp-error/mem-error/out_of_bounds_2.bril gc
+# exit code: 2
+not ok 496 - ./test/interp-error/mem-error/out_of_bounds.bril original-eval
+# exit code: 2
+not ok 497 - ./test/interp-error/mem-error/out_of_bounds.bril copy-eval
+# exit code: 2
+not ok 498 - ./test/interp-error/mem-error/out_of_bounds.bril gc
+# exit code: 2
+not ok 499 - ./test/interp-error/mem-error/uninit_read.bril original-eval
+# exit code: 2
+not ok 500 - ./test/interp-error/mem-error/uninit_read.bril copy-eval
+# exit code: 2
+not ok 501 - ./test/interp-error/mem-error/uninit_read.bril gc
+# exit code: 2
+not ok 502 - ./test/interp-error/mem-error/wrong_write.bril original-eval
+# exit code: 2
+not ok 503 - ./test/interp-error/mem-error/wrong_write.bril copy-eval
+# exit code: 2
+not ok 504 - ./test/interp-error/mem-error/wrong_write.bril gc
+# exit code: 2
+not ok 505 - ./test/interp-error/spec-error/spec-call.bril original-eval
+# exit code: 2
+not ok 506 - ./test/interp-error/spec-error/spec-call.bril copy-eval
+# exit code: 2
+not ok 507 - ./test/interp-error/spec-error/spec-call.bril gc
+# exit code: 2
+not ok 508 - ./test/interp-error/spec-error/spec-double-commit.bril original-eval
+# exit code: 2
+not ok 509 - ./test/interp-error/spec-error/spec-double-commit.bril copy-eval
+# exit code: 2
+not ok 510 - ./test/interp-error/spec-error/spec-double-commit.bril gc
+# exit code: 2
+not ok 511 - ./test/interp-error/spec-error/spec-nonspec-abort.bril original-eval
+# exit code: 2
+not ok 512 - ./test/interp-error/spec-error/spec-nonspec-abort.bril copy-eval
+# exit code: 2
+not ok 513 - ./test/interp-error/spec-error/spec-nonspec-abort.bril gc
+# exit code: 2
+not ok 514 - ./test/interp-error/spec-error/spec-return.bril original-eval
+# exit code: 2
+not ok 515 - ./test/interp-error/spec-error/spec-return.bril copy-eval
+# exit code: 2
+not ok 516 - ./test/interp-error/spec-error/spec-return.bril gc
+# exit code: 2
+not ok 517 - ./test/interp-error/spec-error/spec-return-implicit.bril original-eval
+# exit code: 2
+not ok 518 - ./test/interp-error/spec-error/spec-return-implicit.bril copy-eval
+# exit code: 2
+not ok 519 - ./test/interp-error/spec-error/spec-return-implicit.bril gc
+# exit code: 2
+not ok 520 - ./test/interp-error/ssa-error/ssa-mismatch.bril original-eval
+# exit code: 2
+not ok 521 - ./test/interp-error/ssa-error/ssa-mismatch.bril copy-eval
+# exit code: 2
+not ok 522 - ./test/interp-error/ssa-error/ssa-mismatch.bril gc
+# exit code: 2
+not ok 523 - ./test/interp-error/ssa-error/ssa-nolabel.bril original-eval
+# exit code: 2
+not ok 524 - ./test/interp-error/ssa-error/ssa-nolabel.bril copy-eval
+# exit code: 2
+not ok 525 - ./test/interp-error/ssa-error/ssa-nolabel.bril gc
+# exit code: 2
+ok 526 - ./test/interp/float/float_args.bril original-eval
+ok 527 - ./test/interp/float/float_args.bril copy-eval
+ok 528 - ./test/interp/float/float_args.bril gc
+ok 529 - ./test/interp/float/float.bril original-eval
+ok 530 - ./test/interp/float/float.bril copy-eval
+ok 531 - ./test/interp/float/float.bril gc
+ok 532 - ./test/interp/float/float_divide_by_zero.bril original-eval
+ok 533 - ./test/interp/float/float_divide_by_zero.bril copy-eval
+ok 534 - ./test/interp/float/float_divide_by_zero.bril gc
+ok 535 - ./test/interp/float/float_special.bril original-eval
+ok 536 - ./test/interp/float/float_special.bril copy-eval
+ok 537 - ./test/interp/float/float_special.bril gc
+ok 538 - ./test/interp/mem/access.bril original-eval
+ok 539 - ./test/interp/mem/access.bril copy-eval
+ok 540 - ./test/interp/mem/access.bril gc
+ok 541 - ./test/interp/mem/access_many.bril original-eval
+ok 542 - ./test/interp/mem/access_many.bril copy-eval
+ok 543 - ./test/interp/mem/access_many.bril gc
+ok 544 - ./test/interp/mem/access_ptr.bril original-eval
+ok 545 - ./test/interp/mem/access_ptr.bril copy-eval
+ok 546 - ./test/interp/mem/access_ptr.bril gc
+ok 547 - ./test/interp/mem/alloc.bril original-eval
+ok 548 - ./test/interp/mem/alloc.bril copy-eval
+ok 549 - ./test/interp/mem/alloc.bril gc
+ok 550 - ./test/interp/mem/alloc_large.bril original-eval
+ok 551 - ./test/interp/mem/alloc_large.bril copy-eval
+ok 552 - ./test/interp/mem/alloc_large.bril gc
+ok 553 - ./test/interp/mem/alloc_many.bril original-eval
+ok 554 - ./test/interp/mem/alloc_many.bril copy-eval
+ok 555 - ./test/interp/mem/alloc_many.bril gc
+ok 556 - ./test/interp/mem/fib.bril original-eval
+ok 557 - ./test/interp/mem/fib.bril copy-eval
+ok 558 - ./test/interp/mem/fib.bril gc
+ok 559 - ./test/interp/mem/mem_id.bril original-eval
+ok 560 - ./test/interp/mem/mem_id.bril copy-eval
+ok 561 - ./test/interp/mem/mem_id.bril gc
+ok 562 - ./test/interp/mem/ptr_call.bril original-eval
+ok 563 - ./test/interp/mem/ptr_call.bril copy-eval
+ok 564 - ./test/interp/mem/ptr_call.bril gc
+ok 565 - ./test/interp/mem/ptr_ret.bril original-eval
+ok 566 - ./test/interp/mem/ptr_ret.bril copy-eval
+ok 567 - ./test/interp/mem/ptr_ret.bril gc
+ok 568 - ./test/interp/mixed/store-char.bril original-eval
+ok 569 - ./test/interp/mixed/store-char.bril copy-eval
+ok 570 - ./test/interp/mixed/store-char.bril gc
+ok 571 - ./test/interp/mixed/store-float.bril original-eval
+ok 572 - ./test/interp/mixed/store-float.bril copy-eval
+ok 573 - ./test/interp/mixed/store-float.bril gc
+ok 574 - ./test/interp/spec/spec-abort.bril original-eval
+ok 575 - ./test/interp/spec/spec-abort.bril copy-eval
+ok 576 - ./test/interp/spec/spec-abort.bril gc
+ok 577 - ./test/interp/spec/spec-commit.bril original-eval
+ok 578 - ./test/interp/spec/spec-commit.bril copy-eval
+ok 579 - ./test/interp/spec/spec-commit.bril gc
+ok 580 - ./test/interp/spec/spec-nested.bril original-eval
+ok 581 - ./test/interp/spec/spec-nested.bril copy-eval
+ok 582 - ./test/interp/spec/spec-nested.bril gc
+ok 583 - ./test/interp/spec/spec-noabort.bril original-eval
+ok 584 - ./test/interp/spec/spec-noabort.bril copy-eval
+ok 585 - ./test/interp/spec/spec-noabort.bril gc
+ok 586 - ./test/interp/ssa/ssa-simple.bril original-eval
+ok 587 - ./test/interp/ssa/ssa-simple.bril copy-eval
+ok 588 - ./test/interp/ssa/ssa-simple.bril gc
+ok 589 - ./test/interp/ssa/ssa-simple-inv.bril original-eval
+ok 590 - ./test/interp/ssa/ssa-simple-inv.bril copy-eval
+ok 591 - ./test/interp/ssa/ssa-simple-inv.bril gc
+not ok 592 - ./test/linking/diamond.bril original-eval
+# exit code: 1
+not ok 593 - ./test/linking/diamond.bril copy-eval
+# exit code: 1
+not ok 594 - ./test/linking/diamond.bril gc
+# exit code: 1
+not ok 595 - ./test/linking/link_ops.bril original-eval
+# exit code: 1
+not ok 596 - ./test/linking/link_ops.bril copy-eval
+# exit code: 1
+not ok 597 - ./test/linking/link_ops.bril gc
+# exit code: 1
+not ok 598 - ./test/linking/nested.bril original-eval
+# exit code: 1
+not ok 599 - ./test/linking/nested.bril copy-eval
+# exit code: 1
+not ok 600 - ./test/linking/nested.bril gc
+# exit code: 1
+not ok 601 - ./test/linking/recursive.bril original-eval
+# exit code: 1
+not ok 602 - ./test/linking/recursive.bril copy-eval
+# exit code: 1
+not ok 603 - ./test/linking/recursive.bril gc
+# exit code: 1
+ok 604 - ./test/parse/add.bril original-eval
+ok 605 - ./test/parse/add.bril copy-eval
+ok 606 - ./test/parse/add.bril gc
+ok 607 - ./test/parse/char.bril original-eval
+ok 608 - ./test/parse/char.bril copy-eval
+ok 609 - ./test/parse/char.bril gc
+ok 610 - ./test/parse/comment.bril original-eval
+ok 611 - ./test/parse/comment.bril copy-eval
+ok 612 - ./test/parse/comment.bril gc
+ok 613 - ./test/parse/float.bril original-eval
+ok 614 - ./test/parse/float.bril copy-eval
+ok 615 - ./test/parse/float.bril gc
+ok 616 - ./test/parse/mem.bril original-eval
+ok 617 - ./test/parse/mem.bril copy-eval
+ok 618 - ./test/parse/mem.bril gc
+ok 619 - ./test/parse/positions.bril original-eval
+ok 620 - ./test/parse/positions.bril copy-eval
+ok 621 - ./test/parse/positions.bril gc
+ok 622 - ./test/parse/print.bril original-eval
+ok 623 - ./test/parse/print.bril copy-eval
+ok 624 - ./test/parse/print.bril gc
+ok 625 - ./test/print/add.bril original-eval
+ok 626 - ./test/print/add.bril copy-eval
+ok 627 - ./test/print/add.bril gc
+ok 628 - ./test/print/call.bril original-eval
+ok 629 - ./test/print/call.bril copy-eval
+ok 630 - ./test/print/call.bril gc
+ok 631 - ./test/print/char.bril original-eval
+ok 632 - ./test/print/char.bril copy-eval
+ok 633 - ./test/print/char.bril gc
+not ok 634 - ./test/print/eight-queens.bril original-eval
+# exit code: 2
+not ok 635 - ./test/print/eight-queens.bril copy-eval
+# exit code: 2
+not ok 636 - ./test/print/eight-queens.bril gc
+# exit code: 2
+ok 637 - ./test/print/ptr.bril original-eval
+ok 638 - ./test/print/ptr.bril copy-eval
+ok 639 - ./test/print/ptr.bril gc
+ok 640 - ./test/print/spec-abort.bril original-eval
+ok 641 - ./test/print/spec-abort.bril copy-eval
+ok 642 - ./test/print/spec-abort.bril gc
+not ok 643 - ./type-infer/tests/fail-infer/arith_ops.bril original-eval
+# exit code: 2, expected: 1
+not ok 644 - ./type-infer/tests/fail-infer/arith_ops.bril copy-eval
+# exit code: 2, expected: 1
+not ok 645 - ./type-infer/tests/fail-infer/arith_ops.bril gc
+# exit code: 2, expected: 1
+ok 646 - ./type-infer/tests/fail-infer/assign_label.bril original-eval
+ok 647 - ./type-infer/tests/fail-infer/assign_label.bril copy-eval
+ok 648 - ./type-infer/tests/fail-infer/assign_label.bril gc
+not ok 649 - ./type-infer/tests/fail-infer/br.bril original-eval
+# exit code: 2, expected: 1
+not ok 650 - ./type-infer/tests/fail-infer/br.bril copy-eval
+# exit code: 2, expected: 1
+not ok 651 - ./type-infer/tests/fail-infer/br.bril gc
+# exit code: 2, expected: 1
+not ok 652 - ./type-infer/tests/fail-infer/comp_ops.bril original-eval
+# exit code: 2, expected: 1
+not ok 653 - ./type-infer/tests/fail-infer/comp_ops.bril copy-eval
+# exit code: 2, expected: 1
+not ok 654 - ./type-infer/tests/fail-infer/comp_ops.bril gc
+# exit code: 2, expected: 1
+not ok 655 - ./type-infer/tests/fail-infer/control_ops.bril original-eval
+# exit code: 2, expected: 1
+not ok 656 - ./type-infer/tests/fail-infer/control_ops.bril copy-eval
+# exit code: 2, expected: 1
+not ok 657 - ./type-infer/tests/fail-infer/control_ops.bril gc
+# exit code: 2, expected: 1
+not ok 658 - ./type-infer/tests/fail-infer/div.bril original-eval
+# exit code: 2, expected: 1
+not ok 659 - ./type-infer/tests/fail-infer/div.bril copy-eval
+# exit code: 2, expected: 1
+not ok 660 - ./type-infer/tests/fail-infer/div.bril gc
+# exit code: 2, expected: 1
+ok 661 - ./type-infer/tests/fail-infer/idchain.bril original-eval
+ok 662 - ./type-infer/tests/fail-infer/idchain.bril copy-eval
+ok 663 - ./type-infer/tests/fail-infer/idchain.bril gc
+not ok 664 - ./type-infer/tests/fail-infer/jmp.bril original-eval
+# exit code: 0, expected: 1
+not ok 665 - ./type-infer/tests/fail-infer/jmp.bril copy-eval
+# exit code: 0, expected: 1
+not ok 666 - ./type-infer/tests/fail-infer/jmp.bril gc
+# exit code: 0, expected: 1
+not ok 667 - ./type-infer/tests/fail-infer/logic_ops.bril original-eval
+# exit code: 2, expected: 1
+not ok 668 - ./type-infer/tests/fail-infer/logic_ops.bril copy-eval
+# exit code: 2, expected: 1
+not ok 669 - ./type-infer/tests/fail-infer/logic_ops.bril gc
+# exit code: 2, expected: 1
+not ok 670 - ./type-infer/tests/fail-infer/many_functions.bril original-eval
+# exit code: 0, expected: 1
+not ok 671 - ./type-infer/tests/fail-infer/many_functions.bril copy-eval
+# exit code: 0, expected: 1
+not ok 672 - ./type-infer/tests/fail-infer/many_functions.bril gc
+# exit code: 0, expected: 1
+not ok 673 - ./type-infer/tests/fail-infer/tricky-jump.bril original-eval
+# exit code: 2
+not ok 674 - ./type-infer/tests/fail-infer/tricky-jump.bril copy-eval
+# exit code: 2
+not ok 675 - ./type-infer/tests/fail-infer/tricky-jump.bril gc
+# exit code: 2
+not ok 676 - ./type-infer/tests/fail-typecheck/add.bril original-eval
+# exit code: 0, expected: 1
+not ok 677 - ./type-infer/tests/fail-typecheck/add.bril copy-eval
+# exit code: 0, expected: 1
+not ok 678 - ./type-infer/tests/fail-typecheck/add.bril gc
+# exit code: 0, expected: 1
+not ok 679 - ./type-infer/tests/fail-typecheck/arith_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 680 - ./type-infer/tests/fail-typecheck/arith_ops.bril copy-eval
+# exit code: 0, expected: 1
+not ok 681 - ./type-infer/tests/fail-typecheck/arith_ops.bril gc
+# exit code: 0, expected: 1
+not ok 682 - ./type-infer/tests/fail-typecheck/br.bril original-eval
+# exit code: 0, expected: 1
+not ok 683 - ./type-infer/tests/fail-typecheck/br.bril copy-eval
+# exit code: 0, expected: 1
+not ok 684 - ./type-infer/tests/fail-typecheck/br.bril gc
+# exit code: 0, expected: 1
+not ok 685 - ./type-infer/tests/fail-typecheck/comp_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 686 - ./type-infer/tests/fail-typecheck/comp_ops.bril copy-eval
+# exit code: 0, expected: 1
+not ok 687 - ./type-infer/tests/fail-typecheck/comp_ops.bril gc
+# exit code: 0, expected: 1
+not ok 688 - ./type-infer/tests/fail-typecheck/control_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 689 - ./type-infer/tests/fail-typecheck/control_ops.bril copy-eval
+# exit code: 0, expected: 1
+not ok 690 - ./type-infer/tests/fail-typecheck/control_ops.bril gc
+# exit code: 0, expected: 1
+not ok 691 - ./type-infer/tests/fail-typecheck/div.bril original-eval
+# exit code: 0, expected: 1
+not ok 692 - ./type-infer/tests/fail-typecheck/div.bril copy-eval
+# exit code: 0, expected: 1
+not ok 693 - ./type-infer/tests/fail-typecheck/div.bril gc
+# exit code: 0, expected: 1
+not ok 694 - ./type-infer/tests/fail-typecheck/idchain.bril original-eval
+# exit code: 0, expected: 1
+not ok 695 - ./type-infer/tests/fail-typecheck/idchain.bril copy-eval
+# exit code: 0, expected: 1
+not ok 696 - ./type-infer/tests/fail-typecheck/idchain.bril gc
+# exit code: 0, expected: 1
+not ok 697 - ./type-infer/tests/fail-typecheck/jmp.bril original-eval
+# exit code: 0, expected: 1
+not ok 698 - ./type-infer/tests/fail-typecheck/jmp.bril copy-eval
+# exit code: 0, expected: 1
+not ok 699 - ./type-infer/tests/fail-typecheck/jmp.bril gc
+# exit code: 0, expected: 1
+not ok 700 - ./type-infer/tests/fail-typecheck/logic_ops.bril original-eval
+# exit code: 0, expected: 1
+not ok 701 - ./type-infer/tests/fail-typecheck/logic_ops.bril copy-eval
+# exit code: 0, expected: 1
+not ok 702 - ./type-infer/tests/fail-typecheck/logic_ops.bril gc
+# exit code: 0, expected: 1
+not ok 703 - ./type-infer/tests/fail-typecheck/many_functions.bril original-eval
+# exit code: 0, expected: 1
+not ok 704 - ./type-infer/tests/fail-typecheck/many_functions.bril copy-eval
+# exit code: 0, expected: 1
+not ok 705 - ./type-infer/tests/fail-typecheck/many_functions.bril gc
+# exit code: 0, expected: 1
+not ok 706 - ./type-infer/tests/fail-typecheck/nop.bril original-eval
+# exit code: 0, expected: 1
+not ok 707 - ./type-infer/tests/fail-typecheck/nop.bril copy-eval
+# exit code: 0, expected: 1
+not ok 708 - ./type-infer/tests/fail-typecheck/nop.bril gc
+# exit code: 0, expected: 1
+not ok 709 - ./type-infer/tests/fail-typecheck/ret.bril original-eval
+# exit code: 0, expected: 1
+not ok 710 - ./type-infer/tests/fail-typecheck/ret.bril copy-eval
+# exit code: 0, expected: 1
+not ok 711 - ./type-infer/tests/fail-typecheck/ret.bril gc
+# exit code: 0, expected: 1
+not ok 712 - ./type-infer/tests/fail-typecheck/tiny.bril original-eval
+# exit code: 0, expected: 1
+not ok 713 - ./type-infer/tests/fail-typecheck/tiny.bril copy-eval
+# exit code: 0, expected: 1
+not ok 714 - ./type-infer/tests/fail-typecheck/tiny.bril gc
+# exit code: 0, expected: 1
+not ok 715 - ./type-infer/tests/fail-typecheck/tricky-jump.bril original-eval
+# exit code: 2, expected: 1
+not ok 716 - ./type-infer/tests/fail-typecheck/tricky-jump.bril copy-eval
+# exit code: 2, expected: 1
+not ok 717 - ./type-infer/tests/fail-typecheck/tricky-jump.bril gc
+# exit code: 2, expected: 1
+not ok 718 - ./type-infer/tests/infer/addarg.bril original-eval
+# exit code: 2
+not ok 719 - ./type-infer/tests/infer/addarg.bril copy-eval
+# exit code: 2
+not ok 720 - ./type-infer/tests/infer/addarg.bril gc
+# exit code: 2
+ok 721 - ./type-infer/tests/infer/arith_ops.bril original-eval
+ok 722 - ./type-infer/tests/infer/arith_ops.bril copy-eval
+ok 723 - ./type-infer/tests/infer/arith_ops.bril gc
+ok 724 - ./type-infer/tests/infer/br.bril original-eval
+ok 725 - ./type-infer/tests/infer/br.bril copy-eval
+ok 726 - ./type-infer/tests/infer/br.bril gc
+ok 727 - ./type-infer/tests/infer/comp_ops.bril original-eval
+ok 728 - ./type-infer/tests/infer/comp_ops.bril copy-eval
+ok 729 - ./type-infer/tests/infer/comp_ops.bril gc
+ok 730 - ./type-infer/tests/infer/control_ops.bril original-eval
+ok 731 - ./type-infer/tests/infer/control_ops.bril copy-eval
+ok 732 - ./type-infer/tests/infer/control_ops.bril gc
+ok 733 - ./type-infer/tests/infer/div.bril original-eval
+ok 734 - ./type-infer/tests/infer/div.bril copy-eval
+ok 735 - ./type-infer/tests/infer/div.bril gc
+ok 736 - ./type-infer/tests/infer/idchain.bril original-eval
+ok 737 - ./type-infer/tests/infer/idchain.bril copy-eval
+ok 738 - ./type-infer/tests/infer/idchain.bril gc
+ok 739 - ./type-infer/tests/infer/jmp.bril original-eval
+ok 740 - ./type-infer/tests/infer/jmp.bril copy-eval
+ok 741 - ./type-infer/tests/infer/jmp.bril gc
+ok 742 - ./type-infer/tests/infer/logic_ops.bril original-eval
+ok 743 - ./type-infer/tests/infer/logic_ops.bril copy-eval
+ok 744 - ./type-infer/tests/infer/logic_ops.bril gc
+ok 745 - ./type-infer/tests/infer/many_functions.bril original-eval
+ok 746 - ./type-infer/tests/infer/many_functions.bril copy-eval
+ok 747 - ./type-infer/tests/infer/many_functions.bril gc
+ok 748 - ./type-infer/tests/infer/nop.bril original-eval
+ok 749 - ./type-infer/tests/infer/nop.bril copy-eval
+ok 750 - ./type-infer/tests/infer/nop.bril gc
+ok 751 - ./type-infer/tests/infer/ret.bril original-eval
+ok 752 - ./type-infer/tests/infer/ret.bril copy-eval
+ok 753 - ./type-infer/tests/infer/ret.bril gc
+ok 754 - ./type-infer/tests/infer/tiny.bril original-eval
+ok 755 - ./type-infer/tests/infer/tiny.bril copy-eval
+ok 756 - ./type-infer/tests/infer/tiny.bril gc
+ok 757 - ./type-infer/tests/infer/tricky-jump.bril original-eval
+ok 758 - ./type-infer/tests/infer/tricky-jump.bril copy-eval
+ok 759 - ./type-infer/tests/infer/tricky-jump.bril gc
+ok 760 - ./type-infer/tests/parse/add.bril original-eval
+ok 761 - ./type-infer/tests/parse/add.bril copy-eval
+ok 762 - ./type-infer/tests/parse/add.bril gc
+ok 763 - ./type-infer/tests/parse/div.bril original-eval
+ok 764 - ./type-infer/tests/parse/div.bril copy-eval
+ok 765 - ./type-infer/tests/parse/div.bril gc
+ok 766 - ./type-infer/tests/parse/partial.bril original-eval
+ok 767 - ./type-infer/tests/parse/partial.bril copy-eval
+ok 768 - ./type-infer/tests/parse/partial.bril gc
+ok 769 - ./type-infer/tests/print/add.bril original-eval
+ok 770 - ./type-infer/tests/print/add.bril copy-eval
+ok 771 - ./type-infer/tests/print/add.bril gc
+ok 772 - ./type-infer/tests/print/div.bril original-eval
+ok 773 - ./type-infer/tests/print/div.bril copy-eval
+ok 774 - ./type-infer/tests/print/div.bril gc
+ok 775 - ./type-infer/tests/print/partial.bril original-eval
+ok 776 - ./type-infer/tests/print/partial.bril copy-eval
+ok 777 - ./type-infer/tests/print/partial.bril gc
+ok 778 - ./type-infer/tests/typecheck/arith_ops.bril original-eval
+ok 779 - ./type-infer/tests/typecheck/arith_ops.bril copy-eval
+ok 780 - ./type-infer/tests/typecheck/arith_ops.bril gc
+ok 781 - ./type-infer/tests/typecheck/br.bril original-eval
+ok 782 - ./type-infer/tests/typecheck/br.bril copy-eval
+ok 783 - ./type-infer/tests/typecheck/br.bril gc
+ok 784 - ./type-infer/tests/typecheck/comp_ops.bril original-eval
+ok 785 - ./type-infer/tests/typecheck/comp_ops.bril copy-eval
+ok 786 - ./type-infer/tests/typecheck/comp_ops.bril gc
+ok 787 - ./type-infer/tests/typecheck/control_ops.bril original-eval
+ok 788 - ./type-infer/tests/typecheck/control_ops.bril copy-eval
+ok 789 - ./type-infer/tests/typecheck/control_ops.bril gc
+ok 790 - ./type-infer/tests/typecheck/div.bril original-eval
+ok 791 - ./type-infer/tests/typecheck/div.bril copy-eval
+ok 792 - ./type-infer/tests/typecheck/div.bril gc
+ok 793 - ./type-infer/tests/typecheck/idchain.bril original-eval
+ok 794 - ./type-infer/tests/typecheck/idchain.bril copy-eval
+ok 795 - ./type-infer/tests/typecheck/idchain.bril gc
+ok 796 - ./type-infer/tests/typecheck/jmp.bril original-eval
+ok 797 - ./type-infer/tests/typecheck/jmp.bril copy-eval
+ok 798 - ./type-infer/tests/typecheck/jmp.bril gc
+ok 799 - ./type-infer/tests/typecheck/logic_ops.bril original-eval
+ok 800 - ./type-infer/tests/typecheck/logic_ops.bril copy-eval
+ok 801 - ./type-infer/tests/typecheck/logic_ops.bril gc
+ok 802 - ./type-infer/tests/typecheck/many_functions.bril original-eval
+ok 803 - ./type-infer/tests/typecheck/many_functions.bril copy-eval
+ok 804 - ./type-infer/tests/typecheck/many_functions.bril gc
+ok 805 - ./type-infer/tests/typecheck/nop.bril original-eval
+ok 806 - ./type-infer/tests/typecheck/nop.bril copy-eval
+ok 807 - ./type-infer/tests/typecheck/nop.bril gc
+ok 808 - ./type-infer/tests/typecheck/ret.bril original-eval
+ok 809 - ./type-infer/tests/typecheck/ret.bril copy-eval
+ok 810 - ./type-infer/tests/typecheck/ret.bril gc
+ok 811 - ./type-infer/tests/typecheck/tiny.bril original-eval
+ok 812 - ./type-infer/tests/typecheck/tiny.bril copy-eval
+ok 813 - ./type-infer/tests/typecheck/tiny.bril gc
+ok 814 - ./type-infer/tests/typecheck/tricky-jump.bril original-eval
+ok 815 - ./type-infer/tests/typecheck/tricky-jump.bril copy-eval
+ok 816 - ./type-infer/tests/typecheck/tricky-jump.bril gc
