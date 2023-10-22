@@ -3,7 +3,7 @@
  */
 export async function readStdin(): Promise<string> {
   const buf = await Deno.readAll(Deno.stdin);
-  return (new TextDecoder()).decode(buf);
+  return new TextDecoder().decode(buf);
 }
 
 export function unreachable(x: never): never {
