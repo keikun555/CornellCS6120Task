@@ -47,8 +47,6 @@ newton,baseline,0
 newton,gc,0
 n_root,baseline,0
 n_root,gc,0
-function_call,baseline,timeout
-function_call,gc,timeout
 mat-inv,baseline,2
 mat-inv,gc,0
 cholesky,baseline,4
@@ -319,7 +317,6 @@ fib,baseline,1
 fib,gc,0
 ptr_ret,baseline,1
 ptr_ret,gc,0
-alloc_large,gc,timeout
 mem_id,baseline,1
 mem_id,gc,0
 alloc_many,baseline,1000000
