@@ -1,4 +1,5 @@
-// Same brili and also prints how much storage we missed
+// Modified to toggle free and garbage collection
+// Also collects heap size profiling
 import * as bril from "./bril-ts/bril.ts";
 import { readStdin, unreachable } from "./bril-ts/util.ts";
 
@@ -44,8 +45,12 @@ export class Key {
  */
 export class Heap<X> {
   private readonly storage: Map<number, X[]>;
+  readonly referenceCounter: Map<number, number>;
+  private size: number;
   constructor() {
     this.storage = new Map();
+    this.referenceCounter = new Map();
+    this.size = 0;
   }
 
   isEmpty(): boolean {
@@ -63,12 +68,51 @@ export class Heap<X> {
     return;
   }
 
+  getSize(): number {
+    return this.size;
+  }
+
+  increment(base: number) {
+    if (!this.referenceCounter.has(base)) {
+      this.referenceCounter.set(base, 0);
+    }
+    this.referenceCounter.set(base, this.referenceCounter.get(base)! + 1);
+  }
+  decrement(base: number) {
+    if (!this.referenceCounter.has(base)) {
+      this.referenceCounter.set(base, 0);
+    }
+    this.referenceCounter.set(base, this.referenceCounter.get(base)! - 1);
+    if (this.referenceCounter.get(base)! <= 0) {
+      // We can free this pointer
+      const data = this.storage.get(base)!;
+      const amt: number = data.length;
+
+      for (let offset = 0; offset < amt; offset++) {
+        const key: Key = new Key(base, offset);
+        const value: Value = this.read(key) as unknown as Value; // hacky but it works
+        if (isPtr(value)) {
+          this.decrement((value as Pointer).loc.base);
+        }
+      }
+
+      const freeKey: Key = new Key(base, 0);
+
+      this.free(freeKey);
+    }
+  }
+  exists(key: Key): boolean {
+    const data = this.storage.get(key.base);
+    return data !== undefined && data.length > key.offset && key.offset >= 0;
+  }
+
   alloc(amt: number): Key {
     if (amt <= 0) {
       throw error(`cannot allocate ${amt} entries`);
     }
     let base = this.getNewBase();
     this.storage.set(base, new Array(amt));
+    this.size++;
     return new Key(base, 0);
   }
 
@@ -76,6 +120,7 @@ export class Heap<X> {
     if (this.storage.has(key.base) && key.offset == 0) {
       this.freeKey(key);
       this.storage.delete(key.base);
+      this.size--;
     } else {
       throw error(
         `Tried to free illegal memory location base: ${key.base}, offset: ${key.offset}. Offset must be 0.`,
@@ -246,6 +291,10 @@ function checkArgs(instr: bril.Operation, count: number) {
   }
 }
 
+function isPtr(val: Value): boolean {
+  return !(typeof val !== "object" || val instanceof BigInt);
+}
+
 function getPtr(instr: bril.Operation, env: Env, index: number): Pointer {
   let val = getArgument(instr, env, index);
   if (typeof val !== "object" || val instanceof BigInt) {
@@ -343,6 +392,10 @@ type State = {
 
   // For speculation: the state at the point where speculation began.
   specparent: State | null;
+
+  // For lesson 11 garbage collection task
+  free: boolean;
+  garbageCollect: boolean;
 };
 
 /**
@@ -378,6 +431,10 @@ function evalCall(instr: bril.Operation, state: State): Action {
 
     // Set the value of the arg in the new (function) environment.
     newEnv.set(params[i].name, value);
+    if (state.garbageCollect && isPtr(value)) {
+      // Pointer is passed in as argument
+      state.heap.increment((value as Pointer).loc.base);
+    }
   }
 
   // Invoke the interpreter on the function.
@@ -389,6 +446,8 @@ function evalCall(instr: bril.Operation, state: State): Action {
     lastlabel: null,
     curlabel: null,
     specparent: null, // Speculation not allowed.
+    free: state.free,
+    garbageCollect: state.garbageCollect,
   };
   let retVal = evalFunc(func, newState);
   state.icount = newState.icount;
@@ -432,7 +491,26 @@ function evalCall(instr: bril.Operation, state: State): Action {
         `type of value returned by function does not match declaration`,
       );
     }
+    if (state.garbageCollect) {
+      if (isPtr(retVal)) {
+        // We're storing a pointer
+        state.heap.increment((retVal as Pointer).loc.base);
+      }
+      const prevValue = state.env.get(instr.dest);
+      if (prevValue !== undefined && isPtr(prevValue)) {
+        // return of this call instruction overwrites the dest
+        state.heap.decrement((prevValue as Pointer).loc.base);
+      }
+    }
     state.env.set(instr.dest, retVal);
+  }
+  if (state.garbageCollect) {
+    // Everything in newEnv is now out of scope, decrement
+    newEnv.forEach((value: Value, key) => {
+      if (isPtr(value)) {
+        state.heap.decrement((value as Pointer).loc.base);
+      }
+    });
   }
   return NEXT;
 }
@@ -483,6 +561,17 @@ function evalInstr(instr: bril.Instruction, state: State): Action {
 
     case "id": {
       let val = getArgument(instr, state.env, 0);
+      if (state.garbageCollect) {
+        if (isPtr(val)) {
+          // We're storing a pointer
+          state.heap.increment((val as Pointer).loc.base);
+        }
+        const prevValue = state.env.get(instr.dest);
+        if (prevValue !== undefined && isPtr(prevValue)) {
+          // overwriting a value
+          state.heap.decrement((prevValue as Pointer).loc.base);
+        }
+      }
       state.env.set(instr.dest, val);
       return NEXT;
     }
@@ -679,22 +768,42 @@ function evalInstr(instr: bril.Instruction, state: State): Action {
         throw error(`cannot allocate non-pointer type ${instr.type}`);
       }
       let ptr = alloc(typ, Number(amt), state.heap);
+      if (state.garbageCollect) {
+        // new reference to the new allocated object
+        state.heap.increment(ptr.loc.base);
+        const prevValue = state.env.get(instr.dest);
+        if (prevValue !== undefined && isPtr(prevValue)) {
+          // overwriting a value
+          state.heap.decrement((prevValue as Pointer).loc.base);
+        }
+      }
       state.env.set(instr.dest, ptr);
       return NEXT;
     }
 
     case "free": {
       let val = getPtr(instr, state.env, 0);
-      state.heap.free(val.loc);
+      if (state.free) {
+        state.heap.free(val.loc);
+      }
       return NEXT;
     }
 
     case "store": {
       let target = getPtr(instr, state.env, 0);
-      state.heap.write(
-        target.loc,
-        getArgument(instr, state.env, 1, target.type),
-      );
+      let value = getArgument(instr, state.env, 1, target.type);
+      if (state.garbageCollect && isPtr(value)) {
+        if (state.heap.exists(target.loc)) {
+          // We're overwriting what's stored
+          const prevValue = state.heap.read(target.loc);
+          if (isPtr(prevValue)) {
+            state.heap.decrement((prevValue as Pointer).loc.base);
+          }
+        }
+        // We're storing a pointer, so another reference
+        state.heap.increment((value as Pointer).loc.base);
+      }
+      state.heap.write(target.loc, value);
       return NEXT;
     }
 
@@ -704,6 +813,17 @@ function evalInstr(instr: bril.Instruction, state: State): Action {
       if (val === undefined || val === null) {
         throw error(`Pointer ${instr.args![0]} points to uninitialized data`);
       } else {
+        if (state.garbageCollect) {
+          if (isPtr(val)) {
+            // if what the pointer points to is a pointer
+            state.heap.increment((val as Pointer).loc.base);
+          }
+          const prevValue = state.env.get(instr.dest);
+          if (prevValue !== undefined && isPtr(prevValue)) {
+            // overwriting a value
+            state.heap.decrement((prevValue as Pointer).loc.base);
+          }
+        }
         state.env.set(instr.dest, val);
       }
       return NEXT;
@@ -712,6 +832,15 @@ function evalInstr(instr: bril.Instruction, state: State): Action {
     case "ptradd": {
       let ptr = getPtr(instr, state.env, 0);
       let val = getInt(instr, state.env, 1);
+      if (state.garbageCollect) {
+        // this is now a new reference to ptr
+        state.heap.increment(ptr.loc.base);
+        const prevValue = state.env.get(instr.dest);
+        if (prevValue !== undefined && isPtr(prevValue)) {
+          // overwriting a value
+          state.heap.decrement((prevValue as Pointer).loc.base);
+        }
+      }
       state.env.set(instr.dest, {
         loc: ptr.loc.add(Number(val)),
         type: ptr.type,
@@ -742,6 +871,16 @@ function evalInstr(instr: bril.Instruction, state: State): Action {
         if (val === undefined) {
           state.env.delete(instr.dest);
         } else {
+          if (state.garbageCollect) {
+            if (isPtr(val)) {
+              // if what the pointer points to is a pointer
+              state.heap.increment((val as Pointer).loc.base);
+            }
+            const prevValue = state.env.get(instr.dest);
+            if (prevValue !== undefined && isPtr(prevValue)) {
+              state.heap.decrement((prevValue as Pointer).loc.base);
+            }
+          }
           state.env.set(instr.dest, val);
         }
       }
@@ -973,6 +1112,24 @@ function evalProg(prog: bril.Program) {
     args.splice(pidx, 1);
   }
 
+  // Silly argument parsing to find the `--no-free-no-gc` flag.
+  let free = true;
+  let garbageCollect = false;
+  pidx = args.indexOf("--no-free-no-gc");
+  if (pidx > -1) {
+    free = false;
+    garbageCollect = false;
+    args.splice(pidx, 1);
+  }
+
+  // Silly argument parsing to find the `--no-free-gc` flag.
+  pidx = args.indexOf("--no-free-gc");
+  if (pidx > -1) {
+    free = false;
+    garbageCollect = true;
+    args.splice(pidx, 1);
+  }
+
   // Remaining arguments are for the main function.k
   let expected = main.args || [];
   let newEnv = parseMainArguments(expected, args);
@@ -985,10 +1142,21 @@ function evalProg(prog: bril.Program) {
     lastlabel: null,
     curlabel: null,
     specparent: null,
+    free: free,
+    garbageCollect: garbageCollect,
   };
   evalFunc(main, state);
 
-  if (!heap.isEmpty()) {
+  if (garbageCollect) {
+    // Everything in newEnv is now out of scope, decrement
+    newEnv.forEach((value: Value) => {
+      if (isPtr(value)) {
+        state.heap.decrement((value as Pointer).loc.base);
+      }
+    });
+  }
+
+  if (!heap.isEmpty() && state.free) {
     throw error(
       `Some memory locations have not been freed by end of execution.`,
     );
@@ -996,6 +1164,7 @@ function evalProg(prog: bril.Program) {
 
   if (profiling) {
     console.error(`total_dyn_inst: ${state.icount}`);
+    console.error(`remaining_heap_pointers: ${state.heap.getSize()}`);
   }
 }
 

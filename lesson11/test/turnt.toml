@@ -8,7 +8,22 @@ command = "bril2json < {filename} | deno run --no-config '../brili.ts' {args}"
 output.out = "-"
 output."copy.err" = "2"
 
-[envs.gc]
+[envs.no-free-eval]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' --no-free-no-gc {args}"
+output.out = "-"
+output."no-free.err" = "2"
+
+[envs.gc-eval]
 command = "bril2json < {filename} | deno run --no-config '../brili.ts' {args}"
 output.out = "-"
 output."gc.err" = "2"
+
+[envs.no-free-prof]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' -p --no-free-no-gc {args}"
+output."no-free-prof.out" = "-"
+output."no-free-prof.err" = "2"
+
+[envs.gc-prof]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' -p --no-free-gc {args}"
+output."gc-prof.out" = "-"
+output."gc-prof.err" = "2"

@@ -1,0 +1,15 @@
+extract = 'remaining_heap_pointers: (\d+)'
+benchmarks = './**/*.bril'
+timeout = 20
+
+[runs.baseline]
+pipeline = [
+    "bril2json",
+"deno run --no-config '../brili.ts' -p --no-free-no-gc {args}",
+]
+
+[runs.gc]
+pipeline = [
+    "bril2json",
+    "deno run --no-config '../brili.ts' -p --no-free-gc {args}",
+]
