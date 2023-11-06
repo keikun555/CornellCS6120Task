@@ -1,0 +1,10 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"v2","op":"const","type":"int","value":1}
+{"args":["v2"],"dest":"i","op":"id","type":"int"}
+{"args":["i"],"dest":"v3","op":"id","type":"int"}
+{"args":["n"],"dest":"v4","op":"id","type":"int"}
+{"args":["v3","v4"],"dest":"v5","op":"lt","type":"bool"}
+{"op":"guard","args":["v5"],"labels":["trace_start"]}
+{"args":["i"],"dest":"v6","op":"id","type":"int"}
+{"op":"commit","index":9,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

@@ -1,0 +1,5 @@
+-rw-rw-r-- 1 kei kei 2.9M Nov  6 22:05 ./benchmarks/core/pythagorean_triple.bril.trace.err
+-rw-rw-r-- 1 kei kei  18K Nov  6 22:05 ./benchmarks/float/sqrt.bril.trace.err
+-rw-rw-r-- 1 kei kei  15K Nov  6 22:05 ./benchmarks/core/perfect.bril.trace.err
+-rw-rw-r-- 1 kei kei 5.8K Nov  6 22:05 ./benchmarks/core/loopfact.bril.trace.err
+-rw-rw-r-- 1 kei kei 2.8K Nov  6 22:05 ./benchmarks/core/reverse.bril.trace.err

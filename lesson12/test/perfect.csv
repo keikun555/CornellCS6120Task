@@ -1,0 +1,6 @@
+benchmark,run,result
+perfect,baseline,232
+perfect,jit-lvn-tdce,242
+benchmark,run,result
+perfect,baseline,217
+perfect,jit-lvn-tdce,227

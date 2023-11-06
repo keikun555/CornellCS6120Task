@@ -1,0 +1,12 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"target","op":"const","type":"int","value":7}
+{"dest":"size","op":"const","type":"int","value":5}
+{"dest":"e1","op":"const","type":"int","value":1}
+{"dest":"e2","op":"const","type":"int","value":2}
+{"dest":"e3","op":"const","type":"int","value":6}
+{"dest":"e4","op":"const","type":"int","value":7}
+{"dest":"e5","op":"const","type":"int","value":11}
+{"dest":"zero","op":"const","type":"int","value":0}
+{"dest":"four","op":"const","type":"int","value":4}
+{"op":"commit","index":9,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

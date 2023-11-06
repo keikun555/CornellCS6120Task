@@ -1,0 +1,6 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"a","op":"const","type":"float","value":2}
+{"dest":"b","op":"const","type":"float","value":10}
+{"dest":"n","op":"const","type":"float","value":8}
+{"op":"commit","index":3,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

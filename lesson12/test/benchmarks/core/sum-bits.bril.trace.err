@@ -1,0 +1,9 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"sum","op":"const","type":"int","value":0}
+{"dest":"two","op":"const","type":"int","value":2}
+{"dest":"zero","op":"const","type":"int","value":0}
+{"args":["input","zero"],"dest":"cond","op":"eq","type":"bool"}
+{"op":"const","type":"bool","dest":"trace.false","value":false}
+{"op":"guard","args":["trace.false"],"labels":["trace_start"]}
+{"op":"commit","index":7,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

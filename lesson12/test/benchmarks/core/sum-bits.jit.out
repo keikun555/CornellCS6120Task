@@ -1,0 +1,34 @@
+@main(input: int) {
+  speculate;
+  sum: int = const 0;
+  two: int = const 2;
+  zero: int = const 0;
+  cond: bool = eq input zero;
+  trace.false: bool = const false;
+  guard trace.false .trace_start;
+  commit;
+  jmp .trace_end;
+.trace_start:
+  sum: int = const 0;
+  two: int = const 2;
+  zero: int = const 0;
+.loop:
+  cond: bool = eq input zero;
+  br cond .done .body;
+.body:
+.trace_end:
+  bit: int = call @mod input two;
+  input: int = div input two;
+  sum: int = add sum bit;
+  jmp .loop;
+.done:
+  print sum;
+  ret;
+}
+@mod(dividend: int, divisor: int): int {
+  quotient: int = div dividend divisor;
+  two: int = const 2;
+  prod: int = mul two quotient;
+  diff: int = sub dividend prod;
+  ret diff;
+}

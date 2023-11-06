@@ -1,0 +1,9 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"v0","op":"const","type":"int","value":23789216}
+{"args":["v0"],"dest":"x","op":"id","type":"int"}
+{"dest":"v1","op":"const","type":"int","value":1748698766}
+{"args":["v1"],"dest":"y","op":"id","type":"int"}
+{"args":["x"],"dest":"v2","op":"id","type":"int"}
+{"args":["y"],"dest":"v3","op":"id","type":"int"}
+{"op":"commit","index":6,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

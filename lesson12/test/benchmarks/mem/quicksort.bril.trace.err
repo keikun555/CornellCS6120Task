@@ -1,0 +1,4 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"size","op":"const","type":"int","value":6}
+{"op":"commit","index":1,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

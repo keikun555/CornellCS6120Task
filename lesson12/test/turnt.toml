@@ -1,0 +1,34 @@
+[envs.original-eval]
+command = "bril2json < {filename} | brili {args}"
+output.out = "-"
+output.err = "2"
+
+[envs.copy-eval]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' {args}"
+output.out = "-"
+output."copy.err" = "2"
+
+[envs.trace]
+command = "bril2json < {filename} | deno run --no-config '../brili.ts' -t {args}"
+output."bril.trace.out" = "-"
+output."bril.trace.err" = "2"
+
+[envs.jit]
+command = "bril2json < {filename} | python3 ../jit.py {filename}.trace.err | bril2txt"
+output."jit.out" = "-"
+output."jit.err" = "2"
+
+[envs.jit-eval]
+command = "bril2json < {filename} | python3 ../jit.py {filename}.trace.err | brili {args}"
+output.out = "-"
+output."jit-eval.err" = "2"
+
+[envs.jit-lvn-eval]
+command = "bril2json < {filename} | python3 ../jit.py {filename}.trace.err | python3 ../lvn.py | brili {args}"
+output.out = "-"
+output."jit-lvn-eval.err" = "2"
+
+[envs.jit-lvn-tdce-eval]
+command = "bril2json < {filename} | python3 ../jit.py {filename}.trace.err | python3 ../lvn.py | python3 ../tdce.py | brili {args}"
+output.out = "-"
+output."jit-lvn-tdce-eval.err" = "2"

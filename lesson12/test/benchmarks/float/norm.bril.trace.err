@@ -1,0 +1,9 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"size","op":"const","type":"int","value":5}
+{"dest":"n1","op":"const","type":"float","value":3}
+{"dest":"n2","op":"const","type":"float","value":10}
+{"dest":"n3","op":"const","type":"float","value":1}
+{"dest":"n4","op":"const","type":"float","value":9}
+{"dest":"n5","op":"const","type":"float","value":7}
+{"op":"commit","index":6,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

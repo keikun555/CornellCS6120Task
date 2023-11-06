@@ -1,0 +1,9 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"ten","op":"const","type":"int","value":10}
+{"dest":"zero","op":"const","type":"int","value":0}
+{"dest":"one","op":"const","type":"int","value":1}
+{"dest":"index","op":"const","type":"int","value":1}
+{"dest":"not_finished","op":"const","type":"bool","value":true}
+{"op":"guard","args":["not_finished"],"labels":["trace_start"]}
+{"op":"commit","index":8,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

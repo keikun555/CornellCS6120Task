@@ -1,0 +1,6 @@
+benchmark,run,result
+pythagorean_triple,baseline,61518
+pythagorean_triple,jit-lvn-tdce,61526
+benchmark,run,result
+pythagorean_triple,baseline,56656
+pythagorean_triple,jit-lvn-tdce,56664

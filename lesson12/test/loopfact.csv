@@ -1,0 +1,6 @@
+benchmark,run,result
+loopfact,baseline,116
+loopfact,jit-lvn-tdce,190
+benchmark,run,result
+loopfact,baseline,142
+loopfact,jit-lvn-tdce,212

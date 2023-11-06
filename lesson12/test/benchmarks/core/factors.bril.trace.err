@@ -1,0 +1,13 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"zer","op":"const","type":"int","value":0}
+{"dest":"one","op":"const","type":"int","value":1}
+{"dest":"fac","op":"const","type":"int","value":2}
+{"args":["one","num"],"dest":"ispos","op":"lt","type":"bool"}
+{"op":"guard","args":["ispos"],"labels":["trace_start"]}
+{"args":["num","fac"],"dest":"quo","op":"div","type":"int"}
+{"args":["quo","fac"],"dest":"tmp","op":"mul","type":"int"}
+{"args":["num","tmp"],"dest":"mod","op":"sub","type":"int"}
+{"args":["mod","zer"],"dest":"iszero","op":"eq","type":"bool"}
+{"op":"guard","args":["iszero"],"labels":["trace_start"]}
+{"op":"commit","index":13,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

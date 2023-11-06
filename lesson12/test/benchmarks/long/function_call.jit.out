@@ -1,0 +1,36 @@
+@main(starting_m: int) {
+  speculate;
+  m: int = id starting_m;
+  zero: int = const 0;
+  one: int = const 1;
+  two: int = const 2;
+  cond_m: bool = eq m zero;
+  trace.false: bool = const false;
+  guard trace.false .trace_start;
+  m: int = sub m one;
+  commit;
+  jmp .trace_end;
+.trace_start:
+  m: int = id starting_m;
+  zero: int = const 0;
+  one: int = const 1;
+  two: int = const 2;
+  cond_m: bool = eq m zero;
+  br cond_m .end .m_nonzero;
+.m_nonzero:
+  m: int = sub m one;
+.trace_end:
+  call @main m;
+  cond_m: bool = eq m zero;
+  br cond_m .end .m_nonzero2;
+.m_nonzero2:
+  m: int = sub m one;
+  call @main m;
+  cond_m: bool = eq m zero;
+  br cond_m .end .m_nonzero3;
+.m_nonzero3:
+  m: int = sub m one;
+  call @main m;
+.end:
+  print starting_m;
+}

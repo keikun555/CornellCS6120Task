@@ -1,0 +1,16 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"dest":"a","op":"const","type":"int","value":25}
+{"dest":"b","op":"const","type":"int","value":50}
+{"dest":"c","op":"const","type":"int","value":100}
+{"dest":"d","op":"const","type":"int","value":150}
+{"dest":"e","op":"const","type":"int","value":250}
+{"dest":"f","op":"const","type":"int","value":2}
+{"dest":"g","op":"const","type":"int","value":10}
+{"dest":"h","op":"const","type":"int","value":20}
+{"dest":"i","op":"const","type":"int","value":30}
+{"dest":"j","op":"const","type":"int","value":40}
+{"dest":"one","op":"const","type":"int","value":1}
+{"dest":"zero","op":"const","type":"int","value":0}
+{"dest":"size","op":"const","type":"int","value":5}
+{"op":"commit","index":13,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}

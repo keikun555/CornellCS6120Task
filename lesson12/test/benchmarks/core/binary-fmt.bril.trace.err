@@ -1,0 +1,3 @@
+{"op":"speculate","index":0,"labels":["trace_start"]}
+{"op":"commit","index":0,"labels":["trace_end"]}
+{"op":"jmp","labels":["trace_end"]}
