@@ -1,6 +1,7 @@
+import sys
+
 import lark
 import z3
-import sys
 
 # A language based on a Lark example from:
 # https://github.com/lark-parser/lark/wiki/Examples
@@ -17,6 +18,10 @@ GRAMMAR = """
   | term "/"  item      -> div
   | term ">>" item      -> shr
   | term "<<" item      -> shl
+  | term "&"  item      -> and
+  | term "|"  item      -> or
+  | term "^"  item      -> xor
+  | "~" term            -> not
 
 ?item: NUMBER           -> num
   | "-" item            -> neg
@@ -38,29 +43,38 @@ def interp(tree, lookup):
     """
 
     op = tree.data
-    if op in ('add', 'sub', 'mul', 'div', 'shl', 'shr'):  # Binary operators.
+    if op in ("add", "sub", "mul", "div", "shl", "shr", "and", "or", "xor"):  # Binary operators.
         lhs = interp(tree.children[0], lookup)
         rhs = interp(tree.children[1], lookup)
-        if op == 'add':
+        if op == "add":
             return lhs + rhs
-        elif op == 'sub':
+        elif op == "sub":
             return lhs - rhs
-        elif op == 'mul':
+        elif op == "mul":
             return lhs * rhs
-        elif op == 'div':
+        elif op == "div":
             return lhs / rhs
-        elif op == 'shl':
+        elif op == "shl":
             return lhs << rhs
-        elif op == 'shr':
+        elif op == "shr":
             return lhs >> rhs
-    elif op == 'neg':  # Negation.
+        elif op == "and":
+            return lhs & rhs
+        elif op == "or":
+            return lhs | rhs
+        elif op == "xor":
+            return lhs ^ rhs
+    elif op == "not":
+        sub = interp(tree.children[0], lookup)
+        return ~sub
+    elif op == "neg":  # Negation.
         sub = interp(tree.children[0], lookup)
         return -sub
-    elif op == 'num':  # Literal number.
+    elif op == "num":  # Literal number.
         return int(tree.children[0])
-    elif op == 'var':  # Variable lookup.
+    elif op == "var":  # Variable lookup.
         return lookup(tree.children[0])
-    elif op == 'if':  # Conditional.
+    elif op == "if":  # Conditional.
         cond = interp(tree.children[0], lookup)
         true = interp(tree.children[1], lookup)
         false = interp(tree.children[2], lookup)
@@ -76,38 +90,44 @@ def pretty(tree, subst={}, paren=False):
 
     # Add parentheses?
     if paren:
+
         def par(s):
-            return '({})'.format(s)
+            return "({})".format(s)
+
     else:
+
         def par(s):
             return s
 
     op = tree.data
-    if op in ('add', 'sub', 'mul', 'div', 'shl', 'shr'):
+    if op in ("add", "sub", "mul", "div", "shl", "shr", "and", "or", "xor"):
         lhs = pretty(tree.children[0], subst, True)
         rhs = pretty(tree.children[1], subst, True)
         c = {
-            'add': '+',
-            'sub': '-',
-            'mul': '*',
-            'div': '/',
-            'shl': '<<',
-            'shr': '>>',
+            "add": "+",
+            "sub": "-",
+            "mul": "*",
+            "div": "/",
+            "shl": "<<",
+            "shr": ">>",
+            "and": "&",
+            "or": "|",
+            "xor": "^",
         }[op]
-        return par('{} {} {}'.format(lhs, c, rhs))
-    elif op == 'neg':
+        return par("{} {} {}".format(lhs, c, rhs))
+    elif op == "neg":
         sub = pretty(tree.children[0], subst)
-        return '-{}'.format(sub, True)
-    elif op == 'num':
+        return "-{}".format(sub, True)
+    elif op == "num":
         return tree.children[0]
-    elif op == 'var':
+    elif op == "var":
         name = tree.children[0]
         return str(subst.get(name, name))
-    elif op == 'if':
+    elif op == "if":
         cond = pretty(tree.children[0], subst)
         true = pretty(tree.children[1], subst)
         false = pretty(tree.children[2], subst)
-        return par('{} ? {} : {}'.format(cond, true, false))
+        return par("{} ? {} : {}".format(cond, true, false))
 
 
 def run(tree, env):
@@ -143,8 +163,7 @@ def z3_expr(tree, vars=None):
 
 
 def solve(phi):
-    """Solve a Z3 expression, returning the model.
-    """
+    """Solve a Z3 expression, returning the model."""
 
     s = z3.Solver()
     s.add(phi)
@@ -153,12 +172,8 @@ def solve(phi):
 
 
 def model_values(model):
-    """Get the values out of a Z3 model.
-    """
-    return {
-        d.name(): model[d]
-        for d in model.decls()
-    }
+    """Get the values out of a Z3 model."""
+    return {d.name(): model[d] for d in model.decls()}
 
 
 def synthesize(tree1, tree2):
@@ -174,8 +189,7 @@ def synthesize(tree1, tree2):
 
     # Filter out the variables starting with "h" to get the non-hole
     # variables.
-    plain_vars = {k: v for k, v in vars1.items()
-                  if not k.startswith('h')}
+    plain_vars = {k: v for k, v in vars1.items() if not k.startswith("h")}
 
     # Formulate the constraint for Z3.
     goal = z3.ForAll(
@@ -188,7 +202,7 @@ def synthesize(tree1, tree2):
 
 
 def ex2(source):
-    src1, src2 = source.strip().split('\n')
+    src1, src2 = source.strip().split("\n")
 
     parser = lark.Lark(GRAMMAR)
     tree1 = parser.parse(src1)
@@ -199,5 +213,5 @@ def ex2(source):
     print(pretty(tree2, model_values(model)))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ex2(sys.stdin.read())
