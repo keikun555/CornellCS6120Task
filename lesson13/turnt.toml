@@ -1,0 +1,4 @@
+[envs.sketch]
+command = "python3 ex2.py < {filename}"
+output.out = "-"
+output.err = "2"
